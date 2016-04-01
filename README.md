@@ -5,7 +5,7 @@ This repo contains files for the Optimization Tool in Alteryx.
 
 ## Installation
 
-1. Download https://github.com/alteryx/test-optim/master.zip.
+1. Download https://github.com/alteryx/test-optim/archive/master.zip.
 2. Rename `.zip` to `.yxi`.
 3. Open in Alteryx to complete installation.
 
