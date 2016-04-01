@@ -35,9 +35,7 @@
         <Configuration>
           <RScript>## DO NOT MODIFY: Auto Inserted by AlteryxRhelper ----
 if ('package:AlteryxRDataX' %in% search()){
-  config &lt;- list(
-    payload = '%Question.payload%'
-  )
+  config &lt;-  jsonlite::fromJSON('%Question.payload%')
   # update this to read only optional inputs which are provided by user
   # that data should be available in config, or can be inferred from
   # number of rows in the data frame
@@ -82,7 +80,7 @@ iOutput &lt;- function(s2a){
     Solution = list(
       value = s2a$objval,
       title = 'Optimal Value',
-      definition = "&lt;p&gt;This is the optimal value of the objective function&lt;/p&gt;"
+      definition = "&lt;p&gt;This is the optimal value&lt;/p&gt;"
     )
   )
 
@@ -98,7 +96,7 @@ iOutput &lt;- function(s2a){
   )
   renderInComposer(app, nOutput = 3)
 }
-
+s2a &lt;- AlteryxSolve(payload)
 iOutput(s2a) 
 </RScript>
           <UseFullUpdate value="False"/>
