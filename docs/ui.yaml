@@ -1,0 +1,40 @@
+inputMode:
+  label: Select input mode
+  type: DropDown
+  values:
+    matrix: Specify the model as matrices
+    manual: Enter the model manually
+    file: Specify the model from a file
+problemType:
+  label: Select problem type
+  type: DropDown
+  values:
+    LP: Linear Program
+    MIP: Mixed Integer Program
+    QP: Quadratic Program
+solver:
+  label: Select solver
+  type: DropDown
+  values:
+    glpk: Glpk
+    gurobi: Gurobi
+    quadprog: Quadprog
+maximize:
+  text: Maximize Objective?
+  type: CheckBox
+  showAsToggle: true
+formulaFields:
+  type: CodeEditor
+  language: alteryx-simple
+  enableDataPreview: false
+  hintList: ""
+fileType:
+  label: Select file type
+  type: DropDown
+  values: 
+    CPLEX_LP: CPLEX_LP
+    MathProg: MathProg
+    MPS_Free: MPS_Free
+filePath:
+  label: Select file
+  type: FileBrowse

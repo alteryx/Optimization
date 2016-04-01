@@ -36,7 +36,7 @@ updateHtmlPlugin <- function(pluginName,
   }
   file.copy(file.path(from, 'App', 'umd', 'app.min.js'), from, overwrite = TRUE)
   files = list.files(from, full.names = T, recursive = TRUE)
-  files = files[!grepl('Supporting_Macros|App', files)]
+  files = files[!grepl('Supporting_Macros|App|docs', files)]
   file.copy(files, to, recursive = TRUE)
 
   # Copy Supporting Macro
