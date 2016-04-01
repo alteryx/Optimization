@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Optimization</title>
+    <script type="text/javascript">
+      // Include version 1 of the base GUI library.
+      document.write(
+        '<link rel="import" href="' + window.Alteryx.LibDir + '1/lib/alteryx/gui/includes.html">'
+      );
+    </script>
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="app.css" charset="utf-8">
+
+    <!-- React: This can be removed once we switch to a more recent nightly -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-with-addons.js"
+      charset="utf-8">
+    </script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"
+      charset="utf-8">
+    </script>
+</head>
+<body>
+	<form>
+    <alteryx-pluginwidget type="TextBox" id="payload" dataName="payload"></alteryx-pluginwidget>
+
+    <!-- Landing Page -->
+		<fieldset id="landing">
+			<legend>Optimization</legend>
+
+			<!-- Input Mode: inputMode -->
+			<alteryx-pluginwidget type="DropDown" id="inputMode" dataName="inputMode">
+			</alteryx-pluginwidget>
+
+    </fieldset>
+    <hr style="width:50%">
+
+    <!-- Manual Input Page -->
+    <fieldset class="page" id="page-manual">
+
+      <!-- Problem Type: problemType -->
+      <label>Select Problem Type</label>
+      <alteryx-pluginwidget type="DropDown" id="problemType" dataName="problemType">
+      </alteryx-pluginwidget>
+
+      <!-- Solver: solver -->
+      <label for="solver">Select Solver</label>
+      <alteryx-pluginwidget type="DropDown" id="solver2" dataName="solver">
+      </alteryx-pluginwidget>
+
+      <div id='manualMode1' style='display:block'>
+        <!-- Maximize: maximize2 -->
+        <alteryx-pluginwidget type="CheckBox" id="maximize2" dataName="maximize2"
+          showAsToggle="true" text="Maximize Objective?">
+        </alteryx-pluginwidget>
+
+        <br/><br/>
+
+        <!-- Objective: objective -->
+        <alteryx-pluginwidget type="CodeEditor" id="objective" dataName="FormulaFields"
+          language="alteryx-simple" hintList="x1,x2,x3,x4" enableDataPreview="false"
+        >
+        </alteryx-pluginwidget>
+        <!-- Constraint Editor -->
+        <div id="constraint-editor"></div>
+
+      </div>
+
+      <!-- <div id='editorDiv' style="display:block;">
+        <textarea id="editor"></textarea>
+      </div> -->
+
+    </fieldset>
+
+    <!-- File Input Page -->
+    <fieldset class="page" id="page-file">
+
+      <!-- File Type: fileType -->
+      <label for="fileType">Select Filetype</label>
+      <alteryx-pluginwidget type="DropDown" id="fileType" dataName="fileType">
+      </alteryx-pluginwidget>
+
+      <!-- Solver: solver -->
+      <label for="solver">Select Solver</label>
+      <alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
+      </alteryx-pluginwidget>
+
+      <!-- File: filePath -->
+      <label>Select File</label>
+      <alteryx-pluginwidget type="FileBrowse" id="filePath" dataName="filePath">
+      </alteryx-pluginwidget>
+
+    </fieldset>
+
+    <!-- Matrix Page -->
+    <fieldset class="page" id="page-matrix">
+
+      <!-- Problem Type: problemType -->
+      <label>Select Problem Type</label>
+      <alteryx-pluginwidget type="DropDown" id="problemType" dataName="problemType">
+      </alteryx-pluginwidget>
+
+      <!-- Solver: solver -->
+      <label for="solver">Select Solver</label>
+      <alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
+      </alteryx-pluginwidget>
+
+      <!-- Maximize -->
+      <alteryx-pluginwidget type="CheckBox" id="maximize" dataName="maximize"
+        showAsToggle="true" text="Maximize Objective?" onText="Yes" offText="No"
+        showOnOffLabel="true"
+      >
+      </alteryx-pluginwidget>
+
+    </fieldset>
+
+	</form>
+	<script src="app.min.js" type="text/javascript"></script>
+</body>
+</html>

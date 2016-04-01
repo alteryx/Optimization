@@ -1,0 +1,140 @@
+alteryx-pluginwidget input[type="radio"]{
+  display: none;
+}
+ul.radioGroup li{
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+alteryx-pluginwidget label, label {
+  width: 100% !important;
+}
+alteryx-pluginwidget[showAsToggle="true"] label{
+  width: 200px !important;
+}
+/* Be consistent with TextBox */
+.Select-control{
+  border-radius: 0px !important;
+}
+.Select{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+input[type="radio"] + label{
+  padding-left: 20px !important;
+}
+.page {
+  display: none;
+}
+ul {
+  margin: 0;
+}
+input[type="radio"] {
+  display: hidden;
+}
+.default-button {
+  margin-left: -1px !important;
+}
+#payload{
+  display: none;
+}
+.CodeMirror{
+  height: inherit !important;
+}
+#editorDiv .CodeMirror {
+    font-size: 14px;
+    font-family: Consolas, Monaco,"Courier New", monospace;
+    line-height: 1.45em;
+    width: 750px;
+    height: 355px !important;
+    margin: 0px;
+    border: solid lightgray 1px;
+    width: 100%;
+}
+
+div.alteryx-toggle-switch-outer{
+  position: absolute;
+  right: 8px;
+}
+.alteryx-toggle-wrapper{
+  margin-top:10px;
+}
+
+/* Alerts: Copied from Bootstrap */
+.alert {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 18px;
+  border: 1px solid #fbeed5;
+}
+
+.alert-heading {
+  color: inherit;
+}
+
+.alert .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  line-height: 18px;
+}
+/* --- */
+fieldset.page{
+  border: 0px;
+}
+
+/*!
+ * Bootstrap v3.3.5 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+/*!
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=f963703b75c62eb8cbbc)
+ * Config saved to config.json and https://gist.github.com/f963703b75c62eb8cbbc
+ */
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+.list-group {
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+}
+.pull-right{
+  float: right;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+#constraint-editor .btn-xs{
+  height: 20px;
+  width: 20px;
+  padding: 2px;
+  margin: 2px;
+  visibility: hidden;
+}
+
+#constraint-editor .list-group-item:hover .btn-xs{
+  height: 20px;
+  width: 20px;
+  padding: 2px;
+  margin: 2px;
+  visibility: visible;
+}
+.list-group-item-editing{
+  border-left: 2px solid darkgreen;
+}

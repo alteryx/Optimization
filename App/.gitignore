@@ -1,0 +1,9 @@
+/coverage
+/node_modules
+/public/build
+npm-debug.log
+/es6
+/lib
+/node_modules
+/umd
+.DS_Store
