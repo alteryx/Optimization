@@ -17,7 +17,7 @@ This repo contains files for the Optimization Tool in Alteryx.
 2. Run `updateHtmlPlugin("Optimization")`. Make sure to update the arguments `fromRoot` and `toRoot` based on your setup. This function builds the application to `umd/app.min.js`, copies it over to the root directory, and installs the plugin to `Alteryx/bin`. Unless you have modified `OptimizationConfig.xml`, you would not need to restart Alteryx.
 
 ```r
-updateHtmlPlugin <- function(pluginName, 
+updateHtmlPlugin <- function(pluginName, build = FALSE,
     fromRoot = '~/Desktop/SNIPPETS/dev/',
     toRoot = '/Volumes/C/Program Files/Alteryx/bin/'){
   from = file.path(fromRoot, pluginName)
@@ -29,12 +29,15 @@ updateHtmlPlugin <- function(pluginName,
   
   cwd = getwd(); setwd(from); on.exit(setwd(cwd));
   from = "."
-  with_dir('nwb', system("nwb build-umd"))
+  if (build){
+    with_dir('nwb', system("nwb build-umd"))
+    file.copy(file.path(from, 'App', 'umd', 'app.min.js'), from, overwrite = TRUE)
+  }
   to = file.path(toRoot, 'HtmlPlugins', pluginName)
   if (!(file.exists(to))) {
     dir.create(to, recursive = TRUE)
   }
-  file.copy(file.path(from, 'App', 'umd', 'app.min.js'), from, overwrite = TRUE)
+ 
   files = list.files(from, full.names = T, recursive = TRUE)
   files = files[!grepl('Supporting_Macros|App|docs', files)]
   file.copy(files, to, recursive = TRUE)
