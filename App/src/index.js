@@ -55,6 +55,16 @@ const syncSolverList = (manager) => {
   problemType.BindUserDataChanged(setSolverList);
 };
 
+const updateHintList = (ayx, editorName, hintListName) => {
+  const { Gui: { manager, renderer } } = ayx;
+  manager.GetDataItem(hintListName).BindUserDataChanged((e) => {
+    const editor = renderer.getReactComponentByDataName(editorName).editor;
+    // let newList = document.getElementById('varList');
+    editor.options.hintList = e.replace(/\s/g, '');
+    console.log(editor.options.hintList);
+  });
+};
+
 Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
   const dataItem = makeDataItem(manager, AlteryxDataItems);
 
@@ -79,6 +89,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
     ['fileType', 'filePath', 'solver', 'inputMode', 'maximize', 'problemType']
   );
   renderConstraintEditor(
+  updateHintList(Alteryx, 'FormulaFields', 'varList');
     Alteryx, {
       editorValue: 'FormulaFields',
       constraints: 'constraints',
