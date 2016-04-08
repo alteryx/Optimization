@@ -8,13 +8,13 @@
     "clean": "nwb clean",
     "start": "nwb serve",
     "test": "nwb test",
-    "test:watch": "nwb test --server"
+    "test:watch": "nwb test --server",
+    "compile": "nwb build-umd; npm run move",
+    "move": "cp -f ./umd/app.min.js '/Volumes/C/Users/cfreeman/AppData/Roaming/Alteryx/Tools/Optimization/app.min.js'"
   },
   "dependencies": {
     "mobx": "^2.0.5",
-    "mobx-react": "^3.0.3",
-    "react": "0.14.x",
-    "react-dom": "0.14.x"
+    "mobx-react": "^3.0.3"
   },
   "peerDependencies": {
     "react": "0.14.3",
