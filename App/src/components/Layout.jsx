@@ -1,13 +1,13 @@
 import React, { PropTypes as P } from 'react';
 import { observer } from 'mobx-react';
-import ConstraintList from './components/ConstraintList';
-import BoundsEditor from './components/BoundsEditor';
+import ConstraintList from './ConstraintList';
+import BoundsEditor from './BoundsEditor';
 
 function Layout({ store }) {
   return (
     <div>
       <h4>Add Constraints</h4>
-      {/*<ConstraintList store={store} />*/}
+      <ConstraintList store={store} />
       <BoundsEditor store={store} />
     </div>
   );
