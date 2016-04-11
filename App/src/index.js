@@ -8,10 +8,10 @@
 
 /* global $ Alteryx */
 
-import $ from 'jquery';
-import { createUIObject, makeDataItem, syncDataItems } from './Utils';
-import VM from './Constants';
-import renderConstraintEditor from './RunView';
+// import $ from 'jquery';
+import { createUIObject, makeDataItem, syncDataItems } from './components/Utils';
+import VM from './components/Constants';
+import renderConstraintEditor from './components/RunView';
 
 
 const controlPageDisplay = (manager) => {
