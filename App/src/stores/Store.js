@@ -22,7 +22,10 @@ class MobxStore extends AyxStore {
     // turn all the initial properties into observables
     extendObservable(this, this);
 
-    this.selectedField = this.fieldNameArray[0];
+    // Automatically set `selectedField` to the first element in `fieldNameArray` as soon as it
+    // exists. This will ensure that the bounds dropdown will actually "select" the first element
+    // by default.
+    autorun(() => this.selectedField = this.fieldNameArray[0]);
   }
 
   @computed get numConstraints() {
@@ -65,15 +68,12 @@ class MobxStore extends AyxStore {
   }
 
   // Specific to bounds-editor
-  // @observable fieldNames = [];
-
   // fieldNames comes in as a comma-separated string, so we split to array in a computed property
   @computed get fieldNameArray() {
     return this.fieldNames.split(',').map(fieldName => fieldName.trim());
   }
 
   @computed get remainingFields() {
-    // return this.fieldNames
     return this.fieldNameArray
       .filter(field => !this.bounds.map(bound => bound.field).includes(field));
   }
