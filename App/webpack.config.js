@@ -63,7 +63,7 @@ if (TARGET === 'start' || !TARGET) {
           loader: 'babel',
           query: {
             cacheDirectory: true,
-            presets: ['react', 'es2015', 'stage-1','react-hmre'],
+            presets: ['react', 'es2015', 'stage-1', 'react-hmre'],
             plugins: ['transform-decorators-legacy', 'transform-object-assign', 'array-includes'],
           },
           include: PATHS.src,
@@ -107,7 +107,13 @@ if (TARGET === 'build') {
           query: {
             cacheDirectory: true,
             presets: ['react', 'es2015', 'stage-1'],
-            plugins: ['transform-decorators-legacy', 'transform-object-assign', 'array-includes'],
+            plugins: [
+              'transform-decorators-legacy',
+              'transform-object-assign',
+              'array-includes',
+              'transform-react-constant-elements',
+              'transform-react-inline-elements',
+            ],
           },
           include: PATHS.src,
         },
@@ -130,9 +136,12 @@ if (TARGET === 'build') {
       // Minify the resulting bundle
       new webpack.optimize.UglifyJsPlugin({
         compress: {
+          screw_ie8: true,
           warnings: false,
         },
       }),
+      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.OccurenceOrderPlugin(),
     ],
   });
 }
