@@ -2,10 +2,11 @@ import React, { PropTypes as P } from 'react';
 import { observer } from 'mobx-react';
 
 function BoundItemView({ bound, onClick, onDelete }) {
+  const showUpperBound = () => (bound.upperBound ? `<= ${bound.upperBound}` : '');
   return (
     <div className="list-group-item clearfix bound-item-view" onClick={onClick}>
-      <h4>{bound.lowerBound} &lt;= {bound.field} &lt;= {bound.upperBound}
-          <button type="button" className="btn btn-danger pull-right" onClick={onDelete}>X</button>
+      <h4>{bound.lowerBound} &lt;= {bound.field} { showUpperBound() }
+        <button type="button" className="btn btn-danger pull-right" onClick={onDelete}>X</button>
       </h4>
     </div>
   );
