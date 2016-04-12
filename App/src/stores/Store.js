@@ -9,7 +9,7 @@
 import AyxStore from './AyxStore';
 import { extendObservable, observable, computed, autorun } from 'mobx'; //eslint-disable-line
 
-class MobxStore extends AyxStore {
+class Store extends AyxStore {
   @observable currentIndex = null;
   @observable bounds = [];
   @observable selectedField;
@@ -25,7 +25,7 @@ class MobxStore extends AyxStore {
     // Automatically set `selectedField` to the first element in `fieldNameArray` as soon as it
     // exists. This will ensure that the bounds dropdown will actually "select" the first element
     // by default.
-    autorun(() => this.selectedField = this.fieldNameArray[0]);
+    autorun(() => { this.selectedField = this.fieldNameArray[0]; });
   }
 
   @computed get numConstraints() {
@@ -114,4 +114,4 @@ class MobxStore extends AyxStore {
   }
 }
 
-export default MobxStore;
+export default Store;
