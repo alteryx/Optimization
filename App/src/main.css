@@ -1,0 +1,19 @@
+body {
+  margin-top: 50px;
+}
+
+.form-inline > input {
+  margin: 5px 3px;
+}
+
+.bound-item-view {
+  cursor: pointer;
+}
+
+.bound-item-view button {
+  visibility: hidden;
+}
+
+.bound-item-view:hover button {
+  visibility: visible;
+}
