@@ -19,7 +19,7 @@ function BoundsEditor({ store }) {
 
   return (
     <div>
-      <form className="form-inline">
+      <div className="form-inline">
         <Select
           style={{ minWidth: 100 }}
           value={store.selectedField}
@@ -34,7 +34,7 @@ function BoundsEditor({ store }) {
         >
           +
         </button>
-      </form>
+      </div>
       <br />
       <BoundsList store={store} />
     </div>
