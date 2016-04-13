@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 *.Rproj
+.DS_Store
+umd
+npm-debug.log

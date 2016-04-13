@@ -8,11 +8,11 @@
 
 /* global $ Alteryx */
 
-import $ from 'jquery';
+// import $ from 'jquery';
 import { createUIObject, makeDataItem, syncDataItems } from './Utils';
 import VM from './Constants';
-import renderConstraintEditor from './RunView';
-
+// import renderConstraintEditor from './RunView';
+import runView from './RunView';
 
 const controlPageDisplay = (manager) => {
   const activePage = manager.GetDataItem('activePage');
@@ -55,6 +55,23 @@ const syncSolverList = (manager) => {
   problemType.BindUserDataChanged(setSolverList);
 };
 
+// Set the hintList prop of the code-editor widget to a data item instead of a string
+const syncHintList = (ayx, editorName, hintListName) => {
+  const { Gui: { manager, renderer } } = ayx;
+
+  // Grab a reference to the editor widget
+  const editor = renderer.getReactComponentByDataName(editorName).editor;
+
+  // Override the default `hintList` prop by setting it to the value of the `hintListName` data item
+  editor.options.hintList = manager.GetDataItem(hintListName).value.replace(/\s/g, '');
+
+  // Bind an event handler to the `hintListName` data item for future changes
+  manager.GetDataItem(hintListName).BindUserDataChanged((e) => {
+    editor.options.hintList = e.replace(/\s/g, '');
+    console.log(editor.options.hintList);
+  });
+};
+
 Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
   const dataItem = makeDataItem(manager, AlteryxDataItems);
 
@@ -64,6 +81,11 @@ Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
   //dataItem('currentIndex', {value: 0})
   //dataItem('payload', { value: '{}' });
 
+
+  // const varList = new AlteryxDataItems.MultiStringSelector(
+  //   { id: 'varList', dataname: 'varList', value: ['x1', 'x2'] }
+  // );
+  // manager.AddDataItem(varList);
 
   const constraints = new AlteryxDataItems.MultiStringSelector(
     { id: 'constraints', dataname: 'constraints' }
@@ -78,11 +100,13 @@ Alteryx.Gui.AfterLoad = (manager) => {
     'payload',
     ['fileType', 'filePath', 'solver', 'inputMode', 'maximize', 'problemType']
   );
-  renderConstraintEditor(
+  syncHintList(Alteryx, 'FormulaFields', 'varList');
+  // renderConstraintEditor(
+  runView(
     Alteryx, {
       editorValue: 'FormulaFields',
       constraints: 'constraints',
-      //currentIndex: 'currentIndex',
+      fieldNames: 'varList',
     }, 'constraint-editor'
   );
 };

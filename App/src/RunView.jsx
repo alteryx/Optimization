@@ -1,15 +1,15 @@
 import React from 'react';
 import { render } from 'react-dom';
-import MobxStore from './Store';
-import ConstraintList from './ConstraintList';
+import Store from './stores/Store';
+import Layout from './components/Layout';
 
-const renderConstraintEditor = (ayx, dataItems, divId) => {
-  const store = new MobxStore(ayx, dataItems);
+const runView = (ayx, dataItems, divId) => {
+  const store = new Store(ayx, dataItems);
 
   render(
-    <ConstraintList store={store} />,
+    <Layout store={store} />,
     document.getElementById(divId)
   );
 };
 
-export default renderConstraintEditor;
+export default runView;

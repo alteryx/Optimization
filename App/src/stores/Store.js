@@ -6,26 +6,14 @@
 
 /* global $ Alteryx */
 
+import AyxStore from './AyxStore';
 import { extendObservable, observable, computed, autorun } from 'mobx'; //eslint-disable-line
 
-class AyxStore {
-  // @param manager is an instance of Alteryx.Gui.manager
-  // @param dataItems is an object where each key is the property name you'd like to use in the
-  // store and the value is a string contraining that dataItem you're making into an observable
-  constructor(manager, dataItems) {
-    Object.keys(dataItems).forEach(i => {
-      const item = manager.GetDataItemByDataName(dataItems[i]); // An Alteryx DataItem
+class Store extends AyxStore {
+  @observable currentIndex = null;
+  @observable bounds = [];
+  @observable selectedField;
 
-      // assign each DataItem's value to its corresponding propName
-      this[i] = item.value;
-
-      // Bind a change handler to each dataItem and have it update the store on change
-      item.BindUserDataChanged((v) => { this[i] = v; });
-    });
-  }
-}
-
-class MobxStore extends AyxStore {
   constructor(ayx, dataItems) {
     const { Gui: { manager } } = ayx;
     // call the AyxStore constructor to set up the DataItem tracking
@@ -33,11 +21,12 @@ class MobxStore extends AyxStore {
 
     // turn all the initial properties into observables
     extendObservable(this, this);
-  }
 
-  //@observable constraints = Alteryx.Gui.manager.GetDataItem('constraints').getValue();
-  //@observable constraints = [];
-  @observable currentIndex = null;
+    // Automatically set `selectedField` to the first element in `fieldNameArray` as soon as it
+    // exists. This will ensure that the bounds dropdown will actually "select" the first element
+    // by default.
+    autorun(() => { this.selectedField = this.fieldNameArray[0]; });
+  }
 
   @computed get numConstraints() {
     return this.constraints.length;
@@ -77,11 +66,45 @@ class MobxStore extends AyxStore {
     this.constraints.splice(idx, 1);
     this.update();
   }
+
+  // Specific to bounds-editor
+  // fieldNames comes in as a comma-separated string, so we split to array in a computed property
+  @computed get fieldNameArray() {
+    return this.fieldNames.split(',').map(fieldName => fieldName.trim());
+  }
+
+  @computed get remainingFields() {
+    return this.fieldNameArray
+      .filter(field => !this.bounds.map(bound => bound.field).includes(field));
+  }
+
+  updateSelectedField(v) {
+    this.selectedField = v;
+  }
+
+  addBound(field) {
+    this.bounds.push({
+      field,
+      lowerBound: 0,
+      upperBound: null,
+    });
+    this.selectedField = this.remainingFields[0];
+  }
+
+  editBound(idx, newBound) {
+    this.bounds[idx] = newBound;
+  }
+
+  deleteBound(idx) {
+    this.bounds.splice(idx, 1);
+    this.selectedField = this.remainingFields[0];
+  }
+
   // since the update to the constraints array is triggered by mobx
   // we need to explicitly update the associated dataItem
   // this can also be automated in AyxStore
   updateAlteryxDataItems() {
-    const {manager, renderer} = Alteryx.Gui;
+    const { manager, renderer } = Alteryx.Gui;
     renderer.getReactComponentByDataName('FormulaFields')
       .editor
       .setValue(this.editorValue);
@@ -91,4 +114,4 @@ class MobxStore extends AyxStore {
   }
 }
 
-export default MobxStore;
+export default Store;
