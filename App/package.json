@@ -8,12 +8,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "npm run build && npm run build-es6",
-    "compile-ayx": "npm run build && npm run move",
+    "compile-ayx": "npm run build-umd && npm run move-src && npm run move-html",
     "clean": "rimraf '*(es6|dist)'",
     "build": "webpack",
+    "build-umd": "webpack",
     "build-es6": "rimraf 'es6' && babel --presets react,stage-1 --plugins transform-decorators-legacy,transform-object-assign,array-includes src -d es6",
     "start": "webpack-dev-server",
     "move": "npm run move-js; npm run move-html",
+    "move-src": "cp -f ./dist/src.js '/Volumes/C/Users/cfreeman/AppData/Roaming/Alteryx/Tools/Optimization/'",
     "move-js": "cp -f ./dist/{manifest,src,vendor}.js '/Volumes/C/Users/cfreeman/AppData/Roaming/Alteryx/Tools/Optimization/'",
     "move-html": "cp -f ../OptimizationGui.html '/Volumes/C/Users/cfreeman/AppData/Roaming/Alteryx/Tools/Optimization/'"
   },
