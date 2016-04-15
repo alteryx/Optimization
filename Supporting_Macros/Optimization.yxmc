@@ -878,9 +878,9 @@ No Text Styling</DefaultAnnotationText>
               <Multiple value="False"/>
               <Default>matrix</Default>
               <Mode>Manual</Mode>
-              <Manual_Values><![CDATA[matrix: Specify the model as matrices
-manual: Enter the model manually
-file: Specify the model from a file
+              <Manual_Values><![CDATA[Specify the model as matrices:matrix
+Enter the model manually:manual
+Specify the model from a file:file
 ]]></Manual_Values>
             </Question>
             <Question>
@@ -891,9 +891,9 @@ file: Specify the model from a file
               <Multiple value="False"/>
               <Default>LP</Default>
               <Mode>Manual</Mode>
-              <Manual_Values><![CDATA[LP: Linear Program
-MIP: Mixed Integer Program
-QP: Quadratic Program
+              <Manual_Values><![CDATA[Linear Program:LP
+Mixed Integer Program:MIP
+Quadratic Program:QP
 ]]></Manual_Values>
             </Question>
             <Question>
@@ -904,9 +904,9 @@ QP: Quadratic Program
               <Multiple value="False"/>
               <Default>glpk</Default>
               <Mode>Manual</Mode>
-              <Manual_Values><![CDATA[glpk: Glpk
-gurobi: Gurobi
-quadprog: Quadprog
+              <Manual_Values><![CDATA[Glpk:glpk
+Gurobi:gurobi
+Quadprog:quadprog
 ]]></Manual_Values>
             </Question>
             <Question>
@@ -937,9 +937,9 @@ quadprog: Quadprog
               <Multiple value="False"/>
               <Default>CPLEX_LP</Default>
               <Mode>Manual</Mode>
-              <Manual_Values><![CDATA[CPLEX_LP: CPLEX_LP
-MathProg: MathProg
-MPS_Free: MPS_Free
+              <Manual_Values><![CDATA[CPLEX_LP
+MathProg
+MPS_Free
 ]]></Manual_Values>
             </Question>
             <Question>
