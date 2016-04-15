@@ -6,3 +6,4 @@
 .DS_Store
 umd
 npm-debug.log
+*.bak
