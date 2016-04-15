@@ -76,7 +76,7 @@ Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
   const dataItem = makeDataItem(manager, AlteryxDataItems);
 
   // Initialize DataItem
-  Object.keys(VM).forEach(d => dataItem(d, { values: VM[d] }));
+  //Object.keys(VM).forEach(d => dataItem(d, { values: VM[d] }));
   dataItem('activePage', { value: 'landing' });
   //dataItem('currentIndex', {value: 0})
   //dataItem('payload', { value: '{}' });
