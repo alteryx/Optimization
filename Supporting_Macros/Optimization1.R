@@ -1,5 +1,7 @@
 ## DO NOT MODIFY: Auto Inserted by AlteryxRhelper ----
-if ('package:AlteryxRDataX' %in% search()){
+inMacro = '%Question.payload%' == ""
+library(AlteryxPrescriptive)
+if ('package:AlteryxRDataX' %in% search() && !inMacro){
   config <-  jsonlite::fromJSON('%Question.payload%')
   # update this to read only optional inputs which are provided by user
   # that data should be available in config, or can be inferred from
@@ -22,7 +24,7 @@ payload <- list(config = config, inputs = inputs)
 options(alteryx.wd = '%Engine.WorkflowDirectory%')
 options(alteryx.debug = config$debug)
 ##----
-library(AlteryxPrescriptive)
+
 
 library(AlteryxRviz)
 iOutput <- function(s2a){
