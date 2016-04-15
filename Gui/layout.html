@@ -1,0 +1,44 @@
+<form>
+  <div style='display: none'>{{ payload }}</div>
+  
+  <!-- Landing Page -->
+	<fieldset id="landing">
+		<legend>Optimization</legend>
+		{{ inputMode }}
+	</fieldset>
+  <hr style="width:50%">
+
+  <!-- Manual Input Page -->
+  <fieldset class="page" id="page-manual">
+    {{ problemType }}
+    {{ solver }}
+    <div id="manualMode1" style="display:block">
+      {{ maximize }}
+      <br/><br/>
+      {{ varList }}
+      <alteryx-pluginwidget type="CodeEditor" id="objective" dataName="FormulaFields"
+        language="alteryx-simple" hintList="x1,x2" enableDataPreview="false"
+      >
+      </alteryx-pluginwidget>
+      
+       <!-- React Components - Constraints, Bounds -->
+      <div id="constraint-editor"></div>
+
+    </div>
+  </fieldset>
+
+    <!-- File Input Page -->
+    <fieldset class="page" id="page-file">
+      {{ fileType }}
+      {{ solver }}
+      {{ filePath }}
+    </fieldset>
+
+    <!-- Matrix Page -->
+    <fieldset class="page" id="page-matrix">
+      {{ problemType }}
+      {{ solver }}
+      {{ maximize }}
+    </fieldset>
+
+</form>
