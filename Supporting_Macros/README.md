@@ -10,13 +10,28 @@ __Syncing R Code and Macro__
 
 __Automatically Write Configuration Code__
 
-The `extractConfig` function uses `../docs/ui.yaml` to extract configuration directly into the R code. This makes it simpler to keep the macro in sync with the UI.
+Running the code below
 
 ```r
-extractConfig <- function(uiFile){
-  ui <- yaml::yaml.load_file(uiFile)
-  d <- names(ui)
-  x <- paste(sprintf("%s = '%%Question.%s%%'", d, d), collapse = ",\n  ")
-  sprintf("config <- list(\n  %s\n)", x)
-}
+AlteryxRhelper:::makeInput('Supporting_Macros/Optimization.yxmc', 'config')
+```
+
+will automatically generate R code to extract macro configuration in the R tool.
+
+```
+## DO NOT MODIFY: Auto Inserted by AlteryxRhelper ----
+library(AlteryxRhelper)
+config <- list(
+  fileType = dropdownInput('%Question.fileType%' , 'CPLEX_LP'),
+  inputMode = dropdownInput('%Question.inputMode%' , 'matrix'),
+  maximize = checkboxInput('%Question.maximize%' , FALSE),
+  payload = textInput('%Question.payload%'),
+  problemType = dropdownInput('%Question.problemType%' , 'LP'),
+  showSensitivity = checkboxInput('%Question.showSensitivity%' , FALSE),
+  solver = dropdownInput('%Question.solver%' , 'glpk'),
+  varList = textInput('%Question.varList%')
+)
+options(alteryx.wd = '%Engine.WorkflowDirectory%')
+options(alteryx.debug = config$debug)
+##----
 ```
