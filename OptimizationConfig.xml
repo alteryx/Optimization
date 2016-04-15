@@ -1,13 +1,11 @@
 <?xml version="1.0"?>
-<!--All paths are relative to this config file.  The variables [Engine.EngineDirectory], [Engine.PluginDirectory] and [Engine.JavaScriptPluginDirectory] can also be used-->
 <AlteryxJavaScriptPlugin>
-  <EngineSettings EngineDll="Macro" EngineDllEntryPoint="Supporting_Macros/Optimization.yxmc" SDKVersion="10.1" />
+  <EngineSettings EngineDLL="Macro" EngineDLLEntryPoint="Supporting_Macros/Optimization.yxmc" SDKVersion="10.1"/>
   <GuiSettings Html="OptimizationGui.html" Icon="OptimizationIcon.png" SDKVersion="10.1">
     <InputConnections>
-       <Connection Name="InputO" AllowMultiple="False" Optional="True" Type="Connection" Label="O"/>
-       <Connection Name="InputA" AllowMultiple="False" Optional="True" Type="Connection" Label="A"/>
-       <Connection Name="InputB" AllowMultiple="False" Optional="True" Type="Connection" Label="B"/>
-       <!-- <Connection Name="InputQ" AllowMultiple="True" Optional="True" Type="Connection" Label="Q"/> -->
+      <Connection Name="InputO" AllowMultiple="False" Optional="True" Type="Connection" Label="O"/>
+      <Connection Name="InputA" AllowMultiple="False" Optional="True" Type="Connection" Label="A"/>
+      <Connection Name="InputB" AllowMultiple="False" Optional="True" Type="Connection" Label="B"/>
     </InputConnections>
     <OutputConnections>
       <Connection Name="OutputI" AllowMultiple="False" Optional="True" Type="Connection" Label="I"/>
@@ -15,12 +13,16 @@
   </GuiSettings>
   <Properties>
     <MetaInfo>
-      <NameIsFileName value="False" />
+      <NameIsFileName>False</NameIsFileName>
       <Name>Optimization</Name>
-      <CategoryName>Prescriptive</CategoryName>
+      <Description>Optimization</Description>
       <ToolVersion>0.1</ToolVersion>
+      <ToolInDb>False</ToolInDb>
+      <CategoryName>Prescriptive</CategoryName>
       <Author>Kuo Liu</Author>
-      <Description>Optimization Macro</Description>
+      <Company>Alteryx, Inc</Company>
+      <Copyright>Alteryx, Inc</Copyright>
+      <DescriptionLink></DescriptionLink>
     </MetaInfo>
   </Properties>
 </AlteryxJavaScriptPlugin>

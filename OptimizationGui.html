@@ -2,119 +2,152 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Optimization</title>
+    <title>
+Optimization
+</title>
+    <link rel="stylesheet" href="app.css" media="screen" charset="utf-8">
     <script type="text/javascript">
       // Include version 1 of the base GUI library.
       document.write(
         '<link rel="import" href="' + window.Alteryx.LibDir + '1/lib/alteryx/gui/includes.html">'
       );
     </script>
-    <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="app.css" charset="utf-8">
-
-    <!-- React: This can be removed once we switch to a more recent nightly -->
-    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-with-addons.js"
-      charset="utf-8">
-    </script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"
-      charset="utf-8">
-    </script> -->
 </head>
 <body>
-	<form>
-    <alteryx-pluginwidget type="TextBox" id="payload" dataName="payload"></alteryx-pluginwidget>
+    
+<form>
+  <div style='display: none'>
+<!--  payload  -->
+<label>UI</label>
+<alteryx-pluginwidget type="TextBox" password="false" id="payload" dataName="payload"></alteryx-pluginwidget>
+  
+</div>
+  
+  <!-- Landing Page -->
+	<fieldset id="landing">
+		<legend>Optimization</legend>
+		
+<!--  inputMode  -->
+<label>Select input mode</label>
+<alteryx-pluginwidget type="DropDown" id="inputMode" dataName="inputMode">
+  <alteryx-option uiobject="matrix">Specify the model as matrices</alteryx-option>
+  <alteryx-option uiobject="manual">Enter the model manually</alteryx-option>
+  <alteryx-option uiobject="file">Specify the model from a file</alteryx-option>
+</alteryx-pluginwidget>
+  
 
-    <!-- Landing Page -->
-		<fieldset id="landing">
-			<legend>Optimization</legend>
+	</fieldset>
+  <hr style="width:50%">
 
-			<!-- Input Mode: inputMode -->
-			<alteryx-pluginwidget type="DropDown" id="inputMode" dataName="inputMode">
-			</alteryx-pluginwidget>
+  <!-- Manual Input Page -->
+  <fieldset class="page" id="page-manual">
+    
+<!--  problemType  -->
+<label>Select problem type</label>
+<alteryx-pluginwidget type="DropDown" id="problemType" dataName="problemType">
+  <alteryx-option uiobject="LP">Linear Program</alteryx-option>
+  <alteryx-option uiobject="MIP">Mixed Integer Program</alteryx-option>
+  <alteryx-option uiobject="QP">Quadratic Program</alteryx-option>
+</alteryx-pluginwidget>
+  
 
-    </fieldset>
-    <hr style="width:50%">
+    
+<!--  solver  -->
+<label>Select solver</label>
+<alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
+  <alteryx-option uiobject="glpk">Glpk</alteryx-option>
+  <alteryx-option uiobject="gurobi">Gurobi</alteryx-option>
+  <alteryx-option uiobject="quadprog">Quadprog</alteryx-option>
+</alteryx-pluginwidget>
+  
 
-    <!-- Manual Input Page -->
-    <fieldset class="page" id="page-manual">
+    <div id="manualMode1" style="display:block">
+      
+<!--  maximize  -->
+<label></label>
+<alteryx-pluginwidget type="CheckBox" text="Maximize Objective?" default="FALSE" showAsToggle="true" id="maximize" dataName="maximize"></alteryx-pluginwidget>
+  
 
-      <!-- Problem Type: problemType -->
-      <label>Select Problem Type</label>
-      <alteryx-pluginwidget type="DropDown" id="problemType" dataName="problemType">
+      <br/><br/>
+      
+<!--  varList  -->
+<label>Variable Names</label>
+<alteryx-pluginwidget type="TextBox" password="false" id="varList" dataName="varList"></alteryx-pluginwidget>
+  
+
+      <alteryx-pluginwidget type="CodeEditor" id="objective" dataName="FormulaFields"
+        language="alteryx-simple" hintList="x1,x2" enableDataPreview="false"
+      >
       </alteryx-pluginwidget>
+      
+       <!-- React Components - Constraints, Bounds -->
+      <div id="constraint-editor"></div>
 
-      <!-- Solver: solver -->
-      <label for="solver">Select Solver</label>
-      <alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
-      </alteryx-pluginwidget>
-
-      <div id='manualMode1' style='display:block'>
-        <!-- Maximize: maximize2 -->
-        <alteryx-pluginwidget type="CheckBox" id="maximize" dataName="maximize"
-          showAsToggle="true" text="Maximize Objective?">
-        </alteryx-pluginwidget>
-
-        <br/><br/>
-
-        <label for="varListTextBox">Variable Names</label>
-        <alteryx-pluginwidget type="TextBox" id="varListTextBox" dataName="varList"></alteryx-pluginwidget>
-
-        <!-- Objective: objective -->
-        <alteryx-pluginwidget type="CodeEditor" id="objective" dataName="FormulaFields"
-          language="alteryx-simple" hintList="x1,x2" enableDataPreview="false"></alteryx-pluginwidget>
-        <!-- React Components - Constraints, Bounds -->
-        <div id="constraint-editor"></div>
-      </div>
-
-      <!-- <div id='editorDiv' style="display:block;">
-        <textarea id="editor"></textarea>
-      </div> -->
-
-    </fieldset>
+    </div>
+  </fieldset>
 
     <!-- File Input Page -->
     <fieldset class="page" id="page-file">
+      
+<!--  fileType  -->
+<label>Select file type</label>
+<alteryx-pluginwidget type="DropDown" id="fileType" dataName="fileType">
+  <alteryx-option uiobject="CPLEX_LP" default="true">CPLEX_LP</alteryx-option>
+  <alteryx-option uiobject="MathProg">MathProg</alteryx-option>
+  <alteryx-option uiobject="MPS_Free">MPS_Free</alteryx-option>
+</alteryx-pluginwidget>
+  
 
-      <!-- File Type: fileType -->
-      <label for="fileType">Select Filetype</label>
-      <alteryx-pluginwidget type="DropDown" id="fileType" dataName="fileType">
-      </alteryx-pluginwidget>
+      
+<!--  solver  -->
+<label>Select solver</label>
+<alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
+  <alteryx-option uiobject="glpk">Glpk</alteryx-option>
+  <alteryx-option uiobject="gurobi">Gurobi</alteryx-option>
+  <alteryx-option uiobject="quadprog">Quadprog</alteryx-option>
+</alteryx-pluginwidget>
+  
 
-      <!-- Solver: solver -->
-      <label for="solver">Select Solver</label>
-      <alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
-      </alteryx-pluginwidget>
-
-      <!-- File: filePath -->
-      <label>Select File</label>
-      <alteryx-pluginwidget type="FileBrowse" id="filePath" dataName="filePath">
-      </alteryx-pluginwidget>
+      
+<!--  filePath  -->
+<label>Select file</label>
+<alteryx-pluginwidget type="FileBrowse" id="filePath" dataName="filePath"></alteryx-pluginwidget>
+  
 
     </fieldset>
 
     <!-- Matrix Page -->
     <fieldset class="page" id="page-matrix">
+      
+<!--  problemType  -->
+<label>Select problem type</label>
+<alteryx-pluginwidget type="DropDown" id="problemType" dataName="problemType">
+  <alteryx-option uiobject="LP">Linear Program</alteryx-option>
+  <alteryx-option uiobject="MIP">Mixed Integer Program</alteryx-option>
+  <alteryx-option uiobject="QP">Quadratic Program</alteryx-option>
+</alteryx-pluginwidget>
+  
 
-      <!-- Problem Type: problemType -->
-      <label>Select Problem Type</label>
-      <alteryx-pluginwidget type="DropDown" id="problemType" dataName="problemType">
-      </alteryx-pluginwidget>
+      
+<!--  solver  -->
+<label>Select solver</label>
+<alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
+  <alteryx-option uiobject="glpk">Glpk</alteryx-option>
+  <alteryx-option uiobject="gurobi">Gurobi</alteryx-option>
+  <alteryx-option uiobject="quadprog">Quadprog</alteryx-option>
+</alteryx-pluginwidget>
+  
 
-      <!-- Solver: solver -->
-      <label for="solver">Select Solver</label>
-      <alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
-      </alteryx-pluginwidget>
-
-      <!-- Maximize -->
-      <alteryx-pluginwidget type="CheckBox" id="maximize" dataName="maximize"
-        showAsToggle="true" text="Maximize Objective?" onText="Yes" offText="No"
-        showOnOffLabel="true"
-      >
-      </alteryx-pluginwidget>
+      
+<!--  maximize  -->
+<label></label>
+<alteryx-pluginwidget type="CheckBox" text="Maximize Objective?" default="FALSE" showAsToggle="true" id="maximize" dataName="maximize"></alteryx-pluginwidget>
+  
 
     </fieldset>
 
-	</form>
-	<script src="src.js" type="text/javascript"></script>
+</form>
+
+  <script src="app.min.js" type="text/javascript"></script>
 </body>
 </html>
