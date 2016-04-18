@@ -23,7 +23,7 @@ This repo contains the **Optimization** tool. Shown below is a brief description
 ### Installation
 
 1. Download https://github.com/alteryx/optimization/archive/master.zip.
-2. Rename `.zip` to `.yxi`.
+2. Rename `Optimization-master.zip` to `Optimization.yxi`.
 3. Open in Alteryx to complete installation.
 
 ### Development
