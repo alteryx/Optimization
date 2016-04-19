@@ -7,14 +7,19 @@
 /* global $ Alteryx */
 
 import AyxStore from './AyxStore';
-import { extendObservable, observable, computed, autorun } from 'mobx'; //eslint-disable-line
+import { extendObservable, observable, computed } from 'mobx';
 
 class Store extends AyxStore {
   @observable currentIndex = null;
-  @observable bounds = [];
-  @observable selectedField;
 
-  constructor(ayx, dataItems) {
+  constructor(ayx, dataItems, fieldStore) {
+    // The following properties are created from Alteryx:
+    // - editorValue: '',
+    // - objective: '',
+    // - constraints: [],
+    // - fieldNames: [],
+    // - fieldList: [],
+
     const { Gui: { manager } } = ayx;
     // call the AyxStore constructor to set up the DataItem tracking
     super(manager, dataItems);
@@ -22,10 +27,12 @@ class Store extends AyxStore {
     // turn all the initial properties into observables
     extendObservable(this, this);
 
-    // Automatically set `selectedField` to the first element in `fieldNameArray` as soon as it
-    // exists. This will ensure that the bounds dropdown will actually "select" the first element
-    // by default.
-    autorun(() => { this.selectedField = this.fieldNameArray[0]; });
+    this.fieldStore = fieldStore;
+
+    const fields = JSON.parse(this.fieldList);
+    if (fields.length > 0) {
+      this.fieldStore.fromJSON(fields);
+    }
   }
 
   @computed get numConstraints() {
@@ -37,7 +44,7 @@ class Store extends AyxStore {
   }
 
   @computed get saveOrAdd() {
-    return this.currentIndex === null ? 'Add' : 'Save';
+    return this.currentIndex === null;
   }
 
   update() {
@@ -67,37 +74,22 @@ class Store extends AyxStore {
     this.update();
   }
 
-  // Specific to bounds-editor
-  // fieldNames comes in as a comma-separated string, so we split to array in a computed property
   @computed get fieldNameArray() {
-    return this.fieldNames.split(',').map(fieldName => fieldName.trim());
+    return this.fieldNames.split(',')
+      .map(fieldName => fieldName.trim())
+      .reduce((acc, elem) => (acc.map(v => v.toLowerCase()).includes(elem.toLowerCase()) ?
+        acc :
+        acc.concat(elem)),
+        []
+      );
   }
 
-  @computed get remainingFields() {
-    return this.fieldNameArray
-      .filter(field => !this.bounds.map(bound => bound.field).includes(field));
-  }
-
-  updateSelectedField(v) {
-    this.selectedField = v;
-  }
-
-  addBound(field) {
-    this.bounds.push({
-      field,
-      lowerBound: 0,
-      upperBound: null,
-    });
-    this.selectedField = this.remainingFields[0];
-  }
-
-  editBound(idx, newBound) {
-    this.bounds[idx] = newBound;
-  }
-
-  deleteBound(idx) {
-    this.bounds.splice(idx, 1);
-    this.selectedField = this.remainingFields[0];
+  @computed get asJSON() {
+    return {
+      objective: this.objective,
+      constraints: this.constraints.toJSON(),
+      fieldInfo: this.fieldStore.asJSON,
+    };
   }
 
   // since the update to the constraints array is triggered by mobx
@@ -110,7 +102,7 @@ class Store extends AyxStore {
       .setValue(this.editorValue);
     manager
       .GetDataItemByDataName('constraints')
-      .setValue((this.constraints.toJSON()));
+      .setValue(this.constraints.toJSON());
   }
 }
 

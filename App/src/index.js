@@ -10,7 +10,7 @@
 
 // import $ from 'jquery';
 import { createUIObject, makeDataItem, syncDataItems } from './Utils';
-import VM from './Constants';
+// import VM from './Constants';
 // import renderConstraintEditor from './RunView';
 import runView from './RunView';
 
@@ -68,7 +68,6 @@ const syncHintList = (ayx, editorName, hintListName) => {
   // Bind an event handler to the `hintListName` data item for future changes
   manager.GetDataItem(hintListName).BindUserDataChanged((e) => {
     editor.options.hintList = e.replace(/\s/g, '');
-    console.log(editor.options.hintList);
   });
 };
 
@@ -80,17 +79,21 @@ Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
   dataItem('activePage', { value: 'landing' });
   //dataItem('currentIndex', {value: 0})
   //dataItem('payload', { value: '{}' });
-
-
-  // const varList = new AlteryxDataItems.MultiStringSelector(
-  //   { id: 'varList', dataname: 'varList', value: ['x1', 'x2'] }
-  // );
-  // manager.AddDataItem(varList);
+  const objective = new AlteryxDataItems.SimpleString(
+    { id: 'objective', dataname: 'objective', value: '' }
+  );
+  manager.AddDataItem(objective);
 
   const constraints = new AlteryxDataItems.MultiStringSelector(
     { id: 'constraints', dataname: 'constraints' }
   );
   manager.AddDataItem(constraints);
+
+  const fieldList = new AlteryxDataItems.SimpleString(
+    { id: 'fieldList', dataname: 'fieldList' }
+  );
+  manager.AddDataItem(fieldList);
+  fieldList.setValue('[]');
 };
 
 Alteryx.Gui.AfterLoad = (manager) => {
@@ -100,13 +103,15 @@ Alteryx.Gui.AfterLoad = (manager) => {
     'payload',
     ['fileType', 'filePath', 'solver', 'inputMode', 'maximize', 'problemType']
   );
+
   syncHintList(Alteryx, 'FormulaFields', 'varList');
-  // renderConstraintEditor(
   runView(
     Alteryx, {
       editorValue: 'FormulaFields',
       constraints: 'constraints',
+      objective: 'objective',
       fieldNames: 'varList',
+      fieldList: 'fieldList',
     }, 'constraint-editor'
   );
 };
