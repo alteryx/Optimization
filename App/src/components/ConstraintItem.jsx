@@ -11,9 +11,9 @@ function ConstraintItem(props) {
     >
       {props.constraint}
         <span className="pull-right">
-          <button className="btn btn-xs btn-danger delete" onClick={props.removeConstraint}>
-            x
-          </button>
+          <a href="#" className="text-danger" onClick={props.removeConstraint}>
+            <i className="fa fa-trash fa-lg"></i>
+          </a>
         </span>
     </div>
   );

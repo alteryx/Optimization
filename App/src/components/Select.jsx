@@ -6,7 +6,7 @@ function Select({ style, value, disabledFilter, options, onChange }) {
     <select
       style={ style }
       value={value}
-      className="form-control"
+      className="form-control input-sm"
       onChange={(e) => onChange(e.target.value)}
     >
       {

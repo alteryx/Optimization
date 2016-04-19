@@ -10,11 +10,11 @@ function ConstraintList({ store }) {
   return (
     <div>
       <button
-        className="btn btn-primary"
+        className="btn btn-default"
         onClick={store.currentIndex === null ? addConstraint : saveConstraint}
         disabled={store.isEditorEmpty}
       >
-        {store.saveOrAdd}
+        {store.saveOrAdd ? <i className="fa fa-plus"></i> : <i className="fa fa-floppy-o"></i>}
       </button>
       <div className="list-group">
         {
