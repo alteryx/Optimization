@@ -6,8 +6,15 @@ if ('package:AlteryxRDataX' %in% search() && !inMacro){
   # update this to read only optional inputs which are provided by user
   # that data should be available in config, or can be inferred from
   # number of rows in the data frame
-  inputs <- lapply(paste0('#', 1:3), read.Alteryx)
-  names(inputs) <- c('O', 'A', 'B')
+  readInputs <- function(...){
+    inputNames = c(...)
+    streams = paste0('#', seq_along(inputNames))
+    inputs <- setNames(lapply(streams, read.Alteryx), inputNames)
+    Filter(function(d){NROW(d) > 0}, inputs)
+  }
+
+  inputs <- readInputs("O", "A", "B")
+
 } else {
   # use this to read a payload directly from an R object.
   config <- list(
