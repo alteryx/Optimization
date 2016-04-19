@@ -26,8 +26,13 @@ class Store extends AyxStore {
 
     // turn all the initial properties into observables
     extendObservable(this, this);
+
     this.fieldStore = fieldStore;
 
+    const fields = JSON.parse(this.fieldList);
+    if (fields.length > 0) {
+      this.fieldStore.fromJSON(fields);
+    }
   }
 
   @computed get numConstraints() {
@@ -79,6 +84,12 @@ class Store extends AyxStore {
       );
   }
 
+  @computed get asJSON() {
+    return {
+      objective: this.objective,
+      constraints: this.constraints.toJSON(),
+      fieldInfo: this.fieldStore.asJSON,
+    };
   }
 
   // since the update to the constraints array is triggered by mobx

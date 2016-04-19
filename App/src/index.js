@@ -79,17 +79,21 @@ Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
   dataItem('activePage', { value: 'landing' });
   //dataItem('currentIndex', {value: 0})
   //dataItem('payload', { value: '{}' });
-
-
-  // const varList = new AlteryxDataItems.MultiStringSelector(
-  //   { id: 'varList', dataname: 'varList', value: ['x1', 'x2'] }
-  // );
-  // manager.AddDataItem(varList);
+  const objective = new AlteryxDataItems.SimpleString(
+    { id: 'objective', dataname: 'objective', value: '' }
+  );
+  manager.AddDataItem(objective);
 
   const constraints = new AlteryxDataItems.MultiStringSelector(
     { id: 'constraints', dataname: 'constraints' }
   );
   manager.AddDataItem(constraints);
+
+  const fieldList = new AlteryxDataItems.SimpleString(
+    { id: 'fieldList', dataname: 'fieldList' }
+  );
+  manager.AddDataItem(fieldList);
+  fieldList.setValue('[]');
 };
 
 Alteryx.Gui.AfterLoad = (manager) => {
@@ -99,12 +103,15 @@ Alteryx.Gui.AfterLoad = (manager) => {
     'payload',
     ['fileType', 'filePath', 'solver', 'inputMode', 'maximize', 'problemType']
   );
+
   syncHintList(Alteryx, 'FormulaFields', 'varList');
   runView(
     Alteryx, {
       editorValue: 'FormulaFields',
       constraints: 'constraints',
+      objective: 'objective',
       fieldNames: 'varList',
+      fieldList: 'fieldList',
     }, 'constraint-editor'
   );
 };
