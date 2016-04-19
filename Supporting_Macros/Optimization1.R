@@ -7,6 +7,7 @@ if ('package:AlteryxRDataX' %in% search() && !inMacro){
   # that data should be available in config, or can be inferred from
   # number of rows in the data frame
   inputs <- lapply(paste0('#', 1:3), read.Alteryx)
+  names(inputs) <- c('O', 'A', 'B')
 } else {
   # use this to read a payload directly from an R object.
   config <- list(
@@ -25,6 +26,9 @@ options(alteryx.wd = '%Engine.WorkflowDirectory%')
 options(alteryx.debug = config$debug)
 ##----
 
+saveRDS(inputs, '%Engine.WorkflowDirectory%inputs.rds')
+saveRDS(payload, '%Engine.WorkflowDirectory%payload.rds')
+saveRDS('%Question.payload%', '%Engine.WorkflowDirectory%raw_payload.rds')
 
 library(AlteryxRviz)
 iOutput <- function(s2a){
