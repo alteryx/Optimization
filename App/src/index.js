@@ -10,7 +10,7 @@
 
 // import $ from 'jquery';
 import { createUIObject, makeDataItem, syncDataItems } from './Utils';
-import VM from './Constants';
+// import VM from './Constants';
 // import renderConstraintEditor from './RunView';
 import runView from './RunView';
 
@@ -68,7 +68,6 @@ const syncHintList = (ayx, editorName, hintListName) => {
   // Bind an event handler to the `hintListName` data item for future changes
   manager.GetDataItem(hintListName).BindUserDataChanged((e) => {
     editor.options.hintList = e.replace(/\s/g, '');
-    console.log(editor.options.hintList);
   });
 };
 
@@ -101,7 +100,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
     ['fileType', 'filePath', 'solver', 'inputMode', 'maximize', 'problemType']
   );
   syncHintList(Alteryx, 'FormulaFields', 'varList');
-  // renderConstraintEditor(
   runView(
     Alteryx, {
       editorValue: 'FormulaFields',
