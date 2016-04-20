@@ -33,9 +33,9 @@ options(alteryx.wd = '%Engine.WorkflowDirectory%')
 options(alteryx.debug = config$debug)
 ##----
 
-saveRDS(inputs, '%Engine.WorkflowDirectory%inputs.rds')
-saveRDS(payload, '%Engine.WorkflowDirectory%payload.rds')
-saveRDS('%Question.payload%', '%Engine.WorkflowDirectory%raw_payload.rds')
+#saveRDS(inputs, '%Engine.WorkflowDirectory%inputs.rds')
+#saveRDS(payload, '%Engine.WorkflowDirectory%payload.rds')
+#saveRDS('%Question.payload%', '%Engine.WorkflowDirectory%raw_payload.rds')
 
 library(AlteryxRviz)
 iOutput <- function(s2a, varNames){
