@@ -2,7 +2,9 @@ import React, { PropTypes as P } from 'react';
 import { observer } from 'mobx-react';
 
 function Objective({ store }) {
-  const handleChange = (e) => store.objective = e.target.value;
+  const handleChange = (e) => {
+    store.updateObjective(e.target.value);
+  };
   return (
     <div>
       <input
