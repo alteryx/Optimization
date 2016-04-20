@@ -1,3 +1,5 @@
 maximize:
   showAsToggle: "true"
+showSensitivity:
+  showAsToggle: "true"
 
