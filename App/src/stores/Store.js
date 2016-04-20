@@ -97,6 +97,12 @@ class Store extends AyxStore {
     };
   }
 
+  updatePayload() {
+    this.manualPayload = JSON.stringify(this.asJSON);
+    Alteryx.Gui.manager.GetDataItemByDataName('manualPayload').setValue(this.manualPayload);
+    console.log(Alteryx.Gui.manager.GetDataItemByDataName('manualPayload').value);
+  }
+
   // since the update to the constraints array is triggered by mobx
   // we need to explicitly update the associated dataItem
   // this can also be automated in AyxStore

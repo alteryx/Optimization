@@ -95,6 +95,12 @@ Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
   );
   manager.AddDataItem(fieldList);
   fieldList.setValue('[]');
+
+  const manualPayload = new AlteryxDataItems.SimpleString(
+    { id: 'manualPayload', dataname: 'manualPayload' }
+  );
+  manager.AddDataItem(manualPayload);
+  manualPayload.setValue('{}');
 };
 
 Alteryx.Gui.AfterLoad = (manager) => {
@@ -113,6 +119,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
       objective: 'objective',
       fieldNames: 'varList',
       fieldList: 'fieldList',
+      manualPayload: 'manualPayload',
     }, 'constraint-editor'
   );
 };
