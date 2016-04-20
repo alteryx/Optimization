@@ -81,7 +81,6 @@ class Store extends AyxStore {
       );
   }
 
-
   // Use property initializer so we don't have to use `this.bind(store)` when calling this method from
   // inside other components (Layout, specifically)
   updateSelectedTab = (selection) => {
