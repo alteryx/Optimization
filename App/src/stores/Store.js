@@ -74,6 +74,11 @@ class Store extends AyxStore {
     this.update();
   }
 
+  updateObjective(v) {
+    this.objective = v;
+    Alteryx.Gui.manager.GetDataItemByDataName('objective').setValue(this.objective);
+  }
+
   @computed get fieldNameArray() {
     return this.fieldNames.split(',')
       .map(fieldName => fieldName.trim())

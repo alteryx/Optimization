@@ -80,9 +80,10 @@ Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
   //dataItem('currentIndex', {value: 0})
   //dataItem('payload', { value: '{}' });
   const objective = new AlteryxDataItems.SimpleString(
-    { id: 'objective', dataname: 'objective', value: '' }
+    { id: 'objective', dataname: 'objective' }
   );
   manager.AddDataItem(objective);
+  objective.setValue('');
 
   const constraints = new AlteryxDataItems.MultiStringSelector(
     { id: 'constraints', dataname: 'constraints' }
