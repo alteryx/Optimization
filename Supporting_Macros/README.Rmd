@@ -17,7 +17,7 @@ This configuration is automatically generated from `Optimization.yxmc`
 ```{r}
 library(AlteryxRhelper)
 d <- generateConfigurationTable('Optimization.yxmc')
-knitr::kable(d)
+knitr::kable(d, format = 'markdown')
 ```
 
 
