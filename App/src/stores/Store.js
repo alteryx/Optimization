@@ -7,12 +7,10 @@
 /* global $ Alteryx */
 
 import AyxStore from './AyxStore';
-import { extendObservable, observable, computed } from 'mobx';
+import { extendObservable, computed, autorun } from 'mobx';
 
 class Store extends AyxStore {
-  @observable currentIndex = null;
-
-  constructor(ayx, dataItems, fieldStore) {
+  constructor(ayx, dataItems, fieldStore, constraintStore) {
     // The following properties are created from Alteryx:
     // - editorValue: '',
     // - objective: '',
@@ -28,15 +26,20 @@ class Store extends AyxStore {
     extendObservable(this, this);
 
     this.fieldStore = fieldStore;
+    this.constraintStore = constraintStore;
 
     const fields = JSON.parse(this.fieldList);
     if (fields.length > 0) {
       this.fieldStore.fromJSON(fields);
     }
-  }
 
-  @computed get numConstraints() {
-    return this.constraints.length;
+    autorun(() => {
+      if (this.constraintStore.currentConstraint === null) {
+        this.updateEditor('');
+      } else {
+        this.updateEditor(this.constraintStore.currentConstraint.value);
+      }
+    });
   }
 
   @computed get isEditorEmpty() {
@@ -44,35 +47,19 @@ class Store extends AyxStore {
   }
 
   @computed get saveOrAdd() {
-    return this.currentIndex === null;
+    return this.constraintStore.currentConstraint === null;
   }
 
   update() {
     this.editorValue = '';
-    this.currentIndex = null;
-    this.updateAlteryxDataItems();
+    // this.updateAlteryxDataItems();
   }
 
-  addConstraint() {
-    this.currentIndex = this.numConstraints;
-    this.saveConstraint();
-  }
-
-  saveConstraint() {
-    this.constraints[this.currentIndex] = this.editorValue;
-    this.update();
-  }
-
-  editConstraint(idx) {
-    this.currentIndex = idx;
-    this.editorValue = this.constraints[this.currentIndex];
-    this.updateAlteryxDataItems();
-  }
-
-  removeConstraint(idx) {
-    this.constraints.splice(idx, 1);
-    this.update();
-  }
+  // editConstraint(c) {
+  //   c.toggleEditing();
+  //   this.editorValue = c.value;
+  //   this.updateAlteryxDataItems();
+  // }
 
   updateObjective(v) {
     this.objective = v;
@@ -92,7 +79,7 @@ class Store extends AyxStore {
   @computed get asJSON() {
     return {
       objective: this.objective,
-      constraints: this.constraints.toJSON(),
+      constraints: this.constraintStore.constraints.toJSON(),
       fieldInfo: this.fieldStore.asJSON,
     };
   }
@@ -103,14 +90,23 @@ class Store extends AyxStore {
     console.log(Alteryx.Gui.manager.GetDataItemByDataName('manualPayload').value);
   }
 
+  updateEditor(value) {
+    const { renderer } = Alteryx.Gui;
+    renderer
+      .getReactComponentByDataName('FormulaFields')
+      .editor
+      .setValue(value);
+  }
+
   // since the update to the constraints array is triggered by mobx
   // we need to explicitly update the associated dataItem
   // this can also be automated in AyxStore
   updateAlteryxDataItems() {
-    const { manager, renderer } = Alteryx.Gui;
-    renderer.getReactComponentByDataName('FormulaFields')
-      .editor
-      .setValue(this.editorValue);
+    const { manager } = Alteryx.Gui;
+    // const { manager, renderer } = Alteryx.Gui;
+    // renderer.getReactComponentByDataName('FormulaFields')
+    //   .editor
+    //   .setValue(this.editorValue);
     manager
       .GetDataItemByDataName('constraints')
       .setValue(this.constraints.toJSON());
