@@ -38,8 +38,8 @@ saveRDS(payload, '%Engine.WorkflowDirectory%payload.rds')
 saveRDS('%Question.payload%', '%Engine.WorkflowDirectory%raw_payload.rds')
 
 library(AlteryxRviz)
-iOutput <- function(s2a){
-  d = data.frame(x = paste0("X", 1:length(s2a$solution)), y = s2a$solution)
+iOutput <- function(s2a, varNames){
+  d = data.frame(x = varNames, y = s2a$solution)
   p4 = c3(
     data = list(json = d, keys = list(x = 'x', value = list('y')), type = 'bar'),
     axis = list(
@@ -75,4 +75,4 @@ iOutput <- function(s2a){
   renderInComposer(app, nOutput = 3)
 }
 s2a <- AlteryxSolve(payload)
-iOutput(s2a)
+iOutput(s2a, inputs$O$variable)
