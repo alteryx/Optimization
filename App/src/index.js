@@ -85,10 +85,11 @@ Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
   manager.AddDataItem(objective);
   objective.setValue('');
 
-  const constraints = new AlteryxDataItems.MultiStringSelector(
+  const constraints = new AlteryxDataItems.SimpleString(
     { id: 'constraints', dataname: 'constraints' }
   );
   manager.AddDataItem(constraints);
+  constraints.setValue('[]');
 
   const fieldList = new AlteryxDataItems.SimpleString(
     { id: 'fieldList', dataname: 'fieldList' }

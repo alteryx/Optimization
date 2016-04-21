@@ -20,10 +20,15 @@ class Constraint {
   save(value) {
     this.value = value;
     this.store.currentConstraint = null;
+    this.store.syncConstraints();
   }
 
   delete() {
     this.store.removeConstraint(this);
+  }
+
+  @computed get asJSON() {
+    return this.value;
   }
 }
 
@@ -31,8 +36,13 @@ class ConstraintStore {
   @observable constraints = [];
   @observable currentConstraint = null;
 
+  constructor({ Gui: { manager } }) {
+    this.manager = manager;
+  }
+
   addConstraint(value) {
     this.constraints.push(new Constraint(this, value));
+    this.syncConstraints();
   }
 
   removeConstraint(constraint) {
@@ -40,6 +50,25 @@ class ConstraintStore {
       this.currentConstraint = null;
     }
     this.constraints.splice(this.constraints.indexOf(constraint), 1);
+    this.syncConstraints();
+  }
+
+  @computed get asJSON() {
+    return this.constraints.map(c => c.asJSON);
+  }
+
+  fromJSON(payload) {
+    payload.forEach(item => {
+      this.addConstraint(item);
+    });
+  }
+
+  // sync(dataName, value) {
+  //   this.manager.GetDataItemByDataName(dataName).setValue(JSON.stringify(value));
+  // }
+
+  syncConstraints() {
+    this.manager.GetDataItemByDataName('constraints').setValue(JSON.stringify(this.asJSON));
   }
 }
 

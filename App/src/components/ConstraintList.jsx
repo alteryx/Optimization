@@ -23,7 +23,6 @@ function ConstraintList({ store }) {
 
   return (
     <div>
-      <h3>This is the constraints component</h3>
       <button
         className="btn btn-default"
         onClick={store.saveOrAdd ? handleAdd : handleSave}

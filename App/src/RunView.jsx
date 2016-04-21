@@ -7,7 +7,7 @@ import Layout from './Layout';
 
 const runView = (ayx, dataItems, divId) => {
   const fieldStore = new FieldStore(ayx);
-  const constraintStore = new ConstraintStore();
+  const constraintStore = new ConstraintStore(ayx);
   const store = new Store(ayx, dataItems, fieldStore, constraintStore);
 
   render(

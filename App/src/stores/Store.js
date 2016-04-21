@@ -33,6 +33,11 @@ class Store extends AyxStore {
       this.fieldStore.fromJSON(fields);
     }
 
+    const constraints = JSON.parse(this.constraints);
+    if (constraints.length > 0) {
+      this.constraintStore.fromJSON(constraints);
+    }
+
     autorun(() => {
       if (this.constraintStore.currentConstraint === null) {
         this.updateEditor('');
@@ -79,7 +84,7 @@ class Store extends AyxStore {
   @computed get asJSON() {
     return {
       objective: this.objective,
-      constraints: this.constraintStore.constraints.toJSON(),
+      constraints: this.constraintStore.constraints.asJSON,
       fieldInfo: this.fieldStore.asJSON,
     };
   }
@@ -93,8 +98,7 @@ class Store extends AyxStore {
   updateEditor(value) {
     const { renderer } = Alteryx.Gui;
     renderer
-      .getReactComponentByDataName('FormulaFields')
-      .editor
+      .getReactComponentByDataName('FormulaFields').editor
       .setValue(value);
   }
 
