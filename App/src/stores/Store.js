@@ -89,12 +89,6 @@ class Store extends AyxStore {
     };
   }
 
-  updatePayload() {
-    this.manualPayload = JSON.stringify(this.asJSON);
-    Alteryx.Gui.manager.GetDataItemByDataName('manualPayload').setValue(this.manualPayload);
-    console.log(Alteryx.Gui.manager.GetDataItemByDataName('manualPayload').value);
-  }
-
   updateEditor(value) {
     const { renderer } = Alteryx.Gui;
     renderer

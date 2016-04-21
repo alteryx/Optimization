@@ -8,9 +8,6 @@ import NavTabs from './components/NavTabs';
 function Layout({ store }) {
   return (
     <div>
-      <button type="button" className="btn btn-sm btn-default" onClick={store.updatePayload.bind(store)}>
-        Update Payload
-      </button>
       <NavTabs>
         <Objective label="Objective" store={store} />
         <FieldList label="Fields" store={store} />
