@@ -112,16 +112,16 @@ Alteryx.Gui.AfterLoad = (manager) => {
     ['fileType', 'filePath', 'solver', 'inputMode', 'maximize', 'problemType']
   );
 
-  syncHintList(Alteryx, 'FormulaFields', 'varList');
+  syncHintList(Alteryx, 'editorValue', 'fieldNames');
   runView(
     Alteryx, {
-      editorValue: 'FormulaFields',
+      editorValue: 'editorValue',
       constraints: 'constraints',
       objective: 'objective',
-      fieldNames: 'varList',
+      fieldNames: 'fieldNames',
       fieldList: 'fieldList',
       manualPayload: 'manualPayload',
-    }, 'constraint-editor'
+    }, 'manual-input'
   );
 };
 

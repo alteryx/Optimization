@@ -15,14 +15,14 @@
     <div id="manualMode1" style="display:block">
       {{ maximize }}
       <br/><br/>
-      {{ varList }}
-      <alteryx-pluginwidget type="CodeEditor" id="objective" dataName="FormulaFields"
+      {{ fieldNames }}
+      <alteryx-pluginwidget type="CodeEditor" id="editorValue" dataName="editorValue"
         language="alteryx-simple" hintList="x1,x2" enableDataPreview="false"
       >
       </alteryx-pluginwidget>
       
        <!-- React Components - Constraints, Bounds -->
-      <div id="constraint-editor"></div>
+      <div id="manual-input"></div>
 
     </div>
   </fieldset>

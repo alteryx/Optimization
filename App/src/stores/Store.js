@@ -98,7 +98,7 @@ class Store extends AyxStore {
   updateEditor(value) {
     const { renderer } = Alteryx.Gui;
     renderer
-      .getReactComponentByDataName('FormulaFields').editor
+      .getReactComponentByDataName('editorValue').editor
       .setValue(value);
   }
 
