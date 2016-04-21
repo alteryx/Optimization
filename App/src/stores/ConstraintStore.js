@@ -63,10 +63,6 @@ class ConstraintStore {
     });
   }
 
-  // sync(dataName, value) {
-  //   this.manager.GetDataItemByDataName(dataName).setValue(JSON.stringify(value));
-  // }
-
   syncConstraints() {
     this.manager.GetDataItemByDataName('constraints').setValue(JSON.stringify(this.asJSON));
   }

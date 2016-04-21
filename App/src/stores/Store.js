@@ -51,17 +51,6 @@ class Store extends AyxStore {
     return this.constraintStore.currentConstraint === null;
   }
 
-  update() {
-    this.editorValue = '';
-    // this.updateAlteryxDataItems();
-  }
-
-  // editConstraint(c) {
-  //   c.toggleEditing();
-  //   this.editorValue = c.value;
-  //   this.updateAlteryxDataItems();
-  // }
-
   updateObjective(v) {
     this.objective = v;
     Alteryx.Gui.manager.GetDataItemByDataName('objective').setValue(this.objective);
@@ -90,20 +79,6 @@ class Store extends AyxStore {
     renderer
       .getReactComponentByDataName('editorValue').editor
       .setValue(value);
-  }
-
-  // since the update to the constraints array is triggered by mobx
-  // we need to explicitly update the associated dataItem
-  // this can also be automated in AyxStore
-  updateAlteryxDataItems() {
-    const { manager } = Alteryx.Gui;
-    // const { manager, renderer } = Alteryx.Gui;
-    // renderer.getReactComponentByDataName('FormulaFields')
-    //   .editor
-    //   .setValue(this.editorValue);
-    manager
-      .GetDataItemByDataName('constraints')
-      .setValue(this.constraints.toJSON());
   }
 }
 
