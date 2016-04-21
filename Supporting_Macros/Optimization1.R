@@ -1,44 +1,39 @@
 ## DO NOT MODIFY: Auto Inserted by AlteryxRhelper ----
-inMacro = '%Question.payload%' == ""
+options(alteryx.wd = '%Engine.WorkflowDirectory%')
 library(AlteryxPrescriptive)
-if ('package:AlteryxRDataX' %in% search() && !inMacro){
-  config <-  jsonlite::fromJSON('%Question.payload%')
-  # update this to read only optional inputs which are provided by user
-  # that data should be available in config, or can be inferred from
-  # number of rows in the data frame
-  readInputs <- function(...){
-    inputNames = c(...)
-    streams = paste0('#', seq_along(inputNames))
-    inputs <- setNames(lapply(streams, read.Alteryx), inputNames)
-    Filter(function(d){NROW(d) > 0}, inputs)
-  }
+library(AlteryxRhelper)
 
-  inputs <- readInputs("O", "A", "B")
+## Configuration ----
+config <- list(
+  fileType = dropdownInput('%Question.fileType%' , 'CPLEX_LP'),
+  filePath = textInput("%Question.filePath%", getSampleData("lp_example.lp")),
+  inputMode = dropdownInput('%Question.inputMode%' , 'file'),
+  maximize = checkboxInput('%Question.maximize%' , FALSE),
+  payload = textInput('%Question.payload%'),
+  problemType = dropdownInput('%Question.problemType%' , 'LP'),
+  showSensitivity = checkboxInput('%Question.showSensitivity%' , FALSE),
+  solver = dropdownInput('%Question.solver%' , 'glpk'),
+  varList = textInput('%Question.varList%')
+)
 
-} else {
-  # use this to read a payload directly from an R object.
-  config <- list(
-    inputMode = "file",
-    fileType = "CPLEX_LP",
-    problemType = "lp",
-    maximize = TRUE,
-    solver = "glpk",
-    filePath = getSampleData("cell_tower.lp")
-  )
-  inputs <- NULL
+## Inputs ----
+readInputs <- function(...){
+  inputNames = c(...)
+  streams = paste0('#', seq_along(inputNames))
+  inputs <- setNames(lapply(streams, read.Alteryx), inputNames)
+  Filter(function(d){NROW(d) > 0}, inputs)
 }
+inputs <- if (inAlteryx()) readInputs("O", "A", "B") else NULL
+print(config)
 payload <- list(config = config, inputs = inputs)
 
-options(alteryx.wd = '%Engine.WorkflowDirectory%')
-options(alteryx.debug = config$debug)
-##----
-
-#saveRDS(inputs, '%Engine.WorkflowDirectory%inputs.rds')
-#saveRDS(payload, '%Engine.WorkflowDirectory%payload.rds')
-#saveRDS('%Question.payload%', '%Engine.WorkflowDirectory%raw_payload.rds')
+## Interactive Visualization ----
 
 library(AlteryxRviz)
 iOutput <- function(s2a, varNames){
+  if (is.null(varNames)){
+    varNames = paste0("x", seq_along(s2a$solution))
+  }
   d = data.frame(x = varNames, y = s2a$solution)
   p4 = c3(
     data = list(json = d, keys = list(x = 'x', value = list('y')), type = 'bar'),
