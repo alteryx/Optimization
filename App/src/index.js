@@ -81,6 +81,7 @@ Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
   dataItem('objective', { value: '' });
   dataItem('constraints', { value: '[]' });
   dataItem('fieldList', { value: '[]' });
+  dataItem('selectedTab', { value: 0 }, 'SimpleFloat');
 };
 
 Alteryx.Gui.AfterLoad = (manager) => {
@@ -99,6 +100,7 @@ Alteryx.Gui.AfterLoad = (manager) => {
       objective: 'objective',
       fieldNames: 'fieldNames',
       fieldList: 'fieldList',
+      selectedTab: 'selectedTab',
     }, 'manual-input'
   );
 };

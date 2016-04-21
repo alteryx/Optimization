@@ -81,6 +81,14 @@ class Store extends AyxStore {
       );
   }
 
+
+  // Use property initializer so we don't have to use `this.bind(store)` when calling this method from
+  // inside other components (Layout, specifically)
+  updateSelectedTab = (selection) => {
+    this.selectedTab = selection;
+    this.manager.GetDataItemByDataName('selectedTab').setValue(this.selectedTab);
+  }
+
   // Update both `this.objective` and the backing Alteryx data item with the value `v`
   updateObjective(v) {
     this.objective = v;
