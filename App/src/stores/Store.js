@@ -27,15 +27,12 @@ class Store extends AyxStore {
     this.fieldStore = fieldStore;
     this.constraintStore = constraintStore;
 
-    const fields = JSON.parse(this.fieldList);
-    if (fields.length > 0) {
-      this.fieldStore.fromJSON(fields);
-    }
-
-    const constraints = JSON.parse(this.constraints);
-    if (constraints.length > 0) {
-      this.constraintStore.fromJSON(constraints);
-    }
+    // recreate the store from the snapshot stored in Alteryx's data items
+    const stores = [
+      { storeName: 'fieldStore', dataItem: 'fieldList' },
+      { storeName: 'constraintStore', dataItem: 'constraints' },
+    ];
+    this.rehydrate(stores);
 
     autorun(() => {
       if (this.constraintStore.currentConstraint === null) {
