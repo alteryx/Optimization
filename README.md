@@ -43,15 +43,5 @@ Whenever you manipulate one of these source files, you can run the `buildPlugin(
 ```r
 library(AlteryxRhelper)
 options(alteryx.path = <path to alteryx>)
-buildPlugin <- function(pluginDir = ".", build = FALSE){
-  if (build){
-    withr::with_dir('App', system('npm run build-umd'))
-    file.copy('App/dist/src.js', 'app.min.js', overwrite = TRUE)
-  }
-  withr::with_dir(file.path(pluginDir, "Supporting_Macros"), 
-    insertRcode("Optimization.yxmc", "Optimization1.R")
-  )
-  createPluginFromMacro(pluginDir, layout = TRUE)
-  updateHtmlPlugin(pluginDir)
-}
+buildPlugin()
 ```
