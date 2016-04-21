@@ -6,7 +6,15 @@ if ('package:AlteryxRDataX' %in% search() && !inMacro){
   # update this to read only optional inputs which are provided by user
   # that data should be available in config, or can be inferred from
   # number of rows in the data frame
-  inputs <- lapply(paste0('#', 1:3), read.Alteryx)
+  readInputs <- function(...){
+    inputNames = c(...)
+    streams = paste0('#', seq_along(inputNames))
+    inputs <- setNames(lapply(streams, read.Alteryx), inputNames)
+    Filter(function(d){NROW(d) > 0}, inputs)
+  }
+
+  inputs <- readInputs("O", "A", "B")
+
 } else {
   # use this to read a payload directly from an R object.
   config <- list(
@@ -25,10 +33,13 @@ options(alteryx.wd = '%Engine.WorkflowDirectory%')
 options(alteryx.debug = config$debug)
 ##----
 
+#saveRDS(inputs, '%Engine.WorkflowDirectory%inputs.rds')
+#saveRDS(payload, '%Engine.WorkflowDirectory%payload.rds')
+#saveRDS('%Question.payload%', '%Engine.WorkflowDirectory%raw_payload.rds')
 
 library(AlteryxRviz)
-iOutput <- function(s2a){
-  d = data.frame(x = paste0("X", 1:length(s2a$solution)), y = s2a$solution)
+iOutput <- function(s2a, varNames){
+  d = data.frame(x = varNames, y = s2a$solution)
   p4 = c3(
     data = list(json = d, keys = list(x = 'x', value = list('y')), type = 'bar'),
     axis = list(
@@ -64,4 +75,4 @@ iOutput <- function(s2a){
   renderInComposer(app, nOutput = 3)
 }
 s2a <- AlteryxSolve(payload)
-iOutput(s2a)
+iOutput(s2a, inputs$O$variable)
