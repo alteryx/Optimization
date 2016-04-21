@@ -77,26 +77,10 @@ Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
   // Initialize DataItem
   //Object.keys(VM).forEach(d => dataItem(d, { values: VM[d] }));
   dataItem('activePage', { value: 'landing' });
+  // Create data items for manual input
   dataItem('objective', { value: '' });
-  // const objective = new AlteryxDataItems.SimpleString(
-  //   { id: 'objective', dataname: 'objective' }
-  // );
-  // manager.AddDataItem(objective);
-  // objective.setValue('');
-
   dataItem('constraints', { value: '[]' });
-  // const constraints = new AlteryxDataItems.SimpleString(
-  //   { id: 'constraints', dataname: 'constraints' }
-  // );
-  // manager.AddDataItem(constraints);
-  // constraints.setValue('[]');
-
   dataItem('fieldList', { value: '[]' });
-  // const fieldList = new AlteryxDataItems.SimpleString(
-  //   { id: 'fieldList', dataname: 'fieldList' }
-  // );
-  // manager.AddDataItem(fieldList);
-  // fieldList.setValue('[]');
 };
 
 Alteryx.Gui.AfterLoad = (manager) => {
