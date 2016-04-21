@@ -45,3 +45,14 @@ library(AlteryxRhelper)
 options(alteryx.path = <path to alteryx>)
 buildPlugin()
 ```
+
+### Build Javascript Files
+
+To build the javascript files, run the following code from the root directory of the plugin.
+
+```r
+withr::with_dir("App", system('npm run build-umd'))
+file.copy('App/dist/src.js', 'app.min.js', overwrite = TRUE)
+updateHtmlPlugin()
+```
+
