@@ -19,6 +19,10 @@ This configuration is automatically generated from `Optimization.yxmc`
 |fileType        |Select file type    |CPLEX_LP |["CPLEX_LP","MathProg","MPS_Free"] |
 |showSensitivity |                    |FALSE    |                                   |
 |varList         |Variable Names      |         |                                   |
+|FormulaFields   |                    |         |                                   |
+|activePage      |Active Page         |         |                                   |
+|fieldList       |Field List          |         |                                   |
+|objective       |Objective           |         |                                   |
 
 
 #### Backend
