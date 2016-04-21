@@ -77,26 +77,26 @@ Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
   // Initialize DataItem
   //Object.keys(VM).forEach(d => dataItem(d, { values: VM[d] }));
   dataItem('activePage', { value: 'landing' });
-  //dataItem('currentIndex', {value: 0})
-  //dataItem('payload', { value: '{}' });
-  const objective = new AlteryxDataItems.SimpleString(
-    { id: 'objective', dataname: 'objective' }
-  );
-  manager.AddDataItem(objective);
-  objective.setValue('');
+  dataItem('objective', { value: '' });
+  // const objective = new AlteryxDataItems.SimpleString(
+  //   { id: 'objective', dataname: 'objective' }
+  // );
+  // manager.AddDataItem(objective);
+  // objective.setValue('');
 
-  const constraints = new AlteryxDataItems.SimpleString(
-    { id: 'constraints', dataname: 'constraints' }
-  );
-  manager.AddDataItem(constraints);
-  constraints.setValue('[]');
+  dataItem('constraints', { value: '[]' });
+  // const constraints = new AlteryxDataItems.SimpleString(
+  //   { id: 'constraints', dataname: 'constraints' }
+  // );
+  // manager.AddDataItem(constraints);
+  // constraints.setValue('[]');
 
-  const fieldList = new AlteryxDataItems.SimpleString(
-    { id: 'fieldList', dataname: 'fieldList' }
-  );
-  manager.AddDataItem(fieldList);
-  fieldList.setValue('[]');
-
+  dataItem('fieldList', { value: '[]' });
+  // const fieldList = new AlteryxDataItems.SimpleString(
+  //   { id: 'fieldList', dataname: 'fieldList' }
+  // );
+  // manager.AddDataItem(fieldList);
+  // fieldList.setValue('[]');
 };
 
 Alteryx.Gui.AfterLoad = (manager) => {
