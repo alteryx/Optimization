@@ -5,10 +5,14 @@ library(AlteryxRhelper)
 
 ## Configuration ----
 config <- list(
+  activePage = textInput('%Question.activePage%', "landing"),
+  fieldList = textInput('%Question.fieldList%'),
   fileType = dropdownInput('%Question.fileType%' , 'CPLEX_LP'),
+  FormulaFields = textInput('%Question.FormulaFields%'),
   filePath = textInput("%Question.filePath%", getSampleData("lp_example.lp")),
   inputMode = dropdownInput('%Question.inputMode%' , 'file'),
   maximize = checkboxInput('%Question.maximize%' , FALSE),
+  objective = textInput('%Question.objective%'),
   payload = textInput('%Question.payload%'),
   problemType = dropdownInput('%Question.problemType%' , 'LP'),
   showSensitivity = checkboxInput('%Question.showSensitivity%' , FALSE),
@@ -23,7 +27,7 @@ readInputs <- function(...){
   inputs <- setNames(lapply(streams, read.Alteryx), inputNames)
   Filter(function(d){NROW(d) > 0}, inputs)
 }
-inputs <- if (inAlteryx()) readInputs("O", "A", "B") else NULL
+inputs <- if (inAlteryx() && '%Question.activePage%' != "") readInputs("O", "A", "B") else NULL
 print(config)
 payload <- list(config = config, inputs = inputs)
 
