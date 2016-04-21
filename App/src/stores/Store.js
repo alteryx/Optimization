@@ -34,6 +34,7 @@ class Store extends AyxStore {
     ];
     this.rehydrate(stores);
 
+    // Automatically update the editor in response to state changes in the constraint store.
     autorun(() => {
       if (this.constraintStore.currentConstraint === null) {
         this.updateEditor('');
@@ -43,19 +44,18 @@ class Store extends AyxStore {
     });
   }
 
+  /* Store Methods */
   @computed get isEditorEmpty() {
     return this.editorValue === '';
   }
 
+  // Determine whether or not the constraint in the the code editor should update an existing
+  // constraint or create a new one
   @computed get saveOrAdd() {
     return this.constraintStore.currentConstraint === null;
   }
 
-  updateObjective(v) {
-    this.objective = v;
-    Alteryx.Gui.manager.GetDataItemByDataName('objective').setValue(this.objective);
-  }
-
+  // Dynamically convert the fieldNames string into a deduped array of unique values
   @computed get fieldNameArray() {
     return this.fieldNames.split(',')
       .map(fieldName => fieldName.trim())
@@ -66,17 +66,15 @@ class Store extends AyxStore {
       );
   }
 
-  @computed get asJSON() {
-    return {
-      objective: this.objective,
-      constraints: this.constraintStore.constraints.asJSON,
-      fieldInfo: this.fieldStore.asJSON,
-    };
+  // Update both `this.objective` and the backing Alteryx data item with the value `v`
+  updateObjective(v) {
+    this.objective = v;
+    this.manager.GetDataItemByDataName('objective').setValue(this.objective);
   }
 
+  // Update the Alteryx code editor widget with the provided value
   updateEditor(value) {
-    const { renderer } = Alteryx.Gui;
-    renderer
+    this.renderer
       .getReactComponentByDataName('editorValue').editor
       .setValue(value);
   }
