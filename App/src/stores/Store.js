@@ -10,6 +10,21 @@ import AyxStore from './AyxStore';
 import { extendObservable, computed, autorun } from 'mobx';
 
 class Store extends AyxStore {
+  // A method for re-instating the domain stores based on the serialized values received from
+  // Alteryx's data items. If `rehydrate` detects that a data item actually has values, it will
+  // rebuild the store from the snapshot using the stores `fromJSON` method.
+
+  // @param stores: An array of object, where each object conforms to the following structure:
+  // { storeName: string, dataItem: string }
+  rehydrate(stores) {
+    stores.forEach(({ storeName, dataItem }) => {
+      const staticValues = JSON.parse(this[dataItem]);
+      if (staticValues.length > 0) {
+        this[storeName].fromJSON(staticValues);
+      }
+    });
+  }
+
   constructor(ayx, dataItems, fieldStore, constraintStore) {
     // The following properties are created from Alteryx:
     // - editorValue: '',
