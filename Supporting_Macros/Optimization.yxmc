@@ -49,7 +49,12 @@ readInputs &lt;- function(...){
   inputs &lt;- setNames(lapply(streams, read.Alteryx), inputNames)
   Filter(function(d){NROW(d) &gt; 0}, inputs)
 }
-inputs &lt;- if (inAlteryx() &amp;&amp; '%Question.activePage%' != "") readInputs("O", "A", "B") else NULL
+# TOFIX: think through the condition to read inputs
+inputs &lt;- if (inAlteryx() &amp;&amp; '%Question.activePage%' != "") {
+  readInputs("O", "A", "B", "Q") 
+} else {
+  NULL
+}
 print(config)
 payload &lt;- list(config = config, inputs = inputs)
 
@@ -583,7 +588,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2812_e81b9aa7c5f04dfcb934e6bbae3c4b8e_\Engine_4720_a60ece5b64904c4a8ae7d1ee6d678b28_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2508_ec5d2ef32d04485097b5d23e6582c8dd_\Engine_2724_6b45e3ddef7e4c36995a90ae18f478e0_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100"/>
@@ -603,6 +608,60 @@ No Text Styling</DefaultAnnotationText>
         </Annotation>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2"/>
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="90" y="582"/>
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False"/>
+          <Name>InputQ</Name>
+          <Abbrev>Q</Abbrev>
+          <ShowFieldMap value="False"/>
+          <Optional value="True"/>
+          <TextInput>
+            <Configuration>
+              <NumRows value="3"/>
+              <Fields>
+                <Field name="x1"/>
+                <Field name="x2"/>
+                <Field name="x3"/>
+              </Fields>
+              <Data>
+                <r>
+                  <c>1</c>
+                  <c>1</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>1</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>1</c>
+                  <c>1</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name/>
+          <DefaultAnnotationText/>
+          <Left value="True"/>
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="x1" source="TextInput:" type="Byte"/>
+            <Field name="x2" source="TextInput:" type="Byte"/>
+            <Field name="x3" source="TextInput:" type="Byte"/>
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput"/>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
@@ -852,6 +911,10 @@ No Text Styling</DefaultAnnotationText>
       <Origin ToolID="6" Connection="Output"/>
       <Destination ToolID="3" Connection="Input"/>
     </Connection>
+    <Connection name="#4">
+      <Origin ToolID="25" Connection="Output"/>
+      <Destination ToolID="3" Connection="Input"/>
+    </Connection>
     <Connection>
       <Origin ToolID="7" Connection="Output"/>
       <Destination ToolID="8" Connection="Input"/>
@@ -953,6 +1016,12 @@ No Text Styling</DefaultAnnotationText>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>objective</Name>
+        <Value/>
+        <IsNumeric value="False"/>
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (25)</Name>
         <Value/>
         <IsNumeric value="False"/>
       </Constant>
@@ -1148,6 +1217,12 @@ MPS_Free
               <Multiline value="False"/>
               <Hidden value="False"/>
             </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description>Macro Input (25)</Description>
+              <Name>Macro Input (25)</Name>
+              <ToolId value="25"/>
+            </Question>
           </Questions>
         </Question>
       </Questions>
@@ -1166,6 +1241,7 @@ MPS_Free
         <Tool ToolId="6" Selected="True"/>
         <Tool ToolId="8" Selected="True"/>
         <Tool ToolId="16" Selected="False"/>
+        <Tool ToolId="25" Selected="True"/>
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage/>
       <Wiz_NoOutputFilesMessage/>

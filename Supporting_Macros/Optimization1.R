@@ -27,7 +27,12 @@ readInputs <- function(...){
   inputs <- setNames(lapply(streams, read.Alteryx), inputNames)
   Filter(function(d){NROW(d) > 0}, inputs)
 }
-inputs <- if (inAlteryx() && '%Question.activePage%' != "") readInputs("O", "A", "B") else NULL
+# TOFIX: think through the condition to read inputs
+inputs <- if (inAlteryx() && '%Question.activePage%' != "") {
+  readInputs("O", "A", "B", "Q") 
+} else {
+  NULL
+}
 print(config)
 payload <- list(config = config, inputs = inputs)
 
