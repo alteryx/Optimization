@@ -18,9 +18,8 @@ class Store extends AyxStore {
     // - fieldNames: [],
     // - fieldList: [],
 
-    const { Gui: { manager } } = ayx;
-    // call the AyxStore constructor to set up the DataItem tracking
-    super(manager, dataItems);
+    // call the AyxStore constructor to set up DataItem tracking and manager/renderer references
+    super(ayx, dataItems);
 
     // turn all the initial properties into observables
     extendObservable(this, this);
