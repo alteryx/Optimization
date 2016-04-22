@@ -588,7 +588,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4160_91788104dab94e389c1a4385109031b6_\Engine_5084_2b4ab45bec364009ac973400e9f537f8_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3432_2a5760ca2db0466fb8e492c1e64f3b60_\Engine_2684_d1b56ae6f8cc4965b8d5af7680913114_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -665,7 +665,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="306" y="162" width="481" height="103" />
+        <Position x="306" y="162" width="478" height="103" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -737,7 +737,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="23">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="162" width="256" height="98" />
+        <Position x="54" y="162" width="246" height="98" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -783,7 +783,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="54" width="891" height="98.00005" />
+        <Position x="54" y="49" width="1138" height="103.0001" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -886,6 +886,32 @@ No Text Styling</DefaultAnnotationText>
             <Configuration />
             <Annotation DisplayMode="0">
               <Name>objective</Name>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+            <Position x="942" y="78" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name>constraints</Name>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+            <Position x="1062" y="78" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name>selectedTab</Name>
               <DefaultAnnotationText />
               <Left value="False" />
             </Annotation>
@@ -1022,6 +1048,18 @@ No Text Styling</DefaultAnnotationText>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>Macro Input (25)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>constraints</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>selectedTab</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
@@ -1222,6 +1260,26 @@ MPS_Free
               <Description>Macro Input (25)</Description>
               <Name>Macro Input (25)</Name>
               <ToolId value="25" />
+            </Question>
+            <Question>
+              <Type>TextBox</Type>
+              <Description>Constraints</Description>
+              <Name>constraints</Name>
+              <ToolId value="26" />
+              <Default />
+              <Password value="False" />
+              <Multiline value="False" />
+              <Hidden value="False" />
+            </Question>
+            <Question>
+              <Type>TextBox</Type>
+              <Description>Selected Tab</Description>
+              <Name>selectedTab</Name>
+              <ToolId value="27" />
+              <Default />
+              <Password value="False" />
+              <Multiline value="False" />
+              <Hidden value="False" />
             </Question>
           </Questions>
         </Question>
