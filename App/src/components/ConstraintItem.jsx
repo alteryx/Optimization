@@ -9,7 +9,7 @@ function ConstraintItem(props) {
       onDoubleClick={props.editConstraint}
       style={{ cursor: 'pointer' }}
     >
-      {props.constraint}
+      {props.constraint.value}
         <span className="pull-right">
           <a href="#" className="text-danger" onClick={props.removeConstraint}>
             <i className="fa fa-trash fa-lg"></i>
@@ -20,7 +20,7 @@ function ConstraintItem(props) {
 }
 
 ConstraintItem.propTypes = {
-  constraint: React.PropTypes.string,
+  constraint: React.PropTypes.object,
   editConstraint: React.PropTypes.func,
   removeConstraint: React.PropTypes.func,
   isBeingEdited: React.PropTypes.bool,

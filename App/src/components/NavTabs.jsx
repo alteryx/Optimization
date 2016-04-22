@@ -1,5 +1,4 @@
 import React, { PropTypes as P } from 'react';
-import { observable } from 'mobx';
 import { observer } from 'mobx-react';
 
 @observer
@@ -9,19 +8,20 @@ class NavTabs extends React.Component {
       P.array,
       P.element,
     ]).isRequired,
+    selected: P.string.isRequired,
+    onSelect: P.func.isRequired,
   }
-  @observable selected = 0;
 
-  handleSelect = (e, idx) => {
+  handleSelect(e, idx) {
     e.preventDefault();
-    this.selected = idx;
+    this.props.onSelect(idx);
   }
 
   renderTabs = () => (
     <ul className="nav nav-tabs">
       {
         this.props.children.map((child, idx) => {
-          let isActive = (this.selected === idx ? 'active' : '');
+          let isActive = (this.props.selected === idx ? 'active' : '');
           return (
             <li key={idx} className={isActive}>
               <a href="#" onClick={(e) => this.handleSelect(e, idx)}>
@@ -36,7 +36,7 @@ class NavTabs extends React.Component {
 
   renderContent = () => (
     <div>
-      {this.props.children[this.selected]}
+      { this.props.children[this.props.selected] }
     </div>
   );
 

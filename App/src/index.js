@@ -77,23 +77,11 @@ Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
   // Initialize DataItem
   //Object.keys(VM).forEach(d => dataItem(d, { values: VM[d] }));
   dataItem('activePage', { value: 'landing' });
-  //dataItem('currentIndex', {value: 0})
-  //dataItem('payload', { value: '{}' });
-  const objective = new AlteryxDataItems.SimpleString(
-    { id: 'objective', dataname: 'objective', value: '' }
-  );
-  manager.AddDataItem(objective);
-
-  const constraints = new AlteryxDataItems.MultiStringSelector(
-    { id: 'constraints', dataname: 'constraints' }
-  );
-  manager.AddDataItem(constraints);
-
-  const fieldList = new AlteryxDataItems.SimpleString(
-    { id: 'fieldList', dataname: 'fieldList' }
-  );
-  manager.AddDataItem(fieldList);
-  fieldList.setValue('[]');
+  // Create data items for manual input
+  dataItem('objective', { value: '' });
+  dataItem('constraints', { value: '[]' });
+  dataItem('fieldList', { value: '[]' });
+  dataItem('selectedTab', { value: 0 }, 'SimpleFloat');
 };
 
 Alteryx.Gui.AfterLoad = (manager) => {
@@ -104,15 +92,16 @@ Alteryx.Gui.AfterLoad = (manager) => {
     ['fileType', 'filePath', 'solver', 'inputMode', 'maximize', 'problemType']
   );
 
-  syncHintList(Alteryx, 'FormulaFields', 'varList');
+  syncHintList(Alteryx, 'editorValue', 'fieldNames');
   runView(
     Alteryx, {
-      editorValue: 'FormulaFields',
+      editorValue: 'editorValue',
       constraints: 'constraints',
       objective: 'objective',
-      fieldNames: 'varList',
+      fieldNames: 'fieldNames',
       fieldList: 'fieldList',
-    }, 'constraint-editor'
+      selectedTab: 'selectedTab',
+    }, 'manual-input'
   );
 };
 

@@ -8,7 +8,7 @@ import NavTabs from './components/NavTabs';
 function Layout({ store }) {
   return (
     <div>
-      <NavTabs>
+      <NavTabs selected={store.selectedTab} onSelect={store.updateSelectedTab}>
         <Objective label="Objective" store={store} />
         <FieldList label="Fields" store={store} />
         <ConstraintList label="Constraints" store={store} />

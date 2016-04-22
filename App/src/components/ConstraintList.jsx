@@ -4,27 +4,41 @@ import { observer } from 'mobx-react';
 import ConstraintItem from './ConstraintItem';
 
 function ConstraintList({ store }) {
-  const addConstraint = store.addConstraint.bind(store);
-  const saveConstraint = store.saveConstraint.bind(store);
+  const cs = store.constraintStore;
+
+  const handleAdd = () => {
+    cs.addConstraint(store.editorValue);
+    // store.update();
+    store.updateEditor('');
+  };
+
+  const handleSave = () => {
+    cs.currentConstraint.save(store.editorValue);
+  };
+
+  const handleRemove = (e, c) => {
+    e.preventDefault();
+    c.delete();
+  };
 
   return (
     <div>
       <button
         className="btn btn-default"
-        onClick={store.currentIndex === null ? addConstraint : saveConstraint}
+        onClick={store.saveOrAdd ? handleAdd : handleSave}
         disabled={store.isEditorEmpty}
       >
         {store.saveOrAdd ? <i className="fa fa-plus"></i> : <i className="fa fa-floppy-o"></i>}
       </button>
       <div className="list-group">
         {
-          store.constraints.map((c, idx) => (
+          cs.constraints.map(c => (
               <ConstraintItem
-                key={idx}
-                isBeingEdited={store.currentIndex === idx}
+                key={c.id}
+                isBeingEdited={c.isBeingEdited}
                 constraint={c}
-                editConstraint={() => store.editConstraint(idx)}
-                removeConstraint={(e) => {e.preventDefault(); store.removeConstraint(idx);}}
+                editConstraint={c.toggleEditing}
+                removeConstraint={(e) => handleRemove(e, c)}
               />
             )
           )

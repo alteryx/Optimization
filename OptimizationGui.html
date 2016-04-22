@@ -22,7 +22,7 @@ Optimization
 <alteryx-pluginwidget type="TextBox" password="false" id="payload" dataName="payload"></alteryx-pluginwidget>
   
 </div>
-  
+
   <!-- Landing Page -->
 	<fieldset id="landing">
 		<legend>Optimization</legend>
@@ -69,21 +69,20 @@ Optimization
   
 
       <br/><br/>
-      
-<!--  varList  -->
-<label htmlFor="varList">Variable Names</label>
-<alteryx-pluginwidget type="TextBox" password="false" id="varList" dataName="varList"></alteryx-pluginwidget>
-  
 
       
-<!--  FormulaFields  -->
-<label htmlFor="FormulaFields"></label>
-<alteryx-pluginwidget type="CodeEditor" password="false" id="FormulaFields" language="alteryx-simple" hintList="x1,x2" enableDataPreview="false" dataName="FormulaFields"></alteryx-pluginwidget>
+<!--  fieldNames  -->
+<label htmlFor="fieldNames">Variable Names</label>
+<alteryx-pluginwidget type="TextBox" password="false" id="fieldNames" dataName="fieldNames"></alteryx-pluginwidget>
   
 
+      <alteryx-pluginwidget type="CodeEditor" id="editorValue" dataName="editorValue"
+        language="alteryx-simple" hintList="x1,x2" enableDataPreview="false"
+      >
+      </alteryx-pluginwidget>
       
        <!-- React Components - Constraints, Bounds -->
-      <div id="constraint-editor"></div>
+      <div id="manual-input"></div>
 
     </div>
   </fieldset>
