@@ -2,9 +2,8 @@ maximize:
   showAsToggle: "true"
 showSensitivity:
   showAsToggle: "true"
-FormulaFields:
+editorValue:
   type: CodeEditor 
-  id: objective
   language: alteryx-simple 
   hintList: "x1,x2" 
   enableDataPreview: "false"
