@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="10.5">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="Optimization">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="showSensitivity">False</Value>
+          <Value name="filePath">\\vmware-host\Shared Folders\SNIPPETS\AlteryxPrescriptive\inst\extdata\lp_example.lp</Value>
+          <Value name="fileType">CPLEX_LP</Value>
+          <Value name="FormulaFields">
+          </Value>
+          <Value name="varList">x1,x2</Value>
+          <Value name="maximize">False</Value>
+          <Value name="solver">glpk</Value>
+          <Value name="problemType">LP</Value>
+          <Value name="inputMode">file</Value>
+          <Value name="payload">{"fileType":"CPLEX_LP","filePath":"\\\\vmware-host\\Shared Folders\\SNIPPETS\\AlteryxPrescriptive\\inst\\extdata\\lp_example.lp","solver":"glpk","inputMode":"file","maximize":false,"problemType":"LP"}</Value>
+          <Value name="constraints">x1 + 2x2</Value>
+          <Value name="fieldList">[{"fieldName":"x1","type":"Continuous","lowerBound":0,"upperBound":null},{"fieldName":"x2","type":"Continuous","lowerBound":0,"upperBound":null}]</Value>
+          <Value name="objective">
+          </Value>
+          <Value name="activePage">landing</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>File Input Mode</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Supporting_Macros/Optimization.yxmc" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="150" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1064_b1a0773b2199464f87e343083b6bd1e9_\Engine_4140_b64f7bb785414dd082a12c397b34daee_.yxdb</TempFile>
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="OutputI" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="True" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>TestFileMode</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

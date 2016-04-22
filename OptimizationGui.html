@@ -18,17 +18,17 @@ Optimization
 <form>
   <div style='display: none'>
 <!--  payload  -->
-<label>UI</label>
+<label htmlFor="payload">UI</label>
 <alteryx-pluginwidget type="TextBox" password="false" id="payload" dataName="payload"></alteryx-pluginwidget>
   
 </div>
-  
+
   <!-- Landing Page -->
 	<fieldset id="landing">
 		<legend>Optimization</legend>
 		
 <!--  inputMode  -->
-<label>Select input mode</label>
+<label htmlFor="inputMode">Select input mode</label>
 <alteryx-pluginwidget type="DropDown" id="inputMode" dataName="inputMode">
   <alteryx-option uiobject="Specify the model as matrices" default="true">matrix</alteryx-option>
   <alteryx-option uiobject="Enter the model manually">manual</alteryx-option>
@@ -43,7 +43,7 @@ Optimization
   <fieldset class="page" id="page-manual">
     
 <!--  problemType  -->
-<label>Select problem type</label>
+<label htmlFor="problemType">Select problem type</label>
 <alteryx-pluginwidget type="DropDown" id="problemType" dataName="problemType">
   <alteryx-option uiobject="Linear Program" default="true">LP</alteryx-option>
   <alteryx-option uiobject="Mixed Integer Program">MIP</alteryx-option>
@@ -53,7 +53,7 @@ Optimization
 
     
 <!--  solver  -->
-<label>Select solver</label>
+<label htmlFor="solver">Select solver</label>
 <alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
   <alteryx-option uiobject="Glpk" default="true">glpk</alteryx-option>
   <alteryx-option uiobject="Gurobi">gurobi</alteryx-option>
@@ -64,16 +64,17 @@ Optimization
     <div id="manualMode1" style="display:block">
       
 <!--  maximize  -->
-<label></label>
+<label htmlFor="maximize"></label>
 <alteryx-pluginwidget type="CheckBox" text="Maximize Objective?" default="FALSE" showAsToggle="true" id="maximize" dataName="maximize"></alteryx-pluginwidget>
   
 
       <br/><br/>
+
       
 <!--  fieldNames  -->
-<label>Variable Names</label>
-  
+<label htmlFor="fieldNames">Variable Names</label>
 <alteryx-pluginwidget type="TextBox" password="false" id="fieldNames" dataName="fieldNames"></alteryx-pluginwidget>
+  
 
       <alteryx-pluginwidget type="CodeEditor" id="editorValue" dataName="editorValue"
         language="alteryx-simple" hintList="x1,x2" enableDataPreview="false"
@@ -90,7 +91,7 @@ Optimization
     <fieldset class="page" id="page-file">
       
 <!--  fileType  -->
-<label>Select file type</label>
+<label htmlFor="fileType">Select file type</label>
 <alteryx-pluginwidget type="DropDown" id="fileType" dataName="fileType">
   <alteryx-option uiobject="CPLEX_LP" default="true">CPLEX_LP</alteryx-option>
   <alteryx-option uiobject="MathProg">MathProg</alteryx-option>
@@ -100,7 +101,7 @@ Optimization
 
       
 <!--  solver  -->
-<label>Select solver</label>
+<label htmlFor="solver">Select solver</label>
 <alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
   <alteryx-option uiobject="Glpk" default="true">glpk</alteryx-option>
   <alteryx-option uiobject="Gurobi">gurobi</alteryx-option>
@@ -110,7 +111,7 @@ Optimization
 
       
 <!--  filePath  -->
-<label>Select file</label>
+<label htmlFor="filePath">Select file</label>
 <alteryx-pluginwidget type="FileBrowse" id="filePath" dataName="filePath"></alteryx-pluginwidget>
   
 
@@ -120,7 +121,7 @@ Optimization
     <fieldset class="page" id="page-matrix">
       
 <!--  problemType  -->
-<label>Select problem type</label>
+<label htmlFor="problemType">Select problem type</label>
 <alteryx-pluginwidget type="DropDown" id="problemType" dataName="problemType">
   <alteryx-option uiobject="Linear Program" default="true">LP</alteryx-option>
   <alteryx-option uiobject="Mixed Integer Program">MIP</alteryx-option>
@@ -130,7 +131,7 @@ Optimization
 
       
 <!--  solver  -->
-<label>Select solver</label>
+<label htmlFor="solver">Select solver</label>
 <alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
   <alteryx-option uiobject="Glpk" default="true">glpk</alteryx-option>
   <alteryx-option uiobject="Gurobi">gurobi</alteryx-option>
@@ -140,8 +141,14 @@ Optimization
 
       
 <!--  maximize  -->
-<label></label>
+<label htmlFor="maximize"></label>
 <alteryx-pluginwidget type="CheckBox" text="Maximize Objective?" default="FALSE" showAsToggle="true" id="maximize" dataName="maximize"></alteryx-pluginwidget>
+  
+
+      
+<!--  showSensitivity  -->
+<label htmlFor="showSensitivity"></label>
+<alteryx-pluginwidget type="CheckBox" text="Show sensitivity report" default="FALSE" showAsToggle="true" id="showSensitivity" dataName="showSensitivity"></alteryx-pluginwidget>
   
 
     </fieldset>

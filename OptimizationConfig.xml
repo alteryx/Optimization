@@ -6,6 +6,7 @@
       <Connection Name="InputO" AllowMultiple="False" Optional="True" Type="Connection" Label="O"/>
       <Connection Name="InputA" AllowMultiple="False" Optional="True" Type="Connection" Label="A"/>
       <Connection Name="InputB" AllowMultiple="False" Optional="True" Type="Connection" Label="B"/>
+      <Connection Name="InputQ" AllowMultiple="False" Optional="True" Type="Connection" Label="Q"/>
     </InputConnections>
     <OutputConnections>
       <Connection Name="OutputI" AllowMultiple="False" Optional="True" Type="Connection" Label="I"/>
@@ -16,7 +17,7 @@
       <NameIsFileName>False</NameIsFileName>
       <Name>Optimization</Name>
       <Description>Optimization</Description>
-      <ToolVersion>0.1</ToolVersion>
+      <ToolVersion>0.2</ToolVersion>
       <ToolInDb>False</ToolInDb>
       <CategoryName>Prescriptive</CategoryName>
       <Author>Kuo Liu</Author>

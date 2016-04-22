@@ -1,6 +1,6 @@
 <form>
   <div style='display: none'>{{ payload }}</div>
-  
+
   <!-- Landing Page -->
 	<fieldset id="landing">
 		<legend>Optimization</legend>
@@ -15,6 +15,7 @@
     <div id="manualMode1" style="display:block">
       {{ maximize }}
       <br/><br/>
+
       {{ fieldNames }}
       <alteryx-pluginwidget type="CodeEditor" id="editorValue" dataName="editorValue"
         language="alteryx-simple" hintList="x1,x2" enableDataPreview="false"
@@ -39,6 +40,7 @@
       {{ problemType }}
       {{ solver }}
       {{ maximize }}
+      {{ showSensitivity }}
     </fieldset>
 
 </form>
