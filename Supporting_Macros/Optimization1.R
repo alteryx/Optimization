@@ -10,9 +10,9 @@ config <- list(
   fieldList = textInput('%Question.fieldList%'),
   fieldNames = textInput('%Question.fieldNames%'),
   fileType = dropdownInput('%Question.fileType%' , 'CPLEX_LP'),
-  inputMode = dropdownInput('%Question.inputMode%' , 'file'),
+  inputMode = dropdownInput('%Question.inputMode%' , if (inAlteryx()) 'matrix' else 'file'),
   maximize = checkboxInput('%Question.maximize%' , TRUE),
-  objective = textInput('%Question.objective%' , '"2 x1 + 4 x2 + 3 x3"'),
+  objective = textInput('%Question.objective%' , '2 x1 + 4 x2 + 3 x3'),
   payload = textInput('%Question.payload%'),
   problemType = dropdownInput('%Question.problemType%' , 'LP'),
   selectedTab = textInput('%Question.selectedTab%'),
@@ -22,10 +22,14 @@ config <- list(
 options(alteryx.wd = '%Engine.WorkflowDirectory%')
 options(alteryx.debug = config$debug)
 ##----
+
+# Update configuration ----
 config$filePath = textInput(
   '%Question.filePath%', 
   AlteryxPrescriptive::getSampleData("lp_example.lp")
 )
+config$constraints = jsonlite::fromJSON(config$constraints)
+
 ## Inputs ----
 readInputs <- function(...){
   inputNames = c(...)
@@ -43,8 +47,6 @@ inputs <- if (inAlteryx()) {
 } else {
   NULL
 }
-
-config$constraints = jsonlite::fromJSON(config$constraints)
 
 print(config)
 payload <- list(config = config, inputs = inputs)

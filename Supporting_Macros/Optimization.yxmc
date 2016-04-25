@@ -32,9 +32,9 @@ config &lt;- list(
   fieldList = textInput('%Question.fieldList%'),
   fieldNames = textInput('%Question.fieldNames%'),
   fileType = dropdownInput('%Question.fileType%' , 'CPLEX_LP'),
-  inputMode = dropdownInput('%Question.inputMode%' , 'matrix'),
+  inputMode = dropdownInput('%Question.inputMode%' , if (inAlteryx()) 'matrix' else 'file'),
   maximize = checkboxInput('%Question.maximize%' , TRUE),
-  objective = textInput('%Question.objective%' , '"2 x1 + 4 x2 + 3 x3"'),
+  objective = textInput('%Question.objective%' , '2 x1 + 4 x2 + 3 x3'),
   payload = textInput('%Question.payload%'),
   problemType = dropdownInput('%Question.problemType%' , 'LP'),
   selectedTab = textInput('%Question.selectedTab%'),
@@ -44,10 +44,14 @@ config &lt;- list(
 options(alteryx.wd = '%Engine.WorkflowDirectory%')
 options(alteryx.debug = config$debug)
 ##----
+
+# Update configuration ----
 config$filePath = textInput(
   '%Question.filePath%', 
   AlteryxPrescriptive::getSampleData("lp_example.lp")
 )
+config$constraints = jsonlite::fromJSON(config$constraints)
+
 ## Inputs ----
 readInputs &lt;- function(...){
   inputNames = c(...)
@@ -65,8 +69,6 @@ inputs &lt;- if (inAlteryx()) {
 } else {
   NULL
 }
-
-config$constraints = jsonlite::fromJSON(config$constraints)
 
 print(config)
 payload &lt;- list(config = config, inputs = inputs)
@@ -114,8 +116,7 @@ iOutput &lt;- function(s2a, varNames){
   renderInComposer(app, nOutput = 3)
 }
 s2a &lt;- AlteryxSolve(payload)
-varNames = if (!is.null(inputs)) inputs$O$variable else NULL
-iOutput(s2a, varNames)</RScript>
+iOutput(s2a, inputs$O$variable)</RScript>
           <UseFullUpdate value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
@@ -123,6 +124,11 @@ iOutput(s2a, varNames)</RScript>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
+        <MetaInfo connection="Output3">
+          <RecordInfo>
+            <Field name="html" size="1073741823" source="R-DATA:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxRPluginEngine.dll" EngineDllEntryPoint="AlteryxR" />
     </Node>
@@ -596,7 +602,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4780_c40378fe10a848aebd41981b63e2473b_\Engine_4160_079c608c0b9746498886e4d41d895915_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1912_e0158a897d904be2a918aaafbc50420e_\Engine_4160_d9d2a82584fb41a7906e76a80dd48c73_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
