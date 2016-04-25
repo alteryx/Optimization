@@ -1,25 +1,31 @@
 ## DO NOT MODIFY: Auto Inserted by AlteryxRhelper ----
-options(alteryx.wd = '%Engine.WorkflowDirectory%')
-library(AlteryxPrescriptive)
 library(AlteryxRhelper)
-
-## Configuration ----
 config <- list(
-  activePage = textInput('%Question.activePage%', "landing"),
+  activePage = textInput('%Question.activePage%'),
+  constraints = textInput(
+    '%Question.constraints%' , 
+    '["3 x1 + 4 x2 + 2 x3 <= 60","2 x1 + x2 + 2 x3 <= 40","x1 + 3 x2 + 2 x3 <= 80"]'
+  ),
+  editorValue = textInput('%Question.editorValue%'),
   fieldList = textInput('%Question.fieldList%'),
+  fieldNames = textInput('%Question.fieldNames%'),
   fileType = dropdownInput('%Question.fileType%' , 'CPLEX_LP'),
-  FormulaFields = textInput('%Question.FormulaFields%'),
-  filePath = textInput("%Question.filePath%", getSampleData("lp_example.lp")),
   inputMode = dropdownInput('%Question.inputMode%' , 'file'),
-  maximize = checkboxInput('%Question.maximize%' , FALSE),
-  objective = textInput('%Question.objective%'),
+  maximize = checkboxInput('%Question.maximize%' , TRUE),
+  objective = textInput('%Question.objective%' , '"2 x1 + 4 x2 + 3 x3"'),
   payload = textInput('%Question.payload%'),
   problemType = dropdownInput('%Question.problemType%' , 'LP'),
+  selectedTab = textInput('%Question.selectedTab%'),
   showSensitivity = checkboxInput('%Question.showSensitivity%' , FALSE),
-  solver = dropdownInput('%Question.solver%' , 'glpk'),
-  varList = textInput('%Question.varList%')
+  solver = dropdownInput('%Question.solver%' , 'glpk')
 )
-
+options(alteryx.wd = '%Engine.WorkflowDirectory%')
+options(alteryx.debug = config$debug)
+##----
+config$filePath = textInput(
+  '%Question.filePath%', 
+  AlteryxPrescriptive::getSampleData("lp_example.lp")
+)
 ## Inputs ----
 readInputs <- function(...){
   inputNames = c(...)
@@ -28,16 +34,23 @@ readInputs <- function(...){
   Filter(function(d){NROW(d) > 0}, inputs)
 }
 # TOFIX: think through the condition to read inputs
-inputs <- if (inAlteryx() && '%Question.activePage%' != "") {
-  readInputs("O", "A", "B", "Q") 
+inputs <- if (inAlteryx()) {
+  if (config$problemType == "LP"){
+    readInputs("O", "A", "B")
+  } else {
+    readInputs("O", "A", "B", "Q") 
+  }
 } else {
   NULL
 }
+
+config$constraints = jsonlite::fromJSON(config$constraints)
+
 print(config)
 payload <- list(config = config, inputs = inputs)
 
 ## Interactive Visualization ----
-
+library(AlteryxPrescriptive)
 library(AlteryxRviz)
 iOutput <- function(s2a, varNames){
   if (is.null(varNames)){
