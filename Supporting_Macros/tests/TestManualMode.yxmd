@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <AlteryxDocument yxmdVer="10.5">
   <Nodes>
-    <Node ToolID="2">
+    <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="150" y="54" />
+        <Position x="246" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4912_056b6b9b8eb349c299ab4549ce77ccdf_\Engine_4160_c0e134f1911447b0bacc75eb24412a13_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4696_163ace1884d14c4ba2e878defe969622_\Engine_4160_268854cb01024a89b9b16f9e344d8a43_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -28,34 +28,33 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
     </Node>
-    <Node ToolID="3">
+    <Node ToolID="7">
       <GuiSettings Plugin="Optimization">
-        <Position x="66" y="54" />
+        <Position x="114" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Value name="showSensitivity">False</Value>
-          <Value name="filePath">\\vmware-host\Shared Folders\SNIPPETS\AlteryxPrescriptive\inst\extdata\lp_example.lp</Value>
+          <Value name="filePath">
+          </Value>
           <Value name="fileType">CPLEX_LP</Value>
           <Value name="editorValue">
           </Value>
-          <Value name="fieldNames">
-          </Value>
-          <Value name="maximize">False</Value>
+          <Value name="fieldNames">x1,x2,x3</Value>
+          <Value name="maximize">True</Value>
           <Value name="solver">glpk</Value>
           <Value name="problemType">LP</Value>
-          <Value name="inputMode">file</Value>
-          <Value name="payload">{"fileType":"CPLEX_LP","filePath":"\\\\vmware-host\\Shared Folders\\SNIPPETS\\AlteryxPrescriptive\\inst\\extdata\\lp_example.lp","solver":"glpk","inputMode":"file","maximize":false,"problemType":"LP"}</Value>
-          <Value name="selectedTab">0</Value>
+          <Value name="inputMode">manual</Value>
+          <Value name="payload">{"fileType":"CPLEX_LP","filePath":"","solver":"glpk","inputMode":"manual","maximize":true,"problemType":"LP"}</Value>
+          <Value name="selectedTab">2</Value>
           <Value name="fieldList">[]</Value>
-          <Value name="constraints">[]</Value>
-          <Value name="objective">
-          </Value>
+          <Value name="constraints">["3x1 + 4x2 + 2x3 &lt;= 60","2x1 + x2 + 2x3 &lt;= 40","x1 + 3x2 + 2x3 &lt;= 80"]</Value>
+          <Value name="objective">2x1 + 4x2 + 3x3</Value>
           <Value name="activePage">landing</Value>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>File Input Mode</DefaultAnnotationText>
+          <DefaultAnnotationText>Manual Input Mode</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -64,8 +63,8 @@
   </Nodes>
   <Connections>
     <Connection>
-      <Origin ToolID="3" Connection="OutputI" />
-      <Destination ToolID="2" Connection="Input" />
+      <Origin ToolID="7" Connection="OutputI" />
+      <Destination ToolID="6" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
@@ -86,7 +85,7 @@
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>TestFileMode</Name>
+      <Name>TestManualMode</Name>
       <Description />
       <RootToolName />
       <ToolVersion />
