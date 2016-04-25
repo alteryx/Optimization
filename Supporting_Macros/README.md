@@ -8,21 +8,23 @@
 This configuration is automatically generated from `Optimization.yxmc`
 
 
-|dataName        |label               |default  |values                             |
-|:---------------|:-------------------|:--------|:----------------------------------|
-|payload         |UI                  |         |                                   |
-|inputMode       |Select input mode   |matrix   |["matrix","manual","file"]         |
-|problemType     |Select problem type |LP       |["LP","MIP","QP"]                  |
-|solver          |Select solver       |glpk     |["glpk","gurobi","quadprog"]       |
-|maximize        |                    |FALSE    |                                   |
-|filePath        |Select file         |         |                                   |
-|fileType        |Select file type    |CPLEX_LP |["CPLEX_LP","MathProg","MPS_Free"] |
-|showSensitivity |                    |FALSE    |                                   |
-|varList         |Variable Names      |         |                                   |
-|FormulaFields   |                    |         |                                   |
-|activePage      |Active Page         |         |                                   |
-|fieldList       |Field List          |         |                                   |
-|objective       |Objective           |         |                                   |
+|dataName        |label               |default                                                                          |values                               |
+|:---------------|:-------------------|:--------------------------------------------------------------------------------|:------------------------------------|
+|payload         |UI                  |                                                                                 |                                     |
+|inputMode       |Select input mode   |matrix                                                                           |["matrix", "manual", "file"]         |
+|problemType     |Select problem type |LP                                                                               |["LP", "MIP", "QP"]                  |
+|solver          |Select solver       |glpk                                                                             |["glpk", "gurobi", "quadprog"]       |
+|maximize        |                    |TRUE                                                                             |                                     |
+|filePath        |Select file         |                                                                                 |                                     |
+|fileType        |Select file type    |CPLEX_LP                                                                         |["CPLEX_LP", "MathProg", "MPS_Free"] |
+|showSensitivity |                    |FALSE                                                                            |                                     |
+|fieldNames      |Variable Names      |                                                                                 |                                     |
+|editorValue     |                    |                                                                                 |                                     |
+|activePage      |Active Page         |                                                                                 |                                     |
+|fieldList       |Field List          |                                                                                 |                                     |
+|objective       |Objective           |"2 x1 + 4 x2 + 3 x3"                                                             |                                     |
+|constraints     |Constraints         |'["3 x1 + 4 x2 + 2 x3 <= 60","2 x1 + x2 + 2 x3 <= 40","x1 + 3 x2 + 2 x3 <= 80"]' |                                     |
+|selectedTab     |Selected Tab        |                                                                                 |                                     |
 
 
 #### Backend

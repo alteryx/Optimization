@@ -16,31 +16,41 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxRPluginGui.R">
-        <Position x="294" y="431" />
+        <Position x="294" y="436" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <RScript>## DO NOT MODIFY: Auto Inserted by AlteryxRhelper ----
-options(alteryx.wd = '%Engine.WorkflowDirectory%')
-library(AlteryxPrescriptive)
 library(AlteryxRhelper)
-
-## Configuration ----
 config &lt;- list(
-  activePage = textInput('%Question.activePage%', "landing"),
+  activePage = textInput('%Question.activePage%'),
+  constraints = textInput(
+    '%Question.constraints%' , 
+    '["3 x1 + 4 x2 + 2 x3 &lt;= 60","2 x1 + x2 + 2 x3 &lt;= 40","x1 + 3 x2 + 2 x3 &lt;= 80"]'
+  ),
+  editorValue = textInput('%Question.editorValue%'),
   fieldList = textInput('%Question.fieldList%'),
+  fieldNames = textInput('%Question.fieldNames%'),
   fileType = dropdownInput('%Question.fileType%' , 'CPLEX_LP'),
-  FormulaFields = textInput('%Question.FormulaFields%'),
-  filePath = textInput("%Question.filePath%", getSampleData("lp_example.lp")),
-  inputMode = dropdownInput('%Question.inputMode%' , 'file'),
-  maximize = checkboxInput('%Question.maximize%' , FALSE),
-  objective = textInput('%Question.objective%'),
+  inputMode = dropdownInput('%Question.inputMode%' , if (inAlteryx()) 'matrix' else 'file'),
+  maximize = checkboxInput('%Question.maximize%' , TRUE),
+  objective = textInput('%Question.objective%' , '2 x1 + 4 x2 + 3 x3'),
   payload = textInput('%Question.payload%'),
   problemType = dropdownInput('%Question.problemType%' , 'LP'),
+  selectedTab = textInput('%Question.selectedTab%'),
   showSensitivity = checkboxInput('%Question.showSensitivity%' , FALSE),
-  solver = dropdownInput('%Question.solver%' , 'glpk'),
-  varList = textInput('%Question.varList%')
+  solver = dropdownInput('%Question.solver%' , 'glpk')
 )
+options(alteryx.wd = '%Engine.WorkflowDirectory%')
+options(alteryx.debug = config$debug)
+##----
+
+# Update configuration ----
+config$filePath = textInput(
+  '%Question.filePath%', 
+  AlteryxPrescriptive::getSampleData("lp_example.lp")
+)
+config$constraints = jsonlite::fromJSON(config$constraints)
 
 ## Inputs ----
 readInputs &lt;- function(...){
@@ -50,16 +60,21 @@ readInputs &lt;- function(...){
   Filter(function(d){NROW(d) &gt; 0}, inputs)
 }
 # TOFIX: think through the condition to read inputs
-inputs &lt;- if (inAlteryx() &amp;&amp; '%Question.activePage%' != "") {
-  readInputs("O", "A", "B", "Q") 
+inputs &lt;- if (inAlteryx()) {
+  if (config$problemType == "LP"){
+    readInputs("O", "A", "B")
+  } else {
+    readInputs("O", "A", "B", "Q") 
+  }
 } else {
   NULL
 }
+
 print(config)
 payload &lt;- list(config = config, inputs = inputs)
 
 ## Interactive Visualization ----
-
+library(AlteryxPrescriptive)
 library(AlteryxRviz)
 iOutput &lt;- function(s2a, varNames){
   if (is.null(varNames)){
@@ -101,8 +116,7 @@ iOutput &lt;- function(s2a, varNames){
   renderInComposer(app, nOutput = 3)
 }
 s2a &lt;- AlteryxSolve(payload)
-iOutput(s2a, inputs$O$variable) 
-</RScript>
+iOutput(s2a, inputs$O$variable)</RScript>
           <UseFullUpdate value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
@@ -120,7 +134,7 @@ iOutput(s2a, inputs$O$variable)
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="114" y="335" />
+        <Position x="114" y="340" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -235,7 +249,7 @@ iOutput(s2a, inputs$O$variable)
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="114" y="431" />
+        <Position x="114" y="436" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -455,7 +469,7 @@ iOutput(s2a, inputs$O$variable)
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="114" y="527" />
+        <Position x="114" y="532" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -533,7 +547,7 @@ iOutput(s2a, inputs$O$variable)
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
-        <Position x="402" y="431" />
+        <Position x="402" y="436" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -567,7 +581,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="534" y="431" />
+        <Position x="534" y="436" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -584,11 +598,11 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="16">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="534" y="503" />
+        <Position x="534" y="508" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3432_2a5760ca2db0466fb8e492c1e64f3b60_\Engine_2684_d1b56ae6f8cc4965b8d5af7680913114_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1912_e0158a897d904be2a918aaafbc50420e_\Engine_4160_d9d2a82584fb41a7906e76a80dd48c73_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -611,7 +625,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="114" y="618" />
+        <Position x="114" y="623" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -665,7 +679,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="306" y="162" width="478" height="103" />
+        <Position x="306" y="167" width="478" height="103" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -683,7 +697,7 @@ No Text Styling</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="19">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="448" y="196" width="59" height="59" />
+            <Position x="448" y="201" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -696,7 +710,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="316" y="196" width="59" height="59" />
+            <Position x="316" y="201" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -709,7 +723,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="15">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="570" y="191" width="59" height="59" />
+            <Position x="570" y="196" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -722,7 +736,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="2">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="702" y="191" width="59" height="59" />
+            <Position x="702" y="196" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -737,7 +751,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="23">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="162" width="246" height="98" />
+        <Position x="54" y="167" width="246" height="98" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -755,7 +769,7 @@ No Text Styling</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="14">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="64" y="191" width="59" height="59" />
+            <Position x="64" y="196" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -768,7 +782,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="13">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.FileBrowse.FileBrowse">
-            <Position x="184" y="191" width="59" height="59" />
+            <Position x="184" y="196" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -783,7 +797,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="49" width="1138" height="103.0001" />
+        <Position x="54" y="54" width="1138" height="103.0001" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -801,7 +815,7 @@ No Text Styling</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="10">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="64" y="83.00005" width="59" height="59" />
+            <Position x="64" y="88.00005" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -814,7 +828,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="11">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="208" y="83.00002" width="59" height="59" />
+            <Position x="208" y="88.00002" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -827,7 +841,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="12">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="328" y="83.00003" width="59" height="59" />
+            <Position x="328" y="88.00003" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -840,7 +854,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="18">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="484" y="83" width="59" height="59" />
+            <Position x="484" y="88" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -854,7 +868,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="17">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="592" y="83" width="59" height="59" />
+            <Position x="592" y="88" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -867,7 +881,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="20">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="724" y="83" width="59" height="59" />
+            <Position x="724" y="88" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -880,7 +894,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="21">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="820" y="83" width="59" height="59" />
+            <Position x="820" y="88" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -893,7 +907,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="26">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="942" y="78" width="59" height="59" />
+            <Position x="942" y="83" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -906,7 +920,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="27">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="1062" y="78" width="59" height="59" />
+            <Position x="1062" y="83" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1169,7 +1183,7 @@ Quadprog:quadprog
               <Name>maximize</Name>
               <ToolId value="12" />
               <Questions />
-              <Default value="False" />
+              <Default value="True" />
               <Collapsable value="False" />
             </Question>
             <Question>
@@ -1250,7 +1264,7 @@ MPS_Free
               <Description>Objective</Description>
               <Name>objective</Name>
               <ToolId value="21" />
-              <Default />
+              <Default>"2 x1 + 4 x2 + 3 x3"</Default>
               <Password value="False" />
               <Multiline value="False" />
               <Hidden value="False" />
@@ -1266,7 +1280,7 @@ MPS_Free
               <Description>Constraints</Description>
               <Name>constraints</Name>
               <ToolId value="26" />
-              <Default />
+              <Default>'["3 x1 + 4 x2 + 2 x3 &lt;= 60","2 x1 + x2 + 2 x3 &lt;= 40","x1 + 3 x2 + 2 x3 &lt;= 80"]'</Default>
               <Password value="False" />
               <Multiline value="False" />
               <Hidden value="False" />
