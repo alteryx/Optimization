@@ -39,7 +39,8 @@ class Field {
 }
 
 class FieldStore {
-  fieldTypes = ['Continuous', 'Binary', 'General'];
+  // Integer === General
+  fieldTypes = ['Continuous', 'Binary', 'Integer'];
   @observable fields = [];
 
   constructor(ayx) {
