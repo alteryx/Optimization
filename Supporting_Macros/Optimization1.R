@@ -29,6 +29,9 @@ config$filePath = textInput(
   AlteryxPrescriptive::getSampleData("lp_example.lp")
 )
 config$constraints = jsonlite::fromJSON(config$constraints)
+if (config$fieldList != "") {
+  config$fieldList = jsonlite::fromJSON(config$fieldList, simplifyDataFrame = FALSE)
+}
 
 ## Inputs ----
 readInputs <- function(...){
