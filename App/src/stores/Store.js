@@ -66,6 +66,9 @@ class Store extends AyxStore {
   @computed get fieldNameArray() {
     return this.fieldNames.split(',')
       .map(fieldName => fieldName.trim())
+      // remove empty entries
+      .filter(v => v.length > 0)
+      // dedupe the array by comparing lowercase versions of existing array elements
       .reduce((acc, elem) => (acc.map(v => v.toLowerCase()).includes(elem.toLowerCase()) ?
         acc :
         acc.concat(elem)),
