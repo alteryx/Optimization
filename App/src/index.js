@@ -1,13 +1,3 @@
-/*
-  eslint new-cap: ["error",
-    {"capIsNewExceptions":
-      ["GetDataItem", "BindUserDataChanged", "AddDataItem"]
-    }
-  ]
-*/
-
-/* global $ Alteryx */
-
 // import $ from 'jquery';
 import { createUIObject, makeDataItem, syncDataItems } from './Utils';
 // import VM from './Constants';

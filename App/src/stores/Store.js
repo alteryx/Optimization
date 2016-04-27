@@ -1,11 +1,3 @@
-/*
-  eslint new-cap: ["error",
-    {"capIsNewExceptions": ["GetDataItemByDataName", "BindUserDataChanged"]}
-  ]
-*/
-
-/* global $ Alteryx */
-
 import AyxStore from './AyxStore';
 import { extendObservable, computed, autorun } from 'mobx';
 
