@@ -20,7 +20,7 @@ _Note: This tool uses the R tool. Install R and the necessary packages by going 
 There are 4 inputs and all are optional
 
 ```{r echo = F, comment = NA, results = 'asis', warning = F}
-AlteryxRhelper::extractInput("Optimization.yxmc")
+AlteryxRhelper::extractInputOutput("Optimization.yxmc")
 ```
 
 ### Configuration Properties
@@ -30,3 +30,7 @@ AlteryxRhelper::extractConfig("Optimization.yxmc")
 ```
 
 ### Output
+
+```{r echo = F, comment = NA, results = 'asis', warning = F}
+AlteryxRhelper::extractInputOutput("Optimization.yxmc", type = 'output')
+```

@@ -30,3 +30,5 @@ There are 4 inputs and all are optional
 9. __Enter objective function__ This is the objective function to be maximized or minimized
 
 ### Output
+
+1. __I Output__ This output provides a dashboard of the solution.
