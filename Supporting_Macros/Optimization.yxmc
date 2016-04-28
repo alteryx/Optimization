@@ -75,7 +75,7 @@ inputs &lt;- if (inAlteryx()) {
 
 print(config)
 payload &lt;- list(config = config, inputs = inputs)
-
+saveRDS(payload, '%Engine.WorkflowDirectory%payload_manual.rds')
 ## Interactive Visualization ----
 library(AlteryxPrescriptive)
 library(AlteryxRviz)
