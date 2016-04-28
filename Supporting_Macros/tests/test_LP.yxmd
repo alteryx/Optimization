@@ -3,16 +3,19 @@
   <Nodes>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="42" y="54" width="696" height="36" />
+        <Position x="42" y="30" width="696" height="84" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Text><![CDATA[Tests for Linear Programming (LP) ]]></Text>
+          <Text>Tests for Linear Programming (LP) 
+ - Matrix mode
+ - Manual mode
+ - File mode</Text>
           <Font name="Segoe UI" size="11.25" style="1" />
           <TextColor name="White" />
           <FillColor r="0" g="128" b="192" />
           <Shape shape="0" />
-          <Justification Justification="4" />
+          <Justification Justification="3" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
