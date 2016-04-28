@@ -6,8 +6,19 @@ import Objective from './components/Objective';
 import NavTabs from './components/NavTabs';
 
 function Layout({ store }) {
+  const handleInputChange = (e) => {
+    e.preventDefault();
+    store.updateFieldNames(e.target.value);
+  };
+
   return (
     <div>
+      <input
+        type="text"
+        className="form-control input-sm"
+        value={store.fieldNames}
+        onChange={handleInputChange}
+      />
       <NavTabs selected={store.selectedTab} onSelect={store.updateSelectedTab}>
         <Objective label="Objective" store={store} />
         <FieldList label="Fields" store={store} />

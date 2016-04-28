@@ -76,6 +76,11 @@ class Store extends AyxStore {
     this.manager.GetDataItemByDataName('selectedTab').setValue(this.selectedTab);
   }
 
+  updateFieldNames(value) {
+    this.fieldNames = value;
+    this.manager.GetDataItemByDataName('fieldNames').setValue(this.fieldNames);
+  }
+
   // Update both `this.objective` and the backing Alteryx data item with the value `v`
   updateObjective(v) {
     this.objective = v;
