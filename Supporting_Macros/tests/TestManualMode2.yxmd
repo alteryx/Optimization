@@ -46,7 +46,7 @@
           <Value name="problemType">LP</Value>
           <Value name="inputMode">manual</Value>
           <Value name="payload">{"fileType":"CPLEX_LP","filePath":"","solver":"glpk","inputMode":"manual","maximize":true,"problemType":"LP"}</Value>
-          <Value name="selectedTab">1</Value>
+          <Value name="selectedTab">2</Value>
           <Value name="fieldList">[{"fieldName":"x1","type":"General","lowerBound":0,"upperBound":null},{"fieldName":"x2","type":"Continuous","lowerBound":0,"upperBound":null},{"fieldName":"x3","type":"General","lowerBound":0,"upperBound":null}]</Value>
           <Value name="constraints">["-x1 + 2x2 + x3 &lt;= 4","4x2 - 3x3 &lt;= 2","x1 - 3x2 + 2x3 &lt;= 3"]</Value>
           <Value name="objective">3x1 + 1x2 + 3x3</Value>

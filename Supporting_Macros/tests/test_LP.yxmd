@@ -1,9 +1,108 @@
 <?xml version="1.0"?>
 <AlteryxDocument yxmdVer="10.5">
   <Nodes>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="42" y="54" width="696" height="36" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text><![CDATA[Tests for Linear Programming (LP) ]]></Text>
+          <Font name="Segoe UI" size="11.25" style="1" />
+          <TextColor name="White" />
+          <FillColor r="0" g="128" b="255" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="42" y="414" width="211" height="130" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Test: manual input LP</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="184" y="443" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1656_d94642a6e2b8480da7705ce90cd9a2aa_\Engine_448_7ce212779ebe4e58a59ff7115c622dbb_.yxdb</TempFile>
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="27">
+          <GuiSettings Plugin="Optimization">
+            <Position x="52" y="443" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="showSensitivity">False</Value>
+              <Value name="filePath">
+              </Value>
+              <Value name="fileType">CPLEX_LP</Value>
+              <Value name="editorValue">
+              </Value>
+              <Value name="fieldNames">x1,x2,x3</Value>
+              <Value name="maximize">True</Value>
+              <Value name="solver">glpk</Value>
+              <Value name="problemType">LP</Value>
+              <Value name="inputMode">manual</Value>
+              <Value name="payload">{"fileType":"CPLEX_LP","filePath":"","solver":"glpk","inputMode":"manual","maximize":true,"problemType":"LP"}</Value>
+              <Value name="selectedTab">2</Value>
+              <Value name="fieldList">[]</Value>
+              <Value name="constraints">["3x1 + 4x2 + 2x3 &lt;= 60","2x1 + x2 + 2x3 &lt;= 40","x1 + 3x2 + 2x3 &lt;= 80"]</Value>
+              <Value name="objective">2x1 + 4x2 + 3x3</Value>
+              <Value name="activePage">landing</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Manual Input Mode</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Supporting_Macros/Optimization.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="54" width="307" height="218" />
+        <Position x="41.99999" y="138" width="307" height="218" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -21,7 +120,7 @@
       <ChildNodes>
         <Node ToolID="3">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="64" y="83" />
+            <Position x="52" y="167" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -67,7 +166,7 @@
         </Node>
         <Node ToolID="4">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="64" y="143" />
+            <Position x="52" y="227" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -115,7 +214,7 @@
         </Node>
         <Node ToolID="5">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="64" y="203" />
+            <Position x="51.99999" y="287" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -145,7 +244,7 @@
         </Node>
         <Node ToolID="6">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="292" y="143" />
+            <Position x="280" y="227" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -172,7 +271,7 @@
         </Node>
         <Node ToolID="24">
           <GuiSettings Plugin="Optimization">
-            <Position x="174" y="150" />
+            <Position x="162" y="234" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -209,7 +308,7 @@
     </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="484" y="59" width="307" height="218" />
+        <Position x="426" y="138" width="307" height="218" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -227,7 +326,7 @@
       <ChildNodes>
         <Node ToolID="8">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="494" y="88" />
+            <Position x="436" y="167" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -273,7 +372,7 @@
         </Node>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="494" y="148" />
+            <Position x="436" y="227" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -306,7 +405,7 @@
         </Node>
         <Node ToolID="10">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="494" y="208" />
+            <Position x="436" y="287" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -336,7 +435,7 @@
         </Node>
         <Node ToolID="11">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="722" y="148" />
+            <Position x="664" y="227" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -363,7 +462,7 @@
         </Node>
         <Node ToolID="23">
           <GuiSettings Plugin="Optimization">
-            <Position x="618" y="150" />
+            <Position x="560" y="229" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -398,8 +497,90 @@
         </Node>
       </ChildNodes>
     </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="306" y="414" width="430.4586" height="130" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Test: manual input LP with * and irregular spacing in objective and constraints</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="29">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="448" y="443" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1656_d94642a6e2b8480da7705ce90cd9a2aa_\Engine_448_7ce212779ebe4e58a59ff7115c622dbb_.yxdb</TempFile>
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="30">
+          <GuiSettings Plugin="Optimization">
+            <Position x="316" y="443" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="showSensitivity">False</Value>
+              <Value name="filePath">
+              </Value>
+              <Value name="fileType">CPLEX_LP</Value>
+              <Value name="editorValue">x1 + 3 * x2 + 2x3 &lt;= 80</Value>
+              <Value name="fieldNames">x1,x2,x3</Value>
+              <Value name="maximize">True</Value>
+              <Value name="solver">glpk</Value>
+              <Value name="problemType">LP</Value>
+              <Value name="inputMode">manual</Value>
+              <Value name="payload">{"fileType":"CPLEX_LP","filePath":"","solver":"glpk","inputMode":"manual","maximize":true,"problemType":"LP"}</Value>
+              <Value name="selectedTab">2</Value>
+              <Value name="fieldList">[]</Value>
+              <Value name="constraints">["3 * x1 + 4*x2 + 2 *x3 &lt;= 60","2x1 + x2 + 2x3 &lt;= 40","x1 + 3x2 + 2x3 &lt;= 80"]</Value>
+              <Value name="objective">2* x1 + 4 x2 + 3 * x3</Value>
+              <Value name="activePage">landing</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Manual Input Mode</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Supporting_Macros/Optimization.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
   </Nodes>
   <Connections>
+    <Connection>
+      <Origin ToolID="27" Connection="OutputI" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
     <Connection>
       <Origin ToolID="3" Connection="Output" />
       <Destination ToolID="24" Connection="InputO" />
@@ -432,6 +613,10 @@
       <Origin ToolID="23" Connection="OutputI" />
       <Destination ToolID="11" Connection="Input" />
     </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="OutputI" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
   </Connections>
   <Properties>
     <Memory default="True" />
@@ -451,7 +636,7 @@
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>test_optimization</Name>
+      <Name>test_LP</Name>
       <Description />
       <RootToolName />
       <ToolVersion />
