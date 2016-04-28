@@ -1,4 +1,5 @@
 import AyxStore from './AyxStore';
+import ConstraintStore from './ConstraintStore';
 import { extendObservable, computed, autorun } from 'mobx';
 
 class Store extends AyxStore {
@@ -17,7 +18,7 @@ class Store extends AyxStore {
     });
   }
 
-  constructor(ayx, dataItems, fieldStore, constraintStore) {
+  constructor(ayx, dataItems, fieldStore) {
     // The following properties are created from Alteryx:
     // - editorValue: '',
     // - objective: '',
@@ -32,23 +33,15 @@ class Store extends AyxStore {
     extendObservable(this, this);
 
     this.fieldStore = fieldStore;
-    this.constraintStore = constraintStore;
+    this.constraintStore = new ConstraintStore(this.manager, this);
 
     // recreate the store from the snapshot stored in Alteryx's data items
     const stores = [
       { storeName: 'fieldStore', dataItem: 'fieldList' },
       { storeName: 'constraintStore', dataItem: 'constraints' },
     ];
-    this.rehydrate(stores);
 
-    // Automatically update the editor in response to state changes in the constraint store.
-    autorun(() => {
-      if (this.constraintStore.currentConstraint === null) {
-        this.updateEditor('');
-      } else {
-        this.updateEditor(this.constraintStore.currentConstraint.value);
-      }
-    });
+    this.rehydrate(stores);
   }
 
   /* Store Methods */
@@ -76,8 +69,8 @@ class Store extends AyxStore {
       );
   }
 
-  // Use property initializer so we don't have to use `this.bind(store)` when calling this method from
-  // inside other components (Layout, specifically)
+  // Use property initializer so we don't have to use `this.bind(store)` when calling this method
+  // from inside other components (Layout, specifically)
   updateSelectedTab = (selection) => {
     this.selectedTab = selection;
     this.manager.GetDataItemByDataName('selectedTab').setValue(this.selectedTab);
@@ -91,9 +84,9 @@ class Store extends AyxStore {
 
   // Update the Alteryx code editor widget with the provided value
   updateEditor(value) {
-    this.renderer
-      .getReactComponentByDataName('editorValue').editor
-      .setValue(value);
+    console.log(`updating editor to ${value}`);
+    this.editorValue = value;
+    // this.manager.GetDataItemByDataName('editorValue').setValue(this.editorValue);
   }
 }
 
