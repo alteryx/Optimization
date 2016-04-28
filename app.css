@@ -41,7 +41,7 @@ input[type="radio"] {
 #payload{
   display: none;
 }
-.CodeMirror{
+/*.CodeMirror{
   height: inherit !important;
 }
 #editorDiv .CodeMirror {
@@ -53,7 +53,7 @@ input[type="radio"] {
     margin: 0px;
     border: solid lightgray 1px;
     width: 100%;
-}
+}*/
 
 div.alteryx-toggle-switch-outer{
   position: absolute;
@@ -143,14 +143,7 @@ fieldset.page{
   border-left: 2px solid darkgreen;
 }
 
-/* CodeMirror-specific styles */
-.cm-s-default {
-  height: auto !important;
-  min-height: 20px !important;
-  overflow: hidden !important;
-  border: 1px hidden !important;
-}
-
+/*Make ReactCodeMirror component align with Bootstrap*/
 .ReactCodeMirror {
   /* Borrowed from Bootstrap textarea styles */
   box-sizing: border-box;
@@ -173,9 +166,13 @@ fieldset.page{
   height: 40px;
 }
 
-/*.Codemirror-scroll {
+/* Override Alteryx's CodeMirror styles */
+.ReactCodeMirror .CodeMirror {
+  height: auto;
+  min-height: 20px;
   overflow: hidden;
-}*/
+  border: 1px hidden;
+}
 
 /*Style for Editor component token matches*/
 .cm-style1 {
