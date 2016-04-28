@@ -49,7 +49,6 @@ Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
 
   // Initialize DataItem
   //Object.keys(VM).forEach(d => dataItem(d, { values: VM[d] }));
-  dataItem('editorValue', { value: '' });
   dataItem('activePage', { value: 'landing' });
   // Create data items for manual input
   dataItem('fieldNames', { value: '' });
@@ -69,7 +68,6 @@ Alteryx.Gui.AfterLoad = (manager) => {
 
   runView(
     Alteryx, {
-      editorValue: 'editorValue',
       constraints: 'constraints',
       objective: 'objective',
       fieldNames: 'fieldNames',
