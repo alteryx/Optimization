@@ -18,7 +18,7 @@ class Editor extends React.Component {
         stream.eatWhile(/[a-zA-Z\d]/);
         if (this.props.hintList.includes(stream.current())) {
           stream.next();
-          return 'style1';
+          return 'highlight-keyword';
         }
         stream.next();
         return null;
