@@ -1,61 +1,36 @@
 ---
-title: "Optimization"
+title: "About the Optimization Tool"
 output: 
   html_document: 
     keep_md: yes
 ---
 
+<img src="../OptimizationIcon.png" width=100 height=100 />
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+__Insert summary of the optimization tool__
 
-#### Configuration Parameters
+_Note: This tool uses the R tool. Install R and the necessary packages by going to Options > Download Predictive Tools._
 
-This configuration is automatically generated from `Optimization.yxmc`
+### Inputs
 
-```{r}
-library(AlteryxRhelper)
-d <- generateConfigurationTable('Optimization.yxmc')
-knitr::kable(d, format = 'markdown')
+There are 4 inputs and all are optional
+
+```{r echo = F, comment = NA, results = 'asis', warning = F}
+AlteryxRhelper::extractInputOutput("Optimization.yxmc")
 ```
 
+### Configuration Properties
 
-#### Backend
-
-This repo contains the backend for the Optimization macro. This is designed to be developed using the `AlteryxRhelper` package, that extracts the R code from the macro into a separate `R` file and allows the macro and the R file to be synced with each other.
-
-__Syncing R Code and Macro__
-
-1. Run `extractRcode('Optimization.yxmc')` to extract R code from the macro.
-2. Run `insertRcode('Optimization.yxmc', 'Optimization1.R')` to insert R code back into the macro.
-
-
-__Automatically Write Configuration Code__
-
-Running the code below
-
-
-```{r echo = T, eval = F}
-configCode <- AlteryxRhelper:::makeInput('Optimization.yxmc', 'config')
+```{r echo = F, comment = NA, results = 'asis', warning = F}
+AlteryxRhelper::extractConfig("Optimization.yxmc")
 ```
 
-automatically generates the code below
+### Output
 
-```r
-## DO NOT MODIFY: Auto Inserted by AlteryxRhelper ----
-library(AlteryxRhelper)
-config <- list(
-  fileType = dropdownInput('%Question.fileType%' , 'CPLEX_LP'),
-  inputMode = dropdownInput('%Question.inputMode%' , 'matrix'),
-  maximize = checkboxInput('%Question.maximize%' , FALSE),
-  payload = textInput('%Question.payload%'),
-  problemType = dropdownInput('%Question.problemType%' , 'LP'),
-  showSensitivity = checkboxInput('%Question.showSensitivity%' , FALSE),
-  solver = dropdownInput('%Question.solver%' , 'glpk'),
-  varList = textInput('%Question.varList%')
-)
-options(alteryx.wd = '%Engine.WorkflowDirectory%')
-options(alteryx.debug = config$debug)
-##----
+```{r echo = F, comment = NA, results = 'asis', warning = F}
+AlteryxRhelper::extractInputOutput("Optimization.yxmc", type = 'output')
 ```
