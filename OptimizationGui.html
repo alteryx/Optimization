@@ -14,19 +14,19 @@ Optimization
     </script>
 </head>
 <body>
-    
+
 <form>
   <div style='display: none'>
 <!--  payload  -->
 <label htmlFor="payload">UI</label>
 <alteryx-pluginwidget type="TextBox" password="false" id="payload" dataName="payload"></alteryx-pluginwidget>
-  
+
 </div>
 
   <!-- Landing Page -->
 	<fieldset id="landing">
 		<legend>Optimization</legend>
-		
+
 <!--  inputMode  -->
 <label htmlFor="inputMode">Select input mode</label>
 <alteryx-pluginwidget type="DropDown" id="inputMode" dataName="inputMode">
@@ -34,14 +34,14 @@ Optimization
   <alteryx-option uiobject="Enter the model manually">manual</alteryx-option>
   <alteryx-option uiobject="Specify the model from a file">file</alteryx-option>
 </alteryx-pluginwidget>
-  
+
 
 	</fieldset>
   <hr style="width:50%">
 
   <!-- Manual Input Page -->
   <fieldset class="page" id="page-manual">
-    
+
 <!--  problemType  -->
 <label htmlFor="problemType">Select problem type</label>
 <alteryx-pluginwidget type="DropDown" id="problemType" dataName="problemType">
@@ -49,9 +49,9 @@ Optimization
   <alteryx-option uiobject="Mixed Integer Program">MIP</alteryx-option>
   <alteryx-option uiobject="Quadratic Program">QP</alteryx-option>
 </alteryx-pluginwidget>
-  
 
-    
+
+
 <!--  solver  -->
 <label htmlFor="solver">Select solver</label>
 <alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
@@ -59,30 +59,17 @@ Optimization
   <alteryx-option uiobject="Gurobi">gurobi</alteryx-option>
   <alteryx-option uiobject="Quadprog">quadprog</alteryx-option>
 </alteryx-pluginwidget>
-  
+
 
     <div id="manualMode1" style="display:block">
-      
+
 <!--  maximize  -->
 <label htmlFor="maximize"></label>
 <alteryx-pluginwidget type="CheckBox" text="Maximize Objective?" default="true" showAsToggle="true" id="maximize" dataName="maximize"></alteryx-pluginwidget>
-  
+
 
       <br/><br/>
 
-      
-<!--  fieldNames  -->
-<label htmlFor="fieldNames">Enter Decision Variables</label>
-<alteryx-pluginwidget type="TextBox" password="false" placeholder="x1,x2,x3" id="fieldNames" dataName="fieldNames"></alteryx-pluginwidget>
-  
-
-      
-<!--  editorValue  -->
-<!-- <label htmlFor="editorValue"></label>
-<alteryx-pluginwidget type="CodeEditor" password="false" language="alteryx-simple" hintList="x1,x2" enableDataPreview="false" id="editorValue" dataName="editorValue"></alteryx-pluginwidget> -->
-  
-
-      
        <!-- React Components - Constraints, Bounds -->
       <div id="manual-input"></div>
 
@@ -91,7 +78,7 @@ Optimization
 
     <!-- File Input Page -->
     <fieldset class="page" id="page-file">
-      
+
 <!--  fileType  -->
 <label htmlFor="fileType">Select file type</label>
 <alteryx-pluginwidget type="DropDown" id="fileType" dataName="fileType">
@@ -99,9 +86,9 @@ Optimization
   <alteryx-option uiobject="MathProg">MathProg</alteryx-option>
   <alteryx-option uiobject="MPS_Free">MPS_Free</alteryx-option>
 </alteryx-pluginwidget>
-  
 
-      
+
+
 <!--  solver  -->
 <label htmlFor="solver">Select solver</label>
 <alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
@@ -109,19 +96,19 @@ Optimization
   <alteryx-option uiobject="Gurobi">gurobi</alteryx-option>
   <alteryx-option uiobject="Quadprog">quadprog</alteryx-option>
 </alteryx-pluginwidget>
-  
 
-      
+
+
 <!--  filePath  -->
 <label htmlFor="filePath">Select file</label>
 <alteryx-pluginwidget type="FileBrowse" id="filePath" dataName="filePath"></alteryx-pluginwidget>
-  
+
 
     </fieldset>
 
     <!-- Matrix Page -->
     <fieldset class="page" id="page-matrix">
-      
+
 <!--  problemType  -->
 <label htmlFor="problemType">Select problem type</label>
 <alteryx-pluginwidget type="DropDown" id="problemType" dataName="problemType">
@@ -129,9 +116,9 @@ Optimization
   <alteryx-option uiobject="Mixed Integer Program">MIP</alteryx-option>
   <alteryx-option uiobject="Quadratic Program">QP</alteryx-option>
 </alteryx-pluginwidget>
-  
 
-      
+
+
 <!--  solver  -->
 <label htmlFor="solver">Select solver</label>
 <alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
@@ -139,19 +126,19 @@ Optimization
   <alteryx-option uiobject="Gurobi">gurobi</alteryx-option>
   <alteryx-option uiobject="Quadprog">quadprog</alteryx-option>
 </alteryx-pluginwidget>
-  
 
-      
+
+
 <!--  maximize  -->
 <label htmlFor="maximize"></label>
 <alteryx-pluginwidget type="CheckBox" text="Maximize Objective?" default="true" showAsToggle="true" id="maximize" dataName="maximize"></alteryx-pluginwidget>
-  
 
-      
+
+
 <!--  showSensitivity  -->
 <label htmlFor="showSensitivity"></label>
 <alteryx-pluginwidget type="CheckBox" text="Show sensitivity report" default="false" showAsToggle="true" id="showSensitivity" dataName="showSensitivity"></alteryx-pluginwidget>
-  
+
 
     </fieldset>
 

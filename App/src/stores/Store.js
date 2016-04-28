@@ -82,8 +82,8 @@ class Store extends AyxStore {
   }
 
   // Update both `this.objective` and the backing Alteryx data item with the value `v`
-  updateObjective(v) {
-    this.objective = v;
+  updateObjective(value) {
+    this.objective = value;
     this.manager.GetDataItemByDataName('objective').setValue(this.objective);
   }
 
