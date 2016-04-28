@@ -10,7 +10,7 @@
           <Text><![CDATA[Tests for Linear Programming (LP) ]]></Text>
           <Font name="Segoe UI" size="11.25" style="1" />
           <TextColor name="White" />
-          <FillColor r="0" g="128" b="255" />
+          <FillColor r="0" g="128" b="192" />
           <Shape shape="0" />
           <Justification Justification="4" />
         </Configuration>
@@ -20,6 +20,146 @@
           <Left value="False" />
         </Annotation>
       </Properties>
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="42" y="114" width="696" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Matrix Mode</Text>
+          <Font name="Segoe UI" size="9.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="42" y="390" width="696" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Manual Mode</Text>
+          <Font name="Segoe UI" size="9.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="42" y="594" width="696" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>File Mode</Text>
+          <Font name="Segoe UI" size="9.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="42" y="618" width="175" height="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Test: file input LP</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="34">
+          <GuiSettings Plugin="Optimization">
+            <Position x="52" y="647" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="showSensitivity">False</Value>
+              <Value name="filePath">..\data\customer.lp</Value>
+              <Value name="fileType">CPLEX_LP</Value>
+              <Value name="editorValue">
+              </Value>
+              <Value name="fieldNames">
+              </Value>
+              <Value name="maximize">False</Value>
+              <Value name="solver">glpk</Value>
+              <Value name="problemType">LP</Value>
+              <Value name="inputMode">file</Value>
+              <Value name="payload">{"fileType":"CPLEX_LP","filePath":"..\\data\\customer.lp","solver":"glpk","inputMode":"file","maximize":false,"problemType":"LP"}</Value>
+              <Value name="selectedTab">0</Value>
+              <Value name="fieldList">[]</Value>
+              <Value name="constraints">[]</Value>
+              <Value name="objective">
+              </Value>
+              <Value name="activePage">landing</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>File Input Mode</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Supporting_Macros/Optimization.yxmc" />
+        </Node>
+        <Node ToolID="35">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="148" y="647" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_7864_aac9c134e0da41a09fa2f37d7aa98532_\Engine_6800_63cb65ed039f4c338f63437f66b8a82f_.yxdb</TempFile>
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
@@ -45,7 +185,7 @@
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1656_d94642a6e2b8480da7705ce90cd9a2aa_\Engine_448_7ce212779ebe4e58a59ff7115c622dbb_.yxdb</TempFile>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_6400_33d753bc0922430ebf8d06b9423ccf3d_\Engine_6800_2da7bf4d1f6b426fbbc76a9c8ca89b1f_.yxdb</TempFile>
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
@@ -248,7 +388,7 @@
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_6956_770be18009954ae0b27a1fb3f4310e10_\Engine_14244_dc449df578e9451ea10ea2722fe3400c_.yxdb</TempFile>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_6400_33d753bc0922430ebf8d06b9423ccf3d_\Engine_6800_90bff47bc6994f95ac7648a6616653d1_.yxdb</TempFile>
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
@@ -308,7 +448,7 @@
     </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="426" y="138" width="307" height="218" />
+        <Position x="431" y="138" width="307" height="218" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -326,7 +466,7 @@
       <ChildNodes>
         <Node ToolID="8">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="436" y="167" />
+            <Position x="441" y="167" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -372,7 +512,7 @@
         </Node>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="436" y="227" />
+            <Position x="441" y="227" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -405,7 +545,7 @@
         </Node>
         <Node ToolID="10">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="436" y="287" />
+            <Position x="441" y="287" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -435,11 +575,11 @@
         </Node>
         <Node ToolID="11">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="664" y="227" />
+            <Position x="669" y="227" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_12948_3a768451294c45b7b3d6a9f6ec4cda26_\Engine_12680_897d23bce94c4f57a0a919e6bf810c9a_.yxdb</TempFile>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_6400_33d753bc0922430ebf8d06b9423ccf3d_\Engine_6800_29682f357fd042fea1efa09a8816f971_.yxdb</TempFile>
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
@@ -462,7 +602,7 @@
         </Node>
         <Node ToolID="23">
           <GuiSettings Plugin="Optimization">
-            <Position x="560" y="229" />
+            <Position x="565" y="229" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -521,7 +661,7 @@
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1656_d94642a6e2b8480da7705ce90cd9a2aa_\Engine_448_7ce212779ebe4e58a59ff7115c622dbb_.yxdb</TempFile>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_6400_33d753bc0922430ebf8d06b9423ccf3d_\Engine_6800_b608d83d9f2443d498e1b887b311a80e_.yxdb</TempFile>
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
@@ -577,6 +717,10 @@
     </Node>
   </Nodes>
   <Connections>
+    <Connection>
+      <Origin ToolID="34" Connection="OutputI" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
     <Connection>
       <Origin ToolID="27" Connection="OutputI" />
       <Destination ToolID="26" Connection="Input" />
@@ -637,14 +781,14 @@
     <MetaInfo>
       <NameIsFileName value="True" />
       <Name>test_LP</Name>
-      <Description />
+      <Description>Tests for Linear Programming (LP)</Description>
       <RootToolName />
       <ToolVersion />
       <ToolInDb value="False" />
       <CategoryName />
       <SearchTags />
-      <Author />
-      <Company />
+      <Author>Kuo Liu</Author>
+      <Company>Alteryx, Inc.</Company>
       <Copyright />
       <DescriptionLink actual="" displayed="" />
     </MetaInfo>
