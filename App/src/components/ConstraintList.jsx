@@ -1,19 +1,23 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-
 import ConstraintItem from './ConstraintItem';
+import Editor from './Editor';
 
 function ConstraintList({ store }) {
   const cs = store.constraintStore;
 
-  const handleAdd = () => {
+  const handleAdd = (e) => {
+    e.preventDefault();
     cs.addConstraint(store.editorValue);
-    // store.update();
-    store.updateEditor('');
   };
 
-  const handleSave = () => {
+  const handleSave = (e) => {
+    e.preventDefault();
     cs.currentConstraint.save(store.editorValue);
+  };
+
+  const handleChange = (v) => {
+    store.updateEditor(v);
   };
 
   const handleRemove = (e, c) => {
@@ -23,6 +27,7 @@ function ConstraintList({ store }) {
 
   return (
     <div>
+      <Editor value={store.editorValue} hintList={store.fieldNameArray} onChange={handleChange} />
       <button
         className="btn btn-default"
         onClick={store.saveOrAdd ? handleAdd : handleSave}
