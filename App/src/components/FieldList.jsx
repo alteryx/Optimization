@@ -3,16 +3,14 @@ import { observer } from 'mobx-react';
 import FieldListItem from './FieldListItem';
 
 function FieldList({ store }) {
-  const handleAdd = (e) => {
-    e.preventDefault();
-    store.fieldNameArray.forEach(field => store.fieldStore.addField(field));
-  };
-
-  return (
+  const renderEmpty = () => (
     <div>
-      <button className="btn btn-default" onClick={handleAdd}>
-        <i className="fa fa-plus"></i>
-      </button>
+      <h4>Enter some fields in the text box above and click the `+` button</h4>
+    </div>
+  );
+
+  const renderList = () => (
+    <div>
       <div className="list-group">
         {
           store.fieldStore.fields.map((field) => (
@@ -26,6 +24,8 @@ function FieldList({ store }) {
       </div>
     </div>
   );
+
+  return store.fieldStore.fields.length === 0 ? renderEmpty() : renderList();
 }
 
 FieldList.propTypes = {
