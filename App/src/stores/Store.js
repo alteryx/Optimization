@@ -1,6 +1,6 @@
 import AyxStore from './AyxStore';
 import ConstraintStore from './ConstraintStore';
-import { extendObservable, computed, autorun } from 'mobx';
+import { extendObservable, computed, observable } from 'mobx';
 
 class Store extends AyxStore {
   // A method for re-instating the domain stores based on the serialized values received from
@@ -17,6 +17,8 @@ class Store extends AyxStore {
       }
     });
   }
+
+  @observable editorValue = '';
 
   constructor(ayx, dataItems, fieldStore) {
     // The following properties are created from Alteryx:

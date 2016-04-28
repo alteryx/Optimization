@@ -178,4 +178,7 @@ fieldset.page{
 .cm-highlight-keyword {
   color: #1691C6;
 }
+
+.constraint-input .btn {
+  height: 40px;
 }

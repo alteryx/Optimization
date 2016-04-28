@@ -27,14 +27,22 @@ function ConstraintList({ store }) {
 
   return (
     <div>
-      <Editor value={store.editorValue} hintList={store.fieldNameArray} onChange={handleChange} />
-      <button
-        className="btn btn-default"
-        onClick={store.saveOrAdd ? handleAdd : handleSave}
-        disabled={store.isEditorEmpty}
-      >
-        {store.saveOrAdd ? <i className="fa fa-plus"></i> : <i className="fa fa-floppy-o"></i>}
-      </button>
+      <div className="input-group constraint-input">
+        <Editor
+          value={store.editorValue}
+          hintList={store.fieldNameArray}
+          onChange={handleChange}
+        />
+        <span className="input-group-btn">
+          <button
+            className="btn btn-sm btn-primary"
+            onClick={store.saveOrAdd ? handleAdd : handleSave}
+            disabled={store.isEditorEmpty}
+          >
+            {store.saveOrAdd ? <i className="fa fa-plus"></i> : <i className="fa fa-floppy-o"></i>}
+          </button>
+        </span>
+      </div>
       <div className="list-group">
         {
           cs.constraints.map(c => (
