@@ -4,13 +4,11 @@ import { observer } from 'mobx-react';
 function FieldNameInput({ store }) {
   const handleChange = (e) => {
     e.preventDefault();
-    console.log('handleChange');
     store.updateFieldNames(e.target.value);
   };
 
   const handleAdd = (e) => {
     e.preventDefault();
-    console.log('handleAdd');
     store.fieldNameArray.forEach(field => store.fieldStore.addField(field));
   };
 
