@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="42" width="696" height="84" />
+        <Position x="54" y="54" width="696" height="84" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -26,7 +26,7 @@
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="126" width="696" height="24" />
+        <Position x="54" y="138" width="696" height="24" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -46,7 +46,7 @@
     </Node>
     <Node ToolID="29">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="330" width="696" height="24" />
+        <Position x="54" y="342" width="696" height="24" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -66,7 +66,7 @@
     </Node>
     <Node ToolID="30">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="510" width="696" height="24" />
+        <Position x="54" y="522" width="696" height="24" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -86,7 +86,7 @@
     </Node>
     <Node ToolID="31">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="534" width="177" height="114" />
+        <Position x="54" y="546" width="177" height="113" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -104,26 +104,24 @@
       <ChildNodes>
         <Node ToolID="32">
           <GuiSettings Plugin="Optimization">
-            <Position x="64" y="563" />
+            <Position x="64" y="575" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <Value name="showSensitivity">False</Value>
               <Value name="filePath">..\data\qp_complex.lp</Value>
               <Value name="fileType">CPLEX_LP</Value>
-              <Value name="editorValue">
-              </Value>
-              <Value name="fieldNames">
-              </Value>
               <Value name="maximize">False</Value>
-              <Value name="solver">glpk</Value>
+              <Value name="solver">quadprog</Value>
               <Value name="problemType">LP</Value>
               <Value name="inputMode">file</Value>
-              <Value name="payload">{"fileType":"CPLEX_LP","filePath":"..\\data\\qp_complex.lp","solver":"glpk","inputMode":"file","maximize":false,"problemType":"LP"}</Value>
+              <Value name="payload">{"fileType":"CPLEX_LP","filePath":"..\\data\\qp_complex.lp","solver":"quadprog","inputMode":"file","maximize":false,"problemType":"LP"}</Value>
               <Value name="selectedTab">0</Value>
               <Value name="fieldList">[]</Value>
               <Value name="constraints">[]</Value>
               <Value name="objective">
+              </Value>
+              <Value name="fieldNames">
               </Value>
               <Value name="activePage">landing</Value>
             </Configuration>
@@ -137,16 +135,21 @@
         </Node>
         <Node ToolID="33">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="162" y="563" />
+            <Position x="162" y="575" />
           </GuiSettings>
           <Properties>
             <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3340_14698de45fdf469dbb5e5ee5153c1fcf_\Engine_888_fa6363407a29421d8db1bd703b90e94e_.yxdb</TempFile>
               <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
                 <View1>
+                  <DefaultTab>Report</DefaultTab>
                   <Hints>
                     <Table />
                   </Hints>
                 </View1>
+                <View2 />
               </Layout>
             </Configuration>
             <Annotation DisplayMode="0">
@@ -161,7 +164,7 @@
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="354" width="154.0998" height="19" />
+        <Position x="54" y="366" width="154.0998" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -179,7 +182,7 @@
       <ChildNodes>
         <Node ToolID="23">
           <GuiSettings Plugin="Optimization">
-            <Position x="64" y="383" />
+            <Position x="64" y="395" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -211,7 +214,7 @@
         </Node>
         <Node ToolID="24">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="160" y="383" />
+            <Position x="160" y="395" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -240,7 +243,7 @@
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="150" width="220.6584" height="19" />
+        <Position x="54" y="162" width="220.6584" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -258,7 +261,7 @@
       <ChildNodes>
         <Node ToolID="1">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="65" y="179" />
+            <Position x="65" y="191" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -304,7 +307,7 @@
         </Node>
         <Node ToolID="2">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="64" y="230" />
+            <Position x="64" y="242" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -352,7 +355,7 @@
         </Node>
         <Node ToolID="3">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="64" y="280" />
+            <Position x="64" y="292" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -382,7 +385,7 @@
         </Node>
         <Node ToolID="4">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="293" y="237" />
+            <Position x="293" y="249" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -409,7 +412,7 @@
         </Node>
         <Node ToolID="5">
           <GuiSettings Plugin="Optimization">
-            <Position x="185" y="249" />
+            <Position x="185" y="261" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -443,7 +446,7 @@
         </Node>
         <Node ToolID="13">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="65" y="339" />
+            <Position x="65" y="351" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -503,7 +506,7 @@
     </Node>
     <Node ToolID="20">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="441" y="150" width="227.5387" height="19" />
+        <Position x="441" y="162" width="227.5387" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -521,7 +524,7 @@
       <ChildNodes>
         <Node ToolID="14">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="451" y="179" />
+            <Position x="451" y="191" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -567,7 +570,7 @@
         </Node>
         <Node ToolID="15">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="451" y="227" />
+            <Position x="451" y="239" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -600,7 +603,7 @@
         </Node>
         <Node ToolID="16">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="451" y="275" />
+            <Position x="451" y="287" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -630,7 +633,7 @@
         </Node>
         <Node ToolID="17">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="679" y="227" />
+            <Position x="679" y="239" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -657,7 +660,7 @@
         </Node>
         <Node ToolID="18">
           <GuiSettings Plugin="Optimization">
-            <Position x="571" y="239" />
+            <Position x="571" y="251" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -691,7 +694,7 @@
         </Node>
         <Node ToolID="19">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="451" y="335" />
+            <Position x="451" y="347" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -731,7 +734,7 @@
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="433" y="354" width="317.2413" height="19" />
+        <Position x="433" y="366" width="317.2413" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -749,7 +752,7 @@
       <ChildNodes>
         <Node ToolID="26">
           <GuiSettings Plugin="Optimization">
-            <Position x="443" y="383" />
+            <Position x="443" y="395" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -781,7 +784,7 @@
         </Node>
         <Node ToolID="27">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="539" y="383" />
+            <Position x="539" y="395" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -874,14 +877,14 @@
     <DisableBrowse value="False" />
     <EnablePerformanceProfiling value="False" />
     <DisableAllOutput value="False" />
-    <ShowAllMacroMessages value="False" />
+    <ShowAllMacroMessages value="True" />
     <ShowConnectionStatusIsOn value="True" />
     <ShowConnectionStatusOnlyWhenRunning value="True" />
     <ZoomLevel value="0" />
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>test_QP</Name>
+      <Name>TestQP</Name>
       <Description />
       <RootToolName />
       <ToolVersion />
