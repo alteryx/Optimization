@@ -3,11 +3,11 @@
   <Nodes>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="150" y="54" />
+        <Position x="138" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4912_056b6b9b8eb349c299ab4549ce77ccdf_\Engine_4160_c0e134f1911447b0bacc75eb24412a13_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4904_356a12c60f534ef8ae0820633828cbc1_\Engine_888_a88edb2ae0b843779b00898fe174ae7c_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -30,26 +30,24 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="Optimization">
-        <Position x="66" y="54" />
+        <Position x="54" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Value name="showSensitivity">False</Value>
-          <Value name="filePath">\\vmware-host\Shared Folders\SNIPPETS\AlteryxPrescriptive\inst\extdata\lp_example.lp</Value>
+          <Value name="filePath">\\vmware-host\Shared Folders\SNIPPETS\dev\HtmlPlugins\Optimization\Supporting_Macros\data\lp_example.lp</Value>
           <Value name="fileType">CPLEX_LP</Value>
-          <Value name="editorValue">
-          </Value>
-          <Value name="fieldNames">
-          </Value>
           <Value name="maximize">False</Value>
           <Value name="solver">glpk</Value>
           <Value name="problemType">LP</Value>
           <Value name="inputMode">file</Value>
-          <Value name="payload">{"fileType":"CPLEX_LP","filePath":"\\\\vmware-host\\Shared Folders\\SNIPPETS\\AlteryxPrescriptive\\inst\\extdata\\lp_example.lp","solver":"glpk","inputMode":"file","maximize":false,"problemType":"LP"}</Value>
+          <Value name="payload">{"fileType":"CPLEX_LP","filePath":"\\\\vmware-host\\Shared Folders\\SNIPPETS\\dev\\HtmlPlugins\\Optimization\\Supporting_Macros\\data\\lp_example.lp","solver":"glpk","inputMode":"file","maximize":false,"problemType":"LP"}</Value>
           <Value name="selectedTab">0</Value>
           <Value name="fieldList">[]</Value>
           <Value name="constraints">[]</Value>
           <Value name="objective">
+          </Value>
+          <Value name="fieldNames">
           </Value>
           <Value name="activePage">landing</Value>
         </Configuration>
