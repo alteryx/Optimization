@@ -20,7 +20,18 @@ const controlPageDisplay = (manager) => {
 const syncSolverList = (manager) => {
   const setSolverList = (pType) => {
     const solver = manager.GetDataItem('solver');
-    if (pType === 'QP') {
+    const inputMode = manager.GetDataItem('inputMode')
+    if (inputMode.getValue() === "file") {
+      //solver.setValue('glpk');
+      solver.setStringList(
+        createUIObject({
+          glpk: 'Glpk',
+          gurobi: 'Gurobi',
+          quadprog: 'Quadprog',
+          symphony: 'Symphony'
+        })
+      );
+    } else if (pType === 'QP') {
       solver.setValue('quadprog');
       solver.setStringList(
         createUIObject({
