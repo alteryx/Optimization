@@ -2,8 +2,3 @@ maximize:
   showAsToggle: "true"
 showSensitivity:
   showAsToggle: "true"
-editorValue:
-  type: CodeEditor 
-  language: alteryx-simple 
-  hintList: "x1,x2" 
-  enableDataPreview: "false"

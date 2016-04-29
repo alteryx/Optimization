@@ -1,14 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
 import FieldStore from './stores/FieldStore';
-import ConstraintStore from './stores/ConstraintStore';
 import Store from './stores/Store';
 import Layout from './Layout';
 
 const runView = (ayx, dataItems, divId) => {
   const fieldStore = new FieldStore(ayx);
-  const constraintStore = new ConstraintStore(ayx);
-  const store = new Store(ayx, dataItems, fieldStore, constraintStore);
+  const store = new Store(ayx, dataItems, fieldStore);
 
   render(
     <Layout store={store} />,

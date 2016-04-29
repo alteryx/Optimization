@@ -1,19 +1,23 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-
 import ConstraintItem from './ConstraintItem';
+import Editor from './Editor';
 
 function ConstraintList({ store }) {
   const cs = store.constraintStore;
 
-  const handleAdd = () => {
+  const handleAdd = (e) => {
+    e.preventDefault();
     cs.addConstraint(store.editorValue);
-    // store.update();
-    store.updateEditor('');
   };
 
-  const handleSave = () => {
+  const handleSave = (e) => {
+    e.preventDefault();
     cs.currentConstraint.save(store.editorValue);
+  };
+
+  const handleChange = (v) => {
+    store.updateEditor(v);
   };
 
   const handleRemove = (e, c) => {
@@ -23,13 +27,22 @@ function ConstraintList({ store }) {
 
   return (
     <div>
-      <button
-        className="btn btn-default"
-        onClick={store.saveOrAdd ? handleAdd : handleSave}
-        disabled={store.isEditorEmpty}
-      >
-        {store.saveOrAdd ? <i className="fa fa-plus"></i> : <i className="fa fa-floppy-o"></i>}
-      </button>
+      <div className="input-group constraint-input">
+        <Editor
+          value={store.editorValue}
+          hintList={store.fieldNameArray}
+          onChange={handleChange}
+        />
+        <span className="input-group-btn">
+          <button
+            className="btn btn-sm btn-primary"
+            onClick={store.saveOrAdd ? handleAdd : handleSave}
+            disabled={store.isEditorEmpty}
+          >
+            {store.saveOrAdd ? <i className="fa fa-plus"></i> : <i className="fa fa-floppy-o"></i>}
+          </button>
+        </span>
+      </div>
       <div className="list-group">
         {
           cs.constraints.map(c => (

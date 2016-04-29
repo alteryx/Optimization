@@ -14,13 +14,12 @@ class Constraint {
   }
 
   toggleEditing = () => {
-    this.store.currentConstraint = this;
+    this.store.editConstraint(this);
   }
 
   save(value) {
     this.value = value;
-    this.store.currentConstraint = null;
-    this.store.syncConstraints();
+    this.store.saveConstraint();
   }
 
   delete() {
@@ -36,13 +35,26 @@ class ConstraintStore {
   @observable constraints = [];
   @observable currentConstraint = null;
 
-  constructor({ Gui: { manager } }) {
+  constructor(manager, parentStore) {
     this.manager = manager;
+    this.parentStore = parentStore;
   }
 
   addConstraint(value) {
     this.constraints.push(new Constraint(this, value));
     this.syncConstraints();
+    this.parentStore.updateEditor('');
+  }
+
+  editConstraint(constraint) {
+    this.currentConstraint = constraint;
+    this.parentStore.updateEditor(this.currentConstraint.value);
+  }
+
+  saveConstraint() {
+    this.currentConstraint = null;
+    this.syncConstraints();
+    this.parentStore.updateEditor('');
   }
 
   removeConstraint(constraint) {

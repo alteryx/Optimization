@@ -1,13 +1,3 @@
-/*
-  eslint new-cap: ["error",
-    {"capIsNewExceptions": ["GetDataItemByDataName", "BindUserDataChanged"]}
-  ]
-*/
-
-/* global $ Alteryx */
-
-import { extendObservable, observable, computed, autorun } from 'mobx'; //eslint-disable-line
-
 class AyxStore {
   // @param manager is an instance of Alteryx.Gui.manager
   // @param dataItems is an object where each key is the property name you'd like to use in the
