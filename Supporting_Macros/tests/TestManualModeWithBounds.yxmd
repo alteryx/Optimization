@@ -7,7 +7,7 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2128_5256d7ea008e4e0a8b5de4ebd6b07a34_\Engine_448_fb128eb44e004e7e9bb565120e7dc841_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_444_06161a3707bf41efaea57a5aa78f4dbb_\Engine_888_5ca8b8be40364902ba5231611e232c95_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -38,18 +38,16 @@
           <Value name="filePath">
           </Value>
           <Value name="fileType">CPLEX_LP</Value>
-          <Value name="editorValue">
-          </Value>
-          <Value name="fieldNames">x1,x2,x3</Value>
           <Value name="maximize">True</Value>
           <Value name="solver">glpk</Value>
           <Value name="problemType">LP</Value>
           <Value name="inputMode">manual</Value>
           <Value name="payload">{"fileType":"CPLEX_LP","filePath":"","solver":"glpk","inputMode":"manual","maximize":true,"problemType":"LP"}</Value>
-          <Value name="selectedTab">2</Value>
-          <Value name="fieldList">[{"fieldName":"x1","type":"General","lowerBound":0,"upperBound":null},{"fieldName":"x2","type":"Continuous","lowerBound":0,"upperBound":null},{"fieldName":"x3","type":"General","lowerBound":0,"upperBound":null}]</Value>
+          <Value name="selectedTab">0</Value>
+          <Value name="fieldList">[{"fieldName":"x1","type":"Integer","lowerBound":0,"upperBound":"+inf"},{"fieldName":"x2","type":"Continuous","lowerBound":0,"upperBound":"+inf"},{"fieldName":"x3","type":"Integer","lowerBound":0,"upperBound":"+inf"}]</Value>
           <Value name="constraints">["-x1 + 2x2 + x3 &lt;= 4","4x2 - 3x3 &lt;= 2","x1 - 3x2 + 2x3 &lt;= 3"]</Value>
           <Value name="objective">3x1 + 1x2 + 3x3</Value>
+          <Value name="fieldNames">x1,x2,x3</Value>
           <Value name="activePage">landing</Value>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -85,7 +83,7 @@
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>TestManualMode2</Name>
+      <Name>TestManualMode3</Name>
       <Description />
       <RootToolName />
       <ToolVersion />

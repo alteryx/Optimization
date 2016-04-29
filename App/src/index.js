@@ -1,17 +1,6 @@
-/*
-  eslint new-cap: ["error",
-    {"capIsNewExceptions":
-      ["GetDataItem", "BindUserDataChanged", "AddDataItem"]
-    }
-  ]
-*/
-
-/* global $ Alteryx */
-
 // import $ from 'jquery';
 import { createUIObject, makeDataItem, syncDataItems } from './Utils';
 // import VM from './Constants';
-// import renderConstraintEditor from './RunView';
 import runView from './RunView';
 
 const controlPageDisplay = (manager) => {
@@ -31,7 +20,18 @@ const controlPageDisplay = (manager) => {
 const syncSolverList = (manager) => {
   const setSolverList = (pType) => {
     const solver = manager.GetDataItem('solver');
-    if (pType === 'QP') {
+    const inputMode = manager.GetDataItem('inputMode')
+    if (inputMode.getValue() === "file") {
+      //solver.setValue('glpk');
+      solver.setStringList(
+        createUIObject({
+          glpk: 'Glpk',
+          gurobi: 'Gurobi',
+          quadprog: 'Quadprog',
+          symphony: 'Symphony'
+        })
+      );
+    } else if (pType === 'QP') {
       solver.setValue('quadprog');
       solver.setStringList(
         createUIObject({
@@ -55,22 +55,6 @@ const syncSolverList = (manager) => {
   problemType.BindUserDataChanged(setSolverList);
 };
 
-// Set the hintList prop of the code-editor widget to a data item instead of a string
-const syncHintList = (ayx, editorName, hintListName) => {
-  const { Gui: { manager, renderer } } = ayx;
-
-  // Grab a reference to the editor widget
-  const editor = renderer.getReactComponentByDataName(editorName).editor;
-
-  // Override the default `hintList` prop by setting it to the value of the `hintListName` data item
-  editor.options.hintList = manager.GetDataItem(hintListName).value.replace(/\s/g, '');
-
-  // Bind an event handler to the `hintListName` data item for future changes
-  manager.GetDataItem(hintListName).BindUserDataChanged((e) => {
-    editor.options.hintList = e.replace(/\s/g, '');
-  });
-};
-
 Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
   const dataItem = makeDataItem(manager, AlteryxDataItems);
 
@@ -78,6 +62,7 @@ Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
   //Object.keys(VM).forEach(d => dataItem(d, { values: VM[d] }));
   dataItem('activePage', { value: 'landing' });
   // Create data items for manual input
+  dataItem('fieldNames', { value: '' });
   dataItem('objective', { value: '' });
   dataItem('constraints', { value: '[]' });
   dataItem('fieldList', { value: '[]' });
@@ -92,10 +77,8 @@ Alteryx.Gui.AfterLoad = (manager) => {
     ['fileType', 'filePath', 'solver', 'inputMode', 'maximize', 'problemType']
   );
 
-  syncHintList(Alteryx, 'editorValue', 'fieldNames');
   runView(
     Alteryx, {
-      editorValue: 'editorValue',
       constraints: 'constraints',
       objective: 'objective',
       fieldNames: 'fieldNames',

@@ -39,7 +39,8 @@ class Field {
 }
 
 class FieldStore {
-  fieldTypes = ['Continuous', 'Binary', 'General'];
+  // Integer === General
+  fieldTypes = ['Continuous', 'Binary', 'Integer'];
   @observable fields = [];
 
   constructor(ayx) {
@@ -47,7 +48,7 @@ class FieldStore {
     this.manager = manager;
   }
 
-  addField(name, type = 'Continuous', lowerBound = 0, upperBound = null) {
+  addField(name, type = 'Continuous', lowerBound = 0, upperBound = '+inf') {
     // only add a field if `name` was provided
     if (name) {
       // Check if a field with the given name already exists

@@ -1,13 +1,6 @@
-/*
-  eslint new-cap: ["error",
-    {"capIsNewExceptions": ["GetDataItemByDataName", "BindUserDataChanged"]}
-  ]
-*/
-
-/* global $ Alteryx */
-
 import AyxStore from './AyxStore';
-import { extendObservable, computed, autorun } from 'mobx';
+import ConstraintStore from './ConstraintStore';
+import { extendObservable, computed, observable } from 'mobx';
 
 class Store extends AyxStore {
   // A method for re-instating the domain stores based on the serialized values received from
@@ -25,7 +18,9 @@ class Store extends AyxStore {
     });
   }
 
-  constructor(ayx, dataItems, fieldStore, constraintStore) {
+  @observable editorValue = '';
+
+  constructor(ayx, dataItems, fieldStore) {
     // The following properties are created from Alteryx:
     // - editorValue: '',
     // - objective: '',
@@ -40,23 +35,15 @@ class Store extends AyxStore {
     extendObservable(this, this);
 
     this.fieldStore = fieldStore;
-    this.constraintStore = constraintStore;
+    this.constraintStore = new ConstraintStore(this.manager, this);
 
     // recreate the store from the snapshot stored in Alteryx's data items
     const stores = [
       { storeName: 'fieldStore', dataItem: 'fieldList' },
       { storeName: 'constraintStore', dataItem: 'constraints' },
     ];
-    this.rehydrate(stores);
 
-    // Automatically update the editor in response to state changes in the constraint store.
-    autorun(() => {
-      if (this.constraintStore.currentConstraint === null) {
-        this.updateEditor('');
-      } else {
-        this.updateEditor(this.constraintStore.currentConstraint.value);
-      }
-    });
+    this.rehydrate(stores);
   }
 
   /* Store Methods */
@@ -74,6 +61,9 @@ class Store extends AyxStore {
   @computed get fieldNameArray() {
     return this.fieldNames.split(',')
       .map(fieldName => fieldName.trim())
+      // remove empty entries
+      .filter(v => v.length > 0)
+      // dedupe the array by comparing lowercase versions of existing array elements
       .reduce((acc, elem) => (acc.map(v => v.toLowerCase()).includes(elem.toLowerCase()) ?
         acc :
         acc.concat(elem)),
@@ -81,24 +71,29 @@ class Store extends AyxStore {
       );
   }
 
-  // Use property initializer so we don't have to use `this.bind(store)` when calling this method from
-  // inside other components (Layout, specifically)
+  // Use property initializer so we don't have to use `this.bind(store)` when calling this method
+  // from inside other components (Layout, specifically)
   updateSelectedTab = (selection) => {
     this.selectedTab = selection;
     this.manager.GetDataItemByDataName('selectedTab').setValue(this.selectedTab);
   }
 
+  updateFieldNames(value) {
+    this.fieldNames = value;
+    this.manager.GetDataItemByDataName('fieldNames').setValue(this.fieldNames);
+  }
+
   // Update both `this.objective` and the backing Alteryx data item with the value `v`
-  updateObjective(v) {
-    this.objective = v;
+  updateObjective(value) {
+    this.objective = value;
     this.manager.GetDataItemByDataName('objective').setValue(this.objective);
   }
 
   // Update the Alteryx code editor widget with the provided value
   updateEditor(value) {
-    this.renderer
-      .getReactComponentByDataName('editorValue').editor
-      .setValue(value);
+    console.log(`updating editor to ${value}`);
+    this.editorValue = value;
+    // this.manager.GetDataItemByDataName('editorValue').setValue(this.editorValue);
   }
 }
 

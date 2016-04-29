@@ -1,5 +1,5 @@
 /*Obviously, figure out how to bundle these into reasonsably sized files*/
-@import 'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css';
+@import 'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css';
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css';
 
 alteryx-pluginwidget input[type="radio"]{
@@ -41,7 +41,7 @@ input[type="radio"] {
 #payload{
   display: none;
 }
-.CodeMirror{
+/*.CodeMirror{
   height: inherit !important;
 }
 #editorDiv .CodeMirror {
@@ -53,7 +53,7 @@ input[type="radio"] {
     margin: 0px;
     border: solid lightgray 1px;
     width: 100%;
-}
+}*/
 
 div.alteryx-toggle-switch-outer{
   position: absolute;
@@ -141,4 +141,52 @@ fieldset.page{
 }
 .list-group-item-editing{
   border-left: 2px solid darkgreen;
+}
+
+/*Make ReactCodeMirror component align with Bootstrap*/
+.ReactCodeMirror {
+  /* Borrowed from Bootstrap textarea styles */
+  box-sizing: border-box;
+  margin: 0;
+  font: inherit;
+  overflow: auto;
+  font-family: inherit;
+  display: block;
+  width: 100%;
+  padding: 4px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  height: 40px;
+}
+
+/* Override Alteryx's CodeMirror styles */
+.ReactCodeMirror .CodeMirror {
+  height: auto;
+  min-height: 20px;
+  overflow: hidden;
+  border: 1px hidden;
+}
+
+.spacer-5 {
+  margin-bottom: 5px;
+}
+
+.spacer-10 {
+  margin-bottom: 10px;
+}
+
+/*Style for Editor component token matches*/
+.cm-highlight-keyword {
+  color: #1691C6;
+}
+
+.constraint-input .btn {
+  height: 40px;
 }

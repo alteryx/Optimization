@@ -7,7 +7,7 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1656_d94642a6e2b8480da7705ce90cd9a2aa_\Engine_448_7ce212779ebe4e58a59ff7115c622dbb_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_144_5ace7e423c8b41a6a5bebd9fdcbb1b82_\Engine_888_511ea65e7f55439e8b003c52e17b80c6_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -38,18 +38,16 @@
           <Value name="filePath">
           </Value>
           <Value name="fileType">CPLEX_LP</Value>
-          <Value name="editorValue">
-          </Value>
-          <Value name="fieldNames">x1,x2,x3</Value>
           <Value name="maximize">True</Value>
           <Value name="solver">glpk</Value>
           <Value name="problemType">LP</Value>
           <Value name="inputMode">manual</Value>
           <Value name="payload">{"fileType":"CPLEX_LP","filePath":"","solver":"glpk","inputMode":"manual","maximize":true,"problemType":"LP"}</Value>
-          <Value name="selectedTab">2</Value>
+          <Value name="selectedTab">0</Value>
           <Value name="fieldList">[]</Value>
           <Value name="constraints">["3x1 + 4x2 + 2x3 &lt;= 60","2x1 + x2 + 2x3 &lt;= 40","x1 + 3x2 + 2x3 &lt;= 80"]</Value>
           <Value name="objective">2x1 + 4x2 + 3x3</Value>
+          <Value name="fieldNames">x1,x2,x3</Value>
           <Value name="activePage">landing</Value>
         </Configuration>
         <Annotation DisplayMode="0">

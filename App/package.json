@@ -8,7 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "npm run build && npm run build-es6",
-    "compile-ayx": "npm run build-umd && npm run move-src",
+    "compile-ayx": "npm run build-umd; npm run move-src; npm run move-css",
     "clean": "rimraf '*(es6|dist)'",
     "build": "webpack",
     "build-umd": "webpack",
@@ -17,13 +17,15 @@
     "move": "npm run move-js; npm run move-html",
     "move-src": "cp -f ./dist/src.js '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/app.min.js'",
     "move-js": "cp -f ./dist/{manifest,src,vendor}.js '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/'",
-    "move-html": "cp -f ../OptimizationGui.html '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/'"
+    "move-html": "cp -f ../OptimizationGui.html '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/'",
+    "move-css": "cp -f ../app.css '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/app.css'"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "mobx": "^2.1.3",
-    "mobx-react": "^3.0.4"
+    "mobx-react": "^3.0.4",
+    "react-codemirror": "^0.2.6"
   },
   "peerDependencies": {
     "react": "0.14.3",

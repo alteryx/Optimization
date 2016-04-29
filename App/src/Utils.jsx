@@ -1,11 +1,3 @@
-/*
-  eslint new-cap: ["error",
-    {"capIsNewExceptions":
-      ["GetDataItem", "BindUserDataChanged", "AddDataItem"]
-    }
-  ]
-*/
-
 /**
  * Create an object that can be passed to setStringList
  *
