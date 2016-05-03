@@ -15,10 +15,15 @@ class Editor extends React.Component {
   componentDidMount() {
     CodeMirror.defineMode('simple-highlighting', () => ({
       token: (stream, /* state */) => {
-        const keywordPattern = new RegExp(this.props.hintList.join('|'));
-        if (stream.match(keywordPattern)) {
-          return 'highlight-keyword';
+        if (this.props.hintList.length > 0) {
+          const keywordPattern = new RegExp(this.props.hintList.join('|'));
+          if (stream.match(keywordPattern)) {
+            return 'highlight-keyword';
+          }
+          stream.next();
+          return null;
         }
+        // If the hint list is empty, just advance the stream without any checks
         stream.next();
         return null;
       },
@@ -48,6 +53,8 @@ class Editor extends React.Component {
     const options = {
       mode: 'simple-highlighting',
       scrollbarStyle: 'null',
+      viewportMargin: Infinity,
+      lineWrapping: true,
       hint: CodeMirror.hint.simpleHints,
       readOnly: false,
       extraKeys: { 'Ctrl-Space': 'autocomplete' },
