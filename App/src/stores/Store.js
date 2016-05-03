@@ -91,7 +91,6 @@ class Store extends AyxStore {
 
   // Update the Alteryx code editor widget with the provided value
   updateEditor(value) {
-    console.log(`updating editor to ${value}`);
     this.editorValue = value;
     // this.manager.GetDataItemByDataName('editorValue').setValue(this.editorValue);
   }
