@@ -18,9 +18,9 @@ const controlPageDisplay = (manager) => {
 };
 
 const syncSolverList = (manager) => {
+  const solver = manager.GetDataItem('solver');
+  const inputMode = manager.GetDataItem('inputMode')
   const setSolverList = (pType) => {
-    const solver = manager.GetDataItem('solver');
-    const inputMode = manager.GetDataItem('inputMode')
     if (inputMode.getValue() === "file") {
       //solver.setValue('glpk');
       solver.setStringList(
@@ -53,6 +53,7 @@ const syncSolverList = (manager) => {
   const problemType = manager.GetDataItem('problemType');
   setSolverList(problemType.getValue());
   problemType.BindUserDataChanged(setSolverList);
+  inputMode.BindUserDataChanged(setSolverList);
 };
 
 Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
