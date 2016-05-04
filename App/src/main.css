@@ -1,19 +1,54 @@
-body {
-  margin-top: 50px;
+@import '../node_modules/bootswatch/cosmo/bootstrap.min.css';
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css';
+
+.list-group-item-editing{
+  border-left: 2px solid darkgreen;
 }
 
-.form-inline > input {
-  margin: 5px 3px;
+/*Make ReactCodeMirror component align with Bootstrap*/
+.ReactCodeMirror {
+  /* Borrowed from Bootstrap textarea styles */
+  box-sizing: border-box;
+  margin: 0;
+  font: inherit;
+  overflow: auto;
+  font-family: inherit;
+  display: block;
+  width: 100%;
+  padding: 4px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  height: 40px;
 }
 
-.bound-item-view {
-  cursor: pointer;
+/* Override Alteryx's CodeMirror styles */
+.ReactCodeMirror .CodeMirror {
+  height: auto;
+  min-height: 20px;
+  overflow: hidden;
+  border: 1px hidden;
 }
 
-.bound-item-view button {
-  visibility: hidden;
+.spacer-5 {
+  margin-bottom: 5px;
 }
 
-.bound-item-view:hover button {
-  visibility: visible;
+.spacer-10 {
+  margin-bottom: 10px;
+}
+
+/*Style for Editor component token matches*/
+.cm-highlight-keyword {
+  color: #1691C6;
+}
+
+.constraint-input .btn {
+  height: 40px;
 }
