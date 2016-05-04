@@ -23,6 +23,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "bootswatch": "^3.3.6",
     "mobx": "^2.1.3",
     "mobx-react": "^3.0.4",
     "react-codemirror": "^0.2.6"
