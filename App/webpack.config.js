@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const NpmInstallPlugin = require('npm-install-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PurifyCSS = require('purifycss-webpack-plugin');
 
 const pkg = require('./package.json');
 const TARGET = process.env.npm_lifecycle_event;
@@ -144,6 +145,12 @@ if (TARGET === 'build' || TARGET === 'build-umd') {
       new CleanWebpackPlugin(PATHS.dist),
       // Output extracted CSS to its own file
       new ExtractTextPlugin('[name].css'),
+      new PurifyCSS({
+        basePath: PATHS.src,
+        // purifyOptions: {
+        //   minify: true,
+        // },
+      }),
       // Use the `production` flag so we get full optimization from React when building
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': '"production"',
