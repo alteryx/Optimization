@@ -16,7 +16,7 @@ class Editor extends React.Component {
     CodeMirror.defineMode('simple-highlighting', () => ({
       token: (stream, /* state */) => {
         if (this.props.hintList.length > 0) {
-          const keywordPattern = new RegExp(this.props.hintList.join('|'));
+          const keywordPattern = new RegExp(this.props.hintList.map(v => `${v}\\b`).join('|'));
           if (stream.match(keywordPattern)) {
             return 'highlight-keyword';
           }
