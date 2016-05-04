@@ -18,7 +18,9 @@
     "move-src": "cp -f ./dist/src.js '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/app.min.js'",
     "move-js": "cp -f ./dist/{manifest,src,vendor}.js '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/'",
     "move-html": "cp -f ../OptimizationGui.html '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/'",
-    "move-css": "cp -f ./dist/style.css '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/main.css'"
+    "move-css": "npm run move-main-css; npm run move-app-css",
+    "move-main-css": "cp -f ./dist/style.css '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/main.css'",
+    "move-app-css": "cp -f ../app.css '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/app.css'"
   },
   "author": "",
   "license": "MIT",
