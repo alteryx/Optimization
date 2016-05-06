@@ -28,7 +28,7 @@ function FieldListItem({ field, options }) {
         </div>
         <div className="col-xs-1" style={{ marginTop: 5 }}>
           <a href="#" className="pull-right" onClick={handleDelete}>
-            <span className="fa fa-trash fa-lg text-danger"></span>
+            <i className="fa fa-trash fa-lg text-danger"></i>
           </a>
         </div>
       </div>

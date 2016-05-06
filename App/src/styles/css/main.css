@@ -1,5 +1,6 @@
-@import '../node_modules/bootswatch/cosmo/bootstrap.min.css';
-@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css';
+@import '../../../node_modules/bootswatch/cosmo/bootstrap.css';
+/*@import 'bootstrap.css';*/
+@import 'font-awesome-custom.css';
 
 .list-group-item-editing{
   border-left: 2px solid darkgreen;

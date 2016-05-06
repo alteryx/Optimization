@@ -12,7 +12,7 @@ function ConstraintItem(props) {
       {props.constraint.value}
         <span className="pull-right">
           <a href="#" className="text-danger" onClick={props.removeConstraint}>
-            <i className="fa fa-trash fa-lg"></i>
+            <i className="fa fa-trash"></i>
           </a>
         </span>
     </div>
