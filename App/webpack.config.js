@@ -2,16 +2,17 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const NpmInstallPlugin = require('npm-install-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PurifyCSS = require('purifycss-webpack-plugin');
+const Visualizer = require('webpack-visualizer-plugin');
 
 const pkg = require('./package.json');
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
   src: path.join(__dirname, 'src'),
   dist: path.join(__dirname, 'dist'),
-  style: path.join(__dirname, 'src/main.css'),
+  style: path.join(__dirname, 'src', 'styles', 'css/main.css'),
 };
 
 const common = {
@@ -20,7 +21,20 @@ const common = {
     style: PATHS.style,
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.css'],
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.(jpg|png)$/,
+        loader: 'file?name=[path][name].[hash].[ext]',
+        // include: PATHS.images,
+      },
+      {
+        test: /\.(ttf|eot|svg|woff(2)?)(\?v=[0-9]\.[0-9]\.[0-9])?(\?\d+)?/,
+        loader: 'url',
+      },
+    ],
   },
   output: {
     path: PATHS.dist,
@@ -33,62 +47,10 @@ const common = {
   ],
 };
 
-// Default Config
-if (TARGET === 'start' || !TARGET) {
-  module.exports = merge(common, {
-    devtool: 'eval-source-map',
-    devServer: {
-      contentBase: PATHS.dist,
-
-      historyApiFallback: true,
-      hot: true,
-      inline: true,
-      progress: true,
-
-      stats: 'errors-only',
-
-      host: process.env.HOST,
-      port: process.env.PORT,
-    },
-    module: {
-      loaders: [
-        // Define dev-specific CSS setup
-        {
-          test: /\.css$/,
-          loaders: ['style', 'css'],
-          include: PATHS.src,
-        },
-        {
-          test: /\.jsx?$/,
-          loader: 'babel',
-          query: {
-            cacheDirectory: true,
-            presets: ['react', 'es2015', 'stage-1', 'react-hmre'],
-            plugins: ['transform-decorators-legacy', 'transform-object-assign', 'array-includes'],
-          },
-          include: PATHS.src,
-        },
-      ],
-    },
-    plugins: [
-      new webpack.HotModuleReplacementPlugin(),
-      new NpmInstallPlugin({
-        save: true,
-      }),
-    ],
-  });
-}
-
-if (TARGET === 'build' || TARGET === 'build-umd') {
+if (TARGET === 'build' || TARGET === 'build-umd' || TARGET === 'profile') {
   const prodConfig = {
     module: {
       loaders: [
-        // Extract CSS during the build process
-        {
-          test: /\.css$/,
-          loader: ExtractTextPlugin.extract('style', 'css'),
-          include: PATHS.src,
-        },
         {
           test: /\.jsx?$/,
           loader: 'babel',
@@ -105,6 +67,12 @@ if (TARGET === 'build' || TARGET === 'build-umd') {
           },
           include: PATHS.src,
         },
+        // Extract CSS during the build process
+        {
+          test: /\.css$/,
+          loader: ExtractTextPlugin.extract('style', 'css'),
+          include: PATHS.style,
+        },
       ],
     },
     plugins: [
@@ -112,6 +80,12 @@ if (TARGET === 'build' || TARGET === 'build-umd') {
       new CleanWebpackPlugin(PATHS.dist),
       // Output extracted CSS to its own file
       new ExtractTextPlugin('[name].css'),
+      new PurifyCSS({
+        basePath: PATHS.src,
+        purifyOptions: {
+          minify: true,
+        },
+      }),
       // Use the `production` flag so we get full optimization from React when building
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': '"production"',
@@ -125,6 +99,7 @@ if (TARGET === 'build' || TARGET === 'build-umd') {
       }),
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.OccurenceOrderPlugin(),
+      new Visualizer(),
     ],
   };
 
