@@ -1,0 +1,83 @@
+/*Obviously, figure out how to bundle these into reasonsably sized files*/
+alteryx-pluginwidget input[type="radio"]{
+  display: none;
+}
+ul.radioGroup li{
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+alteryx-pluginwidget label, label {
+  width: 100% !important;
+}
+alteryx-pluginwidget[showAsToggle="true"] label{
+  width: 200px !important;
+}
+/* Be consistent with TextBox */
+.Select-control{
+  border-radius: 0px !important;
+}
+.Select{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+input[type="radio"] + label{
+  padding-left: 20px !important;
+}
+.page {
+  display: none;
+}
+ul {
+  margin: 0;
+}
+input[type="radio"] {
+  display: hidden;
+}
+.default-button {
+  margin-left: -1px !important;
+}
+#payload{
+  display: none;
+}
+/*.CodeMirror{
+  height: inherit !important;
+}
+#editorDiv .CodeMirror {
+    font-size: 14px;
+    font-family: Consolas, Monaco,"Courier New", monospace;
+    line-height: 1.45em;
+    width: 750px;
+    height: 355px !important;
+    margin: 0px;
+    border: solid lightgray 1px;
+    width: 100%;
+}*/
+
+div.alteryx-toggle-switch-outer{
+  position: absolute;
+  right: 8px;
+}
+.alteryx-toggle-wrapper{
+  margin-top:10px;
+}
+
+/* Alerts: Copied from Bootstrap */
+.alert {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 18px;
+  border: 1px solid #fbeed5;
+}
+
+.alert-heading {
+  color: inherit;
+}
+
+.alert .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  line-height: 18px;
+}
+/* --- */
+fieldset.page{
+  border: 0px;
+}

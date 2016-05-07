@@ -1,6 +1,7 @@
 @import '../../../node_modules/bootswatch/cosmo/bootstrap.css';
 /*@import 'bootstrap.css';*/
 @import 'font-awesome-custom.css';
+@import 'app.css';
 
 .list-group-item-editing{
   border-left: 2px solid darkgreen;
