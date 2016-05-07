@@ -30,7 +30,6 @@ formattable(df, list(
 ```
 
 ```{r}
-library(formattable)
 d <- as.vector(jsonlite::fromJSON('_tests.json'))
 df <- data.frame(
   id = seq_along(d),
