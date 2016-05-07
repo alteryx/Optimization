@@ -1,5 +1,5 @@
 ## DO NOT MODIFY: Auto Inserted by AlteryxRhelper ----
-library(AlteryxRhelper)
+library(AlteryxPrescriptive)
 config <- list(
   activePage = textInput('%Question.activePage%'),
   constraints = textInput(
@@ -55,7 +55,6 @@ print(config)
 payload <- list(config = config, inputs = inputs)
 
 ## Interactive Visualization ----
-library(AlteryxPrescriptive)
 library(AlteryxRviz)
 iOutput <- function(s2a, varNames){
   if (is.null(varNames)){
