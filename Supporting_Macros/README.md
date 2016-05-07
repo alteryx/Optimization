@@ -19,14 +19,15 @@ There are 4 inputs and all are optional
 
 1. __O Input (optional):__ Use this to provide the objective function. It should have the following 5 columns:
 
-     - `variable`: a string, decision variable names;
+     - `variable`: a string, decision variable names
+     
      -  `coefficient`: a number, coefficient of each decision variable in objective function
 
      - `lb`: a number, lower bound of according decision variable
 
      - `ub`: a number, uppper bound of according decision variable
 
-     - `type`: a character,  the type of according decision variable, which can be __C__ (continuous), __B__(binary, 0 and 1) and __I__ (integer)
+     - `type`: a character,  the type of according decision variable, which can be __C__ (continuous), __B__ (binary) and __I__ (integer)
 2. __A Input (optional):__ Use this to provide the coefficients of the constraint matrix.
 
     - SLAM matrix: requires 3 columns: `i`, `j`, `v`, where, `i`, `j` are row and column index respectively and `v` is the non-zero value of the matrix element
