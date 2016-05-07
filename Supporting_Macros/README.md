@@ -23,21 +23,30 @@ There are 4 inputs and all are optional
 - `lb`: a number, lower bound of according decision variable;
 - `ub`: a number, uppper bound of according decision variable;
 - `type`: a character,  the type of according decision variable, which can be __C__ (continuous), __B__(binary, 0 and 1) and __I__ (integer)
-2. NULL
-3. NULL
-4. NULL
+2. __A Input (optional)__ Use this to provide the coefficients of the constraint matrix.
+- SLAM matrix: requires 3 columns: `i`, `j`, `v`, where, `i`, `j` are row and column index respectively and `v` is the non-zero value of the matrix element
+- Dense matri: columns are decision variable names, for example: `x`, `y`, `z`. Number of rows equal to number of constraints. __Note__: you can combine Input B with input A for dense matrix. Simply add the two columns from Input B to Input A.
+
+  
+3. __B Input (optional)__ Use this to provide the name, direction and right hand side of the constraints. It should have the following 2 columns:
+- `dir`: a string, direction of the constraint inequality. It has to be `>=`, `<=` or `=`
+- `rhs`: a number, the right hand side of the inequality. 
+4. __Q Input (optional)__ Use this to provide the quadratic portion of the objective function, in the case of a Quadratic Programming problem.
+- __SLAM matrix__: requires 3 columns: `i`, `j`, `v`, where, `i`, `j` are row and column index respectively and `v` is the non-zero value of the matrix element.
+- __Dense matrix__: columns are decision variable names, for example: `x`, `y`, `z`. 
 
 ### Configuration Properties
 
-1. __Select input mode__ This option controls the mode of input. Currently supports matrix, manual and file inputs.
-2. __Select problem type__ We support multiple problem types. Currently supported models include LP, MIP and QP.
-3. __Select solver__ The solvers supported currently are Glpk, Gurobi.
-4. __Maximize Objective?__ Is this a maximization problem?
-5. __Select file__ This is the path to the file.
-6. __Select file type__ We currently support CLPEX_LP, MathProg and MPS formats.
-7. __Show sensitivity report__ This option controls whether or not to carry out sensitivity analysis and display the results.
-8. __Enter Decision Variables__ A comma separated list of decision variable names
-9. __Enter objective function__ This is the objective function to be maximized or minimized
+1. __Select input mode:__ This option controls the mode of input. Currently supports matrix, manual and file inputs.
+2. __Select problem type:__ We currently support:
+-  __linear programming__ (LP): linear objective and linear constraints with __continuous__ decision variables;
+- __mixed integer linear programming__ (MILP): linear objective and linear constraints with __bineary__ or __integer__ decision variables;
+- __quadratic programming__ (QP): quadratic objective and linear constraints with __continous__ decision variables.
+3. __Maximize Objective?:__ Is this a maximization problem?
+4. __Select file type:__ We currently support CLPEX_LP, MathProg and MPS formats.
+5. __Show sensitivity report:__ This option controls whether or not to carry out sensitivity analysis and display the results. If selected, solver is GLPK.
+6. __Enter Decision Variables:__ A comma separated list of decision variable names
+7. __Enter objective function:__ This is the objective function to be maximized or minimized
 
 ### Output
 
