@@ -55,11 +55,18 @@ There are 4 inputs and all are optional
     - __mixed integer linear programming__ (MILP): linear objective and linear constraints with __binary__ or __integer__ decision variables
 
     - __quadratic programming__ (QP): quadratic objective and linear constraints with __continous__ decision variables.
-3. __Maximize Objective?:__ Is this a maximization problem?
-4. __Select file type:__ We currently support CLPEX_LP, MathProg and MPS formats.
-5. __Show sensitivity report:__ This option controls whether or not to carry out sensitivity analysis and display the results. If selected, solver is GLPK.
-6. __Enter Decision Variables:__ A comma separated list of decision variable names
-7. __Enter objective function:__ This is the objective function to be maximized or minimized
+3. __Select solver:__ The solvers currently supported are
+ 
+
+    - Linear programing: Glpk, Symphony and Gurobi.
+    - Mixed Integer linear programming: Glpk, Symphony and [Gurobi](http://gurobi.com).
+    - Quadratic Programming: quadprog, Gurobi. 
+4. __Maximize Objective?:__ Is this a maximization problem?
+5. __Select file:__ Path to optimization model file. 
+6. __Select file type:__ We currently support CLPEX_LP, MathProg and MPS formats.
+7. __Show sensitivity report:__ This option controls whether or not to carry out sensitivity analysis and display the results. If selected, solver is GLPK.
+8. __Enter decision variables:__ A comma separated list of decision variable names
+9. __Enter objective function:__ This is the objective function to be maximized or minimized
 
 ### Output
 
