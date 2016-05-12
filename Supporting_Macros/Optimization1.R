@@ -56,4 +56,4 @@ payload <- list(config = config, inputs = inputs)
 
 ## Interactive Visualization ----
 out <- AlteryxSolve(payload)
-renderInComposer(makeInteractiveReport(out), nOutput = 3)
+makeInteractiveReport(out, nOutput = 3)

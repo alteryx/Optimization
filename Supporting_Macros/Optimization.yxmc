@@ -78,7 +78,7 @@ payload &lt;- list(config = config, inputs = inputs)
 
 ## Interactive Visualization ----
 out &lt;- AlteryxSolve(payload)
-renderInComposer(makeInteractiveReport(out), nOutput = 3) 
+makeInteractiveReport(out, nOutput = 3) 
 </RScript>
           <UseFullUpdate value="False"/>
         </Configuration>
