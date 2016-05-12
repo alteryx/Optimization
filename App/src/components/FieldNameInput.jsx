@@ -19,7 +19,7 @@ function FieldNameInput({ store }) {
         type="text"
         className="form-control input-sm"
         value={store.fieldNames}
-        placeholder="x1, x2, x3"
+        placeholder="Enter a comma-separated list, e.g. x1, x2, x3"
         onChange={handleChange}
       />
       <span className="input-group-btn">
