@@ -12,7 +12,7 @@ class Editor extends React.Component {
     onChange: P.func.isRequired,
   }
 
-  componentDidMount() {
+  componentWillMount() {
     CodeMirror.defineMode('simple-highlighting', () => ({
       token: (stream, /* state */) => {
         if (this.props.hintList.length > 0) {
