@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import ReactCodeMirror from 'react-codemirror';
 import CodeMirror from 'codemirror';
 import 'codemirror/addon/hint/show-hint.js';
+import 'codemirror/addon/display/placeholder.js';
 
 @observer
 class Editor extends React.Component {
@@ -12,7 +13,7 @@ class Editor extends React.Component {
     onChange: P.func.isRequired,
   }
 
-  componentDidMount() {
+  componentWillMount() {
     CodeMirror.defineMode('simple-highlighting', () => ({
       token: (stream, /* state */) => {
         if (this.props.hintList.length > 0) {
@@ -49,6 +50,14 @@ class Editor extends React.Component {
     };
   }
 
+  componentDidMount() {
+    // If we find that there is data returning from the Alteryx backend, then force the edtior to
+    // to load the value rather than deferring to the placeholder.
+    if (this.props.value) {
+      this.refs.editor.getCodeMirror().setValue(this.props.value);
+    }
+  }
+
   render() {
     const options = {
       mode: 'simple-highlighting',
@@ -65,6 +74,7 @@ class Editor extends React.Component {
       <ReactCodeMirror
         ref="editor"
         value={this.props.value}
+        placeholder="Ctrl + Space for suggestions"
         onChange={this.props.onChange}
         options={options}
       />
