@@ -10,3 +10,6 @@ README.html
 *.yxi
 Supporting_Macros/*.html
 *.rds
+
+# ignore Examples/
+Examples/
