@@ -18,9 +18,7 @@
     "move-src": "cp -f ./dist/src.js '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/app.min.js'",
     "move-js": "cp -f ./dist/{manifest,src,vendor}.js '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/'",
     "move-html": "cp -f ../OptimizationGui.html '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/'",
-    "move-css": "npm run move-main-css; npm run move-app-css",
-    "move-main-css": "cp -f ./dist/style.css '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/main.css'",
-    "move-app-css": "cp -f ../app.css '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/app.css'",
+    "move-css": "cp -f ./dist/style.css '/Volumes/C/Program Files/Alteryx/bin/HtmlPlugins/Optimization/app.css'",
     "profile": "npm run build-umd; open ./dist/stats.html"
   },
   "author": "",
@@ -63,6 +61,7 @@
     "npm-install-webpack-plugin": "^3.0.0",
     "purifycss-webpack-plugin": "^2.0.3",
     "react": "^0.14.3",
+    "react-codemirror": "github:cafreeman/react-codemirror",
     "react-dom": "^0.14.3",
     "rimraf": "^2.5.2",
     "style-loader": "^0.13.1",

@@ -20,7 +20,6 @@
   padding: 1px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #555;
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
@@ -31,12 +30,16 @@
   height: auto;
 }
 
-/* Override Alteryx's CodeMirror styles */
 .ReactCodeMirror .CodeMirror {
   height: auto;
   min-height: 20px;
+  color: #555;
   overflow: hidden;
   border: 1px hidden;
+}
+
+.ReactCodeMirror .CodeMirror pre.CodeMirror-placeholder {
+  color: #999;
 }
 
 .spacer-5 {
