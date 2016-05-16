@@ -9,7 +9,8 @@
       <Connection Name="InputQ" AllowMultiple="False" Optional="True" Type="Connection" Label="Q"/>
     </InputConnections>
     <OutputConnections>
-      <Connection Name="OutputI" AllowMultiple="False" Optional="False" Type="Connection" Label="I"/>
+      <Connection Name="Data" AllowMultiple="False" Optional="False" Type="Connection" Label="D"/>
+      <Connection Name="Interactive" AllowMultiple="False" Optional="False" Type="Connection" Label="I"/>
     </OutputConnections>
   </GuiSettings>
   <Properties>
