@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="138" y="90" />
+        <Position x="54" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -112,7 +112,7 @@
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="138" y="210" />
+        <Position x="54" y="174" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -154,7 +154,7 @@
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="138" y="150" />
+        <Position x="54" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -256,21 +256,17 @@
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="390" y="150" />
+        <Position x="282" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2712_81dd48e3b5c94388b4886f43439c914f_\Engine_4160_f7d6496ce1f04b5ba88a70f725f00e58_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3780_cf8fa942222f4b969bee743bd5d292f8_\Engine_5088_86d8d7472df04147bcd6f8d724b04ca1_.yxdb</TempFile>
           <Layout>
-            <ViewMode>Single</ViewMode>
-            <ViewSize value="100" />
             <View1>
-              <DefaultTab>Report</DefaultTab>
               <Hints>
                 <Table />
               </Hints>
             </View1>
-            <View2 />
           </Layout>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -283,7 +279,7 @@
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="Optimization">
-        <Position x="258" y="150" />
+        <Position x="174" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -313,6 +309,33 @@
       </Properties>
       <EngineSettings Macro="Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Supporting_Macros/Optimization.yxmc" />
     </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="282" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3780_cf8fa942222f4b969bee743bd5d292f8_\Engine_5088_c42593271c894f7ba3aed3e8c6aa9aee_.yxdb</TempFile>
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
   </Nodes>
   <Connections>
     <Connection>
@@ -328,8 +351,12 @@
       <Destination ToolID="7" Connection="InputA" />
     </Connection>
     <Connection>
-      <Origin ToolID="7" Connection="OutputI" />
+      <Origin ToolID="7" Connection="Data" />
       <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Interactive" />
+      <Destination ToolID="8" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>

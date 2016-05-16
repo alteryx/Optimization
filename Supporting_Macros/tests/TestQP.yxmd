@@ -86,7 +86,7 @@
     </Node>
     <Node ToolID="31">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="546" width="177" height="113" />
+        <Position x="54" y="517" width="177" height="158" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -135,11 +135,34 @@
         </Node>
         <Node ToolID="33">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="162" y="575" />
+            <Position x="162" y="546" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3340_14698de45fdf469dbb5e5ee5153c1fcf_\Engine_888_fa6363407a29421d8db1bd703b90e94e_.yxdb</TempFile>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3436_49424185880c4c04a69bb9af2917fc5b_\Engine_5088_d47e95f1ed5342338a4dcbecc28dfec5_.yxdb</TempFile>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="34">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="162" y="606" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3436_49424185880c4c04a69bb9af2917fc5b_\Engine_5088_9105a6125c304b18a3092ad45f4f00cb_.yxdb</TempFile>
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
@@ -814,12 +837,12 @@
   </Nodes>
   <Connections>
     <Connection>
-      <Origin ToolID="32" Connection="OutputI" />
+      <Origin ToolID="32" Connection="Data" />
       <Destination ToolID="33" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="23" Connection="OutputI" />
-      <Destination ToolID="24" Connection="Input" />
+      <Origin ToolID="32" Connection="Interactive" />
+      <Destination ToolID="34" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="1" Connection="Output" />
@@ -838,10 +861,6 @@
       <Destination ToolID="5" Connection="InputQ" />
     </Connection>
     <Connection>
-      <Origin ToolID="5" Connection="OutputI" />
-      <Destination ToolID="4" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="14" Connection="Output" />
       <Destination ToolID="18" Connection="InputO" />
     </Connection>
@@ -856,14 +875,6 @@
     <Connection>
       <Origin ToolID="19" Connection="Output" />
       <Destination ToolID="18" Connection="InputQ" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="18" Connection="OutputI" />
-      <Destination ToolID="17" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="26" Connection="OutputI" />
-      <Destination ToolID="27" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>

@@ -3,21 +3,17 @@
   <Nodes>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="186" y="54" />
+        <Position x="162" y="18" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_444_06161a3707bf41efaea57a5aa78f4dbb_\Engine_888_5ca8b8be40364902ba5231611e232c95_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3388_25a69442d33b4af8ae321cecd9fa72ca_\Engine_5088_4b7d4f8b374249d89dcd802d1ac32b01_.yxdb</TempFile>
           <Layout>
-            <ViewMode>Single</ViewMode>
-            <ViewSize value="100" />
             <View1>
-              <DefaultTab>Report</DefaultTab>
               <Hints>
                 <Table />
               </Hints>
             </View1>
-            <View2 />
           </Layout>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -58,11 +54,42 @@
       </Properties>
       <EngineSettings Macro="Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Supporting_Macros/Optimization.yxmc" />
     </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="162" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3388_25a69442d33b4af8ae321cecd9fa72ca_\Engine_5088_e68b0c17642f46788bc64e59b01b574e_.yxdb</TempFile>
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
   </Nodes>
   <Connections>
     <Connection>
-      <Origin ToolID="7" Connection="OutputI" />
+      <Origin ToolID="7" Connection="Data" />
       <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Interactive" />
+      <Destination ToolID="8" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
@@ -83,7 +110,7 @@
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>TestManualMode3</Name>
+      <Name>TestManualModeWithBounds</Name>
       <Description />
       <RootToolName />
       <ToolVersion />
