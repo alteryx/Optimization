@@ -21,7 +21,7 @@
       <Properties>
         <Configuration>
           <RScript>## DO NOT MODIFY: Auto Inserted by AlteryxRhelper ----
-library(AlteryxPrescriptive)
+suppressWarnings(library(AlteryxPrescriptive))
 config &lt;- list(
   activePage = textInput('%Question.activePage%'),
   constraints = textInput(
@@ -78,7 +78,10 @@ payload &lt;- list(config = config, inputs = inputs)
 
 ## Interactive Visualization ----
 out &lt;- AlteryxSolve(payload)
-makeInteractiveReport(out, nOutput = 3) 
+makeInteractiveReport(out, nOutput = 3)
+
+dataOutput &lt;- makeDataOutput(out, asJSON = TRUE)
+write.Alteryx(dataOutput, 1) 
 </RScript>
           <UseFullUpdate value="False"/>
         </Configuration>
@@ -90,6 +93,12 @@ makeInteractiveReport(out, nOutput = 3)
         <MetaInfo connection="Output3">
           <RecordInfo>
             <Field name="html" size="1073741823" source="R-DATA:" type="V_WString"/>
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output1">
+          <RecordInfo>
+            <Field name="name" size="1073741823" source="R-DATA:" type="V_WString"/>
+            <Field name="value" size="1073741823" source="R-DATA:" type="V_WString"/>
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -570,7 +579,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Name>OutputI</Name>
+          <Name>Interactive</Name>
           <Abbrev>I</Abbrev>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -588,7 +597,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1912_e0158a897d904be2a918aaafbc50420e_\Engine_4160_d9d2a82584fb41a7906e76a80dd48c73_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4800_5a141b38a14f4d6382290debe746a080_\Engine_2088_3a999d963c544b019ec664413c12ddda_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100"/>
@@ -667,6 +676,23 @@ No Text Styling</DefaultAnnotationText>
         </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput"/>
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="534" y="366"/>
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Data</Name>
+          <Abbrev>D</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name/>
+          <DefaultAnnotationText/>
+          <Left value="False"/>
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput"/>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
@@ -1250,6 +1276,10 @@ No Text Styling</DefaultAnnotationText>
       <Origin ToolID="3" Connection="Output3"/>
       <Destination ToolID="7" Connection="Input"/>
     </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output1"/>
+      <Destination ToolID="43" Connection="Input"/>
+    </Connection>
     <Connection name="#1">
       <Origin ToolID="4" Connection="Output"/>
       <Destination ToolID="3" Connection="Input"/>
@@ -1388,6 +1418,12 @@ No Text Styling</DefaultAnnotationText>
         <Value/>
         <IsNumeric value="False"/>
       </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (43)</Name>
+        <Value/>
+        <IsNumeric value="False"/>
+      </Constant>
     </Constants>
     <MetaInfo>
       <NameIsFileName value="False"/>
@@ -1442,6 +1478,12 @@ No Text Styling</DefaultAnnotationText>
               <Description>Macro Input (13)</Description>
               <Name>Macro Input (6)</Name>
               <ToolId value="6"/>
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (43)</Description>
+              <Name>Macro Output (43)</Name>
+              <ToolId value="43"/>
             </Question>
             <Question>
               <Type>MacroOutput</Type>
@@ -1625,6 +1667,7 @@ MPS_Free
         <Tool ToolId="8" Selected="True"/>
         <Tool ToolId="16" Selected="False"/>
         <Tool ToolId="25" Selected="True"/>
+        <Tool ToolId="43" Selected="True"/>
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage/>
       <Wiz_NoOutputFilesMessage/>

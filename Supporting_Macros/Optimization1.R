@@ -1,5 +1,5 @@
 ## DO NOT MODIFY: Auto Inserted by AlteryxRhelper ----
-library(AlteryxPrescriptive)
+suppressWarnings(library(AlteryxPrescriptive))
 config <- list(
   activePage = textInput('%Question.activePage%'),
   constraints = textInput(
@@ -57,3 +57,6 @@ payload <- list(config = config, inputs = inputs)
 ## Interactive Visualization ----
 out <- AlteryxSolve(payload)
 makeInteractiveReport(out, nOutput = 3)
+
+dataOutput <- makeDataOutput(out, asJSON = TRUE)
+write.Alteryx(dataOutput, 1)
