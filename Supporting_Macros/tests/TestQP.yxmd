@@ -44,29 +44,9 @@
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="29">
-      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="342" width="696" height="24" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Text>Manual Mode</Text>
-          <Font name="Segoe UI" size="9.75" style="0" />
-          <TextColor name="Black" />
-          <FillColor name="Silver" />
-          <Shape shape="0" />
-          <Justification Justification="4" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-    </Node>
     <Node ToolID="30">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="522" width="696" height="24" />
+        <Position x="54" y="786" width="696" height="24" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -84,9 +64,29 @@
         </Annotation>
       </Properties>
     </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="66" y="474" width="696" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Manual Mode</Text>
+          <Font name="Segoe UI" size="9.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Silver" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
     <Node ToolID="31">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="546" width="177" height="206" />
+        <Position x="54" y="810" width="177" height="206" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -104,7 +104,7 @@
       <ChildNodes>
         <Node ToolID="32">
           <GuiSettings Plugin="Optimization">
-            <Position x="64" y="633" />
+            <Position x="64" y="897" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -134,11 +134,11 @@
         </Node>
         <Node ToolID="33">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="162" y="630" />
+            <Position x="162" y="894" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2240_0765ccf7f2994a5ea7bc86f7e7f99f02_\Engine_3640_c101faf0c39745998a4ccd8e59bc2499_.yxdb</TempFile>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_10228_7be67da85579407585022898a5f61193_\Engine_9572_efb888eb03384a128dd29b576eb0f8bc_.yxdb</TempFile>
               <Layout>
                 <View1>
                   <Hints>
@@ -157,11 +157,11 @@
         </Node>
         <Node ToolID="34">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="162" y="683" />
+            <Position x="162" y="947" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2240_0765ccf7f2994a5ea7bc86f7e7f99f02_\Engine_3640_47017cb5266442cdb2d2003e59396d25_.yxdb</TempFile>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_10228_7be67da85579407585022898a5f61193_\Engine_9572_bd90825168ec4937b0867f1b02b35748_.yxdb</TempFile>
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
@@ -184,11 +184,11 @@
         </Node>
         <Node ToolID="35">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="162" y="575" />
+            <Position x="162" y="839" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2240_0765ccf7f2994a5ea7bc86f7e7f99f02_\Engine_3640_6d972a2a2ead4d5bae212ec71f912538_.yxdb</TempFile>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_10228_7be67da85579407585022898a5f61193_\Engine_9572_321449e98fbc499ab2c4aeadf7ad846c_.yxdb</TempFile>
               <Layout>
                 <View1>
                   <Hints>
@@ -209,14 +209,14 @@
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="366" width="154.0998" height="19" />
+        <Position x="66" y="498" width="177" height="237" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Test: manual input QP</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
-          <Disabled value="True" />
-          <Folded value="True" />
+          <Disabled value="False" />
+          <Folded value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -227,17 +227,13 @@
       <ChildNodes>
         <Node ToolID="23">
           <GuiSettings Plugin="Optimization">
-            <Position x="64" y="395" />
+            <Position x="76.00001" y="604" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Value name="showSensitivity">False</Value>
               <Value name="filePath">
               </Value>
               <Value name="fileType">CPLEX_LP</Value>
-              <Value name="editorValue">
-              </Value>
-              <Value name="fieldNames">x, y, z</Value>
               <Value name="maximize">False</Value>
               <Value name="solver">quadprog</Value>
               <Value name="problemType">QP</Value>
@@ -247,6 +243,7 @@
               <Value name="fieldList">[{"fieldName":"x","type":"Continuous","lowerBound":0,"upperBound":"1"},{"fieldName":"y","type":"Continuous","lowerBound":0,"upperBound":"1"},{"fieldName":"z","type":"Continuous","lowerBound":0,"upperBound":"1"}]</Value>
               <Value name="constraints">["x + 2y + 3z &gt;= 4","x + y &gt;= 1"]</Value>
               <Value name="objective">2 x + [ 2 x ^2 + 2 x * y + 2 y ^2 + 2 y * z + 2 z ^2 ] / 2</Value>
+              <Value name="fieldNames">x, y, z</Value>
               <Value name="activePage">landing</Value>
             </Configuration>
             <Annotation DisplayMode="0">
@@ -257,13 +254,45 @@
           </Properties>
           <EngineSettings Macro="Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Supporting_Macros/Optimization.yxmc" />
         </Node>
-        <Node ToolID="24">
+        <Node ToolID="42">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="160" y="395" />
+            <Position x="174" y="527" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8164_b51536cc99d1412c8d7b4a01984336ad_\Engine_6800_a43530a0759045bb93126a477e60c6c3_.yxdb</TempFile>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5716_eacf8a2221c1449fba0398f0846ed848_\Engine_8336_1779e698367340e2bcd513fc9c08c117_.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="43">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="174" y="599" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5716_eacf8a2221c1449fba0398f0846ed848_\Engine_8336_232b696015c24ec081730bd7d8a46ce9_.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="44">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="174" y="666" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5716_eacf8a2221c1449fba0398f0846ed848_\Engine_8336_0c7e1da0bf6048f4b1ca6bfb37b599db_.yxdb</TempFile>
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
@@ -288,14 +317,14 @@
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="162" width="220.6584" height="19" />
+        <Position x="54" y="162" width="297" height="275" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Test: matrix input QP slam matrices</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
-          <Disabled value="True" />
-          <Folded value="True" />
+          <Disabled value="False" />
+          <Folded value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -306,7 +335,7 @@
       <ChildNodes>
         <Node ToolID="1">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="65" y="191" />
+            <Position x="64.99999" y="208" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -352,7 +381,7 @@
         </Node>
         <Node ToolID="2">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="64" y="242" />
+            <Position x="64" y="259" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -400,7 +429,7 @@
         </Node>
         <Node ToolID="3">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="64" y="292" />
+            <Position x="64.00002" y="301" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -428,47 +457,15 @@
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
         </Node>
-        <Node ToolID="4">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="293" y="249" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_10176_9128af0ff85d42a29107afe2e2c02e34_\Engine_3528_9ae19cf85f334987bdb4a9efe8e45bad_.yxdb</TempFile>
-              <Layout>
-                <ViewMode>Single</ViewMode>
-                <ViewSize value="100" />
-                <View1>
-                  <DefaultTab>Report</DefaultTab>
-                  <Hints>
-                    <Table />
-                  </Hints>
-                </View1>
-                <View2 />
-              </Layout>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-        </Node>
         <Node ToolID="5">
           <GuiSettings Plugin="Optimization">
-            <Position x="185" y="261" />
+            <Position x="185" y="278" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Value name="showSensitivity">False</Value>
               <Value name="filePath">
               </Value>
               <Value name="fileType">CPLEX_LP</Value>
-              <Value name="editorValue">
-              </Value>
-              <Value name="fieldNames">
-              </Value>
               <Value name="maximize">False</Value>
               <Value name="solver">quadprog</Value>
               <Value name="problemType">QP</Value>
@@ -478,6 +475,8 @@
               <Value name="fieldList">[]</Value>
               <Value name="constraints">[]</Value>
               <Value name="objective">
+              </Value>
+              <Value name="fieldNames">
               </Value>
               <Value name="activePage">landing</Value>
             </Configuration>
@@ -491,7 +490,7 @@
         </Node>
         <Node ToolID="13">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="65" y="351" />
+            <Position x="64.99995" y="368" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -547,18 +546,85 @@
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
         </Node>
+        <Node ToolID="36">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="282" y="191" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5716_eacf8a2221c1449fba0398f0846ed848_\Engine_8336_9d5f7097d1de40acb6613c3a42ea2a66_.yxdb</TempFile>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="282" y="275" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5716_eacf8a2221c1449fba0398f0846ed848_\Engine_8336_5a402102e66d4b68b1356bb7edb46cd6_.yxdb</TempFile>
+              <Layout />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="38">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="282" y="359" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5716_eacf8a2221c1449fba0398f0846ed848_\Engine_8336_ffb45f7cd6574bd193b9a51647bb6a87_.yxdb</TempFile>
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
       </ChildNodes>
     </Node>
     <Node ToolID="20">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="441" y="162" width="227.5387" height="19" />
+        <Position x="441" y="145" width="294" height="271" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Test: matrix input QP dense matrices</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
-          <Disabled value="True" />
-          <Folded value="True" />
+          <Disabled value="False" />
+          <Folded value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -676,47 +742,15 @@
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
         </Node>
-        <Node ToolID="17">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="679" y="239" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_10176_9128af0ff85d42a29107afe2e2c02e34_\Engine_3528_9ae19cf85f334987bdb4a9efe8e45bad_.yxdb</TempFile>
-              <Layout>
-                <ViewMode>Single</ViewMode>
-                <ViewSize value="100" />
-                <View1>
-                  <DefaultTab>Report</DefaultTab>
-                  <Hints>
-                    <Table />
-                  </Hints>
-                </View1>
-                <View2 />
-              </Layout>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-        </Node>
         <Node ToolID="18">
           <GuiSettings Plugin="Optimization">
             <Position x="571" y="251" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Value name="showSensitivity">False</Value>
               <Value name="filePath">
               </Value>
               <Value name="fileType">CPLEX_LP</Value>
-              <Value name="editorValue">
-              </Value>
-              <Value name="fieldNames">
-              </Value>
               <Value name="maximize">False</Value>
               <Value name="solver">quadprog</Value>
               <Value name="problemType">QP</Value>
@@ -726,6 +760,8 @@
               <Value name="fieldList">[]</Value>
               <Value name="constraints">[]</Value>
               <Value name="objective">
+              </Value>
+              <Value name="fieldNames">
               </Value>
               <Value name="activePage">landing</Value>
             </Configuration>
@@ -775,18 +811,66 @@
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
         </Node>
+        <Node ToolID="39">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="666" y="174" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5716_eacf8a2221c1449fba0398f0846ed848_\Engine_8336_f626ab78866a4588a4fcd6bc8e6e62aa_.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="40">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="666" y="246" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5716_eacf8a2221c1449fba0398f0846ed848_\Engine_8336_be7ee2cd66574f0099180fa3a146e5dc_.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="41">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="666" y="330" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5716_eacf8a2221c1449fba0398f0846ed848_\Engine_8336_61e49c34d99f4959a7259a0ec4adbf04_.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
       </ChildNodes>
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="433" y="366" width="317.2413" height="19" />
+        <Position x="426" y="498" width="317.2413" height="254" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Test: manual input QP, with * and irregular white space</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
-          <Disabled value="True" />
-          <Folded value="True" />
+          <Disabled value="False" />
+          <Folded value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -797,17 +881,13 @@
       <ChildNodes>
         <Node ToolID="26">
           <GuiSettings Plugin="Optimization">
-            <Position x="443" y="395" />
+            <Position x="436" y="604" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Value name="showSensitivity">False</Value>
               <Value name="filePath">
               </Value>
               <Value name="fileType">CPLEX_LP</Value>
-              <Value name="editorValue">
-              </Value>
-              <Value name="fieldNames">x, y, z</Value>
               <Value name="maximize">False</Value>
               <Value name="solver">quadprog</Value>
               <Value name="problemType">QP</Value>
@@ -817,6 +897,7 @@
               <Value name="fieldList">[{"fieldName":"x","type":"Continuous","lowerBound":0,"upperBound":"1"},{"fieldName":"y","type":"Continuous","lowerBound":0,"upperBound":"1"},{"fieldName":"z","type":"Continuous","lowerBound":0,"upperBound":"1"}]</Value>
               <Value name="constraints">["x + 2y + 3z &gt;= 4","x + y &gt;= 1"]</Value>
               <Value name="objective">2* x + [ 2 x ^2 + 2 x * y + 2 y ^2 + 2 y * z + 2 z ^2 ] / 2</Value>
+              <Value name="fieldNames">x, y, z</Value>
               <Value name="activePage">landing</Value>
             </Configuration>
             <Annotation DisplayMode="0">
@@ -827,13 +908,45 @@
           </Properties>
           <EngineSettings Macro="Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Supporting_Macros/Optimization.yxmc" />
         </Node>
-        <Node ToolID="27">
+        <Node ToolID="45">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="539" y="395" />
+            <Position x="534" y="527" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8164_b51536cc99d1412c8d7b4a01984336ad_\Engine_6800_cd03cf17f97549c38b48b936ae179c60_.yxdb</TempFile>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5716_eacf8a2221c1449fba0398f0846ed848_\Engine_8336_6607ccd834cc44d9980d2e8156b1ba71_.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="46">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="534" y="599" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5716_eacf8a2221c1449fba0398f0846ed848_\Engine_8336_dc5f1fc9e242472c9e44eeeec0addbaa_.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="47">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="534" y="683" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5716_eacf8a2221c1449fba0398f0846ed848_\Engine_8336_e4e9325a53034cd08e8458c828445a2c_.yxdb</TempFile>
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
@@ -871,6 +984,18 @@
       <Destination ToolID="35" Connection="Input" />
     </Connection>
     <Connection>
+      <Origin ToolID="23" Connection="Simple" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Data" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Interactive" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
       <Origin ToolID="1" Connection="Output" />
       <Destination ToolID="5" Connection="InputO" />
     </Connection>
@@ -887,6 +1012,18 @@
       <Destination ToolID="5" Connection="InputQ" />
     </Connection>
     <Connection>
+      <Origin ToolID="5" Connection="Simple" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Data" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Interactive" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
       <Origin ToolID="14" Connection="Output" />
       <Destination ToolID="18" Connection="InputO" />
     </Connection>
@@ -901,6 +1038,30 @@
     <Connection>
       <Origin ToolID="19" Connection="Output" />
       <Destination ToolID="18" Connection="InputQ" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Simple" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Data" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Interactive" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Simple" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Data" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Interactive" />
+      <Destination ToolID="47" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
