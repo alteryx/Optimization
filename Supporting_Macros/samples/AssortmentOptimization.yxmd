@@ -350,7 +350,7 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3300_c4e28b3fd1c94582ac0f497acb725910_\Engine_5448_e6d244b53d784b669ed7cf272d4411e6_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3568_10b30922f796461b94beb368d8b7160e_\Engine_4908_98b3f0c78f0c459b932ee72605d31fb4_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -446,7 +446,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3300_c4e28b3fd1c94582ac0f497acb725910_\Engine_5448_c386187fb74345f2ae83a943ae2b0c01_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3568_10b30922f796461b94beb368d8b7160e_\Engine_4908_9467a49a917f48bcb670aabe5b0488ce_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -649,7 +649,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3300_c4e28b3fd1c94582ac0f497acb725910_\Engine_5448_a52825f7f0e64f35bd2946bc50089bc4_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3568_10b30922f796461b94beb368d8b7160e_\Engine_4908_40f57901f8e24e33b5ac627c829c85a5_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -672,7 +672,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3300_c4e28b3fd1c94582ac0f497acb725910_\Engine_5448_5177230a07cc4ee9ae36095f534cbaf2_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3568_10b30922f796461b94beb368d8b7160e_\Engine_4908_6d33f7779e424897ba0baf566a54bc6f_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -813,7 +813,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3300_c4e28b3fd1c94582ac0f497acb725910_\Engine_5448_9cd3f7e074344d909fc45d2c9c7c6eae_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3568_10b30922f796461b94beb368d8b7160e_\Engine_4908_ff61711777084a45a7cc584ad96b1b27_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -836,17 +836,13 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3300_c4e28b3fd1c94582ac0f497acb725910_\Engine_5448_0d98f6fe8ebc44268d8bd4e40a4941d8_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3568_10b30922f796461b94beb368d8b7160e_\Engine_4908_4a28b9d4f83349bd8952ae3a802bcdfc_.yxdb</TempFile>
           <Layout>
-            <ViewMode>Single</ViewMode>
-            <ViewSize value="100" />
             <View1>
-              <DefaultTab>Report</DefaultTab>
               <Hints>
                 <Table />
               </Hints>
             </View1>
-            <View2 />
           </Layout>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -863,7 +859,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Text>We use the File Mode to specify the problem using an external file formatted according to one of CPLEX_LP, MathProg or MPS formats. The image above is the CPLEX_LP format.</Text>
+          <Text>We use the File Mode to specify the problem using an external file formatted according to one of CPLEX_LP, MathProg or MPS formats. The image below is the CPLEX_LP format.</Text>
           <Font name="Segoe UI" size="9.75" style="0" />
           <TextColor name="Black" />
           <FillColor name="White" />
@@ -903,7 +899,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3300_c4e28b3fd1c94582ac0f497acb725910_\Engine_5448_4b45dbf5ef8343879df110803fa41e26_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3568_10b30922f796461b94beb368d8b7160e_\Engine_4908_01aee445f5e84ee1ab9058f4fce632fe_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -926,7 +922,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3300_c4e28b3fd1c94582ac0f497acb725910_\Engine_5448_f347653d655949779000dbbf625dd819_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3568_10b30922f796461b94beb368d8b7160e_\Engine_4908_26e5a26b188c4e87b02b24af3cc79c73_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -1121,7 +1117,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3300_c4e28b3fd1c94582ac0f497acb725910_\Engine_5448_d075ecfc14ca4476ba81cb5bc5c51c20_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3568_10b30922f796461b94beb368d8b7160e_\Engine_4908_54165ef955f8430093a2b3d612bed157_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -1173,7 +1169,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3300_c4e28b3fd1c94582ac0f497acb725910_\Engine_5448_5b8c38911dc34c5a93e2f293164663b8_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3568_10b30922f796461b94beb368d8b7160e_\Engine_4908_57ec9eb7bfd84cc284897bb1e3a6536d_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -1227,7 +1223,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3300_c4e28b3fd1c94582ac0f497acb725910_\Engine_5448_274b0ee9853c4d699480a6bd36ecf0af_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3568_10b30922f796461b94beb368d8b7160e_\Engine_4908_373cd1a0e25a4a80beecb12f9c5dd13b_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -1285,7 +1281,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3300_c4e28b3fd1c94582ac0f497acb725910_\Engine_5448_501c2ced1e7c4e3ca17ba0848743bc5c_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3568_10b30922f796461b94beb368d8b7160e_\Engine_4908_1b0fb193f1f64d1688e0adf3634a87b2_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -1423,7 +1419,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>Sample_Assortment_Optimization</Name>
+      <Name>AssortmentOptimization</Name>
       <Description />
       <RootToolName />
       <ToolVersion />
