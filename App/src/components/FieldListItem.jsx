@@ -9,7 +9,7 @@ function FieldListItem({ field, options }) {
   const onSelect = (v) => field.update('type', v);
 
   return (
-    <div className="list-group-item">
+    <div className="list-group-item short-item">
       <div className="row">
         <div className="col-xs-8">
           <BoundItemContainer
@@ -27,7 +27,8 @@ function FieldListItem({ field, options }) {
           />
         </div>
         <div className="col-xs-1" style={{ marginTop: 5 }}>
-          <a href="#" className="pull-right" onClick={handleDelete}>
+          {/*<a href="#" className="pull-right" onClick={handleDelete}>*/}
+          <a href="#" onClick={handleDelete}>
             <i className="fa fa-trash fa-lg text-danger"></i>
           </a>
         </div>

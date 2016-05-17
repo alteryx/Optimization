@@ -6,7 +6,7 @@ function InputBound({ bound, field, onChange, placeholder }) {
     <input
       type="text"
       style={{ width: '100%' }}
-      className="form-control"
+      className="form-control input-sm"
       defaultValue={bound[field]}
       onChange={(e) => onChange(e, field)}
       placeholder={ placeholder || field }
