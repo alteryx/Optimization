@@ -3,11 +3,11 @@
   <Nodes>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="162" y="90" />
+        <Position x="162" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4364_11e58a2f468d44dba3128e3772e3f615_\Engine_4144_140b6327b0d64d5ab0a6ddaf0daee2c3_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5948_b103dd8c315d47a7a7f811dc92353b5e_\Engine_6056_8cb6bc92ed144696859506cabf699f9b_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -24,43 +24,13 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
     </Node>
-    <Node ToolID="3">
-      <GuiSettings Plugin="Optimization">
-        <Position x="54" y="90" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Value name="filePath">\\vmware-host\Shared Folders\SNIPPETS\dev\HtmlPlugins\Optimization\Supporting_Macros\data\lp_example.lp</Value>
-          <Value name="fileType">CPLEX_LP</Value>
-          <Value name="maximize">False</Value>
-          <Value name="solver">glpk</Value>
-          <Value name="problemType">LP</Value>
-          <Value name="inputMode">file</Value>
-          <Value name="payload">{"fileType":"CPLEX_LP","filePath":"\\\\vmware-host\\Shared Folders\\SNIPPETS\\dev\\HtmlPlugins\\Optimization\\Supporting_Macros\\data\\lp_example.lp","solver":"glpk","inputMode":"file","maximize":false,"problemType":"LP"}</Value>
-          <Value name="selectedTab">0</Value>
-          <Value name="fieldList">[]</Value>
-          <Value name="constraints">[]</Value>
-          <Value name="objective">
-          </Value>
-          <Value name="fieldNames">
-          </Value>
-          <Value name="activePage">landing</Value>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>File Input Mode</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings Macro="Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Supporting_Macros/Optimization.yxmc" />
-    </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="162" y="162" />
+        <Position x="162" y="210" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4364_11e58a2f468d44dba3128e3772e3f615_\Engine_4144_2f9c2d6a136a40beacebe301be568223_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5948_b103dd8c315d47a7a7f811dc92353b5e_\Engine_6056_714b99ee45fd4013b848d4b7ea37018f_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -83,11 +53,11 @@
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="162" y="6" />
+        <Position x="162" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4364_11e58a2f468d44dba3128e3772e3f615_\Engine_4144_ad25b2172f41418a9f5989acda45f99f_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5948_b103dd8c315d47a7a7f811dc92353b5e_\Engine_6056_2a520f15a45e4f148079efb19885c73c_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -104,19 +74,49 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
     </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="Optimization">
+        <Position x="78" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="filePath">..\data\lp_example.lp</Value>
+          <Value name="fileType">CPLEX_LP</Value>
+          <Value name="maximize">False</Value>
+          <Value name="solver">glpk</Value>
+          <Value name="problemType">LP</Value>
+          <Value name="inputMode">file</Value>
+          <Value name="payload">{"fileType":"CPLEX_LP","filePath":"..\\data\\lp_example.lp","solver":"glpk","inputMode":"file","maximize":false,"problemType":"LP"}</Value>
+          <Value name="selectedTab">0</Value>
+          <Value name="fieldList">[]</Value>
+          <Value name="constraints">[]</Value>
+          <Value name="objective">
+          </Value>
+          <Value name="fieldNames">
+          </Value>
+          <Value name="activePage">landing</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>File Input Mode</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Optimization/Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Optimization/Supporting_Macros/Optimization.yxmc" />
+    </Node>
   </Nodes>
   <Connections>
     <Connection>
-      <Origin ToolID="3" Connection="Data" />
+      <Origin ToolID="6" Connection="Data" />
       <Destination ToolID="2" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="3" Connection="Interactive" />
-      <Destination ToolID="4" Connection="Input" />
+      <Origin ToolID="6" Connection="Simple" />
+      <Destination ToolID="5" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="3" Connection="Simple" />
-      <Destination ToolID="5" Connection="Input" />
+      <Origin ToolID="6" Connection="Interactive" />
+      <Destination ToolID="4" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
