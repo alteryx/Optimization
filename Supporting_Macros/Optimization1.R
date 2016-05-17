@@ -1,19 +1,25 @@
 ## DO NOT MODIFY: Auto Inserted by AlteryxRhelper ----
 suppressWarnings(library(AlteryxPrescriptive))
+# This option helps us detect whether we are running in an Alteryx workflow or not.
+options(alteryx.inworkflow = '%Question.activePage%' != "" && inAlteryx()) 
 config <- list(
   activePage = textInput('%Question.activePage%'),
   constraints = textInput(
     '%Question.constraints%'
-    #, '["3 x1 + 4 x2 + 2 x3 <= 60","2 x1 + x2 + 2 x3 <= 40","x1 + 3 x2 + 2 x3 <= 80"]'
+    , '["3 x1 + 4 x2 + 2 x3 <= 60","2 x1 + x2 + 2 x3 <= 40","x1 + 3 x2 + 2 x3 <= 80"]'
   ),
   editorValue = textInput('%Question.editorValue%'),
   fieldList = textInput('%Question.fieldList%'),
   fieldNames = textInput('%Question.fieldNames%'),
   fileType = dropdownInput('%Question.fileType%' , 'CPLEX_LP'),
-  inputMode = dropdownInput('%Question.inputMode%' , if (inAlteryx()) 'matrix' else 'file'),
+  inputMode = dropdownInput(
+    '%Question.inputMode%' , 
+    if (inAlteryx()) 'matrix' else 'file'
+  ),
   maximize = checkboxInput('%Question.maximize%' , TRUE),
-  objective = textInput('%Question.objective%' 
-    #, '2 x1 + 4 x2 + 3 x3'
+  objective = textInput(
+    '%Question.objective%' 
+    , '2 x1 + 4 x2 + 3 x3'
   ),
   payload = textInput('%Question.payload%'),
   problemType = dropdownInput('%Question.problemType%' , 'LP'),
@@ -26,8 +32,9 @@ options(alteryx.debug = config$debug)
 ##----
 
 # Update configuration ----
-config$filePath = textInput('%Question.filePath%'
-  #,AlteryxPrescriptive::getSampleData("lp_example.lp")
+config$filePath = textInput(
+  '%Question.filePath%', 
+  AlteryxPrescriptive::getSampleData("lp_example.lp")
 )
 # Throw error if file path is invalid
 if (config$inputMode == 'file' && !file.exists(config$filePath)){
@@ -57,7 +64,7 @@ readInputs <- function(...){
 }
 # TOFIX: think through the condition to read inputs
 inputs <- if (inAlteryx()) {
-  if (config$problemType == "LP"){
+  if (config$problemType != "QP"){
     readInputs("O", "A", "B")
   } else {
     readInputs("O", "A", "B", "Q") 
