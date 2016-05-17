@@ -51,6 +51,20 @@ options(alteryx.debug = config$debug)
 config$filePath = textInput('%Question.filePath%'
   #,AlteryxPrescriptive::getSampleData("lp_example.lp")
 )
+# Throw error if file path is invalid
+if (config$inputMode == 'file' &amp;&amp; !file.exists(config$filePath)){
+  stop.Alteryx('Invalid file path specified')
+}
+
+if (config$inputMode == 'manual'){
+  if (config$objective == ""){
+    stop.Alteryx("Please specify an objective function")
+  }
+  if (config$constraints == "[]"){
+    stop.Alteryx("Please specify at least one constraint")
+  }
+}
+
 config$constraints = jsonlite::fromJSON(config$constraints)
 if (config$fieldList != "") {
   config$fieldList = jsonlite::fromJSON(config$fieldList, simplifyDataFrame = FALSE)
