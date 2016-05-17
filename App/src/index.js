@@ -21,10 +21,10 @@ const controlPageDisplay = (manager) => {
 
 const syncSolverList = (manager) => {
   const solverList = {
-    All: {glpk: 'Glpk', symphony: 'Symphony', quadprog: 'Quadprog', gurobi: 'Gurobi'},
-    LP: {glpk: "Glpk", symphony: "Symphony", gurobi: "Gurobi"},
-    MIP: {glpk: "Glpk", symphony: "Symphony", gurobi: "Gurobi"},
-    QP: {quadprog: "Quadprog", gurobi: "Gurobi"}
+    All: {glpk: 'Glpk', symphony: 'Symphony', quadprog: 'Quadprog'},
+    LP: {glpk: "Glpk", symphony: "Symphony"},
+    MIP: {glpk: "Glpk", symphony: "Symphony"},
+    QP: {quadprog: "Quadprog"}
   }
   const solver = manager.GetDataItem('solver')
   const inputMode = manager.GetDataItem('inputMode')
