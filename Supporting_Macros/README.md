@@ -71,3 +71,5 @@ There are 4 inputs and all are optional
 ### Output
 
 1. __I Output:__ This output provides a dashboard of the solution.
+2. __D Output:__ This output consists of three pipe-separted tables `summary`, `variables` and `constraints`. They can be used upstream in the workflow to create reports and dashboards.
+3. __S Output:__ This is a simple data output that consists of a single table with the optimal value of the objective function and the decision variables. For problems consisting of only Binary decision variables (0/1), this table only contains those values that are 1.
