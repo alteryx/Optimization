@@ -256,11 +256,11 @@
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="282" y="78" />
+        <Position x="282" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3780_cf8fa942222f4b969bee743bd5d292f8_\Engine_5088_86d8d7472df04147bcd6f8d724b04ca1_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4172_606c399e493c4f478c23ea03b41df5fe_\Engine_4144_e2104b097d444a71a524fa52f3d1d5e5_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -283,13 +283,9 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Value name="showSensitivity">False</Value>
           <Value name="filePath">
           </Value>
           <Value name="fileType">CPLEX_LP</Value>
-          <Value name="editorValue">
-          </Value>
-          <Value name="fieldNames">x1,x2,x3</Value>
           <Value name="maximize">True</Value>
           <Value name="solver">glpk</Value>
           <Value name="problemType">LP</Value>
@@ -299,6 +295,7 @@
           <Value name="fieldList">[]</Value>
           <Value name="constraints">["3x1 + 4x2 + 2x3 &lt;= 60","2x1 + x2 + 2x3 &lt;= 40","x1 + 3x2 + 2x3 &lt;= 80"]</Value>
           <Value name="objective">2x1 + 4x2 + 3x3</Value>
+          <Value name="fieldNames">x1,x2,x3</Value>
           <Value name="activePage">landing</Value>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -311,11 +308,11 @@
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="282" y="162" />
+        <Position x="282" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3780_cf8fa942222f4b969bee743bd5d292f8_\Engine_5088_c42593271c894f7ba3aed3e8c6aa9aee_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4172_606c399e493c4f478c23ea03b41df5fe_\Engine_4144_1cf1036ad0134ec780135bee6f076600_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -326,6 +323,29 @@
               </Hints>
             </View1>
             <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="282" y="42" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4172_606c399e493c4f478c23ea03b41df5fe_\Engine_4144_5eea383826b648e798e7b9971049e62a_.yxdb</TempFile>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
           </Layout>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -357,6 +377,10 @@
     <Connection>
       <Origin ToolID="7" Connection="Interactive" />
       <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Simple" />
+      <Destination ToolID="9" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>

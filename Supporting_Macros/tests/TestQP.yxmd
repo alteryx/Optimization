@@ -86,7 +86,7 @@
     </Node>
     <Node ToolID="31">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="517" width="177" height="158" />
+        <Position x="54" y="546" width="177" height="206" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -104,11 +104,10 @@
       <ChildNodes>
         <Node ToolID="32">
           <GuiSettings Plugin="Optimization">
-            <Position x="64" y="575" />
+            <Position x="64" y="633" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Value name="showSensitivity">False</Value>
               <Value name="filePath">..\data\qp_complex.lp</Value>
               <Value name="fileType">CPLEX_LP</Value>
               <Value name="maximize">False</Value>
@@ -135,11 +134,11 @@
         </Node>
         <Node ToolID="33">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="162" y="546" />
+            <Position x="162" y="630" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3436_49424185880c4c04a69bb9af2917fc5b_\Engine_5088_d47e95f1ed5342338a4dcbecc28dfec5_.yxdb</TempFile>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2240_0765ccf7f2994a5ea7bc86f7e7f99f02_\Engine_3640_c101faf0c39745998a4ccd8e59bc2499_.yxdb</TempFile>
               <Layout>
                 <View1>
                   <Hints>
@@ -158,11 +157,11 @@
         </Node>
         <Node ToolID="34">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="162" y="606" />
+            <Position x="162" y="683" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_3436_49424185880c4c04a69bb9af2917fc5b_\Engine_5088_9105a6125c304b18a3092ad45f4f00cb_.yxdb</TempFile>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2240_0765ccf7f2994a5ea7bc86f7e7f99f02_\Engine_3640_47017cb5266442cdb2d2003e59396d25_.yxdb</TempFile>
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
@@ -173,6 +172,29 @@
                   </Hints>
                 </View1>
                 <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="35">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="162" y="575" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2240_0765ccf7f2994a5ea7bc86f7e7f99f02_\Engine_3640_6d972a2a2ead4d5bae212ec71f912538_.yxdb</TempFile>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
               </Layout>
             </Configuration>
             <Annotation DisplayMode="0">
@@ -843,6 +865,10 @@
     <Connection>
       <Origin ToolID="32" Connection="Interactive" />
       <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Simple" />
+      <Destination ToolID="35" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="1" Connection="Output" />
