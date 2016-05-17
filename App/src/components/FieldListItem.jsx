@@ -18,19 +18,21 @@ function FieldListItem({ field, options }) {
             onEdit={handleEdit}
           />
         </div>
-        <div className="col-xs-3">
-          <Select
-            style={{ width: 'auto' }}
-            value={field.type}
-            options={options}
-            onChange={onSelect}
-          />
-        </div>
-        <div className="col-xs-1" style={{ marginTop: 5 }}>
-          {/*<a href="#" className="pull-right" onClick={handleDelete}>*/}
-          <a href="#" onClick={handleDelete}>
-            <i className="fa fa-trash fa-lg text-danger"></i>
-          </a>
+        <div className="col-xs-4 full-width">
+          <div className="input-group">
+            <Select
+              // style={{ width: 'auto' }}
+              className="form-control"
+              value={field.type}
+              options={options}
+              onChange={onSelect}
+            />
+              <span className="input-group-btn">
+                <button type="button" className="btn btn-xs btn-transparent" onClick={handleDelete}>
+                  <i className="fa fa-trash text-danger"></i>
+                </button>
+              </span>
+          </div>
         </div>
       </div>
     </div>

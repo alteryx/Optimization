@@ -16,8 +16,26 @@
   padding-bottom: 5px;
 }
 
+.full-width {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .list-group-item-editing {
   border-left: 2px solid darkgreen;
+}
+
+.btn-transparent {
+  background-color: transparent;
+}
+
+.btn-transparent:hover {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.btn-tiny {
+  font-size: 9px;
 }
 
 /*Make ReactCodeMirror component align with Bootstrap*/

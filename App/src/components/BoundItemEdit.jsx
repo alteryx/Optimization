@@ -8,9 +8,9 @@ function BoundItemEdit({ tempBound, onSubmit, onCancel }) {
   };
 
   return (
-    <div className="row clearfix">
+    <div className="row">
       <form className="form-inline" onSubmit={onSubmit}>
-        <div className="col-xs-3">
+        <div className="col-xs-4">
           <InputBound
             bound={tempBound}
             field="lowerBound"
@@ -18,12 +18,10 @@ function BoundItemEdit({ tempBound, onSubmit, onCancel }) {
             placeholder="Lower Bound"
           />
         </div>
-        <div style={{ paddingLeft: 5, paddingRight: 5 }} className="col-xs-2">
-          <label>
-            <h5> &lt;= {tempBound.field} &lt;= </h5>
-          </label>
+        <div style={{ paddingLeft: 5, paddingRight: 5 }} className="col-xs-1">
+          <h5 style={{ marginTop: 5, marginBottom: 5, paddingTop: 4 }} className="text-center">{tempBound.field}</h5>
         </div>
-        <div className="col-xs-3">
+        <div className="col-xs-4">
           <InputBound
             bound={tempBound}
             field="upperBound"
@@ -31,14 +29,14 @@ function BoundItemEdit({ tempBound, onSubmit, onCancel }) {
             placeholder="Upper Bound"
           />
         </div>
-        <div className="col-xs-3">
-          <div style={{ marginTop: 10 }} className="btn-toolbar pull-right">
-            <button type="submit" className="btn btn-success btn-sm">
+        <div style={{ paddingLeft: 5, paddingRight: 5, paddingTop: 10 }} className="col-xs-3">
+          <div className="btn-toolbar center-block">
+            <button type="submit" className="btn btn-tiny btn-success btn-xs">
               <i className="fa fa-check"></i>
             </button>
             <button
               type="button"
-              className="btn btn-danger btn-sm"
+              className="btn btn-tiny btn-danger btn-xs"
               onClick={onCancel}
             >
               <i className="fa fa-times"></i>
