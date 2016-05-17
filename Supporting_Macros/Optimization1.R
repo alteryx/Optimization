@@ -3,8 +3,8 @@ suppressWarnings(library(AlteryxPrescriptive))
 config <- list(
   activePage = textInput('%Question.activePage%'),
   constraints = textInput(
-    '%Question.constraints%' , 
-    '["3 x1 + 4 x2 + 2 x3 <= 60","2 x1 + x2 + 2 x3 <= 40","x1 + 3 x2 + 2 x3 <= 80"]'
+    '%Question.constraints%'
+    #, '["3 x1 + 4 x2 + 2 x3 <= 60","2 x1 + x2 + 2 x3 <= 40","x1 + 3 x2 + 2 x3 <= 80"]'
   ),
   editorValue = textInput('%Question.editorValue%'),
   fieldList = textInput('%Question.fieldList%'),
@@ -12,7 +12,9 @@ config <- list(
   fileType = dropdownInput('%Question.fileType%' , 'CPLEX_LP'),
   inputMode = dropdownInput('%Question.inputMode%' , if (inAlteryx()) 'matrix' else 'file'),
   maximize = checkboxInput('%Question.maximize%' , TRUE),
-  objective = textInput('%Question.objective%' , '2 x1 + 4 x2 + 3 x3'),
+  objective = textInput('%Question.objective%' 
+    #, '2 x1 + 4 x2 + 3 x3'
+  ),
   payload = textInput('%Question.payload%'),
   problemType = dropdownInput('%Question.problemType%' , 'LP'),
   selectedTab = textInput('%Question.selectedTab%'),
@@ -24,9 +26,8 @@ options(alteryx.debug = config$debug)
 ##----
 
 # Update configuration ----
-config$filePath = textInput(
-  '%Question.filePath%', 
-  AlteryxPrescriptive::getSampleData("lp_example.lp")
+config$filePath = textInput('%Question.filePath%'
+  #,AlteryxPrescriptive::getSampleData("lp_example.lp")
 )
 config$constraints = jsonlite::fromJSON(config$constraints)
 if (config$fieldList != "") {
