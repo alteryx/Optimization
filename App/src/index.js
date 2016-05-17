@@ -17,41 +17,35 @@ const controlPageDisplay = (manager) => {
     });
 };
 
+
+
 const syncSolverList = (manager) => {
-  const solver = manager.GetDataItem('solver');
+  const solverList = {
+    All: {glpk: 'Glpk', symphony: 'Symphony', quadprog: 'Quadprog', gurobi: 'Gurobi'},
+    LP: {glpk: "Glpk", symphony: "Symphony", gurobi: "Gurobi"},
+    MIP: {glpk: "Glpk", symphony: "Symphony", gurobi: "Gurobi"},
+    QP: {quadprog: "Quadprog", gurobi: "Gurobi"}
+  }
+  const solver = manager.GetDataItem('solver')
   const inputMode = manager.GetDataItem('inputMode')
-  const setSolverList = (pType) => {
-    if (inputMode.getValue() === "file") {
-      //solver.setValue('glpk');
-      solver.setStringList(
-        createUIObject({
-          glpk: 'Glpk',
-          gurobi: 'Gurobi',
-          quadprog: 'Quadprog',
-          symphony: 'Symphony'
-        })
-      );
-    } else if (pType === 'QP') {
-      solver.setValue('quadprog');
-      solver.setStringList(
-        createUIObject({
-          quadprog: 'Quadprog',
-          gurobi: 'Gurobi',
-        })
-      );
+  const setSolverList = () => {
+    const pType = manager.GetDataItem('problemType').getValue();
+    if (inputMode.getValue() == "file"){
+      solver.setStringList(createUIObject(solverList.All))
+    } else if (pType == "QP"){
+      if (Object.keys(solverList.QP).indexOf(solver.value) < 0){
+        solver.setValue("quadprog")
+      }
+      solver.setStringList(createUIObject(solverList.QP))
     } else {
-      solver.setValue('glpk');
-      solver.setStringList(
-        createUIObject({
-          glpk: 'Glpk',
-          gurobi: 'Gurobi',
-          symphony: 'Symphony',
-        })
-      );
+      if (Object.keys(solverList.LP).indexOf(solver.value) < 0){
+        solver.setValue("glpk")
+      }
+      solver.setStringList(createUIObject(solverList.LP))
     }
-  };
+  }
   const problemType = manager.GetDataItem('problemType');
-  setSolverList(problemType.getValue());
+  setSolverList();
   problemType.BindUserDataChanged(setSolverList);
   inputMode.BindUserDataChanged(setSolverList);
 };
