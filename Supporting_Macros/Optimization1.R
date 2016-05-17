@@ -54,9 +54,20 @@ inputs <- if (inAlteryx()) {
 print(config)
 payload <- list(config = config, inputs = inputs)
 
-## Interactive Visualization ----
+# Solve Optimization Problem
 out <- AlteryxSolve(payload)
-makeInteractiveReport(out, nOutput = 3)
 
-dataOutput <- makeDataOutput(out, asJSON = TRUE)
-write.Alteryx(dataOutput, 1)
+## Outputs ---
+
+# S Output: Simple Table
+simpleOutput <- makeDataOutput(out, format = 'simple')
+write.Alteryx(simpleOutput, 1)
+
+# D Output: All Tables
+dataOutput <- makeDataOutput(out, format = 'pipe')
+write.Alteryx(dataOutput, 3)
+
+## I Output: Interactive Dashboard ----
+makeInteractiveReport(out, nOutput = 5)
+
+
