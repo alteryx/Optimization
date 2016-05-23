@@ -47,6 +47,11 @@ class Store extends AyxStore {
   }
 
   /* Store Methods */
+  // Indicate whether the user has entered fields and created the Field objects
+  @computed get fieldsAssigned() {
+    return this.fieldStore.fields.length > 0;
+  }
+
   @computed get isEditorEmpty() {
     return this.editorValue === '';
   }
