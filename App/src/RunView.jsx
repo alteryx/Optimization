@@ -1,12 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
-import FieldStore from './stores/FieldStore';
+// import FieldStore from './stores/FieldStore';
 import Store from './stores/Store';
 import Layout from './Layout';
 
 const runView = (ayx, dataItems, divId) => {
-  const fieldStore = new FieldStore(ayx);
-  const store = new Store(ayx, dataItems, fieldStore);
+  const store = new Store(ayx, dataItems);
 
   render(
     <Layout store={store} />,

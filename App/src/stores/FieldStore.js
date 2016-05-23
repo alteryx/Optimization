@@ -53,9 +53,8 @@ class FieldStore {
   fieldTypes = ['Continuous', 'Binary', 'Integer'];
   @observable fields = [];
 
-  constructor(ayx) {
-    const { manager } = ayx.Gui;
-    this.manager = manager;
+  constructor(parentStore) {
+    this.parentStore = parentStore;
   }
 
   addField(name, type = 'Continuous', lowerBound = 0, upperBound = '+inf') {
@@ -87,7 +86,9 @@ class FieldStore {
   }
 
   syncFields() {
-    this.manager.GetDataItemByDataName('fieldList').setValue(JSON.stringify(this.asJSON));
+    this.parentStore.manager
+      .GetDataItemByDataName('fieldList')
+      .setValue(JSON.stringify(this.asJSON));
   }
 }
 
