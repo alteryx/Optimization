@@ -15,7 +15,7 @@ This configuration is automatically generated from `Optimization.yxmc`
 |filePath        |Select file              |                                                                                 |                                     |
 |fileType        |Select file type         |CPLEX_LP                                                                         |["CPLEX_LP", "MathProg", "MPS_Free"] |
 |showSensitivity |                         |false                                                                            |                                     |
-|fieldNames      |Enter Decision Variables |x1,x2,x3                                                                         |                                     |
+|fieldNames      |Enter decision variables |x1,x2,x3                                                                         |                                     |
 |editorValue     |                         |                                                                                 |                                     |
 |activePage      |Active Page              |                                                                                 |                                     |
 |fieldList       |Field List               |                                                                                 |                                     |
