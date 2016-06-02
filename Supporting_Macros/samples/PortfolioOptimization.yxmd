@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="174" y="258" />
+        <Position x="198" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -26,32 +26,9 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
     </Node>
-    <Node ToolID="5">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="294" y="198" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_11568_0d7a72b84d0c4d32a1c16c33c328cf79_\Engine_7312_32a0cc9d810f497ba78ad2ecc71906e0_.yxdb</TempFile>
-          <Layout>
-            <View1>
-              <Hints>
-                <Table />
-              </Hints>
-            </View1>
-          </Layout>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-    </Node>
     <Node ToolID="17">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="150" y="556" />
+        <Position x="174" y="652" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -72,14 +49,15 @@
     </Node>
     <Node ToolID="18">
       <GuiSettings Plugin="AlteryxRPluginGui.R">
-        <Position x="342" y="486" />
+        <Position x="366" y="654" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <RScript>dat &lt;- read.Alteryx("#1")
 
-mu &lt;- 8
-cov_mat &lt;- as.data.frame(-2*mu*cov(dat))
+# Set "risk aversion parameter", a = 8
+a &lt;- 8
+cov_mat &lt;- as.data.frame(-2*a*cov(dat))
 
 write.Alteryx(cov_mat, 1)</RScript>
           <UseFullUpdate value="False" />
@@ -91,7 +69,6 @@ write.Alteryx(cov_mat, 1)</RScript>
         </Annotation>
         <MetaInfo connection="Output1">
           <RecordInfo>
-            <Field name="Year" source="R-DATA:" type="Double" />
             <Field name="X3MonthTBills" source="R-DATA:" type="Double" />
             <Field name="USGovLongBonds" source="R-DATA:" type="Double" />
             <Field name="SP500" source="R-DATA:" type="Double" />
@@ -107,7 +84,7 @@ write.Alteryx(cov_mat, 1)</RScript>
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
-        <Position x="318" y="258" />
+        <Position x="342" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -135,7 +112,7 @@ write.Alteryx(cov_mat, 1)</RScript>
     </Node>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="546" y="270" />
+        <Position x="606" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -157,7 +134,7 @@ write.Alteryx(cov_mat, 1)</RScript>
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="426" y="270" />
+        <Position x="498" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -180,7 +157,7 @@ type="C"</DefaultAnnotationText>
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="42" y="258" />
+        <Position x="66" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -451,7 +428,7 @@ type="C"</DefaultAnnotationText>
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="Optimization">
-        <Position x="846" y="402" />
+        <Position x="870" y="570" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -480,57 +457,21 @@ type="C"</DefaultAnnotationText>
       </Properties>
       <EngineSettings Macro="Optimization/Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Optimization/Supporting_Macros/Optimization.yxmc" />
     </Node>
-    <Node ToolID="14">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="390" y="342" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <NumRows value="1" />
-          <Fields>
-            <Field name="Field1" />
-            <Field name="Field2" />
-            <Field name="Field3" />
-            <Field name="Field4" />
-            <Field name="Field5" />
-            <Field name="Field6" />
-            <Field name="Field7" />
-            <Field name="Field8" />
-          </Fields>
-          <Data>
-            <r>
-              <c>1</c>
-              <c>1</c>
-              <c>1</c>
-              <c>1</c>
-              <c>1</c>
-              <c>1</c>
-              <c>1</c>
-              <c>1</c>
-            </r>
-          </Data>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
-    </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="535" y="409" />
+        <Position x="526" y="576" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <NumRows value="1" />
           <Fields>
+            <Field name="constraint" />
             <Field name="dir" />
             <Field name="rhs" />
           </Fields>
           <Data>
             <r>
+              <c>Percentage</c>
               <c>==</c>
               <c>1</c>
             </r>
@@ -546,11 +487,11 @@ type="C"</DefaultAnnotationText>
     </Node>
     <Node ToolID="23">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="942" y="318" />
+        <Position x="966" y="486" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_11568_0d7a72b84d0c4d32a1c16c33c328cf79_\Engine_7312_fb967d8bb2c648b8897c84416310ee63_.yxdb</TempFile>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_10116_3465cc1e033a482c8dab9ca996075de9_\Engine_10016_8a8b6ca507914d25940c15d06ab81f16_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -569,11 +510,11 @@ type="C"</DefaultAnnotationText>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="966" y="402" />
+        <Position x="990" y="570" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_11568_0d7a72b84d0c4d32a1c16c33c328cf79_\Engine_7312_597179e9d18349dcbba0d28369f435c5_.yxdb</TempFile>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_10116_3465cc1e033a482c8dab9ca996075de9_\Engine_10016_8a01700167ae4728abf41373984afd4b_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -592,11 +533,11 @@ type="C"</DefaultAnnotationText>
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="954" y="510" />
+        <Position x="978" y="678" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_11568_0d7a72b84d0c4d32a1c16c33c328cf79_\Engine_7312_88028556d1c54814afda37725e95bc97_.yxdb</TempFile>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_10116_3465cc1e033a482c8dab9ca996075de9_\Engine_10016_13cfc91b23f9452eac674e22d974f8cc_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -619,20 +560,20 @@ type="C"</DefaultAnnotationText>
     </Node>
     <Node ToolID="27">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="666" y="354" />
+        <Position x="498" y="522" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <OrderChanged value="True" />
           <SelectFields>
-            <SelectField field="3MonthTBills" selected="True" type="Int16" size="2" />
-            <SelectField field="USGovLongBonds" selected="True" type="Int16" size="2" />
-            <SelectField field="SP500" selected="True" type="Int16" size="2" />
-            <SelectField field="Wilshire5000" selected="True" type="Int16" size="2" />
-            <SelectField field="NASDAQComposite" selected="True" type="Int16" size="2" />
-            <SelectField field="LehmanBrosBonds" selected="True" type="Int16" size="2" />
-            <SelectField field="EAFE" selected="True" type="Int16" size="2" />
-            <SelectField field="Gold" selected="True" type="Int16" size="2" />
+            <SelectField field="3MonthTBills" selected="False" type="Int16" size="2" />
+            <SelectField field="USGovLongBonds" selected="False" type="Int16" size="2" />
+            <SelectField field="SP500" selected="False" type="Int16" size="2" />
+            <SelectField field="Wilshire5000" selected="False" type="Int16" size="2" />
+            <SelectField field="NASDAQComposite" selected="False" type="Int16" size="2" />
+            <SelectField field="LehmanBrosBonds" selected="False" type="Int16" size="2" />
+            <SelectField field="EAFE" selected="False" type="Int16" size="2" />
+            <SelectField field="Gold" selected="False" type="Int16" size="2" />
             <SelectField field="3-Month T-Bills" selected="False" type="Int16" size="2" />
             <SelectField field="US Gov. Long Bonds" selected="False" type="Int16" size="2" />
             <SelectField field="S&amp;P500" selected="False" type="Int16" size="2" />
@@ -648,6 +589,8 @@ type="C"</DefaultAnnotationText>
             <SelectField field="Field6" selected="False" type="Int16" size="2" />
             <SelectField field="Field7" selected="False" type="Int16" size="2" />
             <SelectField field="Field8" selected="False" type="Int16" size="2" />
+            <SelectField field="Name" selected="True" rename="variable" />
+            <SelectField field="Value" selected="False" />
             <SelectField field="*Unknown" selected="False" />
           </SelectFields>
         </Configuration>
@@ -659,53 +602,84 @@ type="C"</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
     </Node>
-    <Node ToolID="35">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
-        <Position x="534" y="354" />
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="102" width="816" height="264" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <RenameMode>RightInputMetadata</RenameMode>
-          <Fields orderChanged="False">
-            <Field name="Field1" />
-            <Field name="Field2" />
-            <Field name="Field3" />
-            <Field name="Field4" />
-            <Field name="Field5" />
-            <Field name="Field6" />
-            <Field name="Field7" />
-            <Field name="Field8" />
-            <Field name="*Unknown" />
-          </Fields>
-          <Expression />
-          <NamesFromMetadata>
-            <OnError>Warn</OnError>
-            <ChangeFields>False</ChangeFields>
-          </NamesFromMetadata>
+          <Text><![CDATA[Suppose that you have already identified 8 stocks/mutual funds/ etc.  you may invest and you have certain amount of money available. The question is:  what pertentage of your total money should be invested to each item?
+
+The basic idea of portfolio optimization is that: we want to
+1. Maximize rewards (historical average returns)
+2. Minimize risks (historical average variance)
+
+Based on Markowitz's modern portfolio theory, we can't simultaneously optimize two objects, instead we maximize a combination of rewards and risks:
+
+                        reward - a * risk,
+
+where "a" is a positive number and is called "risk aversion parameter. 
+For a detailed discussion, see: http://www.wdiam.com/2012/06/10/mean-variance-portfolio-optimization-with-r-and-quadratic-programming/
+
+
+The input is historical data of US 3 Month T-Bills, US government Long Bonds, S&P 500, Wilshire 5000, NASDAQ Composite etc. from 1973 to 1994. Here we illustrate how to decide the percentage of the total money you should invest in each of the funds using optimization tool.
+
+]]></Text>
+          <Font name="Segoe UI" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="3" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="3MonthTBills" source="TextInput:" type="Byte" />
-            <Field name="USGovLongBonds" source="TextInput:" type="Byte" />
-            <Field name="SP500" source="TextInput:" type="Byte" />
-            <Field name="Wilshire5000" source="TextInput:" type="Byte" />
-            <Field name="NASDAQComposite" source="TextInput:" type="Byte" />
-            <Field name="LehmanBrosBonds" source="TextInput:" type="Byte" />
-            <Field name="EAFE" source="TextInput:" type="Byte" />
-            <Field name="Gold" source="TextInput:" type="Byte" />
-          </RecordInfo>
-        </MetaInfo>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="816" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Portfolio Optimization with Optimization tool (Quadratic Programming)</Text>
+          <Font name="Segoe UI" size="14.25" style="1" />
+          <TextColor name="White" />
+          <FillColor r="0" g="128" b="192" />
+          <Shape shape="0" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="606" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField field="Percentage" type="Double" size="8" expression="1" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>Percentage=1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
     </Node>
     <Node ToolID="34">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="378" y="630" width="106.4582" height="19" />
+        <Position x="402" y="606" width="106.4582" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -723,7 +697,7 @@ type="C"</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="30">
           <GuiSettings Plugin="AlteryxBasePluginsGui.PearsonCorrelation.PearsonCorrelation">
-            <Position x="388" y="659" />
+            <Position x="412" y="635" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -750,7 +724,7 @@ type="C"</DefaultAnnotationText>
         </Node>
         <Node ToolID="33">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="484" y="659" />
+            <Position x="508" y="635" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -783,19 +757,7 @@ Field_4=-16*[Field_4]
   <Connections>
     <Connection>
       <Origin ToolID="3" Connection="Output" />
-      <Destination ToolID="5" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="3" Connection="Output" />
       <Destination ToolID="19" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="3" Connection="Output" />
-      <Destination ToolID="35" Connection="Source" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="14" Connection="Output" />
-      <Destination ToolID="35" Connection="Targets" />
     </Connection>
     <Connection name="#1">
       <Origin ToolID="17" Connection="Output" />
@@ -818,12 +780,16 @@ Field_4=-16*[Field_4]
       <Destination ToolID="13" Connection="InputB" />
     </Connection>
     <Connection>
-      <Origin ToolID="27" Connection="Output" />
+      <Origin ToolID="38" Connection="Output" />
       <Destination ToolID="13" Connection="InputA" />
     </Connection>
     <Connection>
       <Origin ToolID="19" Connection="Output" />
       <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="22" Connection="Output" />
@@ -850,8 +816,8 @@ Field_4=-16*[Field_4]
       <Destination ToolID="25" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="35" Connection="Output" />
-      <Destination ToolID="27" Connection="Input" />
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="30" Connection="Output" />
