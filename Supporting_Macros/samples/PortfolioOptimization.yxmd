@@ -1,0 +1,861 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="10.5">
+  <Nodes>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="198" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="3MonthTBills" action="Avg" rename="3MonthTBills" />
+            <SummarizeField field="USGovLongBonds" action="Avg" rename="USGovLongBonds" />
+            <SummarizeField field="SP500" action="Avg" rename="SP500" />
+            <SummarizeField field="Wilshire5000" action="Avg" rename="Wilshire5000" />
+            <SummarizeField field="NASDAQComposite" action="Avg" rename="NASDAQComposite" />
+            <SummarizeField field="LehmanBrosBonds" action="Avg" rename="LehmanBrosBonds" />
+            <SummarizeField field="EAFE" action="Avg" rename="EAFE" />
+            <SummarizeField field="Gold" action="Avg" rename="Gold" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="174" y="652" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <SelectFields>
+            <SelectField field="Year" selected="False" />
+            <SelectField field="Field_1" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxRPluginGui.R">
+        <Position x="366" y="654" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RScript>dat &lt;- read.Alteryx("#1")
+
+# Set "risk aversion parameter", a = 8
+a &lt;- 8
+cov_mat &lt;- as.data.frame(-2*a*cov(dat))
+
+write.Alteryx(cov_mat, 1)</RScript>
+          <UseFullUpdate value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output1">
+          <RecordInfo>
+            <Field name="X3MonthTBills" source="R-DATA:" type="Double" />
+            <Field name="USGovLongBonds" source="R-DATA:" type="Double" />
+            <Field name="SP500" source="R-DATA:" type="Double" />
+            <Field name="Wilshire5000" source="R-DATA:" type="Double" />
+            <Field name="NASDAQComposite" source="R-DATA:" type="Double" />
+            <Field name="LehmanBrosBonds" source="R-DATA:" type="Double" />
+            <Field name="EAFE" source="R-DATA:" type="Double" />
+            <Field name="Gold" source="R-DATA:" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxRPluginEngine.dll" EngineDllEntryPoint="AlteryxR" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+        <Position x="342" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ErrorWarn>Warn</ErrorWarn>
+          <KeyFields />
+          <DataFields>
+            <Field field="3MonthTBills" selected="True" />
+            <Field field="USGovLongBonds" selected="True" />
+            <Field field="SP500" selected="True" />
+            <Field field="Wilshire5000" selected="True" />
+            <Field field="NASDAQComposite" selected="True" />
+            <Field field="LehmanBrosBonds" selected="True" />
+            <Field field="EAFE" selected="True" />
+            <Field field="Gold" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </DataFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="606" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <SelectFields>
+            <SelectField field="Name" selected="True" rename="variable" />
+            <SelectField field="Value" selected="True" rename="coefficient" />
+            <SelectField field="lb" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="498" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField field="lb" type="String" size="64" expression="0" />
+            <FormulaField field="ub" type="String" size="64" expression="&quot;Inf&quot;" />
+            <FormulaField field="type" type="String" size="64" expression="&quot;C&quot;" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>lb=0
+ub="Inf"
+type="C"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="66" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="22" />
+          <Fields>
+            <Field name="Year" />
+            <Field name="3MonthTBills" />
+            <Field name="USGovLongBonds" />
+            <Field name="SP500" />
+            <Field name="Wilshire5000" />
+            <Field name="NASDAQComposite" />
+            <Field name="LehmanBrosBonds" />
+            <Field name="EAFE" />
+            <Field name="Gold" />
+          </Fields>
+          <Data>
+            <r>
+              <c>1973</c>
+              <c>1.075</c>
+              <c>0.942</c>
+              <c>0.852</c>
+              <c>0.815</c>
+              <c>0.698</c>
+              <c>1.023</c>
+              <c>0.851</c>
+              <c>1.677</c>
+            </r>
+            <r>
+              <c>1974</c>
+              <c>1.084</c>
+              <c>1.02</c>
+              <c>0.735</c>
+              <c>0.716</c>
+              <c>0.662</c>
+              <c>1.002</c>
+              <c>0.768</c>
+              <c>1.722</c>
+            </r>
+            <r>
+              <c>1975</c>
+              <c>1.061</c>
+              <c>1.056</c>
+              <c>1.371</c>
+              <c>1.385</c>
+              <c>1.318</c>
+              <c>1.123</c>
+              <c>1.354</c>
+              <c>0.76</c>
+            </r>
+            <r>
+              <c>1976</c>
+              <c>1.052</c>
+              <c>1.175</c>
+              <c>1.236</c>
+              <c>1.266</c>
+              <c>1.28</c>
+              <c>1.156</c>
+              <c>1.025</c>
+              <c>0.96</c>
+            </r>
+            <r>
+              <c>1977</c>
+              <c>1.055</c>
+              <c>1.002</c>
+              <c>0.926</c>
+              <c>0.974</c>
+              <c>1.093</c>
+              <c>1.03</c>
+              <c>1.181</c>
+              <c>1.2</c>
+            </r>
+            <r>
+              <c>1978</c>
+              <c>1.077</c>
+              <c>0.982</c>
+              <c>1.064</c>
+              <c>1.093</c>
+              <c>1.146</c>
+              <c>1.012</c>
+              <c>1.326</c>
+              <c>1.295</c>
+            </r>
+            <r>
+              <c>1979</c>
+              <c>1.109</c>
+              <c>0.978</c>
+              <c>1.184</c>
+              <c>1.256</c>
+              <c>1.307</c>
+              <c>1.023</c>
+              <c>1.048</c>
+              <c>2.212</c>
+            </r>
+            <r>
+              <c>1980</c>
+              <c>1.127</c>
+              <c>0.947</c>
+              <c>1.323</c>
+              <c>1.337</c>
+              <c>1.367</c>
+              <c>1.031</c>
+              <c>1.226</c>
+              <c>1.296</c>
+            </r>
+            <r>
+              <c>1981</c>
+              <c>1.156</c>
+              <c>1.003</c>
+              <c>0.949</c>
+              <c>0.963</c>
+              <c>0.99</c>
+              <c>1.073</c>
+              <c>0.977</c>
+              <c>0.688</c>
+            </r>
+            <r>
+              <c>1982</c>
+              <c>1.117</c>
+              <c>1.465</c>
+              <c>1.215</c>
+              <c>1.187</c>
+              <c>1.213</c>
+              <c>1.311</c>
+              <c>0.981</c>
+              <c>1.084</c>
+            </r>
+            <r>
+              <c>1983</c>
+              <c>1.092</c>
+              <c>0.985</c>
+              <c>1.224</c>
+              <c>1.235</c>
+              <c>1.217</c>
+              <c>1.08</c>
+              <c>1.237</c>
+              <c>0.872</c>
+            </r>
+            <r>
+              <c>1984</c>
+              <c>1.103</c>
+              <c>1.159</c>
+              <c>1.061</c>
+              <c>1.03</c>
+              <c>0.903</c>
+              <c>1.15</c>
+              <c>1.074</c>
+              <c>0.825</c>
+            </r>
+            <r>
+              <c>1985</c>
+              <c>1.08</c>
+              <c>1.366</c>
+              <c>1.316</c>
+              <c>1.326</c>
+              <c>1.333</c>
+              <c>1.213</c>
+              <c>1.562</c>
+              <c>1.006</c>
+            </r>
+            <r>
+              <c>1986</c>
+              <c>1.063</c>
+              <c>1.309</c>
+              <c>1.186</c>
+              <c>1.161</c>
+              <c>1.086</c>
+              <c>1.156</c>
+              <c>1.694</c>
+              <c>1.216</c>
+            </r>
+            <r>
+              <c>1987</c>
+              <c>1.061</c>
+              <c>0.925</c>
+              <c>1.052</c>
+              <c>1.023</c>
+              <c>0.959</c>
+              <c>1.023</c>
+              <c>1.246</c>
+              <c>1.244</c>
+            </r>
+            <r>
+              <c>1988</c>
+              <c>1.071</c>
+              <c>1.086</c>
+              <c>1.165</c>
+              <c>1.179</c>
+              <c>1.165</c>
+              <c>1.076</c>
+              <c>1.283</c>
+              <c>0.861</c>
+            </r>
+            <r>
+              <c>1989</c>
+              <c>1.087</c>
+              <c>1.212</c>
+              <c>1.316</c>
+              <c>1.292</c>
+              <c>1.204</c>
+              <c>1.142</c>
+              <c>1.105</c>
+              <c>0.977</c>
+            </r>
+            <r>
+              <c>1990</c>
+              <c>1.08</c>
+              <c>1.054</c>
+              <c>0.968</c>
+              <c>0.938</c>
+              <c>0.83</c>
+              <c>1.083</c>
+              <c>0.766</c>
+              <c>0.922</c>
+            </r>
+            <r>
+              <c>1991</c>
+              <c>1.057</c>
+              <c>1.193</c>
+              <c>1.304</c>
+              <c>1.342</c>
+              <c>1.594</c>
+              <c>1.161</c>
+              <c>1.121</c>
+              <c>0.958</c>
+            </r>
+            <r>
+              <c>1992</c>
+              <c>1.036</c>
+              <c>1.079</c>
+              <c>1.076</c>
+              <c>1.09</c>
+              <c>1.174</c>
+              <c>1.076</c>
+              <c>0.878</c>
+              <c>0.926</c>
+            </r>
+            <r>
+              <c>1993</c>
+              <c>1.031</c>
+              <c>1.217</c>
+              <c>1.1</c>
+              <c>1.113</c>
+              <c>1.162</c>
+              <c>1.11</c>
+              <c>1.326</c>
+              <c>1.146</c>
+            </r>
+            <r>
+              <c>1994</c>
+              <c>1.045</c>
+              <c>0.889</c>
+              <c>1.012</c>
+              <c>0.999</c>
+              <c>0.968</c>
+              <c>0.965</c>
+              <c>1.078</c>
+              <c>0.99</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="Optimization">
+        <Position x="870" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="filePath">
+          </Value>
+          <Value name="fileType">CPLEX_LP</Value>
+          <Value name="maximize">True</Value>
+          <Value name="solver">quadprog</Value>
+          <Value name="problemType">QP</Value>
+          <Value name="inputMode">matrix</Value>
+          <Value name="payload">{"fileType":"CPLEX_LP","filePath":"","solver":"quadprog","inputMode":"matrix","maximize":true,"problemType":"QP"}</Value>
+          <Value name="selectedTab">0</Value>
+          <Value name="fieldList">[]</Value>
+          <Value name="constraints">[]</Value>
+          <Value name="objective">
+          </Value>
+          <Value name="fieldNames">
+          </Value>
+          <Value name="activePage">landing</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Matrix Input Mode</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Optimization/Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Optimization/Supporting_Macros/Optimization.yxmc" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="526" y="576" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="constraint" />
+            <Field name="dir" />
+            <Field name="rhs" />
+          </Fields>
+          <Data>
+            <r>
+              <c>Percentage</c>
+              <c>==</c>
+              <c>1</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="966" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_10116_3465cc1e033a482c8dab9ca996075de9_\Engine_10016_8a8b6ca507914d25940c15d06ab81f16_.yxdb</TempFile>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="990" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_10116_3465cc1e033a482c8dab9ca996075de9_\Engine_10016_8a01700167ae4728abf41373984afd4b_.yxdb</TempFile>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="978" y="678" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_10116_3465cc1e033a482c8dab9ca996075de9_\Engine_10016_13cfc91b23f9452eac674e22d974f8cc_.yxdb</TempFile>
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="498" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <SelectFields>
+            <SelectField field="3MonthTBills" selected="False" type="Int16" size="2" />
+            <SelectField field="USGovLongBonds" selected="False" type="Int16" size="2" />
+            <SelectField field="SP500" selected="False" type="Int16" size="2" />
+            <SelectField field="Wilshire5000" selected="False" type="Int16" size="2" />
+            <SelectField field="NASDAQComposite" selected="False" type="Int16" size="2" />
+            <SelectField field="LehmanBrosBonds" selected="False" type="Int16" size="2" />
+            <SelectField field="EAFE" selected="False" type="Int16" size="2" />
+            <SelectField field="Gold" selected="False" type="Int16" size="2" />
+            <SelectField field="3-Month T-Bills" selected="False" type="Int16" size="2" />
+            <SelectField field="US Gov. Long Bonds" selected="False" type="Int16" size="2" />
+            <SelectField field="S&amp;P500" selected="False" type="Int16" size="2" />
+            <SelectField field="S&amp;P 500" selected="False" type="Int16" size="2" />
+            <SelectField field="Wilshire 5000" selected="False" type="Int16" size="2" />
+            <SelectField field="NASDAQ Composite" selected="False" type="Int16" size="2" />
+            <SelectField field="Lehman Bros. Bonds" selected="False" type="Int16" size="2" />
+            <SelectField field="Field1" selected="False" type="Int16" size="2" />
+            <SelectField field="Field2" selected="False" type="Int16" size="2" />
+            <SelectField field="Field3" selected="False" type="Int16" size="2" />
+            <SelectField field="Field4" selected="False" type="Int16" size="2" />
+            <SelectField field="Field5" selected="False" type="Int16" size="2" />
+            <SelectField field="Field6" selected="False" type="Int16" size="2" />
+            <SelectField field="Field7" selected="False" type="Int16" size="2" />
+            <SelectField field="Field8" selected="False" type="Int16" size="2" />
+            <SelectField field="Name" selected="True" rename="variable" />
+            <SelectField field="Value" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="102" width="816" height="264" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text><![CDATA[Suppose that you have already identified 8 stocks/mutual funds/ etc.  you may invest and you have certain amount of money available. The question is:  what pertentage of your total money should be invested to each item?
+
+The basic idea of portfolio optimization is that: we want to
+1. Maximize rewards (historical average returns)
+2. Minimize risks (historical average variance)
+
+Based on Markowitz's modern portfolio theory, we can't simultaneously optimize two objects, instead we maximize a combination of rewards and risks:
+
+                        reward - a * risk,
+
+where "a" is a positive number and is called "risk aversion parameter. 
+For a detailed discussion, see: http://www.wdiam.com/2012/06/10/mean-variance-portfolio-optimization-with-r-and-quadratic-programming/
+
+
+The input is historical data of US 3 Month T-Bills, US government Long Bonds, S&P 500, Wilshire 5000, NASDAQ Composite etc. from 1973 to 1994. Here we illustrate how to decide the percentage of the total money you should invest in each of the funds using optimization tool.
+
+]]></Text>
+          <Font name="Segoe UI" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="816" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Portfolio Optimization with Optimization tool (Quadratic Programming)</Text>
+          <Font name="Segoe UI" size="14.25" style="1" />
+          <TextColor name="White" />
+          <FillColor r="0" g="128" b="192" />
+          <Shape shape="0" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="606" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField field="Percentage" type="Double" size="8" expression="1" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>Percentage=1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="402" y="606" width="106.4582" height="19" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 34</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="30">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.PearsonCorrelation.PearsonCorrelation">
+            <Position x="412" y="635" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields orderChanged="False">
+                <Field name="Field_2" />
+                <Field name="Field_3" />
+                <Field name="Field_4" />
+                <Field name="Field_5" />
+                <Field name="Field_6" />
+                <Field name="Field_7" />
+                <Field name="Field_8" />
+                <Field name="Field_9" />
+                <Field name="*Unknown" />
+              </Fields>
+              <Covariance value="True" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxPearsonCorrelation" />
+        </Node>
+        <Node ToolID="33">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="508" y="635" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField field="Field_2" type="Double" size="8" expression="-16*[Field_2]" />
+                <FormulaField field="Field_3" type="Double" size="8" expression="-16*[Field_3]" />
+                <FormulaField field="Field_4" type="Double" size="8" expression="-16*[Field_4]" />
+                <FormulaField field="Field_5" type="Double" size="8" expression="-16*[Field_5]" />
+                <FormulaField field="Field_6" type="Double" size="8" expression="-16*[Field_6]" />
+                <FormulaField field="Field_7" type="Double" size="8" expression="-16*[Field_7]" />
+                <FormulaField field="Field_8" type="Double" size="8" expression="-16*[Field_8]" />
+                <FormulaField field="Field_9" type="Double" size="8" expression="-16*[Field_9]" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText />
+              <DefaultAnnotationText>Field_2=-16*[Field_2]
+Field_3=-16*[Field_3]
+Field_4=-16*[Field_4]
+...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output1" />
+      <Destination ToolID="13" Connection="InputQ" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="13" Connection="InputO" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="13" Connection="InputB" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="13" Connection="InputA" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Simple" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Data" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Interactive" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>PortfolioVan</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
