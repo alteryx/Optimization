@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="54" y="270" />
+        <Position x="54" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -112,7 +112,7 @@
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="54" y="390" />
+        <Position x="54" y="354" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -154,7 +154,7 @@
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="54" y="322" />
+        <Position x="54" y="286" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -256,11 +256,11 @@
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="222" y="450" />
+        <Position x="222" y="414" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_13624_6e6cfe94c26e42749968d623245f3bc9_\Engine_12928_fa3a6ed1599f4177b87b20539f0ed3f6_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4228_e095de9aa6854012b188e0d4296f83c3_\Engine_3940_62d4160ae411425e960baec9b677d99f_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -281,29 +281,9 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
     </Node>
-    <Node ToolID="12">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="498" y="318" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <OrderChanged value="False" />
-          <SelectFields>
-            <SelectField field="value" selected="True" rename="out" />
-            <SelectField field="*Unknown" selected="True" />
-          </SelectFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="342" y="330" />
+        <Position x="342" y="294" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -327,7 +307,7 @@
     </Node>
     <Node ToolID="16">
       <GuiSettings Plugin="Optimization">
-        <Position x="150" y="330" />
+        <Position x="150" y="294" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -358,11 +338,11 @@
     </Node>
     <Node ToolID="17">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="234" y="198" />
+        <Position x="234" y="162" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_13624_6e6cfe94c26e42749968d623245f3bc9_\Engine_12928_7ffd99bfc5d94f99a0c58ec374e4f57c_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4228_e095de9aa6854012b188e0d4296f83c3_\Engine_3940_7a2f90acc6e741fc8b06ff9c7154471d_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -379,29 +359,9 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
     </Node>
-    <Node ToolID="19">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="498" y="402" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <OrderChanged value="False" />
-          <SelectFields>
-            <SelectField field="value" selected="True" rename="out" />
-            <SelectField field="*Unknown" selected="True" />
-          </SelectFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="342" y="414" />
+        <Position x="342" y="378" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -423,29 +383,9 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
     </Node>
-    <Node ToolID="23">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="498" y="222" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <OrderChanged value="False" />
-          <SelectFields>
-            <SelectField field="value" selected="True" rename="out" />
-            <SelectField field="*Unknown" selected="True" />
-          </SelectFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="342" y="234" />
+        <Position x="342" y="198" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -467,42 +407,16 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
     </Node>
-    <Node ToolID="26">
-      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="66" y="54" width="708" height="144" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Text>This example shows: how you can use "Text To Columns" tool, "Dynamic Rename" tool together with filter, select tools to extract information from "D" output for 
-
--  Solution summary
--  Variable 
--  Constraints
-
-The 3 tables correspond to the 3 sections in Output I</Text>
-          <Font name="Segoe UI" size="9.75" style="0" />
-          <TextColor name="Black" />
-          <FillColor name="White" />
-          <Shape shape="0" />
-          <Justification Justification="3" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-    </Node>
     <Node ToolID="27">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="618" y="402" />
+        <Position x="462" y="366" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Field>out</Field>
+          <Field>value</Field>
           <NumFields value="5" />
           <ErrorHandling>Last</ErrorHandling>
-          <RootName />
+          <RootName>value</RootName>
           <Delimeters value="|" />
           <Flags value="0" />
         </Configuration>
@@ -516,11 +430,11 @@ The 3 tables correspond to the 3 sections in Output I</Text>
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="906" y="414" />
+        <Position x="810" y="378" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_13624_6e6cfe94c26e42749968d623245f3bc9_\Engine_12928_f6f5a70c6b8b482cb23ede5e64617580_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4228_e095de9aa6854012b188e0d4296f83c3_\Engine_3940_638922a9f7c04e4f9e16191240fcf413_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -539,18 +453,23 @@ The 3 tables correspond to the 3 sections in Output I</Text>
     </Node>
     <Node ToolID="29">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
-        <Position x="810" y="414" />
+        <Position x="714" y="378" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <RenameMode>FirstRow</RenameMode>
           <Fields orderChanged="False">
-            <Field name="1" />
-            <Field name="2" />
-            <Field name="3" />
-            <Field name="4" />
-            <Field name="5" />
-            <Field name="*Unknown" selected="False" />
+            <Field name="value1" />
+            <Field name="value2" />
+            <Field name="value3" />
+            <Field name="value4" />
+            <Field name="value5" />
+            <Field name="*Unknown" />
+            <Field name="1" selected="False" />
+            <Field name="2" selected="False" />
+            <Field name="3" selected="False" />
+            <Field name="4" selected="False" />
+            <Field name="5" selected="False" />
           </Fields>
           <Expression />
           <FirstRow>
@@ -564,11 +483,11 @@ The 3 tables correspond to the 3 sections in Output I</Text>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field description="TextToColumns: Parsed from out" name="1" size="1073741823" source="TextToColumns: Parsed from out" type="V_WString" />
-            <Field description="TextToColumns: Parsed from out" name="2" size="1073741823" source="TextToColumns: Parsed from out" type="V_WString" />
-            <Field description="TextToColumns: Parsed from out" name="3" size="1073741823" source="TextToColumns: Parsed from out" type="V_WString" />
-            <Field description="TextToColumns: Parsed from out" name="4" size="1073741823" source="TextToColumns: Parsed from out" type="V_WString" />
-            <Field description="TextToColumns: Parsed from out" name="5" size="1073741823" source="TextToColumns: Parsed from out" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Constraint" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Value" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Direction" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="RHS" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Slack" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -576,14 +495,14 @@ The 3 tables correspond to the 3 sections in Output I</Text>
     </Node>
     <Node ToolID="30">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="714" y="402" />
+        <Position x="582" y="366" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <OrderChanged value="False" />
           <SelectFields>
             <SelectField field="name" selected="False" />
-            <SelectField field="out" selected="False" />
+            <SelectField field="value" selected="False" />
             <SelectField field="*Unknown" selected="True" />
           </SelectFields>
         </Configuration>
@@ -597,11 +516,11 @@ The 3 tables correspond to the 3 sections in Output I</Text>
     </Node>
     <Node ToolID="32">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="906" y="234" />
+        <Position x="810" y="198" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_13624_6e6cfe94c26e42749968d623245f3bc9_\Engine_12928_151cb11bc26e40f6bd994ef6618ef3da_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4228_e095de9aa6854012b188e0d4296f83c3_\Engine_3940_3963222c555a4a98818f4d8edb7b1a9a_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -620,14 +539,14 @@ The 3 tables correspond to the 3 sections in Output I</Text>
     </Node>
     <Node ToolID="35">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="618" y="318" />
+        <Position x="462" y="282" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Field>out</Field>
+          <Field>value</Field>
           <NumFields value="4" />
           <ErrorHandling>Last</ErrorHandling>
-          <RootName />
+          <RootName>value</RootName>
           <Delimeters value="|" />
           <Flags value="0" />
         </Configuration>
@@ -641,11 +560,11 @@ The 3 tables correspond to the 3 sections in Output I</Text>
     </Node>
     <Node ToolID="36">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="906" y="330" />
+        <Position x="810" y="294" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_13624_6e6cfe94c26e42749968d623245f3bc9_\Engine_12928_8682b54d70a5422693c4e4de342aa2c6_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4228_e095de9aa6854012b188e0d4296f83c3_\Engine_3940_f018ddb591654101820ee36a6295f7ba_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -664,17 +583,21 @@ The 3 tables correspond to the 3 sections in Output I</Text>
     </Node>
     <Node ToolID="37">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
-        <Position x="810" y="330" />
+        <Position x="714" y="294" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <RenameMode>FirstRow</RenameMode>
           <Fields orderChanged="False">
-            <Field name="1" />
-            <Field name="2" />
-            <Field name="3" />
-            <Field name="4" />
-            <Field name="*Unknown" selected="False" />
+            <Field name="value1" />
+            <Field name="value2" />
+            <Field name="value3" />
+            <Field name="value4" />
+            <Field name="*Unknown" />
+            <Field name="1" selected="False" />
+            <Field name="2" selected="False" />
+            <Field name="3" selected="False" />
+            <Field name="4" selected="False" />
           </Fields>
           <Expression />
           <FirstRow>
@@ -688,10 +611,10 @@ The 3 tables correspond to the 3 sections in Output I</Text>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field description="TextToColumns: Parsed from out" name="1" size="1073741823" source="TextToColumns: Parsed from out" type="V_WString" />
-            <Field description="TextToColumns: Parsed from out" name="2" size="1073741823" source="TextToColumns: Parsed from out" type="V_WString" />
-            <Field description="TextToColumns: Parsed from out" name="3" size="1073741823" source="TextToColumns: Parsed from out" type="V_WString" />
-            <Field description="TextToColumns: Parsed from out" name="4" size="1073741823" source="TextToColumns: Parsed from out" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Variable" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Value" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Coefficient" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Type" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -699,14 +622,14 @@ The 3 tables correspond to the 3 sections in Output I</Text>
     </Node>
     <Node ToolID="38">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="714" y="318" />
+        <Position x="582" y="282" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <OrderChanged value="False" />
           <SelectFields>
             <SelectField field="name" selected="False" />
-            <SelectField field="out" selected="False" />
+            <SelectField field="value" selected="False" />
             <SelectField field="*Unknown" selected="True" />
           </SelectFields>
         </Configuration>
@@ -720,14 +643,14 @@ The 3 tables correspond to the 3 sections in Output I</Text>
     </Node>
     <Node ToolID="34">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="714" y="222" />
+        <Position x="582" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <OrderChanged value="False" />
           <SelectFields>
             <SelectField field="name" selected="False" />
-            <SelectField field="out" selected="False" />
+            <SelectField field="value" selected="False" />
             <SelectField field="*Unknown" selected="True" />
           </SelectFields>
         </Configuration>
@@ -741,14 +664,14 @@ The 3 tables correspond to the 3 sections in Output I</Text>
     </Node>
     <Node ToolID="31">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="618" y="222" />
+        <Position x="462" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Field>out</Field>
+          <Field>value</Field>
           <NumFields value="2" />
           <ErrorHandling>Last</ErrorHandling>
-          <RootName />
+          <RootName>value</RootName>
           <Delimeters value="|" />
           <Flags value="0" />
         </Configuration>
@@ -762,14 +685,14 @@ The 3 tables correspond to the 3 sections in Output I</Text>
     </Node>
     <Node ToolID="33">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
-        <Position x="810" y="234" />
+        <Position x="714" y="198" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <RenameMode>FirstRow</RenameMode>
           <Fields orderChanged="False">
-            <Field name="1" />
-            <Field name="2" />
+            <Field name="value1" />
+            <Field name="value2" />
             <Field name="*Unknown" selected="False" />
           </Fields>
           <Expression />
@@ -784,12 +707,134 @@ The 3 tables correspond to the 3 sections in Output I</Text>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field description="TextToColumns: Parsed from out" name="1" size="1073741823" source="TextToColumns: Parsed from out" type="V_WString" />
-            <Field description="TextToColumns: Parsed from out" name="2" size="1073741823" source="TextToColumns: Parsed from out" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Description" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Value" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="66" y="54" width="804" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text><![CDATA[Extract Tables 
+from D Output
+]]></Text>
+          <Font name="Segoe UI" size="20.25" style="0" />
+          <TextColor name="White" />
+          <FillColor r="22" g="145" b="198" />
+          <Shape shape="0" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="342" y="66" width="528" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>The example illustrates how to extract the solution summary, variables and constraints from the D output using a combination of tools.</Text>
+          <Font name="Segoe UI" size="9" style="0" />
+          <TextColor name="White" />
+          <FillColor r="111" g="111" b="111" />
+          <Shape shape="3" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="318" y="150" width="108" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Filter out table named Summary</Text>
+          <Font name="Segoe UI" size="9" style="0" />
+          <TextColor r="0" g="128" b="192" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="438" y="150" width="108" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Split value field into columns</Text>
+          <Font name="Segoe UI" size="9" style="0" />
+          <TextColor r="0" g="128" b="192" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="558" y="150" width="108" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Select extracted columns</Text>
+          <Font name="Segoe UI" size="9" style="0" />
+          <TextColor r="0" g="128" b="192" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="678" y="150" width="144" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Dynamically rename fields based on first row</Text>
+          <Font name="Segoe UI" size="9" style="0" />
+          <TextColor r="0" g="128" b="192" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
     </Node>
   </Nodes>
   <Connections>
@@ -806,12 +851,8 @@ The 3 tables correspond to the 3 sections in Output I</Text>
       <Destination ToolID="16" Connection="InputA" />
     </Connection>
     <Connection>
-      <Origin ToolID="12" Connection="Output" />
-      <Destination ToolID="35" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="15" Connection="True" />
-      <Destination ToolID="12" Connection="Input" />
+      <Destination ToolID="35" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="16" Connection="Interactive" />
@@ -834,20 +875,12 @@ The 3 tables correspond to the 3 sections in Output I</Text>
       <Destination ToolID="25" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="19" Connection="Output" />
+      <Origin ToolID="21" Connection="True" />
       <Destination ToolID="27" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="21" Connection="True" />
-      <Destination ToolID="19" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="23" Connection="Output" />
-      <Destination ToolID="31" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="25" Connection="True" />
-      <Destination ToolID="23" Connection="Input" />
+      <Destination ToolID="31" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="27" Connection="Output" />
