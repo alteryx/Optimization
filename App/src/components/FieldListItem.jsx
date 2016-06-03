@@ -4,6 +4,7 @@ import { observable, toJSON } from 'mobx';
 import BoundItemEdit from './BoundItemEdit';
 import BoundItemView from './BoundItemView';
 import Select from './Select';
+import { iconImages } from '../Utils';
 
 @observer
 class FieldListItem extends React.Component {
@@ -48,7 +49,6 @@ class FieldListItem extends React.Component {
           <div className="input-group">
             {/*Field type selection*/}
             <Select
-              // style={{ width: 'auto' }}
               className="form-control"
               value={this.props.field.type}
               options={this.props.options}
@@ -58,10 +58,10 @@ class FieldListItem extends React.Component {
             <span className="input-group-btn">
               <button
                 type="button"
-                className="btn btn-xs btn-transparent"
+                className="smallButton btn-transparent"
                 onClick={this.handleDelete}
               >
-                <i className="fa fa-trash text-danger"></i>
+                <img style={{ width: 12, height: 12 }} src={iconImages.trash} />
               </button>
             </span>
           </div>
