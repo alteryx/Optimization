@@ -66,6 +66,10 @@ button.btn.btn-ayx:disabled:hover {
   font-size: 13px;
 }
 
+a.nav-tab-label {
+  color: #1691C6;
+}
+
 /*Make ReactCodeMirror component align with Bootstrap*/
 .ReactCodeMirror {
   /* Borrowed from Bootstrap textarea styles */
