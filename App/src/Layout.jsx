@@ -1,5 +1,6 @@
 import React, { PropTypes as P } from 'react';
 import { observer } from 'mobx-react';
+import SplashScreen from './components/SplashScreen';
 import FieldNameInput from './components/FieldNameInput';
 import ConstraintList from './components/ConstraintList';
 import FieldList from './components/FieldList';
@@ -14,11 +15,16 @@ function Layout({ store }) {
         <FieldNameInput store={store} />
       </div>
       <div className="row">
-        <NavTabs selected={store.selectedTab} onSelect={store.updateSelectedTab}>
-          <Objective label="Objective" store={store} />
-          <ConstraintList label="Constraints" store={store} />
-          <FieldList label="Bounds & Types" store={store} />
-        </NavTabs>
+        {
+          store.fieldsAssigned ?
+            <NavTabs selected={store.selectedTab} onSelect={store.updateSelectedTab}>
+              <Objective label="Objective" store={store} />
+              <ConstraintList label="Constraints" store={store} />
+              <FieldList label="Bounds & Types" store={store} />
+            </NavTabs>
+            :
+            <SplashScreen />
+        }
       </div>
     </div>
   );

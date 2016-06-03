@@ -1,5 +1,6 @@
 import AyxStore from './AyxStore';
 import ConstraintStore from './ConstraintStore';
+import FieldStore from './FieldStore';
 import { extendObservable, computed, observable } from 'mobx';
 
 class Store extends AyxStore {
@@ -20,9 +21,8 @@ class Store extends AyxStore {
 
   @observable editorValue = '';
 
-  constructor(ayx, dataItems, fieldStore) {
+  constructor(ayx, dataItems) {
     // The following properties are created from Alteryx:
-    // - editorValue: '',
     // - objective: '',
     // - constraints: [],
     // - fieldNames: [],
@@ -34,8 +34,8 @@ class Store extends AyxStore {
     // turn all the initial properties into observables
     extendObservable(this, this);
 
-    this.fieldStore = fieldStore;
-    this.constraintStore = new ConstraintStore(this.manager, this);
+    this.fieldStore = new FieldStore(this);
+    this.constraintStore = new ConstraintStore(this);
 
     // recreate the store from the snapshot stored in Alteryx's data items
     const stores = [
@@ -47,6 +47,11 @@ class Store extends AyxStore {
   }
 
   /* Store Methods */
+  // Indicate whether the user has entered fields and created the Field objects
+  @computed get fieldsAssigned() {
+    return this.fieldStore.fields.length > 0;
+  }
+
   @computed get isEditorEmpty() {
     return this.editorValue === '';
   }

@@ -1,4 +1,4 @@
-import { observable, computed, extendObservable } from 'mobx';
+import { observable, computed, extendObservable, autorun, transaction } from 'mobx';
 import uuid from 'node-uuid';
 
 class Field {
@@ -16,6 +16,16 @@ class Field {
       field: fieldName,
       lowerBound,
       upperBound,
+    });
+
+    // Automatically set the bound range to (0, 1) if the type is set to 'Binary'
+    autorun(() => {
+      if (this.type === 'Binary') {
+        transaction(() => {
+          this.bound.lowerBound = 0;
+          this.bound.upperBound = 1;
+        });
+      }
     });
   }
 
@@ -43,9 +53,8 @@ class FieldStore {
   fieldTypes = ['Continuous', 'Binary', 'Integer'];
   @observable fields = [];
 
-  constructor(ayx) {
-    const { manager } = ayx.Gui;
-    this.manager = manager;
+  constructor(parentStore) {
+    this.parentStore = parentStore;
   }
 
   addField(name, type = 'Continuous', lowerBound = 0, upperBound = '+inf') {
@@ -77,7 +86,9 @@ class FieldStore {
   }
 
   syncFields() {
-    this.manager.GetDataItemByDataName('fieldList').setValue(JSON.stringify(this.asJSON));
+    this.parentStore.manager
+      .GetDataItemByDataName('fieldList')
+      .setValue(JSON.stringify(this.asJSON));
   }
 }
 

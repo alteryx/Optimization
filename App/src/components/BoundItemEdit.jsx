@@ -19,7 +19,12 @@ function BoundItemEdit({ tempBound, onSubmit, onCancel }) {
           />
         </div>
         <div style={{ paddingLeft: 5, paddingRight: 5 }} className="col-xs-1">
-          <h5 style={{ marginTop: 5, marginBottom: 5, paddingTop: 4 }} className="text-center">{tempBound.field}</h5>
+          <h5
+            style={{ marginTop: 5, marginBottom: 5, paddingTop: 4 }}
+            className="text-center"
+          >
+            {tempBound.field}
+          </h5>
         </div>
         <div className="col-xs-4">
           <InputBound
@@ -31,12 +36,12 @@ function BoundItemEdit({ tempBound, onSubmit, onCancel }) {
         </div>
         <div style={{ paddingLeft: 5, paddingRight: 5, paddingTop: 10 }} className="col-xs-3">
           <div className="btn-toolbar center-block">
-            <button type="submit" className="btn btn-tiny btn-success btn-xs">
+            <button type="submit" className="btn btn-success btn-xs">
               <i className="fa fa-check"></i>
             </button>
             <button
               type="button"
-              className="btn btn-tiny btn-danger btn-xs"
+              className="btn btn-danger btn-xs"
               onClick={onCancel}
             >
               <i className="fa fa-times"></i>
