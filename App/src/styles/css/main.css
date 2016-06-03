@@ -38,6 +38,30 @@
   font-size: 9px;
 }
 
+button.btn.btn-ayx {
+  background-color: #1691C6;
+  border-color: rgb(204, 204, 204);
+  color: #ffffff;
+}
+
+button.btn.btn-ayx:hover {
+  background-color: #1380AE;
+  border-color: rgb(204, 204, 204);
+  color: #ffffff;
+}
+
+button.btn.btn-ayx:disabled {
+  background-color: transparent;
+  color: #999999;
+  border-color: rgb(204, 204, 204);
+}
+
+button.btn.btn-ayx:disabled:hover {
+  background-color: transparent;
+  color: #999999;
+  border-color: rgb(204, 204, 204);
+}
+
 /*Make ReactCodeMirror component align with Bootstrap*/
 .ReactCodeMirror {
   /* Borrowed from Bootstrap textarea styles */

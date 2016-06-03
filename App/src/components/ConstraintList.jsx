@@ -35,7 +35,7 @@ function ConstraintList({ store }) {
         />
         <span className="input-group-btn">
           <button
-            className="btn btn-sm btn-primary"
+            className="btn btn-sm btn-ayx"
             onClick={store.saveOrAdd ? handleAdd : handleSave}
             disabled={store.isEditorEmpty}
           >
