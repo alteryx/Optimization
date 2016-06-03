@@ -11,6 +11,7 @@ class Editor extends React.Component {
     value: P.string.isRequired,
     hintList: P.array.isRequired,
     onChange: P.func.isRequired,
+    onSubmit: P.func,
   }
 
   componentWillMount() {
@@ -58,6 +59,12 @@ class Editor extends React.Component {
     }
   }
 
+  handleSubmit = () => {
+    if (this.props.onSubmit) {
+      this.props.onSubmit();
+    }
+  }
+
   render() {
     const options = {
       mode: 'simple-highlighting',
@@ -66,7 +73,10 @@ class Editor extends React.Component {
       lineWrapping: true,
       hint: CodeMirror.hint.simpleHints,
       readOnly: false,
-      extraKeys: { 'Ctrl-Space': 'autocomplete' },
+      extraKeys: {
+        'Ctrl-Space': 'autocomplete',
+        Enter: this.handleSubmit,
+      },
       hintList: this.props.hintList,
     };
 
