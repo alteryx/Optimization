@@ -62,6 +62,10 @@ button.btn.btn-ayx:disabled:hover {
   border-color: rgb(204, 204, 204);
 }
 
+.panel-body .panel-text {
+  font-size: 13px;
+}
+
 /*Make ReactCodeMirror component align with Bootstrap*/
 .ReactCodeMirror {
   /* Borrowed from Bootstrap textarea styles */

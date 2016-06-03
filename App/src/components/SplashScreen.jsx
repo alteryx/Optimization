@@ -5,9 +5,11 @@ function SplashScreen() {
   return (
     <div className="panel panel-default">
       <div className="panel-body">
-        <h4 className="text-center">
-          Enter your decision variables as a comma-separated list in the textbox above and click the `+` button.
-        </h4>
+        {/*<h4 className="text-center">*/}
+        <p className="text-center panel-text">
+          Enter variables as a comma-separated list in the text entry field above, then click Add to define the bounds and types.
+        </p>
+        {/*</h4>*/}
       </div>
     </div>
   );
