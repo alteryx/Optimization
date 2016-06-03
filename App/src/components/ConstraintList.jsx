@@ -11,12 +11,14 @@ function ConstraintList({ store }) {
     if (e.hasOwnProperty('preventDefault')) {
       e.preventDefault();
     }
-    if (store.saveOrAdd) {
-      // Add
-      cs.addConstraint(store.editorValue);
-    } else {
-      // Save
-      cs.currentConstraint.save(store.editorValue);
+    if (!store.isEditorEmpty) {
+      if (store.saveOrAdd) {
+        // Add
+        cs.addConstraint(store.editorValue);
+      } else {
+        // Save
+        cs.currentConstraint.save(store.editorValue);
+      }
     }
   };
 
