@@ -18,7 +18,7 @@
     <MetaInfo>
       <NameIsFileName>False</NameIsFileName>
       <Name>Optimization</Name>
-      <Description>Optimization</Description>
+      <Description>Solve linear programming (LP), mixed integer linear programming (MILP), and quadratic programming (QP) optimization problems using matrix, manual, and file input modes.</Description>
       <ToolVersion>0.2</ToolVersion>
       <ToolInDb>False</ToolInDb>
       <CategoryName>Prescriptive</CategoryName>
