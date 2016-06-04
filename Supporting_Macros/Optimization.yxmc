@@ -3,20 +3,20 @@
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
-        <Position x="0" y="0" width="59" height="59" />
+        <Position x="0" y="0" width="59" height="59"/>
       </GuiSettings>
       <Properties>
-        <Configuration />
+        <Configuration/>
         <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
+          <Name/>
+          <DefaultAnnotationText/>
+          <Left value="False"/>
         </Annotation>
       </Properties>
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxRPluginGui.R">
-        <Position x="292" y="453" />
+        <Position x="292" y="453"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -95,7 +95,7 @@ inputs &lt;- if (inAlteryx()) {
   NULL
 }
 
-print(config)
+#print(config)
 payload &lt;- list(config = config, inputs = inputs)
 
 # Solve Optimization Problem
@@ -114,53 +114,57 @@ write.Alteryx(dataOutput, 3)
 ## I Output: Interactive Dashboard ----
 makeInteractiveReport(out, nOutput = 5)
 
+if (out$status$code == 1){
+  AlteryxMessage(out$status$msg$message, iType = 3, iPriority = 3)
+}
+
  
 </RScript>
-          <UseFullUpdate value="False" />
+          <UseFullUpdate value="False"/>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
+          <Name/>
+          <DefaultAnnotationText/>
+          <Left value="False"/>
         </Annotation>
         <MetaInfo connection="Output1">
           <RecordInfo>
-            <Field name="name" size="1073741823" source="R-DATA:" type="V_WString" />
-            <Field name="value" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="name" size="1073741823" source="R-DATA:" type="V_WString"/>
+            <Field name="value" size="1073741823" source="R-DATA:" type="V_WString"/>
           </RecordInfo>
         </MetaInfo>
         <MetaInfo connection="Output3">
           <RecordInfo>
-            <Field name="name" size="1073741823" source="R-DATA:" type="V_WString" />
-            <Field name="value" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="name" size="1073741823" source="R-DATA:" type="V_WString"/>
+            <Field name="value" size="1073741823" source="R-DATA:" type="V_WString"/>
           </RecordInfo>
         </MetaInfo>
         <MetaInfo connection="Output5">
           <RecordInfo>
-            <Field name="html" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="html" size="1073741823" source="R-DATA:" type="V_WString"/>
           </RecordInfo>
         </MetaInfo>
       </Properties>
-      <EngineSettings EngineDll="AlteryxRPluginEngine.dll" EngineDllEntryPoint="AlteryxR" />
+      <EngineSettings EngineDll="AlteryxRPluginEngine.dll" EngineDllEntryPoint="AlteryxR"/>
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="102" y="354" />
+        <Position x="102" y="354"/>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <UseFileInput value="False" />
+          <UseFileInput value="False"/>
           <Name>InputO</Name>
           <Abbrev>O</Abbrev>
-          <ShowFieldMap value="False" />
-          <Optional value="True" />
+          <ShowFieldMap value="False"/>
+          <Optional value="True"/>
           <TextInput>
             <Configuration>
-              <NumRows value="15" />
+              <NumRows value="15"/>
               <Fields>
-                <Field name="variable" />
-                <Field name="coefficient" />
-                <Field name="type" />
+                <Field name="variable"/>
+                <Field name="coefficient"/>
+                <Field name="type"/>
               </Fields>
               <Data>
                 <r>
@@ -243,7 +247,7 @@ makeInteractiveReport(out, nOutput = 5)
           </TextInput>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
+          <Name/>
           <AnnotationText>__O Input (optional):__ Use this to provide the objective function. It should have the following 5 columns:
 
      - `variable`: a string, decision variable names
@@ -255,37 +259,37 @@ makeInteractiveReport(out, nOutput = 5)
      - `ub`: a number, uppper bound of according decision variable
 
      - `type`: a character,  the type of according decision variable, which can be __C__ (continuous), __B__ (binary) and __I__ (integer)</AnnotationText>
-          <DefaultAnnotationText />
-          <Left value="True" />
+          <DefaultAnnotationText/>
+          <Left value="True"/>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="variable" size="3" source="TextInput:" type="String" />
-            <Field name="coefficient" source="TextInput:" type="Int16" />
-            <Field name="type" size="1" source="TextInput:" type="String" />
+            <Field name="variable" size="3" source="TextInput:" type="String"/>
+            <Field name="coefficient" source="TextInput:" type="Int16"/>
+            <Field name="type" size="1" source="TextInput:" type="String"/>
           </RecordInfo>
         </MetaInfo>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput"/>
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="112" y="453" />
+        <Position x="112" y="453"/>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <UseFileInput value="False" />
+          <UseFileInput value="False"/>
           <Name>InputA</Name>
           <Abbrev>A</Abbrev>
-          <ShowFieldMap value="False" />
-          <Optional value="True" />
+          <ShowFieldMap value="False"/>
+          <Optional value="True"/>
           <TextInput>
             <Configuration>
-              <NumRows value="36" />
+              <NumRows value="36"/>
               <Fields>
-                <Field name="i" />
-                <Field name="j" />
-                <Field name="v" />
+                <Field name="i"/>
+                <Field name="j"/>
+                <Field name="v"/>
               </Fields>
               <Data>
                 <r>
@@ -473,7 +477,7 @@ makeInteractiveReport(out, nOutput = 5)
           </TextInput>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
+          <Name/>
           <AnnotationText><![CDATA[__A Input (optional):__ Use this to provide the coefficients of the constraint matrix.
 
 
@@ -482,36 +486,36 @@ makeInteractiveReport(out, nOutput = 5)
     - Dense matrix: columns are decision variable names, for example: `x`, `y`, `z`. Number of rows equal to number of constraints. __Note__: you can combine Input B with input A for dense matrix. Simply add the two columns from Input B to Input A.
 
   ]]></AnnotationText>
-          <DefaultAnnotationText />
-          <Left value="True" />
+          <DefaultAnnotationText/>
+          <Left value="True"/>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="i" source="TextInput:" type="Byte" />
-            <Field name="j" source="TextInput:" type="Byte" />
-            <Field name="v" source="TextInput:" type="Double" />
+            <Field name="i" source="TextInput:" type="Byte"/>
+            <Field name="j" source="TextInput:" type="Byte"/>
+            <Field name="v" source="TextInput:" type="Double"/>
           </RecordInfo>
         </MetaInfo>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput"/>
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="112" y="549" />
+        <Position x="112" y="549"/>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <UseFileInput value="False" />
+          <UseFileInput value="False"/>
           <Name>InputB</Name>
           <Abbrev>B</Abbrev>
-          <ShowFieldMap value="False" />
-          <Optional value="True" />
+          <ShowFieldMap value="False"/>
+          <Optional value="True"/>
           <TextInput>
             <Configuration>
-              <NumRows value="10" />
+              <NumRows value="10"/>
               <Fields>
-                <Field name="dir" />
-                <Field name="rhs" />
+                <Field name="dir"/>
+                <Field name="rhs"/>
               </Fields>
               <Data>
                 <r>
@@ -559,62 +563,62 @@ makeInteractiveReport(out, nOutput = 5)
           </TextInput>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
+          <Name/>
           <AnnotationText><![CDATA[__B Input (optional):__ Use this to provide the name, direction and right hand side of the constraints. It should have the following 2 columns:
 
 
     - `dir`: a string, direction of the constraint inequality. It has to be `>=`, `<=` or `=`
 
     - `rhs`: a number, the right hand side of the inequality. ]]></AnnotationText>
-          <DefaultAnnotationText />
-          <Left value="True" />
+          <DefaultAnnotationText/>
+          <Left value="True"/>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="dir" size="2" source="TextInput:" type="String" />
-            <Field name="rhs" source="TextInput:" type="Byte" />
+            <Field name="dir" size="2" source="TextInput:" type="String"/>
+            <Field name="rhs" source="TextInput:" type="Byte"/>
           </RecordInfo>
         </MetaInfo>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput"/>
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
-        <Position x="414" y="558" />
+        <Position x="414" y="558"/>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <HeaderMode value="False" />
-          <RawMode value="True" />
-          <ValidatePCXML value="False" />
+          <HeaderMode value="False"/>
+          <RawMode value="True"/>
+          <ValidatePCXML value="False"/>
           <Message>[html:A]</Message>
-          <RichTextMode value="False" />
+          <RichTextMode value="False"/>
           <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}}
 \viewkind4\uc1\pard\f0\fs29\par
 }
 ]]></RichTextString>
           <Styles>
-            <Style Name="TextStyle" />
+            <Style Name="TextStyle"/>
           </Styles>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
+          <Name/>
           <DefaultAnnotationText>Raw PCXML
 No Text Styling</DefaultAnnotationText>
-          <Left value="False" />
+          <Left value="False"/>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="html" size="1073741823" source="R-DATA:" type="V_WString" />
-            <Field name="Text" size="2147483647" source="Report:Text:" type="V_String" />
+            <Field name="html" size="1073741823" source="R-DATA:" type="V_WString"/>
+            <Field name="Text" size="2147483647" source="Report:Text:" type="V_String"/>
           </RecordInfo>
         </MetaInfo>
       </Properties>
-      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin"/>
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="510" y="558" />
+        <Position x="510" y="558"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -622,32 +626,32 @@ No Text Styling</DefaultAnnotationText>
           <Abbrev>I</Abbrev>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
+          <Name/>
           <AnnotationText>__I Output:__ This output provides a dashboard of the solution.</AnnotationText>
-          <DefaultAnnotationText />
-          <Left value="False" />
+          <DefaultAnnotationText/>
+          <Left value="False"/>
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput"/>
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="112" y="640" />
+        <Position x="112" y="640"/>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <UseFileInput value="False" />
+          <UseFileInput value="False"/>
           <Name>InputQ</Name>
           <Abbrev>Q</Abbrev>
-          <ShowFieldMap value="False" />
-          <Optional value="True" />
+          <ShowFieldMap value="False"/>
+          <Optional value="True"/>
           <TextInput>
             <Configuration>
-              <NumRows value="3" />
+              <NumRows value="3"/>
               <Fields>
-                <Field name="x1" />
-                <Field name="x2" />
-                <Field name="x3" />
+                <Field name="x1"/>
+                <Field name="x2"/>
+                <Field name="x3"/>
               </Fields>
               <Data>
                 <r>
@@ -670,28 +674,28 @@ No Text Styling</DefaultAnnotationText>
           </TextInput>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
+          <Name/>
           <AnnotationText><![CDATA[__Q Input (optional):__ Use this to provide the quadratic portion of the objective function, in the case of a Quadratic Programming problem.
 
 
     - __SLAM matrix__: requires 3 columns: `i`, `j`, `v`, where, `i`, `j` are row and column index respectively and `v` is the non-zero value of the matrix element.
     - __Dense matrix__: columns are decision variable names, for example: `x`, `y`, `z`. ]]></AnnotationText>
-          <DefaultAnnotationText />
-          <Left value="True" />
+          <DefaultAnnotationText/>
+          <Left value="True"/>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="x1" source="TextInput:" type="Byte" />
-            <Field name="x2" source="TextInput:" type="Byte" />
-            <Field name="x3" source="TextInput:" type="Byte" />
+            <Field name="x1" source="TextInput:" type="Byte"/>
+            <Field name="x2" source="TextInput:" type="Byte"/>
+            <Field name="x3" source="TextInput:" type="Byte"/>
           </RecordInfo>
         </MetaInfo>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput"/>
     </Node>
     <Node ToolID="43">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="510" y="450" />
+        <Position x="510" y="450"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -699,17 +703,17 @@ No Text Styling</DefaultAnnotationText>
           <Abbrev>D</Abbrev>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
+          <Name/>
           <AnnotationText>__D Output:__ This output consists of three pipe-separted tables `summary`, `variables` and `constraints`. They can be used upstream in the workflow to create reports and dashboards.</AnnotationText>
-          <DefaultAnnotationText />
-          <Left value="False" />
+          <DefaultAnnotationText/>
+          <Left value="False"/>
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput"/>
     </Node>
     <Node ToolID="44">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="510" y="354" />
+        <Position x="510" y="354"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -717,163 +721,163 @@ No Text Styling</DefaultAnnotationText>
           <Abbrev>S</Abbrev>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
+          <Name/>
           <AnnotationText>__S Output:__ This is a simple data output that consists of a single table with the optimal value of the objective function and the decision variables. For problems consisting of only Binary decision variables (0/1), this table only contains those values that are 1.</AnnotationText>
-          <DefaultAnnotationText />
-          <Left value="False" />
+          <DefaultAnnotationText/>
+          <Left value="False"/>
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput"/>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="292" y="191" width="468" height="122" />
+        <Position x="292" y="191" width="468" height="122"/>
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Landing Page</Caption>
-          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
-          <Disabled value="False" />
-          <Folded value="False" />
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10"/>
+          <Disabled value="False"/>
+          <Folded value="False"/>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
+          <Name/>
+          <DefaultAnnotationText/>
+          <Left value="False"/>
         </Annotation>
       </Properties>
       <ChildNodes>
         <Node ToolID="19">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="434" y="244" width="59" height="59" />
+            <Position x="434" y="244" width="59" height="59"/>
           </GuiSettings>
           <Properties>
-            <Configuration />
+            <Configuration/>
             <Annotation DisplayMode="0">
               <Name>activePage</Name>
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="326" y="244" width="59" height="59" />
+            <Position x="326" y="244" width="59" height="59"/>
           </GuiSettings>
           <Properties>
-            <Configuration />
+            <Configuration/>
             <Annotation DisplayMode="0">
               <Name>inputMode</Name>
               <AnnotationText>This option controls the mode of input. Currently supports matrix, manual and file inputs.</AnnotationText>
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="15">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="554" y="244" width="59" height="59" />
+            <Position x="554" y="244" width="59" height="59"/>
           </GuiSettings>
           <Properties>
-            <Configuration />
+            <Configuration/>
             <Annotation DisplayMode="0">
               <Name>showSensitivity</Name>
               <AnnotationText>This option controls whether or not to carry out sensitivity analysis and display the results. If selected, solver is GLPK.</AnnotationText>
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="2">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="674" y="244" width="59" height="59" />
+            <Position x="674" y="244" width="59" height="59"/>
           </GuiSettings>
           <Properties>
-            <Configuration />
+            <Configuration/>
             <Annotation DisplayMode="0">
               <Name>payload</Name>
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="39">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="302" y="220" width="100" height="24" />
+            <Position x="302" y="220" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
               <Text>inputMode</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor r="128" g="128" b="255" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="255"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
             </Configuration>
             <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="40">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="410" y="220" width="100" height="24" />
+            <Position x="410" y="220" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
               <Text>activePage</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor r="128" g="128" b="255" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="255"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
             </Configuration>
             <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="41">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="530" y="220" width="100" height="24" />
+            <Position x="530" y="220" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
               <Text>showSensitivity</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor r="128" g="128" b="255" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="255"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
             </Configuration>
             <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="42">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="650" y="220" width="100" height="24" />
+            <Position x="650" y="220" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
               <Text>payload</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor r="128" g="128" b="255" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="255"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
             </Configuration>
             <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
@@ -881,87 +885,87 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="23">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="186" width="228" height="122" />
+        <Position x="54" y="186" width="228" height="122"/>
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>File Mode</Caption>
-          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
-          <Disabled value="False" />
-          <Folded value="False" />
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10"/>
+          <Disabled value="False"/>
+          <Folded value="False"/>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
+          <Name/>
+          <DefaultAnnotationText/>
+          <Left value="False"/>
         </Annotation>
       </Properties>
       <ChildNodes>
         <Node ToolID="14">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="76" y="239" width="59" height="59" />
+            <Position x="76" y="239" width="59" height="59"/>
           </GuiSettings>
           <Properties>
-            <Configuration />
+            <Configuration/>
             <Annotation DisplayMode="0">
               <Name>fileType</Name>
               <AnnotationText>We currently support CLPEX_LP, MathProg and MPS formats.</AnnotationText>
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="13">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.FileBrowse.FileBrowse">
-            <Position x="196" y="239" width="59" height="59" />
+            <Position x="196" y="239" width="59" height="59"/>
           </GuiSettings>
           <Properties>
-            <Configuration />
+            <Configuration/>
             <Annotation DisplayMode="0">
               <Name>filePath</Name>
               <AnnotationText><![CDATA[Path to optimization model file. ]]></AnnotationText>
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="37">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="64" y="215" width="100" height="24" />
+            <Position x="64" y="215" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
               <Text>fileType</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor r="128" g="128" b="255" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="255"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
             </Configuration>
             <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="38">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="172" y="215" width="100" height="24" />
+            <Position x="172" y="215" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
               <Text>filePath</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor r="128" g="128" b="255" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="255"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
             </Configuration>
             <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
@@ -969,28 +973,28 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="54" width="1044" height="122" />
+        <Position x="54" y="54" width="1044" height="122"/>
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Manual Mode</Caption>
-          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
-          <Disabled value="False" />
-          <Folded value="False" />
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10"/>
+          <Disabled value="False"/>
+          <Folded value="False"/>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
+          <Name/>
+          <DefaultAnnotationText/>
+          <Left value="False"/>
         </Annotation>
       </Properties>
       <ChildNodes>
         <Node ToolID="10">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="88" y="107" width="59" height="59" />
+            <Position x="88" y="107" width="59" height="59"/>
           </GuiSettings>
           <Properties>
-            <Configuration />
+            <Configuration/>
             <Annotation DisplayMode="0">
               <Name>problemType</Name>
               <AnnotationText>We currently support:
@@ -1001,17 +1005,17 @@ No Text Styling</DefaultAnnotationText>
     - __mixed integer linear programming__ (MILP): linear objective and linear constraints with __binary__ or __integer__ decision variables
 
     - __quadratic programming__ (QP): quadratic objective and linear constraints with __continous__ decision variables.</AnnotationText>
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="11">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="196" y="107" width="59" height="59" />
+            <Position x="196" y="107" width="59" height="59"/>
           </GuiSettings>
           <Properties>
-            <Configuration />
+            <Configuration/>
             <Annotation DisplayMode="0">
               <Name>solver</Name>
               <AnnotationText><![CDATA[The solvers currently supported are
@@ -1020,282 +1024,282 @@ No Text Styling</DefaultAnnotationText>
     - Linear programing: Glpk, Symphony and Gurobi.
     - Mixed Integer linear programming: Glpk, Symphony and [Gurobi](http://gurobi.com).
     - Quadratic Programming: quadprog, Gurobi. ]]></AnnotationText>
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="12">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="316" y="107" width="59" height="59" />
+            <Position x="316" y="107" width="59" height="59"/>
           </GuiSettings>
           <Properties>
-            <Configuration />
+            <Configuration/>
             <Annotation DisplayMode="0">
               <Name>maximize</Name>
               <AnnotationText>Is this a maximization problem?</AnnotationText>
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="18">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="436" y="107" width="59" height="59" />
+            <Position x="436" y="107" width="59" height="59"/>
           </GuiSettings>
           <Properties>
-            <Configuration />
+            <Configuration/>
             <Annotation DisplayMode="0">
               <Name>editorValue</Name>
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="17">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="556" y="107" width="59" height="59" />
+            <Position x="556" y="107" width="59" height="59"/>
           </GuiSettings>
           <Properties>
-            <Configuration />
+            <Configuration/>
             <Annotation DisplayMode="0">
               <Name>fieldNames</Name>
               <AnnotationText>A comma separated list of decision variable names</AnnotationText>
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="20">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="676" y="107" width="59" height="59" />
+            <Position x="676" y="107" width="59" height="59"/>
           </GuiSettings>
           <Properties>
-            <Configuration />
+            <Configuration/>
             <Annotation DisplayMode="0">
               <Name>fieldList</Name>
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="21">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="784" y="107" width="59" height="59" />
+            <Position x="784" y="107" width="59" height="59"/>
           </GuiSettings>
           <Properties>
-            <Configuration />
+            <Configuration/>
             <Annotation DisplayMode="0">
               <Name>objective</Name>
               <AnnotationText>This is the objective function to be maximized or minimized</AnnotationText>
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="26">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="892" y="107" width="59" height="59" />
+            <Position x="892" y="107" width="59" height="59"/>
           </GuiSettings>
           <Properties>
-            <Configuration />
+            <Configuration/>
             <Annotation DisplayMode="0">
               <Name>constraints</Name>
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="27">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="1012" y="107" width="59" height="59" />
+            <Position x="1012" y="107" width="59" height="59"/>
           </GuiSettings>
           <Properties>
-            <Configuration />
+            <Configuration/>
             <Annotation DisplayMode="0">
               <Name>selectedTab</Name>
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="28">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="64" y="83" width="100" height="24" />
+            <Position x="64" y="83" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
               <Text>problemType</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor r="128" g="128" b="255" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="255"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
             </Configuration>
             <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="30">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="292" y="83" width="100" height="24" />
+            <Position x="292" y="83" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
               <Text>maximize</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor r="128" g="128" b="255" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="255"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
             </Configuration>
             <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="29">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="172" y="83" width="100" height="24" />
+            <Position x="172" y="83" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
               <Text>solver</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor r="128" g="128" b="255" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="255"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
             </Configuration>
             <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="31">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="412" y="83" width="100" height="24" />
+            <Position x="412" y="83" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
               <Text>editorValue</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor r="128" g="128" b="255" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="255"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
             </Configuration>
             <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="32">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="532" y="83" width="100" height="24" />
+            <Position x="532" y="83" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
               <Text>fieldNames</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor r="128" g="128" b="255" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="255"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
             </Configuration>
             <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="33">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="652" y="83" width="100" height="24" />
+            <Position x="652" y="83" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
               <Text>fieldList</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor r="128" g="128" b="255" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="255"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
             </Configuration>
             <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="34">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="760" y="83" width="100" height="24" />
+            <Position x="760" y="83" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
               <Text>objective</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor r="128" g="128" b="255" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="255"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
             </Configuration>
             <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="35">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="868" y="83" width="100" height="24" />
+            <Position x="868" y="83" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
               <Text>constraints</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor r="128" g="128" b="255" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="255"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
             </Configuration>
             <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
         <Node ToolID="36">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="988" y="83" width="100" height="24" />
+            <Position x="988" y="83" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
               <Text>selectedTab</Text>
-              <Font name="Segoe UI" size="8.25" style="0" />
-              <TextColor name="Black" />
-              <FillColor r="128" g="128" b="255" />
-              <Shape shape="0" />
-              <Justification Justification="4" />
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="255"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
             </Configuration>
             <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
             </Annotation>
           </Properties>
         </Node>
@@ -1304,242 +1308,224 @@ No Text Styling</DefaultAnnotationText>
   </Nodes>
   <Connections>
     <Connection>
-      <Origin ToolID="3" Connection="Output5" />
-      <Destination ToolID="7" Connection="Input" />
+      <Origin ToolID="3" Connection="Output5"/>
+      <Destination ToolID="7" Connection="Input"/>
     </Connection>
     <Connection>
-      <Origin ToolID="3" Connection="Output3" />
-      <Destination ToolID="43" Connection="Input" />
+      <Origin ToolID="3" Connection="Output3"/>
+      <Destination ToolID="43" Connection="Input"/>
     </Connection>
     <Connection>
-      <Origin ToolID="3" Connection="Output1" />
-      <Destination ToolID="44" Connection="Input" />
+      <Origin ToolID="3" Connection="Output1"/>
+      <Destination ToolID="44" Connection="Input"/>
     </Connection>
     <Connection name="#1">
-      <Origin ToolID="4" Connection="Output" />
-      <Destination ToolID="3" Connection="Input" />
+      <Origin ToolID="4" Connection="Output"/>
+      <Destination ToolID="3" Connection="Input"/>
     </Connection>
     <Connection name="#2">
-      <Origin ToolID="5" Connection="Output" />
-      <Destination ToolID="3" Connection="Input" />
+      <Origin ToolID="5" Connection="Output"/>
+      <Destination ToolID="3" Connection="Input"/>
     </Connection>
     <Connection name="#3">
-      <Origin ToolID="6" Connection="Output" />
-      <Destination ToolID="3" Connection="Input" />
+      <Origin ToolID="6" Connection="Output"/>
+      <Destination ToolID="3" Connection="Input"/>
     </Connection>
     <Connection name="#4">
-      <Origin ToolID="25" Connection="Output" />
-      <Destination ToolID="3" Connection="Input" />
+      <Origin ToolID="25" Connection="Output"/>
+      <Destination ToolID="3" Connection="Input"/>
     </Connection>
     <Connection>
-      <Origin ToolID="7" Connection="Output" />
-      <Destination ToolID="8" Connection="Input" />
+      <Origin ToolID="7" Connection="Output"/>
+      <Destination ToolID="8" Connection="Input"/>
     </Connection>
   </Connections>
   <Properties>
-    <Memory default="True" />
-    <GlobalRecordLimit value="0" />
-    <TempFiles default="True" />
-    <Annotation on="False" includeToolName="False" />
-    <ConvErrorLimit value="10" />
-    <ConvErrorLimit_Stop value="False" />
-    <CancelOnError value="False" />
-    <DisableBrowse value="False" />
-    <EnablePerformanceProfiling value="False" />
-    <DisableAllOutput value="False" />
-    <ShowAllMacroMessages value="False" />
-    <ShowConnectionStatusIsOn value="True" />
-    <ShowConnectionStatusOnlyWhenRunning value="True" />
-    <ZoomLevel value="0" />
+    <Memory default="True"/>
+    <GlobalRecordLimit value="0"/>
+    <TempFiles default="True"/>
+    <Annotation on="False" includeToolName="False"/>
+    <ConvErrorLimit value="10"/>
+    <ConvErrorLimit_Stop value="False"/>
+    <CancelOnError value="False"/>
+    <DisableBrowse value="False"/>
+    <EnablePerformanceProfiling value="False"/>
+    <DisableAllOutput value="False"/>
+    <ShowAllMacroMessages value="False"/>
+    <ShowConnectionStatusIsOn value="True"/>
+    <ShowConnectionStatusOnlyWhenRunning value="True"/>
+    <ZoomLevel value="0"/>
     <LayoutType>Horizontal</LayoutType>
     <Constants>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>payload</Name>
-        <Value />
-        <IsNumeric value="False" />
+        <Value/>
+        <IsNumeric value="False"/>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>inputMode</Name>
-        <Value />
-        <IsNumeric value="False" />
+        <Value/>
+        <IsNumeric value="False"/>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>problemType</Name>
-        <Value />
-        <IsNumeric value="False" />
+        <Value/>
+        <IsNumeric value="False"/>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>solver</Name>
-        <Value />
-        <IsNumeric value="False" />
+        <Value/>
+        <IsNumeric value="False"/>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>maximize</Name>
-        <Value />
-        <IsNumeric value="False" />
+        <Value/>
+        <IsNumeric value="False"/>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>filePath</Name>
-        <Value />
-        <IsNumeric value="False" />
+        <Value/>
+        <IsNumeric value="False"/>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>fileType</Name>
-        <Value />
-        <IsNumeric value="False" />
+        <Value/>
+        <IsNumeric value="False"/>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>showSensitivity</Name>
-        <Value />
-        <IsNumeric value="False" />
+        <Value/>
+        <IsNumeric value="False"/>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>fieldNames</Name>
-        <Value />
-        <IsNumeric value="False" />
+        <Value/>
+        <IsNumeric value="False"/>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>editorValue</Name>
-        <Value />
-        <IsNumeric value="False" />
+        <Value/>
+        <IsNumeric value="False"/>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>activePage</Name>
-        <Value />
-        <IsNumeric value="False" />
+        <Value/>
+        <IsNumeric value="False"/>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>fieldList</Name>
-        <Value />
-        <IsNumeric value="False" />
+        <Value/>
+        <IsNumeric value="False"/>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>objective</Name>
-        <Value />
-        <IsNumeric value="False" />
-      </Constant>
-      <Constant>
-        <Namespace>Question</Namespace>
-        <Name>Macro Input (25)</Name>
-        <Value />
-        <IsNumeric value="False" />
+        <Value/>
+        <IsNumeric value="False"/>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>constraints</Name>
-        <Value />
-        <IsNumeric value="False" />
+        <Value/>
+        <IsNumeric value="False"/>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>selectedTab</Name>
-        <Value />
-        <IsNumeric value="False" />
-      </Constant>
-      <Constant>
-        <Namespace>Question</Namespace>
-        <Name>Macro Output (43)</Name>
-        <Value />
-        <IsNumeric value="False" />
-      </Constant>
-      <Constant>
-        <Namespace>Question</Namespace>
-        <Name>Macro Output (44)</Name>
-        <Value />
-        <IsNumeric value="False" />
+        <Value/>
+        <IsNumeric value="False"/>
       </Constant>
     </Constants>
     <MetaInfo>
-      <NameIsFileName value="False" />
+      <NameIsFileName value="False"/>
       <Name>Optimization</Name>
-      <Description>Optimization</Description>
-      <RootToolName />
+      <Description>Solve linear programming (LP), mixed integer linear programming (MILP), and quadratic programming (QP) optimization problems using matrix, manual, and file input modes.</Description>
+      <RootToolName/>
       <ToolVersion>0.2</ToolVersion>
-      <ToolInDb value="False" />
+      <ToolInDb value="False"/>
       <CategoryName>Prescriptive</CategoryName>
-      <SearchTags />
+      <SearchTags/>
       <Author>Kuo Liu</Author>
       <Company>Alteryx, Inc</Company>
       <Copyright>Alteryx, Inc</Copyright>
-      <DescriptionLink actual="" displayed="" />
+      <DescriptionLink actual="" displayed=""/>
     </MetaInfo>
     <Events>
-      <Enabled value="True" />
+      <Enabled value="True"/>
     </Events>
     <RuntimeProperties>
-      <Actions />
+      <Actions/>
       <Questions>
         <Question>
           <Type>Tab</Type>
           <Description>Questions</Description>
           <Name>Tab (1)</Name>
-          <ToolId value="1" />
+          <ToolId value="1"/>
           <Questions>
             <Question>
               <Type>TextBox</Type>
               <Description>UI</Description>
               <Name>payload</Name>
-              <ToolId value="2" />
-              <Default />
-              <Password value="False" />
-              <Multiline value="False" />
-              <Hidden value="False" />
+              <ToolId value="2"/>
+              <Default/>
+              <Password value="False"/>
+              <Multiline value="False"/>
+              <Hidden value="False"/>
             </Question>
             <Question>
               <Type>MacroInput</Type>
               <Description>Macro Input (11)</Description>
               <Name>Macro Input (4)</Name>
-              <ToolId value="4" />
+              <ToolId value="4"/>
             </Question>
             <Question>
               <Type>MacroInput</Type>
               <Description>Macro Input (12)</Description>
               <Name>Macro Input (5)</Name>
-              <ToolId value="5" />
+              <ToolId value="5"/>
             </Question>
             <Question>
               <Type>MacroInput</Type>
               <Description>Macro Input (13)</Description>
               <Name>Macro Input (6)</Name>
-              <ToolId value="6" />
+              <ToolId value="6"/>
             </Question>
             <Question>
               <Type>MacroOutput</Type>
               <Description>Macro Output (44)</Description>
               <Name>Macro Output (44)</Name>
-              <ToolId value="44" />
+              <ToolId value="44"/>
             </Question>
             <Question>
               <Type>MacroOutput</Type>
               <Description>Macro Output (43)</Description>
               <Name>Macro Output (43)</Name>
-              <ToolId value="43" />
+              <ToolId value="43"/>
             </Question>
             <Question>
               <Type>MacroOutput</Type>
               <Description>Macro Output (8)</Description>
               <Name>Macro Output (8)</Name>
-              <ToolId value="8" />
+              <ToolId value="8"/>
             </Question>
             <Question>
               <Type>ListBox</Type>
               <Description>Select input mode</Description>
               <Name>inputMode</Name>
-              <ToolId value="9" />
-              <Multiple value="False" />
+              <ToolId value="9"/>
+              <Multiple value="False"/>
               <Default>matrix</Default>
               <Mode>Manual</Mode>
               <Manual_Values><![CDATA[Specify the model as matrices:matrix
@@ -1551,8 +1537,8 @@ Specify the model from a file:file
               <Type>ListBox</Type>
               <Description>Select problem type</Description>
               <Name>problemType</Name>
-              <ToolId value="10" />
-              <Multiple value="False" />
+              <ToolId value="10"/>
+              <Multiple value="False"/>
               <Default>LP</Default>
               <Mode>Manual</Mode>
               <Manual_Values><![CDATA[Linear Program:LP
@@ -1564,8 +1550,8 @@ Quadratic Program:QP
               <Type>ListBox</Type>
               <Description>Select solver</Description>
               <Name>solver</Name>
-              <ToolId value="11" />
-              <Multiple value="False" />
+              <ToolId value="11"/>
+              <Multiple value="False"/>
               <Default>glpk</Default>
               <Mode>Manual</Mode>
               <Manual_Values><![CDATA[Glpk:glpk
@@ -1577,28 +1563,28 @@ Quadprog:quadprog
               <Type>BooleanGroup</Type>
               <Description>Maximize Objective?</Description>
               <Name>maximize</Name>
-              <ToolId value="12" />
-              <Questions />
-              <Default value="True" />
-              <Collapsable value="False" />
+              <ToolId value="12"/>
+              <Questions/>
+              <Default value="True"/>
+              <Collapsable value="False"/>
             </Question>
             <Question>
               <Type>FileBrowse</Type>
               <Description>Select file</Description>
               <Name>filePath</Name>
-              <ToolId value="13" />
-              <SaveAs value="False" />
+              <ToolId value="13"/>
+              <SaveAs value="False"/>
               <Mode>DW2</Mode>
-              <DW2_SpatialOnly value="False" />
-              <DW2_FieldMap value="False" />
-              <InputToolId value="-1" />
+              <DW2_SpatialOnly value="False"/>
+              <DW2_FieldMap value="False"/>
+              <InputToolId value="-1"/>
             </Question>
             <Question>
               <Type>ListBox</Type>
               <Description>Select file type</Description>
               <Name>fileType</Name>
-              <ToolId value="14" />
-              <Multiple value="False" />
+              <ToolId value="14"/>
+              <Multiple value="False"/>
               <Default>CPLEX_LP</Default>
               <Mode>Manual</Mode>
               <Manual_Values><![CDATA[CPLEX_LP
@@ -1610,111 +1596,111 @@ MPS_Free
               <Type>BooleanGroup</Type>
               <Description>Show sensitivity report</Description>
               <Name>showSensitivity</Name>
-              <ToolId value="15" />
-              <Questions />
-              <Default value="False" />
-              <Collapsable value="False" />
+              <ToolId value="15"/>
+              <Questions/>
+              <Default value="False"/>
+              <Collapsable value="False"/>
             </Question>
             <Question>
               <Type>TextBox</Type>
               <Description>Enter decision variables</Description>
               <Name>fieldNames</Name>
-              <ToolId value="17" />
+              <ToolId value="17"/>
               <Default>x1,x2,x3</Default>
-              <Password value="False" />
-              <Multiline value="False" />
-              <Hidden value="False" />
+              <Password value="False"/>
+              <Multiline value="False"/>
+              <Hidden value="False"/>
             </Question>
             <Question>
               <Type>TextBox</Type>
-              <Description />
+              <Description/>
               <Name>editorValue</Name>
-              <ToolId value="18" />
-              <Default />
-              <Password value="False" />
-              <Multiline value="False" />
-              <Hidden value="False" />
+              <ToolId value="18"/>
+              <Default/>
+              <Password value="False"/>
+              <Multiline value="False"/>
+              <Hidden value="False"/>
             </Question>
             <Question>
               <Type>TextBox</Type>
               <Description>Active Page</Description>
               <Name>activePage</Name>
-              <ToolId value="19" />
-              <Default />
-              <Password value="False" />
-              <Multiline value="False" />
-              <Hidden value="False" />
+              <ToolId value="19"/>
+              <Default/>
+              <Password value="False"/>
+              <Multiline value="False"/>
+              <Hidden value="False"/>
             </Question>
             <Question>
               <Type>TextBox</Type>
               <Description>Field List</Description>
               <Name>fieldList</Name>
-              <ToolId value="20" />
-              <Default />
-              <Password value="False" />
-              <Multiline value="False" />
-              <Hidden value="False" />
+              <ToolId value="20"/>
+              <Default/>
+              <Password value="False"/>
+              <Multiline value="False"/>
+              <Hidden value="False"/>
             </Question>
             <Question>
               <Type>TextBox</Type>
               <Description>Enter objective function</Description>
               <Name>objective</Name>
-              <ToolId value="21" />
+              <ToolId value="21"/>
               <Default>"2 x1 + 4 x2 + 3 x3"</Default>
-              <Password value="False" />
-              <Multiline value="False" />
-              <Hidden value="False" />
+              <Password value="False"/>
+              <Multiline value="False"/>
+              <Hidden value="False"/>
             </Question>
             <Question>
               <Type>MacroInput</Type>
               <Description>Macro Input (25)</Description>
               <Name>Macro Input (25)</Name>
-              <ToolId value="25" />
+              <ToolId value="25"/>
             </Question>
             <Question>
               <Type>TextBox</Type>
               <Description>Constraints</Description>
               <Name>constraints</Name>
-              <ToolId value="26" />
+              <ToolId value="26"/>
               <Default>'["3 x1 + 4 x2 + 2 x3 &lt;= 60","2 x1 + x2 + 2 x3 &lt;= 40","x1 + 3 x2 + 2 x3 &lt;= 80"]'</Default>
-              <Password value="False" />
-              <Multiline value="False" />
-              <Hidden value="False" />
+              <Password value="False"/>
+              <Multiline value="False"/>
+              <Hidden value="False"/>
             </Question>
             <Question>
               <Type>TextBox</Type>
               <Description>Selected Tab</Description>
               <Name>selectedTab</Name>
-              <ToolId value="27" />
-              <Default />
-              <Password value="False" />
-              <Multiline value="False" />
-              <Hidden value="False" />
+              <ToolId value="27"/>
+              <Default/>
+              <Password value="False"/>
+              <Multiline value="False"/>
+              <Hidden value="False"/>
             </Question>
           </Questions>
         </Question>
       </Questions>
       <ModuleType>Macro</ModuleType>
-      <MacroCustomHelp value="False" />
-      <MacroDynamicOutputFields value="False" />
-      <MacroImageStd value="39" />
-      <MacroInputs />
-      <MacroOutputs />
-      <Wiz_CustomHelp value="False" />
-      <Wiz_CustomGraphic value="False" />
-      <Wiz_ShowOutput value="True" />
+      <MacroCustomHelp value="False"/>
+      <MacroDynamicOutputFields value="False"/>
+      <MacroImageStd value="39"/>
+      <MacroInputs/>
+      <MacroOutputs/>
+      <Wiz_CustomHelp value="False"/>
+      <Wiz_CustomGraphic value="False"/>
+      <Wiz_ShowOutput value="True"/>
       <Wiz_OpenOutputTools>
-        <Tool ToolId="4" Selected="True" />
-        <Tool ToolId="5" Selected="True" />
-        <Tool ToolId="6" Selected="True" />
-        <Tool ToolId="8" Selected="True" />
-        <Tool ToolId="25" Selected="True" />
-        <Tool ToolId="43" Selected="True" />
-        <Tool ToolId="44" Selected="True" />
+        <Tool ToolId="4" Selected="True"/>
+        <Tool ToolId="5" Selected="True"/>
+        <Tool ToolId="6" Selected="True"/>
+        <Tool ToolId="8" Selected="True"/>
+        <Tool ToolId="25" Selected="True"/>
+        <Tool ToolId="43" Selected="True"/>
+        <Tool ToolId="44" Selected="True"/>
       </Wiz_OpenOutputTools>
-      <Wiz_OutputMessage />
-      <Wiz_NoOutputFilesMessage />
-      <Wiz_ChainRunWizard />
+      <Wiz_OutputMessage/>
+      <Wiz_NoOutputFilesMessage/>
+      <Wiz_ChainRunWizard/>
     </RuntimeProperties>
   </Properties>
 </AlteryxDocument>
