@@ -41,11 +41,11 @@ class FieldListItem extends React.Component {
   renderView() {
     return (
       <div className="row">
-        <div className="col-xs-8">
+        <div className="col-xs-7">
           {/*Display bound information*/}
           <BoundItemView bound={this.props.field.bound} onClick={this.toggleEditing} />
         </div>
-        <div className="col-xs-4 full-width">
+        <div className="col-xs-5 full-width">
           <div className="input-group">
             {/*Field type selection*/}
             <Select
@@ -55,7 +55,7 @@ class FieldListItem extends React.Component {
               onChange={this.selectFieldType}
             />
             {/*The delete button*/}
-            <span className="input-group-btn">
+            <span className="input-group-btn" style={{ paddingLeft: 5, paddingRight: 5 }}>
               <button
                 type="button"
                 className="smallButton btn-transparent"

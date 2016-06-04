@@ -35,7 +35,7 @@ function BoundItemEdit({ tempBound, onSubmit, onCancel }) {
             placeholder="Upper Bound"
           />
         </div>
-        <div style={{ paddingLeft: 5, paddingRight: 5, paddingTop: 5 }} className="col-xs-3">
+        <div style={{ paddingLeft: 10, paddingRight: 5, paddingTop: 5 }} className="col-xs-3">
           <div className="btn-toolbar center-block">
             <button
               type="button"
