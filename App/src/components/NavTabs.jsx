@@ -24,7 +24,7 @@ class NavTabs extends React.Component {
           let isActive = (this.props.selected === idx ? 'active' : '');
           return (
             <li key={idx} className={isActive}>
-              <a href="#" onClick={(e) => this.handleSelect(e, idx)}>
+              <a href="#" className="nav-tab-label" onClick={(e) => this.handleSelect(e, idx)}>
                 {child.props.label}
               </a>
             </li>

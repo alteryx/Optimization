@@ -35,8 +35,7 @@ class ConstraintStore {
   @observable constraints = [];
   @observable currentConstraint = null;
 
-  constructor(manager, parentStore) {
-    this.manager = manager;
+  constructor(parentStore) {
     this.parentStore = parentStore;
   }
 
@@ -76,7 +75,9 @@ class ConstraintStore {
   }
 
   syncConstraints() {
-    this.manager.GetDataItemByDataName('constraints').setValue(JSON.stringify(this.asJSON));
+    this.parentStore.manager
+      .GetDataItemByDataName('constraints')
+      .setValue(JSON.stringify(this.asJSON));
   }
 }
 

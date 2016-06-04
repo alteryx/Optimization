@@ -1,6 +1,7 @@
 import React, { PropTypes as P } from 'react';
 import { observer } from 'mobx-react';
 import InputBound from './InputBound';
+import { iconImages } from '../Utils';
 
 function BoundItemEdit({ tempBound, onSubmit, onCancel }) {
   const handleBoundChange = (e, field) => {
@@ -9,7 +10,7 @@ function BoundItemEdit({ tempBound, onSubmit, onCancel }) {
 
   return (
     <div className="row">
-      <form className="form-inline" onSubmit={onSubmit}>
+      <form className="form-inline">
         <div className="col-xs-4">
           <InputBound
             bound={tempBound}
@@ -19,7 +20,12 @@ function BoundItemEdit({ tempBound, onSubmit, onCancel }) {
           />
         </div>
         <div style={{ paddingLeft: 5, paddingRight: 5 }} className="col-xs-1">
-          <h5 style={{ marginTop: 5, marginBottom: 5, paddingTop: 4 }} className="text-center">{tempBound.field}</h5>
+          <h5
+            style={{ marginTop: 5, marginBottom: 5, paddingTop: 4 }}
+            className="text-center"
+          >
+            {tempBound.field}
+          </h5>
         </div>
         <div className="col-xs-4">
           <InputBound
@@ -29,17 +35,22 @@ function BoundItemEdit({ tempBound, onSubmit, onCancel }) {
             placeholder="Upper Bound"
           />
         </div>
-        <div style={{ paddingLeft: 5, paddingRight: 5, paddingTop: 10 }} className="col-xs-3">
+        <div style={{ paddingLeft: 10, paddingRight: 5, paddingTop: 5 }} className="col-xs-3">
           <div className="btn-toolbar center-block">
-            <button type="submit" className="btn btn-tiny btn-success btn-xs">
-              <i className="fa fa-check"></i>
+            <button
+              type="button"
+              style={{ height: 'auto', width: 'auto' }}
+              className="btn smallButton btn-transparent"
+              onClick={onSubmit}
+            >
+              <img src={iconImages.save} />
             </button>
             <button
               type="button"
-              className="btn btn-tiny btn-danger btn-xs"
+              className="btn smallButton btn-transparent"
               onClick={onCancel}
             >
-              <i className="fa fa-times"></i>
+              <img src={iconImages.undo} />
             </button>
           </div>
         </div>
