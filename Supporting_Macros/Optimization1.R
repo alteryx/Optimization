@@ -73,7 +73,7 @@ inputs <- if (inAlteryx()) {
   NULL
 }
 
-print(config)
+#print(config)
 payload <- list(config = config, inputs = inputs)
 
 # Solve Optimization Problem
@@ -91,5 +91,9 @@ write.Alteryx(dataOutput, 3)
 
 ## I Output: Interactive Dashboard ----
 makeInteractiveReport(out, nOutput = 5)
+
+if (out$status$code == 1){
+  AlteryxMessage(out$status$msg$message, iType = 3, iPriority = 3)
+}
 
 
