@@ -23,7 +23,7 @@ function FieldNameInput({ store }) {
         onChange={handleChange}
       />
       <span className="input-group-btn">
-        <button type="button" className="btn btn-sm btn-primary" onClick={handleAdd}>
+        <button type="button" className="btn btn-sm btn-ayx" disabled={store.fieldNames === ''} onClick={handleAdd}>
           <i className="fa fa-plus"></i>
         </button>
       </span>

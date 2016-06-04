@@ -1,8 +1,11 @@
 import React from 'react';
 import { observer } from 'mobx-react';
+import { iconImages } from '../Utils';
+
 
 function ConstraintItem(props) {
   const isBeingEdited = props.isBeingEdited ? ' list-group-item-editing' : '';
+
   return (
     <div
       className={`list-group-item clearfix constraint-item ${isBeingEdited}`}
@@ -11,8 +14,8 @@ function ConstraintItem(props) {
     >
       {props.constraint.value}
         <span className="pull-right">
-          <a href="#" className="text-danger" onClick={props.removeConstraint}>
-            <i className="fa fa-trash"></i>
+          <a href="#" className="default-button smallButton" onClick={props.removeConstraint}>
+            <img style={{ width: 12, height: 12 }} src={iconImages.trash} />
           </a>
         </span>
     </div>

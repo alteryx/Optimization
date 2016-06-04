@@ -6,14 +6,20 @@ import Editor from './Editor';
 function ConstraintList({ store }) {
   const cs = store.constraintStore;
 
-  const handleAdd = (e) => {
-    e.preventDefault();
-    cs.addConstraint(store.editorValue);
-  };
-
-  const handleSave = (e) => {
-    e.preventDefault();
-    cs.currentConstraint.save(store.editorValue);
+  const handleSubmit = (e = {}) => {
+    // Check if `handleSubmit` received an actual event and, if so, prevent default
+    if (e.hasOwnProperty('preventDefault')) {
+      e.preventDefault();
+    }
+    if (!store.isEditorEmpty) {
+      if (store.saveOrAdd) {
+        // Add
+        cs.addConstraint(store.editorValue);
+      } else {
+        // Save
+        cs.currentConstraint.save(store.editorValue);
+      }
+    }
   };
 
   const handleChange = (v) => {
@@ -32,11 +38,12 @@ function ConstraintList({ store }) {
           value={store.editorValue}
           hintList={store.fieldNameArray}
           onChange={handleChange}
+          onSubmit={handleSubmit}
         />
         <span className="input-group-btn">
           <button
-            className="btn btn-sm btn-primary"
-            onClick={store.saveOrAdd ? handleAdd : handleSave}
+            className="btn btn-sm btn-ayx"
+            onClick={handleSubmit}
             disabled={store.isEditorEmpty}
           >
             {store.saveOrAdd ? <i className="fa fa-plus"></i> : <i className="fa fa-floppy-o"></i>}

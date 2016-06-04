@@ -4,6 +4,7 @@ import { observable, toJSON } from 'mobx';
 import BoundItemEdit from './BoundItemEdit';
 import BoundItemView from './BoundItemView';
 import Select from './Select';
+import { iconImages } from '../Utils';
 
 @observer
 class FieldListItem extends React.Component {
@@ -40,28 +41,27 @@ class FieldListItem extends React.Component {
   renderView() {
     return (
       <div className="row">
-        <div className="col-xs-8">
+        <div className="col-xs-7">
           {/*Display bound information*/}
           <BoundItemView bound={this.props.field.bound} onClick={this.toggleEditing} />
         </div>
-        <div className="col-xs-4 full-width">
+        <div className="col-xs-5 full-width">
           <div className="input-group">
             {/*Field type selection*/}
             <Select
-              // style={{ width: 'auto' }}
               className="form-control"
               value={this.props.field.type}
               options={this.props.options}
               onChange={this.selectFieldType}
             />
             {/*The delete button*/}
-            <span className="input-group-btn">
+            <span className="input-group-btn" style={{ paddingLeft: 5, paddingRight: 5 }}>
               <button
                 type="button"
-                className="btn btn-xs btn-transparent"
+                className="smallButton btn-transparent"
                 onClick={this.handleDelete}
               >
-                <i className="fa fa-trash text-danger"></i>
+                <img style={{ width: 12, height: 12 }} src={iconImages.trash} />
               </button>
             </span>
           </div>
