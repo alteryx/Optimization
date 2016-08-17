@@ -4,3 +4,11 @@ showSensitivity:
   showAsToggle: "true"
 nameVar:
   clearable: "true"
+nameCoef:
+  clearable: "true"
+nameLower:
+  clearable: "true"
+nameUpper:
+  clearable: "true"
+nameType:
+  clearable: "true"
