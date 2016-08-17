@@ -176,6 +176,9 @@ This can be understood as an easy optimization problem:
               <DefaultAnnotationText>daily_lineup.yxdb</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
             <MetaInfo connection="Output">
               <RecordInfo>
                 <Field name="Name" size="254" source="File: C:\Users\kliu\Documents\Work\201604_Inspire\good_data.csv" type="V_WString" />
@@ -212,6 +215,9 @@ This can be understood as an easy optimization problem:
               <DefaultAnnotationText />
               <Left value="False" />
             </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
           </Properties>
           <EngineSettings Macro="Predictive Tools\Field_Summary_Report.yxmc" />
         </Node>
@@ -221,7 +227,7 @@ This can be understood as an easy optimization problem:
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5896_e594eca9967043fe86c5bd49f88312cb_\Engine_5448_611fa7a4604f4a22bfd4b34551745eb7_.yxdb</TempFile>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_6516_4c193e4eec3549978bbce2bba2845578_\Engine_2512_1e57085644e64354bbf9c9c18e97b1d6_.yxdb</TempFile>
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
@@ -248,7 +254,7 @@ This can be understood as an easy optimization problem:
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5896_e594eca9967043fe86c5bd49f88312cb_\Engine_5448_556a0163c69e449682f8b84230799d7f_.yxdb</TempFile>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_6516_4c193e4eec3549978bbce2bba2845578_\Engine_2512_45c1f61a933b4748a31a709be7bd7a9f_.yxdb</TempFile>
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
@@ -275,7 +281,7 @@ This can be understood as an easy optimization problem:
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5896_e594eca9967043fe86c5bd49f88312cb_\Engine_5448_922ab5fcbb9247b084c3d81e0d9c9e55_.yxdb</TempFile>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_6516_4c193e4eec3549978bbce2bba2845578_\Engine_2512_f89d1b4965d04a1e870e0d6ff1db0666_.yxdb</TempFile>
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
@@ -323,7 +329,7 @@ This can be understood as an easy optimization problem:
           <Properties>
             <Configuration>
               <Passwords />
-              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\data\daily_lineup.yxdb</File>
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\daily_lineup.yxdb</File>
               <FormatSpecificOptions />
             </Configuration>
             <Annotation DisplayMode="0">
@@ -331,21 +337,9 @@ This can be understood as an easy optimization problem:
               <DefaultAnnotationText>daily_lineup.yxdb</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="Name" size="254" source="File: C:\Users\kliu\Documents\Work\201604_Inspire\good_data.csv" type="V_WString" />
-                <Field name="Team" size="254" source="File: C:\Users\kliu\Documents\Work\201604_Inspire\good_data.csv" type="V_WString" />
-                <Field name="Pos" size="254" source="File: C:\Users\kliu\Documents\Work\201604_Inspire\good_data.csv" type="V_String" />
-                <Field name="Bat" size="254" source="File: C:\Users\kliu\Documents\Work\201604_Inspire\good_data.csv" type="V_String" />
-                <Field name="Opp" size="254" source="File: C:\Users\kliu\Documents\Work\201604_Inspire\good_data.csv" type="V_WString" />
-                <Field name="Salary" source="File: C:\Users\kliu\Documents\Work\201604_Inspire\good_data.csv" type="Double" />
-                <Field name="Pts" source="File: C:\Users\kliu\Documents\Work\201604_Inspire\good_data.csv" type="Double" />
-                <Field name="Value" source="File: C:\Users\kliu\Documents\Work\201604_Inspire\good_data.csv" type="Double" />
-                <Field name="ML" source="File: C:\Users\kliu\Documents\Work\201604_Inspire\good_data.csv" type="Double" />
-                <Field name="O/U" source="File: C:\Users\kliu\Documents\Work\201604_Inspire\good_data.csv" type="Double" />
-                <Field name="Weather" size="254" source="File: C:\Users\kliu\Documents\Work\201604_Inspire\good_data.csv" type="V_WString" />
-              </RecordInfo>
-            </MetaInfo>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
         </Node>
@@ -531,7 +525,7 @@ endif
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5896_e594eca9967043fe86c5bd49f88312cb_\Engine_5448_d1c2a4150f764ff6874166a5f8d7c0de_.yxdb</TempFile>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_6516_4c193e4eec3549978bbce2bba2845578_\Engine_2512_598d9c0e9adb4505b05722ef717f2313_.yxdb</TempFile>
               <Layout>
                 <View1>
                   <Hints>
@@ -554,7 +548,7 @@ endif
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5896_e594eca9967043fe86c5bd49f88312cb_\Engine_5448_3dae0a19ea9b4da6a748f92b7aca7b8a_.yxdb</TempFile>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_6516_4c193e4eec3549978bbce2bba2845578_\Engine_2512_b7d7c8b7147640569af4cd3707dd84e5_.yxdb</TempFile>
               <Layout>
                 <View1>
                   <Hints>
@@ -577,7 +571,7 @@ endif
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5896_e594eca9967043fe86c5bd49f88312cb_\Engine_5448_432f12472f524abcaea636afca77f74c_.yxdb</TempFile>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_6516_4c193e4eec3549978bbce2bba2845578_\Engine_2512_7e22f41442654e85abda463238e6275a_.yxdb</TempFile>
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
@@ -708,7 +702,7 @@ endif
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>Sample_FantasyBaseball_DailyLineup</Name>
+      <Name>FantasyBaseballDailyLineup</Name>
       <Description />
       <RootToolName />
       <ToolVersion />

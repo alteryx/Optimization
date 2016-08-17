@@ -1087,13 +1087,13 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Value name="filePath">..\data\assortment.lp</Value>
+          <Value name="filePath">.\assortment.lp</Value>
           <Value name="fileType">CPLEX_LP</Value>
           <Value name="maximize">False</Value>
           <Value name="solver">glpk</Value>
           <Value name="problemType">LP</Value>
           <Value name="inputMode">file</Value>
-          <Value name="payload">{"fileType":"CPLEX_LP","filePath":"..\\data\\assortment.lp","solver":"glpk","inputMode":"file","maximize":false,"problemType":"LP"}</Value>
+          <Value name="payload">{"fileType":"CPLEX_LP","filePath":".\\assortment.lp","solver":"glpk","inputMode":"file","maximize":false,"problemType":"LP"}</Value>
           <Value name="selectedTab">0</Value>
           <Value name="fieldList">[]</Value>
           <Value name="constraints">[]</Value>
@@ -1148,8 +1148,8 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
           <Value name="problemType">LP</Value>
           <Value name="inputMode">manual</Value>
           <Value name="payload">{"fileType":"CPLEX_LP","filePath":"","solver":"glpk","inputMode":"manual","maximize":true,"problemType":"LP"}</Value>
-          <Value name="selectedTab">2</Value>
-          <Value name="fieldList">[{"fieldName":"P1","type":"Binary","lowerBound":0,"upperBound":"1"},{"fieldName":"P2","type":"Binary","lowerBound":0,"upperBound":"1"},{"fieldName":"P3","type":"Binary","lowerBound":0,"upperBound":"1"},{"fieldName":"J1","type":"Binary","lowerBound":0,"upperBound":"1"},{"fieldName":"J2","type":"Binary","lowerBound":0,"upperBound":"1"},{"fieldName":"M1","type":"Binary","lowerBound":0,"upperBound":"1"},{"fieldName":"M2","type":"Binary","lowerBound":0,"upperBound":"1"},{"fieldName":"M3","type":"Binary","lowerBound":0,"upperBound":"1"},{"fieldName":"B1","type":"Binary","lowerBound":0,"upperBound":"1"},{"fieldName":"B2","type":"Binary","lowerBound":0,"upperBound":"1"},{"fieldName":"B3","type":"Binary","lowerBound":0,"upperBound":"1"},{"fieldName":"B4","type":"Binary","lowerBound":0,"upperBound":"1"}]</Value>
+          <Value name="selectedTab">1</Value>
+          <Value name="fieldList">[{"fieldName":"P1","type":"Binary","lowerBound":0,"upperBound":1},{"fieldName":"P2","type":"Binary","lowerBound":0,"upperBound":1},{"fieldName":"P3","type":"Binary","lowerBound":0,"upperBound":1},{"fieldName":"J1","type":"Binary","lowerBound":0,"upperBound":1},{"fieldName":"J2","type":"Binary","lowerBound":0,"upperBound":1},{"fieldName":"M1","type":"Binary","lowerBound":0,"upperBound":1},{"fieldName":"M2","type":"Binary","lowerBound":0,"upperBound":1},{"fieldName":"M3","type":"Binary","lowerBound":0,"upperBound":1},{"fieldName":"B1","type":"Binary","lowerBound":0,"upperBound":1},{"fieldName":"B2","type":"Binary","lowerBound":0,"upperBound":1},{"fieldName":"B3","type":"Binary","lowerBound":0,"upperBound":1},{"fieldName":"B4","type":"Binary","lowerBound":0,"upperBound":1}]</Value>
           <Value name="constraints">["12 P1 + 16 P2 + 18 P3 + 21 J1 + 24 J2 + 18 M1 + 21 M2 + 28 M3 + 12 B1 + 15 B2 + 18 B3 + 24 B4 &lt;= 80","P1 + P2 + P3 &lt;= 1","J1 + J2 &lt;= 1","M1 + M2 + M3 &lt;= 1","B1 + B2 + B3 + B4 &lt;= 1"]</Value>
           <Value name="objective">3.7*P1 + 5.2*P2 + 6.1P3 + 9.3J1 + 9.6J2 + 4.8M1 + 7.2M2 + 9.1M3 + 2.6B1 + 5.4B2 + 5.8B3 + 6.9B4</Value>
           <Value name="fieldNames">P1, P2, P3, J1, J2, M1, M2, M3, B1, B2, B3, B4</Value>

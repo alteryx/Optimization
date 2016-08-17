@@ -67,18 +67,6 @@ write.Alteryx(cov_mat, 1)</RScript>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <MetaInfo connection="Output1">
-          <RecordInfo>
-            <Field name="X3MonthTBills" source="R-DATA:" type="Double" />
-            <Field name="USGovLongBonds" source="R-DATA:" type="Double" />
-            <Field name="SP500" source="R-DATA:" type="Double" />
-            <Field name="Wilshire5000" source="R-DATA:" type="Double" />
-            <Field name="NASDAQComposite" source="R-DATA:" type="Double" />
-            <Field name="LehmanBrosBonds" source="R-DATA:" type="Double" />
-            <Field name="EAFE" source="R-DATA:" type="Double" />
-            <Field name="Gold" source="R-DATA:" type="Double" />
-          </RecordInfo>
-        </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxRPluginEngine.dll" EngineDllEntryPoint="AlteryxR" />
     </Node>
@@ -842,7 +830,7 @@ Field_4=-16*[Field_4]
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>PortfolioVan</Name>
+      <Name>PortfolioOptimization</Name>
       <Description />
       <RootToolName />
       <ToolVersion />
