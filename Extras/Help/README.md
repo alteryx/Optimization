@@ -1,6 +1,6 @@
 # About the Optimization Tool
 
-<img src="../OptimizationIcon.png" width=100 height=100 />
+<img src="../../OptimizationIcon.png" width=48 height=48 />
 
 
 
@@ -10,12 +10,11 @@ An optimization problem typically consists of an _objective function_, a set of 
 
 Alteryx Optimization tool currently supports 3 most common optimization problems: linear programming (LP), mixed integer linear programing (MILP) and quadratic programming (QP).  We offer 3 input modes: file, matrix and manual. File mode supports industry standard model file input, including CPLEX_LP, MathProg and MPS format. Users who generate her constraints and objective via other programs will find it easy to use matrix input mode that supports either dense or sparse([slam](https://cran.r-project.org/web/packages/slam/slam.pdf)) matrices. Manual input mode offers an interactive interface, where users can specify according objective and constraints directly. Sensitivity analysis is available for linear programing problems. 
 
-
 _Note: This tool uses the R tool. Install R and the necessary packages by going to Options > Download Predictive Tools._
 
 ### Inputs
 
-There are 4 inputs and all are optional
+There are 4 inputs and all are optional.
 
 1. __O Input (optional):__ Use this to provide the objective function. It should have the following 5 columns:
 
@@ -73,3 +72,4 @@ There are 4 inputs and all are optional
 1. __I Output:__ This output provides a dashboard of the solution.
 2. __D Output:__ This output consists of three pipe-separted tables `summary`, `variables` and `constraints`. They can be used upstream in the workflow to create reports and dashboards.
 3. __S Output:__ This is a simple data output that consists of a single table with the optimal value of the objective function and the decision variables. For problems consisting of only Binary decision variables (0/1), this table only contains those values that are 1.
+

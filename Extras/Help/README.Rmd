@@ -5,10 +5,12 @@ output:
     keep_md: yes
 ---
 
-<img src="../OptimizationIcon.png" width=100 height=100 />
+<img src="../../OptimizationIcon.png" width=48 height=48 />
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+pluginDir <- file.path("..", "..", AlteryxRhelper:::dirNames()$macros)
+pluginName = file.path(pluginDir, "Optimization.yxmc")
 ```
 
 Optimization has wide applications in many industries, such as supply chain, transportation, financial service, retail, telecom, engery etc. Application examples include supply chain optimization, assortment optimization, portfolio optimization, workforce scheduling, sports scheduling and so on.
@@ -17,25 +19,25 @@ An optimization problem typically consists of an _objective function_, a set of 
 
 Alteryx Optimization tool currently supports 3 most common optimization problems: linear programming (LP), mixed integer linear programing (MILP) and quadratic programming (QP).  We offer 3 input modes: file, matrix and manual. File mode supports industry standard model file input, including CPLEX_LP, MathProg and MPS format. Users who generate her constraints and objective via other programs will find it easy to use matrix input mode that supports either dense or sparse([slam](https://cran.r-project.org/web/packages/slam/slam.pdf)) matrices. Manual input mode offers an interactive interface, where users can specify according objective and constraints directly. Sensitivity analysis is available for linear programing problems. 
 
-
 _Note: This tool uses the R tool. Install R and the necessary packages by going to Options > Download Predictive Tools._
 
 ### Inputs
 
-There are 4 inputs and all are optional
+There are 4 inputs and all are optional.
 
 ```{r echo = F, comment = NA, results = 'asis', warning = F}
-AlteryxRhelper::extractInputOutput("Optimization.yxmc")
+AlteryxRhelper::extractInputOutput(pluginName)
 ```
 
 ### Configuration Properties
 
 ```{r echo = F, comment = NA, results = 'asis', warning = F}
-AlteryxRhelper::extractConfig("Optimization.yxmc")
+AlteryxRhelper::extractConfig(pluginName)
 ```
 
 ### Output
 
 ```{r echo = F, comment = NA, results = 'asis', warning = F}
-AlteryxRhelper::extractInputOutput("Optimization.yxmc", type = 'output')
+AlteryxRhelper::extractInputOutput(pluginName, type = 'output')
 ```
+
