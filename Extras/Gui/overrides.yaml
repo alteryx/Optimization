@@ -2,3 +2,5 @@ maximize:
   showAsToggle: "true"
 showSensitivity:
   showAsToggle: "true"
+nameVar:
+  clearable: "true"
