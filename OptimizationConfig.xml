@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <AlteryxJavaScriptPlugin>
   <EngineSettings EngineDLL="Macro" EngineDLLEntryPoint="Optimization/Supporting_Macros/Optimization.yxmc" SDKVersion="10.1"/>
-  <GuiSettings Html="OptimizationGui.html" Icon="OptimizationIcon.png" SDKVersion="10.1" Help="Optimization.htm">
+  <GuiSettings Html="OptimizationGui.html" Icon="OptimizationIcon.png" SDKVersion="10.1" Help="">
     <InputConnections>
       <Connection Name="InputO" AllowMultiple="False" Optional="True" Type="Connection" Label="O"/>
       <Connection Name="InputA" AllowMultiple="False" Optional="True" Type="Connection" Label="A"/>
@@ -16,12 +16,14 @@
   </GuiSettings>
   <Properties>
     <MetaInfo>
-      <NameIsFileName>False</NameIsFileName>
+      <NameIsFileName></NameIsFileName>
       <Name>Optimization</Name>
       <Description>Solve linear programming (LP), mixed integer linear programming (MILP), and quadratic programming (QP) optimization problems using matrix, manual, and file input modes.</Description>
+      <RootToolName></RootToolName>
       <ToolVersion>0.2</ToolVersion>
-      <ToolInDb>False</ToolInDb>
+      <ToolInDb></ToolInDb>
       <CategoryName>Prescriptive</CategoryName>
+      <SearchTags></SearchTags>
       <Author>Kuo Liu</Author>
       <Company>Alteryx, Inc</Company>
       <Copyright>Alteryx, Inc</Copyright>

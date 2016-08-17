@@ -66,6 +66,8 @@ Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems) => {
 
 Alteryx.Gui.AfterLoad = (manager) => {
   controlPageDisplay(manager);
+  console.log('Displaying Field Map O')
+  displayTarget('field-map-O', 'displayFieldMapO')
   syncSolverList(manager);
   syncDataItems(
     'payload',
@@ -87,3 +89,23 @@ Alteryx.Gui.Annotation = (manager) => {
   const string = manager.GetDataItem('inputMode').getValue();
   return `${string.charAt(0).toUpperCase() + string.slice(1)} Input Mode`;
 };
+
+function displayTarget(targetId, di, cond, resize = false){
+  let condition;
+  if (typeof cond == 'undefined'){
+    condition = function(v){return v}
+  } else if (typeof cond == 'string'){
+    condition = function(v){return v === cond}
+  } else {
+    condition = cond;
+  }
+  const dataItem = Alteryx.Gui.manager.GetDataItemByDataName(di)
+  const targetDiv = document.getElementById(targetId)
+  function display(v){
+    targetDiv.style.display = condition(v) ? 'block' : 'none'
+    console.log("Resizing ", v)
+    window.dispatchEvent(new Event('resize'));
+  }
+  dataItem.BindUserDataChanged(display)
+  display(dataItem.value)
+}
