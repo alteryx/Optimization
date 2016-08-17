@@ -123,6 +123,38 @@ Optimization
 <label for="maximize"></label>
 <alteryx-pluginwidget type="CheckBox" text="Maximize Objective?" default="true" showAsToggle="true" id="maximize" dataName="maximize"></alteryx-pluginwidget>
 
+      
+<!--  displayFieldMapO  -->
+<label for="displayFieldMapO"></label>
+<alteryx-pluginwidget type="CheckBox" text="Display Field Mapping for O" default="false" id="displayFieldMapO" dataName="displayFieldMapO"></alteryx-pluginwidget>
+      
+    <div id='field-map-O'>
+      
+<!--  nameVar  -->
+<label for="nameVar">Select variable column</label>
+<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="nameVar" dataName="nameVar"></alteryx-pluginwidget>
+		
+      
+<!--  nameCoef  -->
+<label for="nameCoef">Select coefficient column</label>
+<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="nameCoef" dataName="nameCoef"></alteryx-pluginwidget>
+
+      
+<!--  nameLower  -->
+<label for="nameLower">Select lower bound column</label>
+<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="nameLower" dataName="nameLower"></alteryx-pluginwidget>
+
+      
+<!--  nameUpper  -->
+<label for="nameUpper">Select upper bound column</label>
+<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="nameUpper" dataName="nameUpper"></alteryx-pluginwidget>
+
+      
+<!--  nameType  -->
+<label for="nameType">Select variable type</label>
+<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="nameType" dataName="nameType"></alteryx-pluginwidget>
+
+    </div>
     </fieldset>
 
 </form>
