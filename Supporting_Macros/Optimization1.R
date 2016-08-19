@@ -8,7 +8,7 @@ config <- list(
     '%Question.constraints%'
     , '["3 x1 + 4 x2 + 2 x3 <= 60","2 x1 + x2 + 2 x3 <= 40","x1 + 3 x2 + 2 x3 <= 80"]'
   ),
-  `displayFieldMapO` = checkboxInput('%Question.displayFieldMapO%' , FALSE),
+  displayFieldMapO = checkboxInput('%Question.displayFieldMapO%' , FALSE),
   editorValue = textInput('%Question.editorValue%'),
   fieldList = textInput('%Question.fieldList%'),
   fieldNames = textInput('%Question.fieldNames%'),
@@ -25,6 +25,7 @@ config <- list(
   `nameUpper` = dropdownInput('%Question.nameUpper%', "u"),
   `nameVar` = dropdownInput('%Question.nameVar%', "v"),
 
+  constraintMode = dropdownInput('%Question.constraintMode%', 'slam'),
   
   objective = textInput(
     '%Question.objective%' 
@@ -79,14 +80,44 @@ inputs <- if (inAlteryx()) {
     readInputs("O", "A", "B", "Q") 
   }
 } else {
-  NULL
+  data.frame
 }
 
 print(config)
 
+#' Infer column names for Input O to "variable", "coefficient", "lb", "ub", "type"
+#' 
+#' @param O A data.frame, original O matrix from input Anchor O.
+#' @param displayFlag A boolean, if display field map for Input O in the UI.
+inferO <- function(O, displayFlag) {
+  r <- c("variable", "coefficient", "lb", "ub", "type")
+  names(r) <- config[c("nameVar", "nameCoef", "nameLower", "nameUpper", "nameType")]
+  if (displayFlag) {
+    O <- plyr::rename(O, r)
+  }
+  return(O)
+}
+
+#' Infer column names for Input A based on constraintMode
+#' 
+#' @param A A data.frame, original A matrix from input Anchor A
+#' @param constrMode A string, constraint mode.
+inferA <- function(A, constrMode) {
+  if (constrMode == 'conInRow') {
+    constraint <- names(Filter(function(x){return(!isTRUE(x))}, 
+                               sapply(A, is.numeric)))
+    names(A)[names(A) == constraint] <- 'constraint'
+  }else if (constrMode == 'varInRow') {
+    variable <- names(Filter(function(x){return(!isTRUE(x))}, 
+                              sapply(A, is.numeric)))
+    names(A)[names(A) == variable] <- 'variable'
+  }
+  return(A)
+}
+
 #' Infer column names for Input B to 'constraint', 'rhs', 'dir'
 #' 
-#' @param B
+#' @param B A data.frame, original B matrix from input Anchor B
 #' @examples 
 #' B <- data.frame(
 #' z = c('A', 'B', 'C'),
@@ -94,7 +125,7 @@ print(config)
 #' y = c(1, 2, 3)
 #' )
 #' inferB(B)
-inferB <- function(B){
+inferB <- function(B) {
   rhs <- names(Filter(isTRUE, sapply(B, is.numeric)))
   dir <- names(Filter(
     function(x){all(x %in% c(">=", "<=", "==", ">", "<", "="))},
@@ -106,17 +137,9 @@ inferB <- function(B){
   plyr::rename(B, replace = repl)
 }
 
-inferO <- function(O, displayFlag) {
-  r <- c("variable", "coefficient", "lb", "ub", "type")
-  names(r) <- config[c("nameVar", "nameCoef", "nameLower", "nameUpper", "nameType")]
-  if (displayFlag) {
-    O <- plyr::rename(O, r)
-  }
-  return(O)
-}
-
 inputs$O <- inferO(inputs$O, config$displayFieldMapO) 
 inputs$B <- inferB(inputs$B)
+inputs$A <- inferA(inputs$A, config$constraintMode)
 
 print('printing inputs')
 print(inputs)

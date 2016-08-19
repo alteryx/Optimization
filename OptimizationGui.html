@@ -126,7 +126,7 @@ Optimization
       
 <!--  displayFieldMapO  -->
 <label for="displayFieldMapO"></label>
-<alteryx-pluginwidget type="CheckBox" text="Display Field Mapping for O" default="false" id="displayFieldMapO" dataName="displayFieldMapO"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="Display field mapping for Input Anchor O" default="false" id="displayFieldMapO" dataName="displayFieldMapO"></alteryx-pluginwidget>
       
     <div id='field-map-O'>
       
@@ -153,6 +153,17 @@ Optimization
 <!--  nameType  -->
 <label for="nameType">Select variable type</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" clearable="true" id="nameType" dataName="nameType"></alteryx-pluginwidget>
+
+    </div>
+    <div>
+      
+<!--  constraintMode  -->
+<label for="constraintMode">Select constraint mode for Input Anchor A</label>
+<alteryx-pluginwidget type="DropDown" id="constraintMode" dataName="constraintMode">
+  <alteryx-option uiobject="Dense matrix, constraints in rows">conInRow</alteryx-option>
+  <alteryx-option uiobject="Dense matrix, variables in rows">varInRow</alteryx-option>
+  <alteryx-option uiobject="Sparse (SLAM) matrix">slam</alteryx-option>
+</alteryx-pluginwidget>
 
     </div>
     </fieldset>

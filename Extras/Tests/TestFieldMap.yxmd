@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="402" width="106.4582" height="19" />
+        <Position x="54" y="364" width="106.4582" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -21,7 +21,7 @@
       <ChildNodes>
         <Node ToolID="15">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="76.00009" y="431" />
+            <Position x="76.00009" y="393" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -67,7 +67,7 @@
         </Node>
         <Node ToolID="16">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="64" y="647" />
+            <Position x="64" y="609" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -109,7 +109,7 @@
         </Node>
         <Node ToolID="18">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="196.0002" y="515" />
+            <Position x="196.0002" y="477" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -131,7 +131,7 @@
         </Node>
         <Node ToolID="19">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="184.0002" y="563" />
+            <Position x="184.0002" y="525" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -151,7 +151,7 @@ conservation=1</DefaultAnnotationText>
         </Node>
         <Node ToolID="20">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="268.0002" y="563" />
+            <Position x="268.0002" y="525" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -177,7 +177,7 @@ conservation=1</DefaultAnnotationText>
         </Node>
         <Node ToolID="21">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="532.0002" y="479" />
+            <Position x="532.0002" y="441" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -193,7 +193,7 @@ conservation=1</DefaultAnnotationText>
         </Node>
         <Node ToolID="22">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="532.0002" y="563" />
+            <Position x="532.0002" y="525" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -209,7 +209,7 @@ conservation=1</DefaultAnnotationText>
         </Node>
         <Node ToolID="23">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="532.0002" y="647" />
+            <Position x="532.0002" y="609" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -232,7 +232,7 @@ conservation=1</DefaultAnnotationText>
         </Node>
         <Node ToolID="28">
           <GuiSettings Plugin="OptimizationV3">
-            <Position x="390.0002" y="558" />
+            <Position x="390.0002" y="520" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -272,7 +272,7 @@ conservation=1</DefaultAnnotationText>
     </Node>
     <Node ToolID="14">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54.00008" y="54" width="535.0001" height="338" />
+        <Position x="54.00008" y="54" width="500.9999" height="300" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -290,7 +290,7 @@ conservation=1</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="5">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="64.00008" y="191" />
+            <Position x="64.00008" y="153" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -336,7 +336,7 @@ conservation=1</DefaultAnnotationText>
         </Node>
         <Node ToolID="6">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="268.0001" y="143" />
+            <Position x="268.0001" y="105" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -360,7 +360,7 @@ conservation=1</DefaultAnnotationText>
         </Node>
         <Node ToolID="7">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="196" y="215" />
+            <Position x="196" y="177" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -380,13 +380,13 @@ Conservation=1</DefaultAnnotationText>
         </Node>
         <Node ToolID="8">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="268.0001" y="191" />
+            <Position x="268.0001" y="153" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <OrderChanged value="True" />
               <SelectFields>
-                <SelectField field="Ingredient" selected="True" rename="variable" />
+                <SelectField field="Ingredient" selected="True" rename="vv" />
                 <SelectField field="Calcium" selected="True" rename="Calcium_min" />
                 <SelectField field="Calcium_max" selected="True" />
                 <SelectField field="Protein" selected="True" />
@@ -404,82 +404,9 @@ Conservation=1</DefaultAnnotationText>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
         </Node>
-        <Node ToolID="10">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="520.0001" y="83" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_11880_837ca96ecc944fc2b32cb26064f56305_\Engine_10532_d4ddf7baa0844cd38197b1164c8ae321_.yxdb</TempFile>
-              <Layout>
-                <View1>
-                  <Hints>
-                    <Table />
-                  </Hints>
-                </View1>
-              </Layout>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-        </Node>
-        <Node ToolID="11">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="520.0001" y="167" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_11880_837ca96ecc944fc2b32cb26064f56305_\Engine_10532_82415f6e92e94389ac87596226f1c673_.yxdb</TempFile>
-              <Layout>
-                <View1>
-                  <Hints>
-                    <Table />
-                  </Hints>
-                </View1>
-              </Layout>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-        </Node>
-        <Node ToolID="12">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="520.0001" y="251" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_11880_837ca96ecc944fc2b32cb26064f56305_\Engine_10532_e8098d9943c148f48f8a6d290fbe75e0_.yxdb</TempFile>
-              <Layout>
-                <ViewMode>Single</ViewMode>
-                <ViewSize value="100" />
-                <View1>
-                  <DefaultTab>Report</DefaultTab>
-                  <Hints>
-                    <Table />
-                  </Hints>
-                </View1>
-                <View2 />
-              </Layout>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-        </Node>
         <Node ToolID="13">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="196" y="143" />
+            <Position x="196" y="105" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -501,33 +428,39 @@ tt="C"</DefaultAnnotationText>
         </Node>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="208" y="323" />
+            <Position x="208" y="285" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <NumRows value="5" />
               <Fields>
-                <Field name="dir" />
-                <Field name="rhs" />
+                <Field name="ha" />
+                <Field name="wer" />
+                <Field name="ge" />
               </Fields>
               <Data>
                 <r>
+                  <c>bee</c>
                   <c>&gt;=</c>
                   <c>0.008</c>
                 </r>
                 <r>
+                  <c>rose</c>
                   <c>&lt;=</c>
                   <c>0.012</c>
                 </r>
                 <r>
+                  <c>banana</c>
                   <c>&gt;=</c>
                   <c>0.22</c>
                 </r>
                 <r>
+                  <c>cat</c>
                   <c>&lt;=</c>
                   <c>0.05</c>
                 </r>
                 <r>
+                  <c>hat</c>
                   <c>==</c>
                   <c>1</c>
                 </r>
@@ -541,15 +474,71 @@ tt="C"</DefaultAnnotationText>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
         </Node>
-        <Node ToolID="32">
-          <GuiSettings Plugin="Optimization">
-            <Position x="390" y="174" />
+        <Node ToolID="38">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="486" y="83" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Value name="nameType">tt</Value>
-              <Value name="nameUpper">u</Value>
-              <Value name="nameLower">l</Value>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_6800_cf5b5bfe231c428f9ce4ce0e97868043_\Engine_5080_d02c09d63c6a483e9d86373d86556de4_.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="39">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="486" y="167" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_6800_cf5b5bfe231c428f9ce4ce0e97868043_\Engine_5080_d5e84822b45147e09fe1ef7336aed16a_.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="40">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="486" y="239" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_6800_cf5b5bfe231c428f9ce4ce0e97868043_\Engine_5080_0c9dbe7b11334d488ef17da0a13bf2f2_.yxdb</TempFile>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="42">
+          <GuiSettings Plugin="Optimization">
+            <Position x="378" y="162" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="constraintMode">varInRow</Value>
+              <Value name="nameType" />
+              <Value name="nameUpper" />
+              <Value name="nameLower" />
               <Value name="nameCoef">Cost</Value>
               <Value name="nameVar">Ingredient</Value>
               <Value name="displayFieldMapO">True</Value>
@@ -605,15 +594,15 @@ tt="C"</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="6" Connection="Output" />
-      <Destination ToolID="32" Connection="InputO" />
+      <Destination ToolID="42" Connection="InputO" />
     </Connection>
     <Connection>
       <Origin ToolID="8" Connection="Output" />
-      <Destination ToolID="32" Connection="InputA" />
+      <Destination ToolID="42" Connection="InputA" />
     </Connection>
     <Connection>
       <Origin ToolID="9" Connection="Output" />
-      <Destination ToolID="32" Connection="InputB" />
+      <Destination ToolID="42" Connection="InputB" />
     </Connection>
     <Connection>
       <Origin ToolID="7" Connection="Output" />
@@ -624,16 +613,16 @@ tt="C"</DefaultAnnotationText>
       <Destination ToolID="6" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="32" Connection="Simple" />
-      <Destination ToolID="10" Connection="Input" />
+      <Origin ToolID="42" Connection="Data" />
+      <Destination ToolID="39" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="32" Connection="Data" />
-      <Destination ToolID="11" Connection="Input" />
+      <Origin ToolID="42" Connection="Simple" />
+      <Destination ToolID="38" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="32" Connection="Interactive" />
-      <Destination ToolID="12" Connection="Input" />
+      <Origin ToolID="42" Connection="Interactive" />
+      <Destination ToolID="40" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>

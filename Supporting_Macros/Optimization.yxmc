@@ -16,7 +16,7 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxRPluginGui.R">
-        <Position x="510" y="726"/>
+        <Position x="510" y="606"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -30,7 +30,7 @@ config &lt;- list(
     '%Question.constraints%'
     , '["3 x1 + 4 x2 + 2 x3 &lt;= 60","2 x1 + x2 + 2 x3 &lt;= 40","x1 + 3 x2 + 2 x3 &lt;= 80"]'
   ),
-  `displayFieldMapO` = checkboxInput('%Question.displayFieldMapO%' , FALSE),
+  displayFieldMapO = checkboxInput('%Question.displayFieldMapO%' , FALSE),
   editorValue = textInput('%Question.editorValue%'),
   fieldList = textInput('%Question.fieldList%'),
   fieldNames = textInput('%Question.fieldNames%'),
@@ -47,6 +47,7 @@ config &lt;- list(
   `nameUpper` = dropdownInput('%Question.nameUpper%', "u"),
   `nameVar` = dropdownInput('%Question.nameVar%', "v"),
 
+  constraintMode = dropdownInput('%Question.constraintMode%', 'slam'),
   
   objective = textInput(
     '%Question.objective%' 
@@ -101,14 +102,44 @@ inputs &lt;- if (inAlteryx()) {
     readInputs("O", "A", "B", "Q") 
   }
 } else {
-  NULL
+  data.frame
 }
 
 print(config)
 
+#' Infer column names for Input O to "variable", "coefficient", "lb", "ub", "type"
+#' 
+#' @param O A data.frame, original O matrix from input Anchor O.
+#' @param displayFlag A boolean, if display field map for Input O in the UI.
+inferO &lt;- function(O, displayFlag) {
+  r &lt;- c("variable", "coefficient", "lb", "ub", "type")
+  names(r) &lt;- config[c("nameVar", "nameCoef", "nameLower", "nameUpper", "nameType")]
+  if (displayFlag) {
+    O &lt;- plyr::rename(O, r)
+  }
+  return(O)
+}
+
+#' Infer column names for Input A based on constraintMode
+#' 
+#' @param A A data.frame, original A matrix from input Anchor A
+#' @param constrMode A string, constraint mode.
+inferA &lt;- function(A, constrMode) {
+  if (constrMode == 'conInRow') {
+    constraint &lt;- names(Filter(function(x){return(!isTRUE(x))}, 
+                               sapply(A, is.numeric)))
+    names(A)[names(A) == constraint] &lt;- 'constraint'
+  }else if (constrMode == 'varInRow') {
+    variable &lt;- names(Filter(function(x){return(!isTRUE(x))}, 
+                              sapply(A, is.numeric)))
+    names(A)[names(A) == variable] &lt;- 'variable'
+  }
+  return(A)
+}
+
 #' Infer column names for Input B to 'constraint', 'rhs', 'dir'
 #' 
-#' @param B
+#' @param B A data.frame, original B matrix from input Anchor B
 #' @examples 
 #' B &lt;- data.frame(
 #' z = c('A', 'B', 'C'),
@@ -116,7 +147,7 @@ print(config)
 #' y = c(1, 2, 3)
 #' )
 #' inferB(B)
-inferB &lt;- function(B){
+inferB &lt;- function(B) {
   rhs &lt;- names(Filter(isTRUE, sapply(B, is.numeric)))
   dir &lt;- names(Filter(
     function(x){all(x %in% c("&gt;=", "&lt;=", "==", "&gt;", "&lt;", "="))},
@@ -128,17 +159,9 @@ inferB &lt;- function(B){
   plyr::rename(B, replace = repl)
 }
 
-inferO &lt;- function(O, displayFlag) {
-  r &lt;- c("variable", "coefficient", "lb", "ub", "type")
-  names(r) &lt;- config[c("nameVar", "nameCoef", "nameLower", "nameUpper", "nameType")]
-  if (displayFlag) {
-    O &lt;- plyr::rename(O, r)
-  }
-  return(O)
-}
-
 inputs$O &lt;- inferO(inputs$O, config$displayFieldMapO) 
 inputs$B &lt;- inferB(inputs$B)
+inputs$A &lt;- inferA(inputs$A, config$constraintMode)
 
 print('printing inputs')
 print(inputs)
@@ -171,29 +194,12 @@ if (out$status$code == 1){
           <DefaultAnnotationText/>
           <Left value="False"/>
         </Annotation>
-        <MetaInfo connection="Output1">
-          <RecordInfo>
-            <Field name="name" size="1073741823" source="R-DATA:" type="V_WString"/>
-            <Field name="value" size="1073741823" source="R-DATA:" type="V_WString"/>
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output3">
-          <RecordInfo>
-            <Field name="name" size="1073741823" source="R-DATA:" type="V_WString"/>
-            <Field name="value" size="1073741823" source="R-DATA:" type="V_WString"/>
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output5">
-          <RecordInfo>
-            <Field name="html" size="1073741823" source="R-DATA:" type="V_WString"/>
-          </RecordInfo>
-        </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxRPluginEngine.dll" EngineDllEntryPoint="AlteryxR"/>
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="54" y="726"/>
+        <Position x="126" y="606"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -352,7 +358,7 @@ if (out$status$code == 1){
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="124" y="933"/>
+        <Position x="124" y="657"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -579,7 +585,7 @@ if (out$status$code == 1){
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="124" y="993"/>
+        <Position x="124" y="717"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -662,7 +668,7 @@ if (out$status$code == 1){
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
-        <Position x="606" y="834"/>
+        <Position x="606" y="714"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -696,7 +702,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="702" y="834"/>
+        <Position x="702" y="714"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -714,7 +720,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="124" y="1048"/>
+        <Position x="124" y="772"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -773,7 +779,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="43">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="666" y="726"/>
+        <Position x="666" y="606"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -791,7 +797,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="44">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="666" y="630"/>
+        <Position x="666" y="558"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -807,13 +813,66 @@ No Text Styling</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput"/>
     </Node>
-    <Node ToolID="64">
+    <Node ToolID="72">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="66" y="354" width="573" height="146"/>
+        <Position x="657" y="354" width="164.1115" height="146"/>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Caption>Container 64</Caption>
+          <Caption>Input A: constraint mode</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10"/>
+          <Disabled value="False"/>
+          <Folded value="False"/>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name/>
+          <DefaultAnnotationText/>
+          <Left value="False"/>
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="71">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
+            <Position x="680" y="431" width="59" height="59"/>
+          </GuiSettings>
+          <Properties>
+            <Configuration/>
+            <Annotation DisplayMode="0">
+              <Name>constraintMode</Name>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="74">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="667" y="383" width="96" height="36"/>
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Select constraint mode</Text>
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor name="White"/>
+              <Shape shape="3"/>
+              <Justification Justification="4"/>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="66" y="354" width="586" height="146"/>
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Input O field map</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10"/>
           <Disabled value="False"/>
           <Folded value="False"/>
@@ -1004,11 +1063,32 @@ No Text Styling</DefaultAnnotationText>
             </Annotation>
           </Properties>
         </Node>
+        <Node ToolID="75">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="570" y="387" width="72" height="36"/>
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text><![CDATA[If field map for O
+]]></Text>
+              <Font name="Segoe UI" size="8.25" style="0"/>
+              <TextColor name="Black"/>
+              <FillColor r="128" g="128" b="192"/>
+              <Shape shape="0"/>
+              <Justification Justification="4"/>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
+            </Annotation>
+          </Properties>
+        </Node>
       </ChildNodes>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="306" y="222" width="468" height="129"/>
+        <Position x="306" y="210" width="468" height="129"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1026,7 +1106,7 @@ No Text Styling</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="19">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="448" y="275" width="59" height="59"/>
+            <Position x="448" y="263" width="59" height="59"/>
           </GuiSettings>
           <Properties>
             <Configuration/>
@@ -1039,7 +1119,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="330" y="282" width="59" height="59"/>
+            <Position x="330" y="270" width="59" height="59"/>
           </GuiSettings>
           <Properties>
             <Configuration/>
@@ -1053,7 +1133,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="15">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="568" y="275" width="59" height="59"/>
+            <Position x="568" y="263" width="59" height="59"/>
           </GuiSettings>
           <Properties>
             <Configuration/>
@@ -1067,7 +1147,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="2">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="688" y="275" width="59" height="59"/>
+            <Position x="688" y="263" width="59" height="59"/>
           </GuiSettings>
           <Properties>
             <Configuration/>
@@ -1080,7 +1160,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="39">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="316" y="251" width="100" height="24"/>
+            <Position x="316" y="239" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1100,7 +1180,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="40">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="424" y="251" width="100" height="24"/>
+            <Position x="424" y="239" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1120,7 +1200,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="41">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="544" y="251" width="100" height="24"/>
+            <Position x="544" y="239" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1140,7 +1220,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="42">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="664" y="251" width="100" height="24"/>
+            <Position x="664" y="239" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1162,7 +1242,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="23">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="66" y="222" width="228" height="122"/>
+        <Position x="66" y="210" width="228" height="129"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1180,7 +1260,7 @@ No Text Styling</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="14">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="88" y="275" width="59" height="59"/>
+            <Position x="88" y="270" width="59" height="59"/>
           </GuiSettings>
           <Properties>
             <Configuration/>
@@ -1194,7 +1274,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="13">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.FileBrowse.FileBrowse">
-            <Position x="208" y="275" width="59" height="59"/>
+            <Position x="208" y="266" width="59" height="59"/>
           </GuiSettings>
           <Properties>
             <Configuration/>
@@ -1208,7 +1288,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="37">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="76" y="251" width="100" height="24"/>
+            <Position x="76" y="239" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1228,7 +1308,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="38">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="184" y="251" width="100" height="24"/>
+            <Position x="184" y="239" width="100" height="24"/>
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1780,6 +1860,12 @@ No Text Styling</DefaultAnnotationText>
         <Value>True</Value>
         <IsNumeric value="False"/>
       </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>constraintMode</Name>
+        <Value/>
+        <IsNumeric value="False"/>
+      </Constant>
     </Constants>
     <MetaInfo>
       <NameIsFileName value="False"/>
@@ -2081,12 +2167,25 @@ MPS_Free
             </Question>
             <Question>
               <Type>BooleanGroup</Type>
-              <Description>Display Field Mapping for O</Description>
+              <Description>Display field mapping for Input Anchor O</Description>
               <Name>displayFieldMapO</Name>
               <ToolId value="70"/>
               <Questions/>
               <Default value="False"/>
               <Collapsable value="False"/>
+            </Question>
+            <Question>
+              <Type>ListBox</Type>
+              <Description>Select constraint mode for Input Anchor A</Description>
+              <Name>constraintMode</Name>
+              <ToolId value="71"/>
+              <Multiple value="False"/>
+              <Default/>
+              <Mode>Manual</Mode>
+              <Manual_Values><![CDATA[Dense matrix, constraints in rows:conInRow
+Dense matrix, variables in rows:varInRow
+Sparse (SLAM) matrix:slam
+]]></Manual_Values>
             </Question>
           </Questions>
         </Question>
