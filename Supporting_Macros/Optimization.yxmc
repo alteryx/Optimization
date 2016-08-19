@@ -16,7 +16,7 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxRPluginGui.R">
-        <Position x="510" y="726" />
+        <Position x="414" y="810" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -30,7 +30,8 @@ config &lt;- list(
     '%Question.constraints%'
     , '["3 x1 + 4 x2 + 2 x3 &lt;= 60","2 x1 + x2 + 2 x3 &lt;= 40","x1 + 3 x2 + 2 x3 &lt;= 80"]'
   ),
-  `displayFieldMapO` = checkboxInput('%Question.displayFieldMapO%' , FALSE),
+  displayFieldMapO = checkboxInput('%Question.displayFieldMapO%' , FALSE),
+  displayFieldMapB = checkboxInput('%Question.displayFieldMapB%' , FALSE),
   editorValue = textInput('%Question.editorValue%'),
   fieldList = textInput('%Question.fieldList%'),
   fieldNames = textInput('%Question.fieldNames%'),
@@ -41,12 +42,14 @@ config &lt;- list(
   ),
   maximize = checkboxInput('%Question.maximize%' , TRUE),
   
-  `nameCoef` = dropdownInput('%Question.nameCoef%', "c"),
-  `nameLower` = dropdownInput('%Question.nameLower%', "l"),
-  `nameType` = dropdownInput('%Question.nameType%', "tt"),
-  `nameUpper` = dropdownInput('%Question.nameUpper%', "u"),
-  `nameVar` = dropdownInput('%Question.nameVar%', "v"),
+  nameCoef = dropdownInput('%Question.nameCoef%', "c"),
+  nameLower = dropdownInput('%Question.nameLower%', "l"),
+  nameType = dropdownInput('%Question.nameType%', "tt"),
+  nameUpper = dropdownInput('%Question.nameUpper%', "u"),
+  nameVar = dropdownInput('%Question.nameVar%', "v"),
 
+  nameDir = dropdownInput("%Question.nameDir%", "dir"),
+  nameRHS = dropdownInput("%Question.nameRHS%", "rhs"),
   
   objective = textInput(
     '%Question.objective%' 
@@ -106,11 +109,17 @@ inputs &lt;- if (inAlteryx()) {
 
 
 print(config)
-r = c("variable", "coefficient", "lb", "ub", "type")
-names(r) &lt;- config[c("nameVar", "nameCoef", "nameLower", "nameUpper", "nameType")]
-print(r)
+
 if (config$displayFieldMapO) {
+  r &lt;- c("variable", "coefficient", "lb", "ub", "type")
+  names(r) &lt;- config[c("nameVar", "nameCoef", "nameLower", "nameUpper", "nameType")]
   inputs$O &lt;- plyr::rename(inputs$O, r)
+}
+
+if (config$displayFieldMapB) {
+  temp &lt;- c("dir", "rhs")
+  names(temp) &lt;- config[c("nameDir", "nameRHS")]
+  inputs$B &lt;- plyr:rename(inputs$B, temp)
 }
 print('printing inputs')
 print(inputs)
@@ -134,7 +143,8 @@ makeInteractiveReport(out, nOutput = 5)
 
 if (out$status$code == 1){
   AlteryxMessage(out$status$msg$message, iType = 3, iPriority = 3)
-}</RScript>
+} 
+</RScript>
           <UseFullUpdate value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
@@ -164,7 +174,7 @@ if (out$status$code == 1){
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="54" y="726" />
+        <Position x="66" y="810" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -323,7 +333,7 @@ if (out$status$code == 1){
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="124" y="933" />
+        <Position x="64" y="873" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -550,7 +560,7 @@ if (out$status$code == 1){
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="124" y="993" />
+        <Position x="64" y="933" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -633,7 +643,7 @@ if (out$status$code == 1){
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
-        <Position x="606" y="834" />
+        <Position x="510" y="918" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -667,7 +677,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="702" y="834" />
+        <Position x="606" y="918" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -685,7 +695,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="124" y="1048" />
+        <Position x="64" y="988" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -744,7 +754,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="43">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="666" y="726" />
+        <Position x="570" y="810" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -762,7 +772,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="44">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="666" y="630" />
+        <Position x="570" y="714" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -780,11 +790,11 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="64">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="66" y="354" width="573" height="146" />
+        <Position x="54" y="354" width="573" height="146" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Caption>Container 64</Caption>
+          <Caption>Input O: field mapping</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
           <Disabled value="False" />
           <Folded value="False" />
@@ -798,7 +808,7 @@ No Text Styling</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="49">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="76" y="431" width="59" height="59" />
+            <Position x="64" y="431" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -811,7 +821,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="51">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="184" y="431" width="59" height="59" />
+            <Position x="172" y="431" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -824,7 +834,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="52">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="76" y="383" width="60" height="36" />
+            <Position x="64" y="383" width="60" height="36" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -844,7 +854,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="53">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="172" y="383" width="84" height="36" />
+            <Position x="160" y="383" width="84" height="36" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -865,7 +875,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="55">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="292" y="431" width="59" height="59" />
+            <Position x="280" y="431" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -878,7 +888,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="56">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="280" y="383" width="72" height="36" />
+            <Position x="268" y="383" width="72" height="36" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -898,7 +908,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="57">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="400" y="431" width="59" height="59" />
+            <Position x="388" y="431" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -911,7 +921,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="58">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="376" y="383" width="84" height="36" />
+            <Position x="364" y="383" width="84" height="36" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -931,7 +941,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="59">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="496" y="431" width="59" height="59" />
+            <Position x="484" y="431" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -944,7 +954,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="60">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="484" y="383" width="72" height="36" />
+            <Position x="472" y="383" width="72" height="36" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -964,7 +974,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="70">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="570" y="426" width="59" height="59" />
+            <Position x="558" y="426" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -979,7 +989,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="306" y="222" width="468" height="129" />
+        <Position x="294" y="222" width="468" height="129" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -997,7 +1007,7 @@ No Text Styling</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="19">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="448" y="275" width="59" height="59" />
+            <Position x="436" y="275" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1010,7 +1020,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="330" y="282" width="59" height="59" />
+            <Position x="318" y="282" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1024,7 +1034,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="15">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="568" y="275" width="59" height="59" />
+            <Position x="556" y="275" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1038,7 +1048,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="2">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="688" y="275" width="59" height="59" />
+            <Position x="676" y="275" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1051,7 +1061,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="39">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="316" y="251" width="100" height="24" />
+            <Position x="304" y="251" width="100" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1071,7 +1081,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="40">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="424" y="251" width="100" height="24" />
+            <Position x="412" y="251" width="100" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1091,7 +1101,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="41">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="544" y="251" width="100" height="24" />
+            <Position x="532" y="251" width="100" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1111,7 +1121,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="42">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="664" y="251" width="100" height="24" />
+            <Position x="652" y="251" width="100" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1133,7 +1143,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="23">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="66" y="222" width="228" height="122" />
+        <Position x="54" y="222" width="228" height="122" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1151,7 +1161,7 @@ No Text Styling</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="14">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="88" y="275" width="59" height="59" />
+            <Position x="76" y="275" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1165,7 +1175,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="13">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.FileBrowse.FileBrowse">
-            <Position x="208" y="275" width="59" height="59" />
+            <Position x="196" y="275" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1179,7 +1189,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="37">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="76" y="251" width="100" height="24" />
+            <Position x="64" y="251" width="100" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1199,7 +1209,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="38">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="184" y="251" width="100" height="24" />
+            <Position x="172" y="251" width="100" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1221,7 +1231,7 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="66" y="54" width="1032" height="129" />
+        <Position x="54" y="54" width="1032" height="129" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1239,7 +1249,7 @@ No Text Styling</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="10">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="100" y="107" width="59" height="59" />
+            <Position x="88" y="107" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1260,7 +1270,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="11">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="208" y="107" width="59" height="59" />
+            <Position x="196" y="107" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1279,7 +1289,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="12">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="328" y="107" width="59" height="59" />
+            <Position x="316" y="107" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1293,7 +1303,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="18">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="436" y="107" width="59" height="59" />
+            <Position x="424" y="107" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1306,7 +1316,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="17">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="556" y="107" width="59" height="59" />
+            <Position x="544" y="107" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1320,7 +1330,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="20">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="676" y="107" width="59" height="59" />
+            <Position x="664" y="107" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1333,7 +1343,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="21">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="784" y="107" width="59" height="59" />
+            <Position x="772" y="107" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1347,7 +1357,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="26">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="894" y="114" width="59" height="59" />
+            <Position x="882" y="114" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1360,7 +1370,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="27">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="1012" y="107" width="59" height="59" />
+            <Position x="1000" y="107" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1373,7 +1383,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="28">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="76" y="83" width="100" height="24" />
+            <Position x="64" y="83" width="100" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1393,7 +1403,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="30">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="304" y="83" width="100" height="24" />
+            <Position x="292" y="83" width="100" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1413,7 +1423,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="29">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="184" y="83" width="100" height="24" />
+            <Position x="172" y="83" width="100" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1433,7 +1443,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="31">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="412" y="83" width="100" height="24" />
+            <Position x="400" y="83" width="100" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1453,7 +1463,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="32">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="532" y="83" width="100" height="24" />
+            <Position x="520" y="83" width="100" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1473,7 +1483,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="33">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="652" y="83" width="100" height="24" />
+            <Position x="640" y="83" width="100" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1493,7 +1503,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="34">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="760" y="83" width="100" height="24" />
+            <Position x="748" y="83" width="100" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1513,7 +1523,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="35">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="868" y="83" width="100" height="24" />
+            <Position x="856" y="83" width="100" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1533,7 +1543,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="36">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="988" y="83" width="100" height="24" />
+            <Position x="976" y="83" width="100" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1546,6 +1556,105 @@ No Text Styling</DefaultAnnotationText>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="82">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="510" width="285" height="146" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Input B: field mapping</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="75">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
+            <Position x="76" y="587" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="2">
+              <Name>nameDir</Name>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="76">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="64" y="539" width="72" height="36" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Select Direction</Text>
+              <Font name="Segoe UI" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="3" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="77">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
+            <Position x="172" y="587" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="2">
+              <Name>nameRHS</Name>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="78">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="160" y="539" width="84" height="36" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Select right-hand-side</Text>
+              <Font name="Segoe UI" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="3" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="81">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
+            <Position x="270" y="583" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name>displayFieldMapB</Name>
               <DefaultAnnotationText />
               <Left value="False" />
             </Annotation>
@@ -1602,6 +1711,14 @@ No Text Styling</DefaultAnnotationText>
     <Connection name="#4">
       <Origin ToolID="25" Connection="Output" />
       <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection Wireless="True">
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="75" Connection="Question Input" />
+    </Connection>
+    <Connection Wireless="True">
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="77" Connection="Question Input" />
     </Connection>
     <Connection>
       <Origin ToolID="7" Connection="Output" />
@@ -1749,6 +1866,24 @@ No Text Styling</DefaultAnnotationText>
         <Namespace>Question</Namespace>
         <Name>displayFieldMapO</Name>
         <Value>True</Value>
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>nameDir</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>nameRHS</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>displayFieldMapB</Name>
+        <Value />
         <IsNumeric value="False" />
       </Constant>
     </Constants>
@@ -2052,9 +2187,48 @@ MPS_Free
             </Question>
             <Question>
               <Type>BooleanGroup</Type>
-              <Description>Display Field Mapping for O</Description>
+              <Description>Display Field Mapping for Input O</Description>
               <Name>displayFieldMapO</Name>
               <ToolId value="70" />
+              <Questions />
+              <Default value="False" />
+              <Collapsable value="False" />
+            </Question>
+            <Question>
+              <Type>ListBox</Type>
+              <Description>Select inequality direction</Description>
+              <Name>nameDir</Name>
+              <ToolId value="75" />
+              <Multiple value="False" />
+              <Default />
+              <Mode>Field</Mode>
+              <Field_ToolId value="6" />
+              <Field_ConnectionName />
+              <Field_Connection>Output</Field_Connection>
+              <Field_IsOutput value="True" />
+              <Field_IncludeNone value="False" />
+              <Field_FilterTypes>String,WString,V_String,V_WString</Field_FilterTypes>
+            </Question>
+            <Question>
+              <Type>ListBox</Type>
+              <Description>Select inequality right-hand-side</Description>
+              <Name>nameRHS</Name>
+              <ToolId value="77" />
+              <Multiple value="False" />
+              <Default />
+              <Mode>Field</Mode>
+              <Field_ToolId value="6" />
+              <Field_ConnectionName />
+              <Field_Connection>Output</Field_Connection>
+              <Field_IsOutput value="True" />
+              <Field_IncludeNone value="False" />
+              <Field_FilterTypes>Bool,Byte,Int16,Int32,Int64,FixedDecimal,Float,Double,String,WString,V_String,V_WString</Field_FilterTypes>
+            </Question>
+            <Question>
+              <Type>BooleanGroup</Type>
+              <Description>Display Field Mapping for Input B</Description>
+              <Name>displayFieldMapB</Name>
+              <ToolId value="81" />
               <Questions />
               <Default value="False" />
               <Collapsable value="False" />

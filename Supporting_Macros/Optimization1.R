@@ -8,7 +8,8 @@ config <- list(
     '%Question.constraints%'
     , '["3 x1 + 4 x2 + 2 x3 <= 60","2 x1 + x2 + 2 x3 <= 40","x1 + 3 x2 + 2 x3 <= 80"]'
   ),
-  `displayFieldMapO` = checkboxInput('%Question.displayFieldMapO%' , FALSE),
+  displayFieldMapO = checkboxInput('%Question.displayFieldMapO%' , FALSE),
+  displayFieldMapB = checkboxInput('%Question.displayFieldMapB%' , FALSE),
   editorValue = textInput('%Question.editorValue%'),
   fieldList = textInput('%Question.fieldList%'),
   fieldNames = textInput('%Question.fieldNames%'),
@@ -19,12 +20,14 @@ config <- list(
   ),
   maximize = checkboxInput('%Question.maximize%' , TRUE),
   
-  `nameCoef` = dropdownInput('%Question.nameCoef%', "c"),
-  `nameLower` = dropdownInput('%Question.nameLower%', "l"),
-  `nameType` = dropdownInput('%Question.nameType%', "tt"),
-  `nameUpper` = dropdownInput('%Question.nameUpper%', "u"),
-  `nameVar` = dropdownInput('%Question.nameVar%', "v"),
+  nameCoef = dropdownInput('%Question.nameCoef%', "c"),
+  nameLower = dropdownInput('%Question.nameLower%', "l"),
+  nameType = dropdownInput('%Question.nameType%', "tt"),
+  nameUpper = dropdownInput('%Question.nameUpper%', "u"),
+  nameVar = dropdownInput('%Question.nameVar%', "v"),
 
+  nameDir = dropdownInput("%Question.nameDir%", "dir"),
+  nameRHS = dropdownInput("%Question.nameRHS%", "rhs"),
   
   objective = textInput(
     '%Question.objective%' 
@@ -84,11 +87,17 @@ inputs <- if (inAlteryx()) {
 
 
 print(config)
-r = c("variable", "coefficient", "lb", "ub", "type")
-names(r) <- config[c("nameVar", "nameCoef", "nameLower", "nameUpper", "nameType")]
-print(r)
+
 if (config$displayFieldMapO) {
+  r <- c("variable", "coefficient", "lb", "ub", "type")
+  names(r) <- config[c("nameVar", "nameCoef", "nameLower", "nameUpper", "nameType")]
   inputs$O <- plyr::rename(inputs$O, r)
+}
+
+if (config$displayFieldMapB) {
+  temp <- c("dir", "rhs")
+  names(temp) <- config[c("nameDir", "nameRHS")]
+  inputs$B <- plyr:rename(inputs$B, temp)
 }
 print('printing inputs')
 print(inputs)

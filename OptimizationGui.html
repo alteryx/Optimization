@@ -126,8 +126,8 @@ Optimization
       
 <!--  displayFieldMapO  -->
 <label for="displayFieldMapO"></label>
-<alteryx-pluginwidget type="CheckBox" text="Display Field Mapping for O" default="false" id="displayFieldMapO" dataName="displayFieldMapO"></alteryx-pluginwidget>
-      
+<alteryx-pluginwidget type="CheckBox" text="Display Field Mapping for Input O" default="false" id="displayFieldMapO" dataName="displayFieldMapO"></alteryx-pluginwidget>
+  
     <div id='field-map-O'>
       
 <!--  nameVar  -->
@@ -153,6 +153,11 @@ Optimization
 <!--  nameType  -->
 <label for="nameType">Select variable type</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" clearable="true" id="nameType" dataName="nameType"></alteryx-pluginwidget>
+
+      
+<!--  nameDir  -->
+<label for="nameDir">Select inequality direction</label>
+<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="nameDir" dataName="nameDir"></alteryx-pluginwidget>
 
     </div>
     </fieldset>
