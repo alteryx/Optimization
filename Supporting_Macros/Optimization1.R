@@ -82,14 +82,42 @@ inputs <- if (inAlteryx()) {
   NULL
 }
 
-
 print(config)
-r = c("variable", "coefficient", "lb", "ub", "type")
-names(r) <- config[c("nameVar", "nameCoef", "nameLower", "nameUpper", "nameType")]
-print(r)
-if (config$displayFieldMapO) {
-  inputs$O <- plyr::rename(inputs$O, r)
+
+#' Infer column names for Input B to 'constraint', 'rhs', 'dir'
+#' 
+#' @param B
+#' @examples 
+#' B <- data.frame(
+#' z = c('A', 'B', 'C'),
+#' x = c(">=", "<=", "=="),
+#' y = c(1, 2, 3)
+#' )
+#' inferB(B)
+inferB <- function(B){
+  rhs <- names(Filter(isTRUE, sapply(B, is.numeric)))
+  dir <- names(Filter(
+    function(x){all(x %in% c(">=", "<=", "==", ">", "<", "="))},
+    lapply(B[,names(B) != rhs], unique)
+  ))
+  constraint <- names(B)[!(names(B) %in% c(rhs, dir))]
+  repl <- c('constraint', 'rhs', 'dir')
+  names(repl) <- c(constraint, rhs, dir)
+  plyr::rename(B, replace = repl)
 }
+
+inferO <- function(O, displayFlag) {
+  r <- c("variable", "coefficient", "lb", "ub", "type")
+  names(r) <- config[c("nameVar", "nameCoef", "nameLower", "nameUpper", "nameType")]
+  if (displayFlag) {
+    O <- plyr::rename(O, r)
+  }
+  return(O)
+}
+
+inputs$O <- inferO(inputs$O, config$displayFieldMapO) 
+inputs$B <- inferB(inputs$B)
+
 print('printing inputs')
 print(inputs)
 payload <- list(config = config, inputs = inputs)
