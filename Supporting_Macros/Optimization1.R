@@ -126,14 +126,43 @@ inferA <- function(A, constrMode) {
 #' )
 #' inferB(B)
 inferB <- function(B) {
+  n = ncol(B)
+  # infer rhs
   rhs <- names(Filter(isTRUE, sapply(B, is.numeric)))
-  dir <- names(Filter(
-    function(x){all(x %in% c(">=", "<=", "==", ">", "<", "="))},
-    lapply(B[,names(B) != rhs], unique)
-  ))
-  constraint <- names(B)[!(names(B) %in% c(rhs, dir))]
-  repl <- c('constraint', 'rhs', 'dir')
-  names(repl) <- c(constraint, rhs, dir)
+  if (is.null(rhs)) {
+    stop("Error: the rhs column should be of type numeric.")
+  }
+  
+  # infer dir
+  if (n > 3) {
+    stop("Error: Input B should only have constraint, dir, rhs columns")
+  } else if (n == 3) {
+    dir <- names(Filter(
+      function(x){all(x %in% c(">=", "<=", "==", ">", "<", "="))},
+      lapply(B[,names(B) != rhs], unique)
+    ))
+  } else if (n == 2) {
+    if (all(levels(B[, names(B) != rhs]) %in% c(">=", "<=", "==", ">", "<", "="))) {
+      dir <- names(B)[!(names(B) %in% rhs)]
+    }
+  } else {
+    stop("Error: Input B should at least dir and rhs columns")
+  }
+  if (is.null(dir)) {
+    stop("Error: the dir column should have >=, <=, ==, > or <.")
+  }
+  
+  # infer constraint
+  if (n == 3) {
+    constraint <- names(B)[!(names(B) %in% c(rhs, dir))]
+    repl <- c('constraint', 'rhs', 'dir')
+    names(repl) <- c(constraint, rhs, dir)
+  } else {
+    repl <- c('rhs', 'dir')
+    names(repl) <- c(rhs, dir)
+  }
+  
+  # Rename
   plyr::rename(B, replace = repl)
 }
 
