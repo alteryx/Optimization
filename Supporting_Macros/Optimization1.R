@@ -8,7 +8,7 @@ config <- list(
     '%Question.constraints%'
     , '["3 x1 + 4 x2 + 2 x3 <= 60","2 x1 + x2 + 2 x3 <= 40","x1 + 3 x2 + 2 x3 <= 80"]'
   ),
-  `displayFieldMapO` = checkboxInput('%Question.displayFieldMapO%' , FALSE),
+  displayFieldMapO = checkboxInput('%Question.displayFieldMapO%' , FALSE),
   editorValue = textInput('%Question.editorValue%'),
   fieldList = textInput('%Question.fieldList%'),
   fieldNames = textInput('%Question.fieldNames%'),
@@ -25,6 +25,7 @@ config <- list(
   `nameUpper` = dropdownInput('%Question.nameUpper%', "u"),
   `nameVar` = dropdownInput('%Question.nameVar%', "v"),
 
+  constraintMode = dropdownInput('%Question.constraintMode%', 'slam'),
   
   objective = textInput(
     '%Question.objective%' 
@@ -79,17 +80,10 @@ inputs <- if (inAlteryx()) {
     readInputs("O", "A", "B", "Q") 
   }
 } else {
-  NULL
+  data.frame
 }
-
 
 print(config)
-r = c("variable", "coefficient", "lb", "ub", "type")
-names(r) <- config[c("nameVar", "nameCoef", "nameLower", "nameUpper", "nameType")]
-print(r)
-if (config$displayFieldMapO) {
-  inputs$O <- plyr::rename(inputs$O, r)
-}
 print('printing inputs')
 print(inputs)
 payload <- list(config = config, inputs = inputs)
