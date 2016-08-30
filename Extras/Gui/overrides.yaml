@@ -12,3 +12,5 @@ nameUpper:
   clearable: "true"
 nameType:
   clearable: "true"
+displayFieldMapO:
+  showAsToggle: "true"
