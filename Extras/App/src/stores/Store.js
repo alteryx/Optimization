@@ -19,7 +19,7 @@ class Store extends AyxStore {
     });
   }
 
-  @observable editorValue = '';
+  //@observable editorValue = '';
 
   constructor(ayx, dataItems) {
     // The following properties are created from Alteryx:
@@ -32,6 +32,7 @@ class Store extends AyxStore {
     super(ayx, dataItems);
 
     // turn all the initial properties into observables
+    this.editorValue = ''
     extendObservable(this, this);
 
     this.fieldStore = new FieldStore(this);
