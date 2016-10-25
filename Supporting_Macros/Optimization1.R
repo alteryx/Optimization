@@ -88,6 +88,7 @@ print('printing inputs')
 print(inputs)
 payload <- list(config = config, inputs = inputs)
 
+library(ROI)
 # Solve Optimization Problem
 out <- AlteryxSolve(payload)
 
