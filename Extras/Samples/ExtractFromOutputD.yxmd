@@ -260,7 +260,8 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4228_e095de9aa6854012b188e0d4296f83c3_\Engine_3940_62d4160ae411425e960baec9b677d99f_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_12080_cb1c651e6ca4498191a443a577219f9d_\Engine_5308_e4fa08a8549144d4accaa76302c03ddd_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_12080_cb1c651e6ca4498191a443a577219f9d_\Engine_5308_8a86e7491a144f80bca814e7b5a908f1_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -311,6 +312,13 @@
       </GuiSettings>
       <Properties>
         <Configuration>
+          <Value name="nameType" />
+          <Value name="nameUpper" />
+          <Value name="nameLower" />
+          <Value name="nameCoef" />
+          <Value name="nameVar" />
+          <Value name="displayFieldMapO">False</Value>
+          <Value name="constraintMode">conInRow</Value>
           <Value name="filePath">
           </Value>
           <Value name="fileType">CPLEX_LP</Value>
@@ -342,7 +350,8 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4228_e095de9aa6854012b188e0d4296f83c3_\Engine_3940_7a2f90acc6e741fc8b06ff9c7154471d_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_12080_cb1c651e6ca4498191a443a577219f9d_\Engine_5308_f75fb2627c4b4118a4a1559914f9750f_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_12080_cb1c651e6ca4498191a443a577219f9d_\Engine_5308_9bbb243da2c2470d8e5ce68a2307c695_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -434,7 +443,8 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4228_e095de9aa6854012b188e0d4296f83c3_\Engine_3940_638922a9f7c04e4f9e16191240fcf413_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_12080_cb1c651e6ca4498191a443a577219f9d_\Engine_5308_ba65b941abdd42c8b5f6d9c453e8a975_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_12080_cb1c651e6ca4498191a443a577219f9d_\Engine_5308_152325da34114872801ac06a05f92fcf_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -520,7 +530,8 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4228_e095de9aa6854012b188e0d4296f83c3_\Engine_3940_3963222c555a4a98818f4d8edb7b1a9a_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_12080_cb1c651e6ca4498191a443a577219f9d_\Engine_5308_904593965fc0442a96c8109b21d296c3_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_12080_cb1c651e6ca4498191a443a577219f9d_\Engine_5308_58e6d518442c40b9b0f61c87fdba7728_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -564,7 +575,8 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4228_e095de9aa6854012b188e0d4296f83c3_\Engine_3940_f018ddb591654101820ee36a6295f7ba_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_12080_cb1c651e6ca4498191a443a577219f9d_\Engine_5308_0de91016b2e8412aa216304695383c95_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_12080_cb1c651e6ca4498191a443a577219f9d_\Engine_5308_b0f4c4be6ddf44259b77f8d4078029e6_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -948,6 +960,10 @@ from D Output
       <Company />
       <Copyright />
       <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
     </MetaInfo>
     <Events>
       <Enabled value="True" />

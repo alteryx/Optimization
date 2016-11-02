@@ -163,7 +163,7 @@ This can be understood as an easy optimization problem:
       <ChildNodes>
         <Node ToolID="2">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="64" y="479" />
+            <Position x="64.00002" y="479" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -318,7 +318,7 @@ This can be understood as an easy optimization problem:
       <ChildNodes>
         <Node ToolID="8">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="64.00003" y="707" />
+            <Position x="64.00004" y="707" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -604,6 +604,13 @@ endif
           </GuiSettings>
           <Properties>
             <Configuration>
+              <Value name="nameType" />
+              <Value name="nameUpper" />
+              <Value name="nameLower" />
+              <Value name="nameCoef" />
+              <Value name="nameVar" />
+              <Value name="displayFieldMapO">False</Value>
+              <Value name="constraintMode">varInRow</Value>
               <Value name="filePath">
               </Value>
               <Value name="fileType">CPLEX_LP</Value>
@@ -719,6 +726,10 @@ endif
       <Company />
       <Copyright />
       <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
     </MetaInfo>
     <Events>
       <Enabled value="True" />
