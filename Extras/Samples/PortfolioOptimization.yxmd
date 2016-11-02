@@ -67,6 +67,18 @@ write.Alteryx(cov_mat, 1)</RScript>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
+        <MetaInfo connection="Output1">
+          <RecordInfo>
+            <Field name="X3MonthTBills" source="R-DATA:" type="Double" />
+            <Field name="USGovLongBonds" source="R-DATA:" type="Double" />
+            <Field name="SP500" source="R-DATA:" type="Double" />
+            <Field name="Wilshire5000" source="R-DATA:" type="Double" />
+            <Field name="NASDAQComposite" source="R-DATA:" type="Double" />
+            <Field name="LehmanBrosBonds" source="R-DATA:" type="Double" />
+            <Field name="EAFE" source="R-DATA:" type="Double" />
+            <Field name="Gold" source="R-DATA:" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxRPluginEngine.dll" EngineDllEntryPoint="AlteryxR" />
     </Node>
@@ -420,6 +432,13 @@ type="C"</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
+          <Value name="nameType" />
+          <Value name="nameUpper" />
+          <Value name="nameLower" />
+          <Value name="nameCoef" />
+          <Value name="nameVar" />
+          <Value name="displayFieldMapO">False</Value>
+          <Value name="constraintMode">varInRow</Value>
           <Value name="filePath">
           </Value>
           <Value name="fileType">CPLEX_LP</Value>
@@ -479,7 +498,8 @@ type="C"</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_10116_3465cc1e033a482c8dab9ca996075de9_\Engine_10016_8a8b6ca507914d25940c15d06ab81f16_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_9748_522818d9a1e14e2e90602976e0b6e275_\Engine_5308_85aca7d914fa41c99dd7181f73335cfc_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_9748_522818d9a1e14e2e90602976e0b6e275_\Engine_5308_4e4dbb0b08694f2091ac20325dc57a9e_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -502,7 +522,8 @@ type="C"</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_10116_3465cc1e033a482c8dab9ca996075de9_\Engine_10016_8a01700167ae4728abf41373984afd4b_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_9748_522818d9a1e14e2e90602976e0b6e275_\Engine_5308_e1ee1094f92e408ea28642b85b577c59_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_9748_522818d9a1e14e2e90602976e0b6e275_\Engine_5308_18b83f7587714e4c882e791d2bf5876c_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -525,7 +546,8 @@ type="C"</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_10116_3465cc1e033a482c8dab9ca996075de9_\Engine_10016_13cfc91b23f9452eac674e22d974f8cc_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_9748_522818d9a1e14e2e90602976e0b6e275_\Engine_5308_c40ee6013dd94f369c2b7c10f82f68d8_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_9748_522818d9a1e14e2e90602976e0b6e275_\Engine_5308_4457e36e259a403a958bf14b04fb3682_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -841,6 +863,10 @@ Field_4=-16*[Field_4]
       <Company />
       <Copyright />
       <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
     </MetaInfo>
     <Events>
       <Enabled value="True" />
