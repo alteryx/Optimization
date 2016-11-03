@@ -1,0 +1,776 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="10.5">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="78" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="3" />
+          <Fields>
+            <Field name="Ingredient" />
+            <Field name="Calcium" />
+            <Field name="Protein" />
+            <Field name="Fiber" />
+            <Field name="Cost" />
+          </Fields>
+          <Data>
+            <r>
+              <c>Limestone</c>
+              <c>0.38</c>
+              <c>0.0</c>
+              <c>0.0</c>
+              <c>10.0</c>
+            </r>
+            <r>
+              <c>Corn</c>
+              <c>0.001</c>
+              <c>0.09</c>
+              <c>0.02</c>
+              <c>30.5</c>
+            </r>
+            <r>
+              <c>Soybean</c>
+              <c>0.002</c>
+              <c>0.50</c>
+              <c>0.08</c>
+              <c>90.0</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="Optimization">
+        <Position x="474" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="nameType" />
+          <Value name="nameUpper" />
+          <Value name="nameLower" />
+          <Value name="nameCoef" />
+          <Value name="nameVar" />
+          <Value name="displayFieldMapO">False</Value>
+          <Value name="constraintMode">varInRow</Value>
+          <Value name="filePath">
+          </Value>
+          <Value name="fileType">CPLEX_LP</Value>
+          <Value name="maximize">False</Value>
+          <Value name="solver">glpk</Value>
+          <Value name="problemType">LP</Value>
+          <Value name="inputMode">matrix</Value>
+          <Value name="payload">
+          </Value>
+          <Value name="selectedTab">0</Value>
+          <Value name="fieldList">[]</Value>
+          <Value name="constraints">[]</Value>
+          <Value name="objective">
+          </Value>
+          <Value name="fieldNames">
+          </Value>
+          <Value name="activePage">landing</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Matrix Input Mode</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Optimization/Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Optimization/Supporting_Macros/Optimization.yxmc" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="186" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <SelectFields>
+            <SelectField field="Ingredient" selected="True" rename="variable" />
+            <SelectField field="Calcium" selected="False" />
+            <SelectField field="Protein" selected="False" />
+            <SelectField field="Fiber" selected="False" />
+            <SelectField field="Cost" selected="True" rename="coefficient" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="282" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField field="lb" type="Double" size="8" expression="0" />
+            <FormulaField field="ub" type="String" size="64" expression="&quot;Inf&quot;" />
+            <FormulaField field="type" type="String" size="64" expression="&quot;C&quot;" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>lb=0
+ub="Inf"
+type="C"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="186" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField field="Calcium_max" type="Double" size="8" expression="[Calcium]" />
+            <FormulaField field="Conservation" type="Double" size="8" expression="1" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Calcium_max=[Calcium]
+Conservation=1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="282" y="570" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <SelectFields>
+            <SelectField field="Ingredient" selected="True" rename="variable" />
+            <SelectField field="Calcium" selected="True" rename="Calcium_min" />
+            <SelectField field="Calcium_max" selected="True" />
+            <SelectField field="Protein" selected="True" />
+            <SelectField field="Fiber" selected="True" />
+            <SelectField field="Cost" selected="False" />
+            <SelectField field="Conservation" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="270" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="5" />
+          <Fields>
+            <Field name="dir" />
+            <Field name="rhs" />
+          </Fields>
+          <Data>
+            <r>
+              <c>&gt;=</c>
+              <c>0.008</c>
+            </r>
+            <r>
+              <c>&lt;=</c>
+              <c>0.012</c>
+            </r>
+            <r>
+              <c>&gt;=</c>
+              <c>0.22</c>
+            </r>
+            <r>
+              <c>&lt;=</c>
+              <c>0.05</c>
+            </r>
+            <r>
+              <c>==</c>
+              <c>1</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="580" y="480" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8720_5f726fe47c134855a94661b1d4250140_\Engine_8760_4f2c193e435349beaa216220dbe016fa_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_8720_5f726fe47c134855a94661b1d4250140_\Engine_8760_2d6309951fff4558aafe37351f55d10b_.yxdb</TempFileDataProfiling>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="579" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8720_5f726fe47c134855a94661b1d4250140_\Engine_8760_b5f07cac9add4b98958b06182683ecfa_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_8720_5f726fe47c134855a94661b1d4250140_\Engine_8760_3aa9c72aeac34b23ad6cbf276efe9e48_.yxdb</TempFileDataProfiling>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="582" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8720_5f726fe47c134855a94661b1d4250140_\Engine_8760_23fb988abf6646928731ffc5ceb3b082_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_8720_5f726fe47c134855a94661b1d4250140_\Engine_8760_b9163e8a1dbe4d63ac4cf84f0a9ada39_.yxdb</TempFileDataProfiling>
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="66" y="114" width="828" height="288" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>One typical Linear Programming (LP) problem is the so called "Mixing Problems".   In these problems, we usually need to mix a few ingredients or products in order to maximize nutrition/revenue or minimize cost etc. 
+
+In this example, we have 3 ingredients:
+- Limestone
+- Corn
+- Soybean
+
+There are certain kilograms of Calcium, Protein and Fiber in one kilogram of ingredient. 
+We want to make a 1 kilogram meal with lowest cost possible, but at the same time we want:
+1. The meal has a minumum of 0.008 kg calcium.
+2. The meal has a maximum of 0.012 kg calcium.
+3. The meal has a minimum of 0.22 kg protein.
+4. The meal has a maximum of 0.05 kg fiber.
+
+The question is how many kilo of each ingredient should I choose? What is the final cost?</Text>
+          <Font name="Segoe UI" size="9.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="66" y="42" width="828" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Sample Alteryx Module
+Optimization Tool</Text>
+          <Font name="Segoe UI" size="20.25" style="0" />
+          <TextColor name="White" />
+          <FillColor r="22" g="145" b="198" />
+          <Shape shape="0" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="438" y="54" width="456" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>The Optimization tool allows one to select values of a set of decision variables to maximize or minimize the value of a dependent objective function subject to a set of constraints.</Text>
+          <Font name="Segoe UI" size="9" style="0" />
+          <TextColor name="White" />
+          <FillColor r="111" g="111" b="111" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="66" y="438" width="624" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Without using feild mapping</Text>
+          <Font name="Segoe UI" size="12" style="1" />
+          <TextColor name="White" />
+          <FillColor r="0" g="128" b="192" />
+          <Shape shape="0" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="78" y="858" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="3" />
+          <Fields>
+            <Field name="Ingredient" />
+            <Field name="Calcium" />
+            <Field name="Protein" />
+            <Field name="Fiber" />
+            <Field name="Cost" />
+          </Fields>
+          <Data>
+            <r>
+              <c>Limestone</c>
+              <c>0.38</c>
+              <c>0.0</c>
+              <c>0.0</c>
+              <c>10.0</c>
+            </r>
+            <r>
+              <c>Corn</c>
+              <c>0.001</c>
+              <c>0.09</c>
+              <c>0.02</c>
+              <c>30.5</c>
+            </r>
+            <r>
+              <c>Soybean</c>
+              <c>0.002</c>
+              <c>0.50</c>
+              <c>0.08</c>
+              <c>90.0</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="Optimization">
+        <Position x="474" y="846" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="nameType" />
+          <Value name="nameUpper" />
+          <Value name="nameLower" />
+          <Value name="nameCoef">Cost</Value>
+          <Value name="nameVar">Ingredient</Value>
+          <Value name="displayFieldMapO">True</Value>
+          <Value name="constraintMode">varInRow</Value>
+          <Value name="filePath">
+          </Value>
+          <Value name="fileType">CPLEX_LP</Value>
+          <Value name="maximize">False</Value>
+          <Value name="solver">glpk</Value>
+          <Value name="problemType">LP</Value>
+          <Value name="inputMode">matrix</Value>
+          <Value name="payload">
+          </Value>
+          <Value name="selectedTab">0</Value>
+          <Value name="fieldList">[]</Value>
+          <Value name="constraints">[]</Value>
+          <Value name="objective">
+          </Value>
+          <Value name="fieldNames">
+          </Value>
+          <Value name="activePage">landing</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Matrix Input Mode</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Optimization/Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Optimization/Supporting_Macros/Optimization.yxmc" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="186" y="858" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField field="Calcium_max" type="Double" size="8" expression="[Calcium]" />
+            <FormulaField field="Conservation" type="Double" size="8" expression="1" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Calcium_max=[Calcium]
+Conservation=1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="282" y="858" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <SelectFields>
+            <SelectField field="Ingredient" selected="True" rename="variable" />
+            <SelectField field="Calcium" selected="True" rename="Calcium_min" />
+            <SelectField field="Calcium_max" selected="True" />
+            <SelectField field="Protein" selected="True" />
+            <SelectField field="Fiber" selected="True" />
+            <SelectField field="Cost" selected="False" />
+            <SelectField field="Conservation" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="270" y="930" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="5" />
+          <Fields>
+            <Field name="dir" />
+            <Field name="rhs" />
+          </Fields>
+          <Data>
+            <r>
+              <c>&gt;=</c>
+              <c>0.008</c>
+            </r>
+            <r>
+              <c>&lt;=</c>
+              <c>0.012</c>
+            </r>
+            <r>
+              <c>&gt;=</c>
+              <c>0.22</c>
+            </r>
+            <r>
+              <c>&lt;=</c>
+              <c>0.05</c>
+            </r>
+            <r>
+              <c>==</c>
+              <c>1</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="570" y="762" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8720_5f726fe47c134855a94661b1d4250140_\Engine_8760_aadcb766ce9c4ff186329c3fbafaf076_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_8720_5f726fe47c134855a94661b1d4250140_\Engine_8760_4a511834508a488f9c213fd8c5f04c4f_.yxdb</TempFileDataProfiling>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="570" y="846" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8720_5f726fe47c134855a94661b1d4250140_\Engine_8760_7420d4cdff1d44f181b8e4ea052077f5_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_8720_5f726fe47c134855a94661b1d4250140_\Engine_8760_e05379956f0549df842ba38ac131d550_.yxdb</TempFileDataProfiling>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="570" y="930" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8720_5f726fe47c134855a94661b1d4250140_\Engine_8760_c4b8a1828ddf4492a9b798c4ee43291a_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_8720_5f726fe47c134855a94661b1d4250140_\Engine_8760_6eef2f0c5c1f4af6904d92a9315c30ac_.yxdb</TempFileDataProfiling>
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="66" y="726" width="624" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Using feild mapping</Text>
+          <Font name="Segoe UI" size="12" style="1" />
+          <TextColor name="White" />
+          <FillColor r="0" g="128" b="192" />
+          <Shape shape="0" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Simple" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Data" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Interactive" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="2" Connection="InputO" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="2" Connection="InputA" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="2" Connection="InputB" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="18" Connection="InputO" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="18" Connection="InputA" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="18" Connection="InputB" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Simple" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Data" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Interactive" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Optimization Mixing Problem Sample</Name>
+      <Description>This sample illustrates the use of the optimzation tool to solve a linear programming problem (or LP). One typical Linear Programming problem is the so called "Mixing Problem".   In a mixing problme, the objective is to mix a few ingredients or products in order to maximize nutrition/revenue or minimize cost.</Description>
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author>Kuo Liu</Author>
+      <Company>Alteryx, Inc.</Company>
+      <Copyright>2016 Alteryx, Inc.</Copyright>
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
