@@ -83,9 +83,9 @@ inputs <- if (inAlteryx()) {
   data.frame
 }
 
-print(config)
-print('printing inputs')
-print(inputs)
+# print(config)
+# print('printing inputs')
+# print(inputs)
 payload <- list(config = config, inputs = inputs)
 
 library(ROI)
