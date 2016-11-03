@@ -74,16 +74,16 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="17">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="198" y="306" />
+    <Node ToolID="77">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="90" y="150" width="655" height="294" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <OrderChanged value="False" />
-          <SelectFields>
-            <SelectField field="*Unknown" selected="True" />
-          </SelectFields>
+          <Caption>Container 77</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -91,413 +91,443 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
           <Left value="False" />
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
-    <Node ToolID="18">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-        <Position x="270" y="306" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <GroupFields>
-            <Field field="product" />
-            <Field field="size" />
-          </GroupFields>
-          <HeaderField field="category" />
-          <DataField field="size" />
-          <Methods>
-            <Method method="Count" />
-          </Methods>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="product" size="15" source="CrossTab:Group:Count:" type="V_String" />
-            <Field name="size" source="CrossTab:Group:Count:" type="Byte" />
-            <Field name="Count_JAM" source="CrossTab:Header:category:JAM:CountNonNulls:" type="Double" />
-            <Field name="Count_MILK" source="CrossTab:Header:category:MILK:CountNonNulls:" type="Double" />
-            <Field name="Count_PEANUT_BUTTER" source="CrossTab:Header:category:PEANUT BUTTER:CountNonNulls:" type="Double" />
-            <Field name="Count_SLICED_BREAD" source="CrossTab:Header:category:SLICED BREAD:CountNonNulls:" type="Double" />
-          </RecordInfo>
-          <SortInfo>
-            <Field field="product" order="Asc" />
-            <Field field="size" order="Asc" />
-          </SortInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
-    </Node>
-    <Node ToolID="19">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="342" y="306" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <OrderChanged value="False" />
-          <SelectFields>
-            <SelectField field="product" selected="True" rename="variable" />
-            <SelectField field="size" selected="True" rename="Size" />
-            <SelectField field="Count_JAM" selected="True" rename="Jam" />
-            <SelectField field="Count_MILK" selected="True" rename="Milk" />
-            <SelectField field="Count_PEANUT_BUTTER" selected="True" rename="Peanut Butter" />
-            <SelectField field="Count_SLICED_BREAD" selected="True" rename="Sliced Bread" />
-            <SelectField field="*Unknown" selected="True" />
-          </SelectFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="True" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
-    <Node ToolID="20">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="498" y="390" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <NumRows value="5" />
-          <Fields>
-            <Field name="constraint" />
-            <Field name="dir" />
-            <Field name="rhs" />
-          </Fields>
-          <Data>
-            <r>
-              <c>Size</c>
-              <c>&lt;=</c>
-              <c>80</c>
-            </r>
-            <r>
-              <c>Peanut Butter</c>
-              <c>&lt;=</c>
-              <c>1</c>
-            </r>
-            <r>
-              <c>Jam</c>
-              <c>&lt;=</c>
-              <c>1</c>
-            </r>
-            <r>
-              <c>Milk</c>
-              <c>&lt;=</c>
-              <c>1</c>
-            </r>
-            <r>
-              <c>Bread</c>
-              <c>&lt;=</c>
-              <c>1</c>
-            </r>
-          </Data>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText><![CDATA[Direction
+      <ChildNodes>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="172" y="291" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="244" y="291" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields>
+                <Field field="product" />
+                <Field field="size" />
+              </GroupFields>
+              <HeaderField field="category" />
+              <DataField field="size" />
+              <Methods>
+                <Method method="Count" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="product" size="15" source="CrossTab:Group:Count:" type="V_String" />
+                <Field name="size" source="CrossTab:Group:Count:" type="Byte" />
+                <Field name="Count_JAM" source="CrossTab:Header:category:JAM:CountNonNulls:" type="Double" />
+                <Field name="Count_MILK" source="CrossTab:Header:category:MILK:CountNonNulls:" type="Double" />
+                <Field name="Count_PEANUT_BUTTER" source="CrossTab:Header:category:PEANUT BUTTER:CountNonNulls:" type="Double" />
+                <Field name="Count_SLICED_BREAD" source="CrossTab:Header:category:SLICED BREAD:CountNonNulls:" type="Double" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="product" order="Asc" />
+                <Field field="size" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="316" y="291" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <SelectFields>
+                <SelectField field="product" selected="True" rename="variable" />
+                <SelectField field="size" selected="True" rename="Size" />
+                <SelectField field="Count_JAM" selected="True" rename="Jam" />
+                <SelectField field="Count_MILK" selected="True" rename="Milk" />
+                <SelectField field="Count_PEANUT_BUTTER" selected="True" rename="Peanut Butter" />
+                <SelectField field="Count_SLICED_BREAD" selected="True" rename="Sliced Bread" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="True" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="472" y="375" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="5" />
+              <Fields>
+                <Field name="constraint" />
+                <Field name="dir" />
+                <Field name="rhs" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>Size</c>
+                  <c>&lt;=</c>
+                  <c>80</c>
+                </r>
+                <r>
+                  <c>Peanut Butter</c>
+                  <c>&lt;=</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>Jam</c>
+                  <c>&lt;=</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>Milk</c>
+                  <c>&lt;=</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>Bread</c>
+                  <c>&lt;=</c>
+                  <c>1</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[Direction
 ]]></AnnotationText>
-          <DefaultAnnotationText />
-          <Left value="True" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
-    </Node>
-    <Node ToolID="21">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="198" y="210" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <OrderChanged value="False" />
-          <SelectFields>
-            <SelectField field="category" selected="False" />
-            <SelectField field="product" selected="True" rename="variable" />
-            <SelectField field="size" selected="False" />
-            <SelectField field="profit" selected="True" rename="coefficient" />
-            <SelectField field="*Unknown" selected="True" />
-          </SelectFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
-    <Node ToolID="22">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="270" y="210" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <FormulaFields>
-            <FormulaField field="type" type="String" size="64" expression="&quot;B&quot;" />
-          </FormulaFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText><![CDATA[
+              <DefaultAnnotationText />
+              <Left value="True" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="21">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="172" y="195" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <SelectFields>
+                <SelectField field="category" selected="False" />
+                <SelectField field="product" selected="True" rename="variable" />
+                <SelectField field="size" selected="False" />
+                <SelectField field="profit" selected="True" rename="coefficient" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="244" y="195" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField field="type" type="String" size="64" expression="&quot;B&quot;" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[
 ]]></AnnotationText>
-          <DefaultAnnotationText>type="B"</DefaultAnnotationText>
-          <Left value="True" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-    </Node>
-    <Node ToolID="26">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="402" y="210" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <SortInfo locale="0">
-            <Field field="variable" order="Ascending" />
-          </SortInfo>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText>Objective</AnnotationText>
-          <DefaultAnnotationText>variable - Ascending</DefaultAnnotationText>
-          <Left value="True" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
-    </Node>
-    <Node ToolID="27">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="414" y="306" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <SortInfo locale="0">
-            <Field field="variable" order="Ascending" />
-          </SortInfo>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText>Constraints</AnnotationText>
-          <DefaultAnnotationText>variable - Ascending</DefaultAnnotationText>
-          <Left value="True" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
-    </Node>
-    <Node ToolID="48">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="126" y="210" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <NumRows value="12" />
-          <Fields>
-            <Field name="category" />
-            <Field name="product" />
-            <Field name="size" />
-            <Field name="profit" />
-          </Fields>
-          <Data>
-            <r>
-              <c>PEANUT BUTTER</c>
-              <c>Peanut Butter 1</c>
-              <c>12</c>
-              <c>3.7</c>
-            </r>
-            <r>
-              <c>PEANUT BUTTER</c>
-              <c>Peanut Butter 2</c>
-              <c>16</c>
-              <c>5.2</c>
-            </r>
-            <r>
-              <c>PEANUT BUTTER</c>
-              <c>Peanut Butter 3</c>
-              <c>18</c>
-              <c>6.1</c>
-            </r>
-            <r>
-              <c>JAM</c>
-              <c>Jam 1</c>
-              <c>21</c>
-              <c>9.3</c>
-            </r>
-            <r>
-              <c>JAM</c>
-              <c>Jam 2</c>
-              <c>24</c>
-              <c>9.6</c>
-            </r>
-            <r>
-              <c>MILK</c>
-              <c>Milk 1</c>
-              <c>18</c>
-              <c>4.8</c>
-            </r>
-            <r>
-              <c>MILK</c>
-              <c>Milk 2</c>
-              <c>21</c>
-              <c>7.2</c>
-            </r>
-            <r>
-              <c>MILK</c>
-              <c>Mlik 3</c>
-              <c>28</c>
-              <c>9.1</c>
-            </r>
-            <r>
-              <c>SLICED BREAD</c>
-              <c>Bread 1</c>
-              <c>12</c>
-              <c>2.6</c>
-            </r>
-            <r>
-              <c>SLICED BREAD</c>
-              <c>Bread 2</c>
-              <c>15</c>
-              <c>5.4</c>
-            </r>
-            <r>
-              <c>SLICED BREAD</c>
-              <c>Bread 3</c>
-              <c>18</c>
-              <c>5.8</c>
-            </r>
-            <r>
-              <c>SLICED BREAD</c>
-              <c>Bread 4</c>
-              <c>24</c>
-              <c>6.9</c>
-            </r>
-          </Data>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
-    </Node>
-    <Node ToolID="53">
-      <GuiSettings Plugin="Optimization">
-        <Position x="594" y="270" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Value name="filePath">
-          </Value>
-          <Value name="fileType">CPLEX_LP</Value>
-          <Value name="maximize">True</Value>
-          <Value name="solver">symphony</Value>
-          <Value name="problemType">MIP</Value>
-          <Value name="inputMode">matrix</Value>
-          <Value name="payload">{"fileType":"CPLEX_LP","filePath":"","solver":"symphony","inputMode":"matrix","maximize":true,"problemType":"MIP"}</Value>
-          <Value name="selectedTab">0</Value>
-          <Value name="fieldList">[]</Value>
-          <Value name="constraints">[]</Value>
-          <Value name="objective">
-          </Value>
-          <Value name="fieldNames">
-          </Value>
-          <Value name="activePage">landing</Value>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText />
-          <DefaultAnnotationText>Matrix Input Mode</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings Macro="Optimization/Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Optimization/Supporting_Macros/Optimization.yxmc" />
-    </Node>
-    <Node ToolID="54">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="702" y="318" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4544_7a48a60a956240ec96e1507b60e2f4dc_\Engine_4040_36b683e632164058ac991627e4e1b983_.yxdb</TempFile>
-          <Layout>
-            <ViewMode>Single</ViewMode>
-            <ViewSize value="100" />
-            <View1>
-              <DefaultTab>Report</DefaultTab>
-              <Hints>
-                <Table />
-              </Hints>
-            </View1>
-            <View2 />
-          </Layout>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-    </Node>
-    <Node ToolID="58">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="702" y="234" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4544_7a48a60a956240ec96e1507b60e2f4dc_\Engine_4040_eb6e5f407f3e49efa497f9929afc8db0_.yxdb</TempFile>
-          <Layout>
-            <View1>
-              <Hints>
-                <Table />
-              </Hints>
-            </View1>
-          </Layout>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-    </Node>
-    <Node ToolID="60">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="486" y="306" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4544_7a48a60a956240ec96e1507b60e2f4dc_\Engine_4040_5ec17786c4c448799f15684f63d823db_.yxdb</TempFile>
-          <Layout>
-            <View1>
-              <Hints>
-                <Table />
-              </Hints>
-            </View1>
-          </Layout>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+              <DefaultAnnotationText>type="B"</DefaultAnnotationText>
+              <Left value="True" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="376" y="195" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="variable" order="Ascending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Objective</AnnotationText>
+              <DefaultAnnotationText>variable - Ascending</DefaultAnnotationText>
+              <Left value="True" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="388" y="291" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="variable" order="Ascending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Constraints</AnnotationText>
+              <DefaultAnnotationText>variable - Ascending</DefaultAnnotationText>
+              <Left value="True" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="48">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="100" y="195" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="12" />
+              <Fields>
+                <Field name="category" />
+                <Field name="product" />
+                <Field name="size" />
+                <Field name="profit" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>PEANUT BUTTER</c>
+                  <c>Peanut Butter 1</c>
+                  <c>12</c>
+                  <c>3.7</c>
+                </r>
+                <r>
+                  <c>PEANUT BUTTER</c>
+                  <c>Peanut Butter 2</c>
+                  <c>16</c>
+                  <c>5.2</c>
+                </r>
+                <r>
+                  <c>PEANUT BUTTER</c>
+                  <c>Peanut Butter 3</c>
+                  <c>18</c>
+                  <c>6.1</c>
+                </r>
+                <r>
+                  <c>JAM</c>
+                  <c>Jam 1</c>
+                  <c>21</c>
+                  <c>9.3</c>
+                </r>
+                <r>
+                  <c>JAM</c>
+                  <c>Jam 2</c>
+                  <c>24</c>
+                  <c>9.6</c>
+                </r>
+                <r>
+                  <c>MILK</c>
+                  <c>Milk 1</c>
+                  <c>18</c>
+                  <c>4.8</c>
+                </r>
+                <r>
+                  <c>MILK</c>
+                  <c>Milk 2</c>
+                  <c>21</c>
+                  <c>7.2</c>
+                </r>
+                <r>
+                  <c>MILK</c>
+                  <c>Mlik 3</c>
+                  <c>28</c>
+                  <c>9.1</c>
+                </r>
+                <r>
+                  <c>SLICED BREAD</c>
+                  <c>Bread 1</c>
+                  <c>12</c>
+                  <c>2.6</c>
+                </r>
+                <r>
+                  <c>SLICED BREAD</c>
+                  <c>Bread 2</c>
+                  <c>15</c>
+                  <c>5.4</c>
+                </r>
+                <r>
+                  <c>SLICED BREAD</c>
+                  <c>Bread 3</c>
+                  <c>18</c>
+                  <c>5.8</c>
+                </r>
+                <r>
+                  <c>SLICED BREAD</c>
+                  <c>Bread 4</c>
+                  <c>24</c>
+                  <c>6.9</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="53">
+          <GuiSettings Plugin="Optimization">
+            <Position x="568" y="255" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="nameType" />
+              <Value name="nameUpper" />
+              <Value name="nameLower" />
+              <Value name="nameCoef" />
+              <Value name="nameVar" />
+              <Value name="displayFieldMapO">False</Value>
+              <Value name="constraintMode">varInRow</Value>
+              <Value name="filePath">
+              </Value>
+              <Value name="fileType">CPLEX_LP</Value>
+              <Value name="maximize">True</Value>
+              <Value name="solver">symphony</Value>
+              <Value name="problemType">MIP</Value>
+              <Value name="inputMode">matrix</Value>
+              <Value name="payload">{"fileType":"CPLEX_LP","filePath":"","solver":"symphony","inputMode":"matrix","maximize":true,"problemType":"MIP"}</Value>
+              <Value name="selectedTab">0</Value>
+              <Value name="fieldList">[]</Value>
+              <Value name="constraints">[]</Value>
+              <Value name="objective">
+              </Value>
+              <Value name="fieldNames">
+              </Value>
+              <Value name="activePage">landing</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText />
+              <DefaultAnnotationText>Matrix Input Mode</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Optimization/Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Optimization/Supporting_Macros/Optimization.yxmc" />
+        </Node>
+        <Node ToolID="54">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="676" y="303" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_11936_096512121d5f46998e02f2596f89d77b_\Engine_5308_e545005c150846fda3d9494f93f9c44b_.yxdb</TempFileDataProfiling>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_11936_096512121d5f46998e02f2596f89d77b_\Engine_5308_58e99d37634e4c8c910e1d80b2c15a07_.yxdb</TempFile>
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="58">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="676" y="219" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_11936_096512121d5f46998e02f2596f89d77b_\Engine_5308_da9598cc5f8346eca0ef227508e9cb07_.yxdb</TempFileDataProfiling>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_11936_096512121d5f46998e02f2596f89d77b_\Engine_5308_7ca2f7ac1eae4504bfce26d4d4f960b4_.yxdb</TempFile>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="60">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="460" y="291" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_11936_096512121d5f46998e02f2596f89d77b_\Engine_5308_463ca14d958946eda99bee482673e1d5_.yxdb</TempFile>
+              <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_11936_096512121d5f46998e02f2596f89d77b_\Engine_5308_a9d4001f8ece412fa5c7a3f5d0e294e4_.yxdb</TempFileDataProfiling>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
     </Node>
     <Node ToolID="57">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="102" y="990" width="120" height="120" />
+        <Position x="54" y="1206" width="120" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Container 57</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="60" />
           <Disabled value="True" />
-          <Folded value="False" />
+          <Folded value="True" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -508,7 +538,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
       <ChildNodes>
         <Node ToolID="31">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="162" y="1393" width="828" height="36" />
+            <Position x="114" y="1609" width="828" height="36" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -528,7 +558,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="32">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="162" y="1369" width="828" height="24" />
+            <Position x="114" y="1585" width="828" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -548,11 +578,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="37">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="346" y="1429" />
+            <Position x="298" y="1645" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8468_539c174bb7b04b9aa8ddfa1170ba93c8_\Engine_9124_539bafb2c94d457dab1700b8b050eed4_.yxdb</TempFile>
+              <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_bfc0e99b0f3c48d1aec78e5f32e82c3a_.yxdb</TempFileDataProfiling>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_197edaa6b62d424594d30eeb3e970cb5_.yxdb</TempFile>
               <Layout>
                 <View1>
                   <Hints>
@@ -571,11 +602,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="38">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="342" y="1478" />
+            <Position x="294" y="1694" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8468_539c174bb7b04b9aa8ddfa1170ba93c8_\Engine_9124_f9732ab889b047b7ba63adcaa971b1bb_.yxdb</TempFile>
+              <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_9a9484f0a12f4a0db7bc5b0d98d5b2ca_.yxdb</TempFileDataProfiling>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_134f6cb7aa87474aa809266bfd072451_.yxdb</TempFile>
               <Layout>
                 <View1>
                   <Hints>
@@ -594,7 +626,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="39">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="162" y="1093" width="828" height="36" />
+            <Position x="114" y="1309" width="828" height="36" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -614,7 +646,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="40">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="162" y="1069" width="828" height="24" />
+            <Position x="114" y="1285" width="828" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -634,11 +666,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="42">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="330" y="1153" />
+            <Position x="281.9999" y="1369" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8468_539c174bb7b04b9aa8ddfa1170ba93c8_\Engine_9124_79199e4c37e2476aa745d2aa1bfd14a2_.yxdb</TempFile>
+              <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_e2040c19e750446290ead4fc241ca39e_.yxdb</TempFileDataProfiling>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_8e9a7305475a474b9b7d70f766f51615_.yxdb</TempFile>
               <Layout>
                 <View1>
                   <Hints>
@@ -657,11 +690,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="43">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="330" y="1252" />
+            <Position x="282" y="1468" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8468_539c174bb7b04b9aa8ddfa1170ba93c8_\Engine_9124_f5881aaa1d96491db1bfa2e03295bb08_.yxdb</TempFile>
+              <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_278c913751c44e7bbb8311e46d3ba20d_.yxdb</TempFileDataProfiling>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_4fbb45f6bd7a4e81a8996ebaab688107_.yxdb</TempFile>
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
@@ -684,7 +718,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="46">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="462" y="1141" width="528" height="204" />
+            <Position x="414" y="1357" width="528" height="204" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -705,7 +739,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="49">
           <GuiSettings Plugin="Optimization">
-            <Position x="198" y="1201" />
+            <Position x="150" y="1417" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -735,11 +769,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="50">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="330" y="1201" />
+            <Position x="282" y="1417" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8468_539c174bb7b04b9aa8ddfa1170ba93c8_\Engine_9124_4ab2901f6986425c9b99102400dea7dd_.yxdb</TempFile>
+              <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_9b666aff2c0c4bf495a1e8c027a9d64c_.yxdb</TempFileDataProfiling>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_d839ee785e694e98bd6ba2a9ee8ab923_.yxdb</TempFile>
               <Layout>
                 <View1>
                   <Hints>
@@ -758,7 +793,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="51">
           <GuiSettings Plugin="Optimization">
-            <Position x="198" y="1477" />
+            <Position x="150" y="1693" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -787,11 +822,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="52">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="342" y="1521" />
+            <Position x="294" y="1737" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8468_539c174bb7b04b9aa8ddfa1170ba93c8_\Engine_9124_d83c340462ae42fb9739dcc28a6c8503_.yxdb</TempFile>
+              <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_bb5d759433b048eeacc7b347b7153bf3_.yxdb</TempFileDataProfiling>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_4c6794dc0edb43b399b791f1cb2c8ffb_.yxdb</TempFile>
               <Layout>
                 <View1>
                   <Hints>
@@ -810,7 +846,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="4">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="186" y="1602" width="828" height="24" />
+            <Position x="138" y="1818" width="828" height="24" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -830,7 +866,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="5">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="186" y="1686" />
+            <Position x="138.0001" y="1902" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -940,7 +976,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="6">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="186" y="1830" />
+            <Position x="138" y="2046" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -990,7 +1026,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="7">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="186" y="1758" />
+            <Position x="138" y="1974" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1093,11 +1129,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="8">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="414" y="1710" />
+            <Position x="366" y="1926" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8468_539c174bb7b04b9aa8ddfa1170ba93c8_\Engine_9124_12a696ccbb694f9e8b642a412ded3b32_.yxdb</TempFile>
+              <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_7b0f0a8d00ba4aaeb11c3bfe29a69578_.yxdb</TempFileDataProfiling>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_0ae1548b45ef4445af6a04fe89d4e052_.yxdb</TempFile>
               <Layout>
                 <View1>
                   <Hints>
@@ -1116,7 +1153,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="11">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="186" y="1626" width="828" height="36" />
+            <Position x="138.0001" y="1842" width="828" height="36" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1136,11 +1173,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="14">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="411.9999" y="1830" />
+            <Position x="363.9999" y="2046" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8468_539c174bb7b04b9aa8ddfa1170ba93c8_\Engine_9124_6f17a0e321154ceea4df1dc4b25efeeb_.yxdb</TempFile>
+              <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_db7c33bfda604eb59790999c4336ee59_.yxdb</TempFileDataProfiling>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_54285b2436524dd281824152c81f29b5_.yxdb</TempFile>
               <Layout>
                 <ViewMode>Single</ViewMode>
                 <ViewSize value="100" />
@@ -1163,7 +1201,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="45">
           <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-            <Position x="486" y="1674" width="528" height="204" />
+            <Position x="438" y="1890" width="528" height="204" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1184,7 +1222,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="55">
           <GuiSettings Plugin="Optimization">
-            <Position x="318" y="1770" />
+            <Position x="270" y="1986" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1215,11 +1253,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
         </Node>
         <Node ToolID="56">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="410.9999" y="1766" />
+            <Position x="362.9999" y="1982" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8468_539c174bb7b04b9aa8ddfa1170ba93c8_\Engine_9124_82aef5bb2ce14c7a9d319e69a37c6561_.yxdb</TempFile>
+              <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_d091929557fc4ce3adc645ed2eb02914_.yxdb</TempFileDataProfiling>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_4152_3ab2d7680484408a9f7cbfc0cb9e3e9c_\Engine_5308_a7f0064890ec4f04a4d302b298705777_.yxdb</TempFile>
               <Layout>
                 <View1>
                   <Hints>
@@ -1370,6 +1409,10 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
       <Company />
       <Copyright />
       <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
     </MetaInfo>
     <Events>
       <Enabled value="True" />

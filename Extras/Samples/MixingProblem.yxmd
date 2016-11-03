@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="66" y="114" width="828" height="288" />
+        <Position x="54" y="114" width="828" height="288" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -37,7 +37,7 @@ The question is how many kilo of each ingredient should I choose? What is the fi
     </Node>
     <Node ToolID="14">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="66" y="54" width="828" height="60" />
+        <Position x="54" y="54" width="828" height="60" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -57,7 +57,7 @@ The question is how many kilo of each ingredient should I choose? What is the fi
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="438" y="54" width="456" height="60" />
+        <Position x="426" y="54" width="456" height="60" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -77,7 +77,7 @@ The question is how many kilo of each ingredient should I choose? What is the fi
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="66" y="726" width="175" height="266" />
+        <Position x="54" y="726" width="175" height="266" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -95,10 +95,17 @@ The question is how many kilo of each ingredient should I choose? What is the fi
       <ChildNodes>
         <Node ToolID="18">
           <GuiSettings Plugin="Optimization">
-            <Position x="76" y="839" />
+            <Position x="64" y="839" />
           </GuiSettings>
           <Properties>
             <Configuration>
+              <Value name="nameType" />
+              <Value name="nameUpper" />
+              <Value name="nameLower" />
+              <Value name="nameCoef" />
+              <Value name="nameVar" />
+              <Value name="displayFieldMapO">False</Value>
+              <Value name="constraintMode">conInRow</Value>
               <Value name="filePath">
               </Value>
               <Value name="fileType">CPLEX_LP</Value>
@@ -124,7 +131,7 @@ The question is how many kilo of each ingredient should I choose? What is the fi
         </Node>
         <Node ToolID="19">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="172" y="755" />
+            <Position x="160" y="755" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -141,7 +148,7 @@ The question is how many kilo of each ingredient should I choose? What is the fi
         </Node>
         <Node ToolID="20">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="172" y="839" />
+            <Position x="160" y="839" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -158,7 +165,7 @@ The question is how many kilo of each ingredient should I choose? What is the fi
         </Node>
         <Node ToolID="21">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="172" y="923" />
+            <Position x="160" y="923" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -187,14 +194,14 @@ The question is how many kilo of each ingredient should I choose? What is the fi
     </Node>
     <Node ToolID="17">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="66" y="426" width="100.7756" height="19" />
+        <Position x="54" y="426" width="571" height="266" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Matrix Input</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
-          <Disabled value="True" />
-          <Folded value="True" />
+          <Disabled value="False" />
+          <Folded value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -205,7 +212,7 @@ The question is how many kilo of each ingredient should I choose? What is the fi
       <ChildNodes>
         <Node ToolID="1">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="76" y="551" />
+            <Position x="64" y="551" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -251,10 +258,17 @@ The question is how many kilo of each ingredient should I choose? What is the fi
         </Node>
         <Node ToolID="2">
           <GuiSettings Plugin="Optimization">
-            <Position x="472" y="539" />
+            <Position x="460" y="539" />
           </GuiSettings>
           <Properties>
             <Configuration>
+              <Value name="nameType" />
+              <Value name="nameUpper" />
+              <Value name="nameLower" />
+              <Value name="nameCoef" />
+              <Value name="nameVar" />
+              <Value name="displayFieldMapO">False</Value>
+              <Value name="constraintMode">varInRow</Value>
               <Value name="filePath">
               </Value>
               <Value name="fileType">CPLEX_LP</Value>
@@ -283,7 +297,7 @@ The question is how many kilo of each ingredient should I choose? What is the fi
         </Node>
         <Node ToolID="3">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="184" y="503" />
+            <Position x="172" y="503" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -307,7 +321,7 @@ The question is how many kilo of each ingredient should I choose? What is the fi
         </Node>
         <Node ToolID="5">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="280" y="503" />
+            <Position x="268" y="503" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -329,7 +343,7 @@ type="C"</DefaultAnnotationText>
         </Node>
         <Node ToolID="7">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="184" y="551" />
+            <Position x="172" y="551" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -349,7 +363,7 @@ Conservation=1</DefaultAnnotationText>
         </Node>
         <Node ToolID="8">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="280" y="551" />
+            <Position x="268" y="551" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -375,7 +389,7 @@ Conservation=1</DefaultAnnotationText>
         </Node>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="268" y="623" />
+            <Position x="256" y="623" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -417,7 +431,7 @@ Conservation=1</DefaultAnnotationText>
         </Node>
         <Node ToolID="10">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="568" y="455" />
+            <Position x="556" y="455" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -440,7 +454,7 @@ Conservation=1</DefaultAnnotationText>
         </Node>
         <Node ToolID="11">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="568" y="539" />
+            <Position x="556" y="539" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -463,7 +477,7 @@ Conservation=1</DefaultAnnotationText>
         </Node>
         <Node ToolID="12">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="568" y="623" />
+            <Position x="556" y="623" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -574,6 +588,10 @@ Conservation=1</DefaultAnnotationText>
       <Company />
       <Copyright />
       <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
     </MetaInfo>
     <Events>
       <Enabled value="True" />
