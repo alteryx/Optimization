@@ -1,0 +1,1001 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="10.5">
+  <Nodes>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="804" height="96" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Sample Alteryx Module:
+Work Scheduling Optimization</Text>
+          <Font name="Microsoft Sans Serif" size="18" style="0" />
+          <TextColor name="White" />
+          <FillColor r="22" g="145" b="198" />
+          <Shape shape="0" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="53.99997" y="162" width="463" height="254" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 28</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="3">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="64" y="191.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="20" />
+              <Fields>
+                <Field name="variable" />
+                <Field name="coefficient" />
+                <Field name="lb" />
+                <Field name="ub" />
+                <Field name="type" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>F1</c>
+                  <c>48</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>F2</c>
+                  <c>48</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>F3</c>
+                  <c>48</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>F4</c>
+                  <c>48</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>F5</c>
+                  <c>48</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>F6</c>
+                  <c>48</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>F7</c>
+                  <c>48</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>F8</c>
+                  <c>48</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>F9</c>
+                  <c>48</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>F10</c>
+                  <c>48</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>P1</c>
+                  <c>32</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>P2</c>
+                  <c>32</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>P3</c>
+                  <c>32</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>P4</c>
+                  <c>32</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>P5</c>
+                  <c>32</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>P6</c>
+                  <c>32</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>P7</c>
+                  <c>32</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>P8</c>
+                  <c>32</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>P9</c>
+                  <c>32</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+                <r>
+                  <c>P10</c>
+                  <c>32</c>
+                  <c>0</c>
+                  <c>Inf</c>
+                  <c>I</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="Optimization">
+            <Position x="268" y="275" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="filePath">
+              </Value>
+              <Value name="fileType">CPLEX_LP</Value>
+              <Value name="maximize">False</Value>
+              <Value name="solver">symphony</Value>
+              <Value name="problemType">MIP</Value>
+              <Value name="inputMode">matrix</Value>
+              <Value name="payload">{"fileType":"CPLEX_LP","filePath":"","solver":"symphony","inputMode":"matrix","maximize":false,"problemType":"MIP"}</Value>
+              <Value name="selectedTab">0</Value>
+              <Value name="fieldList">[]</Value>
+              <Value name="constraints">[]</Value>
+              <Value name="objective">
+              </Value>
+              <Value name="fieldNames">
+              </Value>
+              <Value name="activePage">landing</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Matrix Input Mode</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Optimization/Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Optimization/Supporting_Macros/Optimization.yxmc" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="64.00001" y="267" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="20" />
+              <Fields>
+                <Field name="variable" />
+                <Field name="T1" />
+                <Field name="T2" />
+                <Field name="T3" />
+                <Field name="T4" />
+                <Field name="T5" />
+                <Field name="T6" />
+                <Field name="T7" />
+                <Field name="T8" />
+                <Field name="T9" />
+                <Field name="T10" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>F1</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c />
+                  <c />
+                </r>
+                <r>
+                  <c>F2</c>
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c />
+                </r>
+                <r>
+                  <c>F3</c>
+                  <c />
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>F4</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>F5</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>F6</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>F7</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>F8</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>F9</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>F10</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>P1</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                </r>
+                <r>
+                  <c>P2</c>
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                </r>
+                <r>
+                  <c>P3</c>
+                  <c />
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                </r>
+                <r>
+                  <c>P4</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c />
+                  <c />
+                  <c />
+                </r>
+                <r>
+                  <c>P5</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c />
+                  <c />
+                </r>
+                <r>
+                  <c>P6</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c />
+                </r>
+                <r>
+                  <c>P7</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>P8</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>P9</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c>4</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>P10</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c>4</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="63.99996" y="346.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="10" />
+              <Fields>
+                <Field name="dir" />
+                <Field name="rhs" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>&gt;=</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>&gt;=</c>
+                  <c>24</c>
+                </r>
+                <r>
+                  <c>&gt;=</c>
+                  <c>16</c>
+                </r>
+                <r>
+                  <c>&gt;=</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>&gt;=</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>&gt;=</c>
+                  <c>12</c>
+                </r>
+                <r>
+                  <c>&gt;=</c>
+                  <c>24</c>
+                </r>
+                <r>
+                  <c>&gt;=</c>
+                  <c>40</c>
+                </r>
+                <r>
+                  <c>&gt;=</c>
+                  <c>32</c>
+                </r>
+                <r>
+                  <c>&gt;=</c>
+                  <c>20</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="448" y="191" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8024_d563f6cb3fd3428e9189fbba8aee2aff_\Engine_708_4e3307d7a3f24126a36d9a466f9d2b27_.yxdb</TempFile>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="448" y="275" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8024_d563f6cb3fd3428e9189fbba8aee2aff_\Engine_708_64303892a09547d29609db58af19c460_.yxdb</TempFile>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="448" y="347" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_8024_d563f6cb3fd3428e9189fbba8aee2aff_\Engine_708_ac42cc72c36145c68f46f0b96778d885_.yxdb</TempFile>
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="526" y="162" width="330.3737" height="19" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Expand this container for the details of the output anchors</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="548" y="191" width="396" height="40" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Anchor S: Results</Text>
+              <Font name="Segoe UI" size="9.75" style="1" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="3" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="536" y="239" width="444" height="127" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Objective: since the objective function calculates the sum of all employees' salary, this result stands for how much the restaurant will spend on all its employees, when it's optimized.
+
+
+Rows after "Objective": value of each decision variables (sorted), i.e. how many employees to hire at each time slot</Text>
+              <Font name="Segoe UI" size="8.25" style="0" />
+              <TextColor r="0" g="128" b="255" />
+              <FillColor name="White" />
+              <Shape shape="3" />
+              <Justification Justification="3" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="55" y="422" width="304.7535" height="19" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Expand this container for the details of input anchors</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="12">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="65" y="487.0001" width="444" height="204" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text><![CDATA[In this case. Decision variables are: F1, ..., F10, P1,..., P10, which stand for number of full time and part time employees the restaurant should hire at Time 1 to Time 10. Thus they are in the "variable" column.
+
+Coefficients: are coefficients of each variable in the objective funciton. Thus, it's 48 (6x8) for full time employees and 32 (8x4) for part time employees
+
+lb: the lower bounds of the decision variables are 0
+
+ub: the uppper bounds of the decision variables are "infinity", thus "Inf"
+
+type: the number of employees can only be integer, thus "I" (short for integer).
+
+]]></Text>
+              <Font name="Segoe UI" size="8.25" style="0" />
+              <TextColor r="0" g="128" b="255" />
+              <FillColor name="White" />
+              <Shape shape="3" />
+              <Justification Justification="3" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="77" y="451.0001" width="396" height="40" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Anchor O:  specify objective function, bounds and types.</Text>
+              <Font name="Segoe UI" size="9.75" style="1" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="3" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="14">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="557" y="451" width="372" height="40" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Anchor A: specify the left-hand-side (LHS) of constraints</Text>
+              <Font name="Segoe UI" size="9.75" style="1" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="3" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="569" y="499" width="444" height="204" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text><![CDATA[There are 10 constraints: i.e. at each time slot, the number of servers shoud be at least 1/4 of groups.
+
+T1, T2, ... T2 columns are the coefficients of each LHS constraint equations.
+]]></Text>
+              <Font name="Segoe UI" size="8.25" style="0" />
+              <TextColor r="0" g="128" b="255" />
+              <FillColor name="White" />
+              <Shape shape="3" />
+              <Justification Justification="3" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="1037" y="451" width="396" height="40" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Anchor B: specify the right-hand-side (RHS) of constraints</Text>
+              <Font name="Segoe UI" size="9.75" style="1" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="3" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="1025" y="499" width="444" height="204" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text><![CDATA[The 10 rows correspond to each constraints (columns) at Anchor A.
+
+Since the number of servers should be greater than 1/4 of the groups, we use ">=" in the "dir" column. The "rhs" columns are the predictied number of groups at each time slot.
+]]></Text>
+              <Font name="Segoe UI" size="8.25" style="0" />
+              <TextColor r="0" g="128" b="255" />
+              <FillColor name="White" />
+              <Shape shape="3" />
+              <Justification Justification="3" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="714" y="66" width="139.9523" height="19" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Sample Description</Caption>
+          <Style TextColor="#2f4f4f" FillColor="#ffffff" BorderColor="#2f4f4f" Transparency="10" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="24">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="724" y="95" width="626" height="355" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>This sample demonstrates how to use the the Optimization tool to decide how many restaurant servers and what types of servers (full time, part time) to schedule at each hour of the day, such that the restaurant can minimize the total cost of employee salary and at the same time make sure customers will be taken care of.
+
+Assume the restaurant runs from 11am to 8 pm everyday and the average number of customer groups in each of its openning hours are:
+Hour:     11am, 12pm, 1pm, 2pm, 3pm, 4pm, 5pm, 6pm, 7pm, 8pm
+Groups: 4,        24,      16,     4,      4,      12,     24,    40,    32,     20
+
+This data might be represented by an array variable D, where Dt is the forecasted demand for period t in number of groups of customers. (For clarity, we will use t=1 for the 11:00 a.m. hour, t=2 for the noon hour, etc.)
+
+If each server can handle 4 customer groups per hour, how many employees will we need during each hour.  This question is complicated by the fact that our employees either work part-time 4 hours per day or full-time 8 hours per day.  (For simplicity we will not presently consider break times, which is an interesting problem in itself.)  Imagine that full-time employees are paid $6 per hour, and part time employees are paid $8 per hour, according to union rules.
+
+See: http://services.byu.edu/t/quant/opt.html  for the details</Text>
+              <Font name="Microsoft Sans Serif" size="9.75" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="0" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="InputO" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="4" Connection="InputA" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="4" Connection="InputB" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Simple" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Data" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Interactive" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Optimization Workforce Scheduling Sample</Name>
+      <Description>This sample demonstrates how to use the the Optimization tool to decide how many restaurant servers and what types of servers (full time, part time) to schedule at each hour of the day, such that the restaurant can minimize the total cost of employee salary and at the same time make sure customers will be taken care of.</Description>
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author>Kuo Liu</Author>
+      <Company>Alteryx Inc.</Company>
+      <Copyright>Alteryx Inc.</Copyright>
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

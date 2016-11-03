@@ -1,0 +1,973 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="10.5">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="54" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="12" />
+          <Fields>
+            <Field name="variable" />
+            <Field name="coefficient" />
+            <Field name="lb" />
+            <Field name="ub" />
+            <Field name="type" />
+          </Fields>
+          <Data>
+            <r>
+              <c>A1</c>
+              <c>3.7</c>
+              <c>0</c>
+              <c>1</c>
+              <c>B</c>
+            </r>
+            <r>
+              <c>A2</c>
+              <c>5.2</c>
+              <c>0</c>
+              <c>1</c>
+              <c>B</c>
+            </r>
+            <r>
+              <c>A3</c>
+              <c>6.1</c>
+              <c>0</c>
+              <c>1</c>
+              <c>B</c>
+            </r>
+            <r>
+              <c>B1</c>
+              <c>9.3</c>
+              <c>0</c>
+              <c>1</c>
+              <c>B</c>
+            </r>
+            <r>
+              <c>B2</c>
+              <c>9.6</c>
+              <c>0</c>
+              <c>1</c>
+              <c>B</c>
+            </r>
+            <r>
+              <c>C1</c>
+              <c>4.8</c>
+              <c>0</c>
+              <c>1</c>
+              <c>B</c>
+            </r>
+            <r>
+              <c>C2</c>
+              <c>7.2</c>
+              <c>0</c>
+              <c>1</c>
+              <c>B</c>
+            </r>
+            <r>
+              <c>C3</c>
+              <c>9.1</c>
+              <c>0</c>
+              <c>1</c>
+              <c>B</c>
+            </r>
+            <r>
+              <c>D1</c>
+              <c>2.6</c>
+              <c>0</c>
+              <c>1</c>
+              <c>B</c>
+            </r>
+            <r>
+              <c>D2</c>
+              <c>5.4</c>
+              <c>0</c>
+              <c>1</c>
+              <c>B</c>
+            </r>
+            <r>
+              <c>D3</c>
+              <c>5.8</c>
+              <c>0</c>
+              <c>1</c>
+              <c>B</c>
+            </r>
+            <r>
+              <c>D4</c>
+              <c>6.9</c>
+              <c>0</c>
+              <c>1</c>
+              <c>B</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="54" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="5" />
+          <Fields>
+            <Field name="dir" />
+            <Field name="rhs" />
+          </Fields>
+          <Data>
+            <r>
+              <c>&lt;=</c>
+              <c>80</c>
+            </r>
+            <r>
+              <c>&lt;=</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>&lt;=</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>&lt;=</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>&lt;=</c>
+              <c>1</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="54" y="286" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="5" />
+          <Fields>
+            <Field name="A1" />
+            <Field name="A2" />
+            <Field name="A3" />
+            <Field name="B1" />
+            <Field name="B2" />
+            <Field name="C1" />
+            <Field name="C2" />
+            <Field name="C3" />
+            <Field name="D1" />
+            <Field name="D2" />
+            <Field name="D3" />
+            <Field name="D4" />
+          </Fields>
+          <Data>
+            <r>
+              <c>12</c>
+              <c>16</c>
+              <c>18</c>
+              <c>21</c>
+              <c>24</c>
+              <c>18</c>
+              <c>21</c>
+              <c>28</c>
+              <c>1</c>
+              <c>15</c>
+              <c>18</c>
+              <c>24</c>
+            </r>
+            <r>
+              <c>1</c>
+              <c>1</c>
+              <c>1</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+            </r>
+            <r>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>1</c>
+              <c>1</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+            </r>
+            <r>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>1</c>
+              <c>1</c>
+              <c>1</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+            </r>
+            <r>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>0</c>
+              <c>1</c>
+              <c>1</c>
+              <c>1</c>
+              <c>1</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="222" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_2768_4a01693ad9bc485b8a21f58666271a3e_\Engine_8760_1e1ce63c053f4eb2bea9ea2d63916cc2_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_2768_4a01693ad9bc485b8a21f58666271a3e_\Engine_8760_b32e77323578481ea2cb6be2880874be_.yxdb</TempFile>
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="342" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Field>name</Field>
+            <Operator>=</Operator>
+            <Operands>
+              <Operand>variables</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>variables</AnnotationText>
+          <DefaultAnnotationText>[name] = variables</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="Optimization">
+        <Position x="150" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="nameType" />
+          <Value name="nameUpper" />
+          <Value name="nameLower" />
+          <Value name="nameCoef" />
+          <Value name="nameVar" />
+          <Value name="displayFieldMapO">False</Value>
+          <Value name="constraintMode">conInRow</Value>
+          <Value name="filePath">
+          </Value>
+          <Value name="fileType">CPLEX_LP</Value>
+          <Value name="maximize">True</Value>
+          <Value name="solver">glpk</Value>
+          <Value name="problemType">LP</Value>
+          <Value name="inputMode">matrix</Value>
+          <Value name="payload">{"fileType":"CPLEX_LP","filePath":"","solver":"glpk","inputMode":"matrix","maximize":true,"problemType":"LP"}</Value>
+          <Value name="selectedTab">0</Value>
+          <Value name="fieldList">[]</Value>
+          <Value name="constraints">[]</Value>
+          <Value name="objective">
+          </Value>
+          <Value name="fieldNames">
+          </Value>
+          <Value name="activePage">landing</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Matrix Input Mode</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Optimization/Supporting_Macros/Optimization.yxmc" EngineDll="Macro" EngineDllEntryPoint="Optimization/Supporting_Macros/Optimization.yxmc" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="234" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_2768_4a01693ad9bc485b8a21f58666271a3e_\Engine_8760_e226a01340044245b21dd28d3a2838af_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_2768_4a01693ad9bc485b8a21f58666271a3e_\Engine_8760_6f8885cfbdd94ee1bcf49abb257b9cdb_.yxdb</TempFile>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="342" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Field>name</Field>
+            <Operator>=</Operator>
+            <Operands>
+              <Operand>constraints</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>constraints</AnnotationText>
+          <DefaultAnnotationText>[name] = constraints</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="342" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Field>name</Field>
+            <Operator>=</Operator>
+            <Operands>
+              <Operand>summary</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ summary]]></AnnotationText>
+          <DefaultAnnotationText>[name] = summary</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="462" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>value</Field>
+          <NumFields value="5" />
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>value</RootName>
+          <Delimeters value="|" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="810" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_2768_4a01693ad9bc485b8a21f58666271a3e_\Engine_8760_8a1e811663174bb8b3ddd3917cd8298a_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_2768_4a01693ad9bc485b8a21f58666271a3e_\Engine_8760_9a56d8981aed46e9a81585615f6c5cdd_.yxdb</TempFile>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+        <Position x="714" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RenameMode>FirstRow</RenameMode>
+          <Fields orderChanged="False">
+            <Field name="value1" />
+            <Field name="value2" />
+            <Field name="value3" />
+            <Field name="value4" />
+            <Field name="value5" />
+            <Field name="*Unknown" />
+            <Field name="1" selected="False" />
+            <Field name="2" selected="False" />
+            <Field name="3" selected="False" />
+            <Field name="4" selected="False" />
+            <Field name="5" selected="False" />
+          </Fields>
+          <Expression />
+          <FirstRow>
+            <OnError>Warn</OnError>
+          </FirstRow>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from value" name="Constraint" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Value" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Direction" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="RHS" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Slack" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="582" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <SelectFields>
+            <SelectField field="name" selected="False" />
+            <SelectField field="value" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="810" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_2768_4a01693ad9bc485b8a21f58666271a3e_\Engine_8760_a3668ea332154c3bb04c9002e6e34fa9_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_2768_4a01693ad9bc485b8a21f58666271a3e_\Engine_8760_04f00a6cb39c4bbc8e038feceb4ee963_.yxdb</TempFile>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="462" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>value</Field>
+          <NumFields value="4" />
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>value</RootName>
+          <Delimeters value="|" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="810" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_2768_4a01693ad9bc485b8a21f58666271a3e_\Engine_8760_e03b553b01bf474192e7c83c5eb1d576_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_2768_4a01693ad9bc485b8a21f58666271a3e_\Engine_8760_63b6ddbad70a440ab836e226afe994bb_.yxdb</TempFile>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+        <Position x="714" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RenameMode>FirstRow</RenameMode>
+          <Fields orderChanged="False">
+            <Field name="value1" />
+            <Field name="value2" />
+            <Field name="value3" />
+            <Field name="value4" />
+            <Field name="*Unknown" />
+            <Field name="1" selected="False" />
+            <Field name="2" selected="False" />
+            <Field name="3" selected="False" />
+            <Field name="4" selected="False" />
+          </Fields>
+          <Expression />
+          <FirstRow>
+            <OnError>Warn</OnError>
+          </FirstRow>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from value" name="Variable" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Value" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Coefficient" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Type" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="582" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <SelectFields>
+            <SelectField field="name" selected="False" />
+            <SelectField field="value" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="582" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <SelectFields>
+            <SelectField field="name" selected="False" />
+            <SelectField field="value" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="462" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>value</Field>
+          <NumFields value="2" />
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>value</RootName>
+          <Delimeters value="|" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+        <Position x="714" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RenameMode>FirstRow</RenameMode>
+          <Fields orderChanged="False">
+            <Field name="value1" />
+            <Field name="value2" />
+            <Field name="*Unknown" selected="False" />
+          </Fields>
+          <Expression />
+          <FirstRow>
+            <OnError>Warn</OnError>
+          </FirstRow>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from value" name="Description" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+            <Field description="TextToColumns: Parsed from value" name="Value" size="1073741823" source="TextToColumns: Parsed from value" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="66" y="30" width="804" height="108" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text><![CDATA[Sample Alteryx Module
+Optitimization Tool
+Extract Tables from D Output
+]]></Text>
+          <Font name="Segoe UI" size="20.25" style="0" />
+          <TextColor name="White" />
+          <FillColor r="22" g="145" b="198" />
+          <Shape shape="0" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="462" y="54" width="408" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>The sample illustrates how to extract the solution summary, variables and constraints from the D output using a combination of tools.</Text>
+          <Font name="Segoe UI" size="9" style="0" />
+          <TextColor name="White" />
+          <FillColor r="111" g="111" b="111" />
+          <Shape shape="3" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="318" y="150" width="108" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Filter out table named Summary</Text>
+          <Font name="Segoe UI" size="9" style="0" />
+          <TextColor r="0" g="128" b="192" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="438" y="150" width="108" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Split value field into columns</Text>
+          <Font name="Segoe UI" size="9" style="0" />
+          <TextColor r="0" g="128" b="192" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="558" y="150" width="108" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Select extracted columns</Text>
+          <Font name="Segoe UI" size="9" style="0" />
+          <TextColor r="0" g="128" b="192" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="678" y="150" width="144" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Dynamically rename fields based on first row</Text>
+          <Font name="Segoe UI" size="9" style="0" />
+          <TextColor r="0" g="128" b="192" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="16" Connection="InputO" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="16" Connection="InputB" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="16" Connection="InputA" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="True" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Interactive" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Data" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Simple" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Data" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Data" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="True" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="True" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="29" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="37" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="33" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="True" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Optimization Parse Detailed Output Sample</Name>
+      <Description>The sample illustrates how to extract the solution summary, variables and constraints from the D output using a combination of tools.</Description>
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author>Kuo Liu</Author>
+      <Company>Alteryx, Inc.</Company>
+      <Copyright>2016, Alteryx, Inc.</Copyright>
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
