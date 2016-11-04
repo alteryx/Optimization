@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="366" y="402" width="468" height="192" />
+        <Position x="366" y="414" width="468" height="192" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -31,7 +31,7 @@ we sppose we have a budget of: $2,800 * 9 = $25,200
     </Node>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="42" width="828" height="72" />
+        <Position x="54" y="54" width="828" height="72" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -52,7 +52,7 @@ Optimization Tool</Text>
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="426" y="54" width="456" height="60" />
+        <Position x="426" y="66" width="456" height="60" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -72,7 +72,7 @@ Optimization Tool</Text>
     </Node>
     <Node ToolID="23">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="570" y="114" width="312" height="40" />
+        <Position x="570" y="126" width="312" height="40" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -92,7 +92,7 @@ Optimization Tool</Text>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="114" width="504" height="264" />
+        <Position x="54" y="126" width="504" height="264" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -126,7 +126,7 @@ This can be understood as an easy optimization problem:
     </Node>
     <Node ToolID="29">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="618" width="780" height="60" />
+        <Position x="54" y="630" width="780" height="60" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -146,7 +146,7 @@ This can be understood as an easy optimization problem:
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="402" width="307" height="194" />
+        <Position x="54" y="414" width="307" height="194" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -164,12 +164,12 @@ This can be understood as an easy optimization problem:
       <ChildNodes>
         <Node ToolID="2">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="64.00002" y="479" />
+            <Position x="64.00002" y="491" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <Passwords />
-              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">daily_lineup.yxdb</File>
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\SampleData\daily_lineup.yxdb</File>
               <FormatSpecificOptions />
             </Configuration>
             <Annotation DisplayMode="0">
@@ -177,6 +177,9 @@ This can be understood as an easy optimization problem:
               <DefaultAnnotationText>daily_lineup.yxdb</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
             <MetaInfo connection="Output">
               <RecordInfo>
                 <Field name="Name" size="254" source="File: C:\Users\kliu\Documents\Work\201604_Inspire\good_data.csv" type="V_WString" />
@@ -197,7 +200,7 @@ This can be understood as an easy optimization problem:
         </Node>
         <Node ToolID="3">
           <GuiSettings>
-            <Position x="196" y="479" />
+            <Position x="196" y="491" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -218,7 +221,7 @@ This can be understood as an easy optimization problem:
         </Node>
         <Node ToolID="4">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="292" y="431" />
+            <Position x="292" y="443" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -246,7 +249,7 @@ This can be understood as an easy optimization problem:
         </Node>
         <Node ToolID="5">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="292" y="479" />
+            <Position x="292" y="491" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -274,7 +277,7 @@ This can be understood as an easy optimization problem:
         </Node>
         <Node ToolID="6">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="292" y="527" />
+            <Position x="292" y="539" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -304,7 +307,7 @@ This can be understood as an easy optimization problem:
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="678" width="733" height="261" />
+        <Position x="54" y="690" width="733" height="261" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -322,12 +325,12 @@ This can be understood as an easy optimization problem:
       <ChildNodes>
         <Node ToolID="8">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="64.00004" y="707" />
+            <Position x="64.00004" y="719" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <Passwords />
-              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">daily_lineup.yxdb</File>
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\SampleData\daily_lineup.yxdb</File>
               <FormatSpecificOptions />
             </Configuration>
             <Annotation DisplayMode="0">
@@ -335,6 +338,9 @@ This can be understood as an easy optimization problem:
               <DefaultAnnotationText>daily_lineup.yxdb</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
             <MetaInfo connection="Output">
               <RecordInfo>
                 <Field name="Name" size="254" source="File: C:\Users\kliu\Documents\Work\201604_Inspire\good_data.csv" type="V_WString" />
@@ -355,7 +361,7 @@ This can be understood as an easy optimization problem:
         </Node>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="160" y="707" />
+            <Position x="160" y="719" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -378,7 +384,7 @@ This can be understood as an easy optimization problem:
         </Node>
         <Node ToolID="10">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="268" y="707" />
+            <Position x="268" y="719" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -420,7 +426,7 @@ endif
         </Node>
         <Node ToolID="14">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="364" y="707" />
+            <Position x="364" y="719" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -451,7 +457,7 @@ endif
         </Node>
         <Node ToolID="15">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="364" y="783" />
+            <Position x="364" y="795" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -477,7 +483,7 @@ endif
         </Node>
         <Node ToolID="17">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="364" y="851" />
+            <Position x="364" y="863" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -531,7 +537,7 @@ endif
         </Node>
         <Node ToolID="26">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="714" y="714" />
+            <Position x="714" y="726" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -555,7 +561,7 @@ endif
         </Node>
         <Node ToolID="27">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="718" y="791" />
+            <Position x="718" y="803" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -579,7 +585,7 @@ endif
         </Node>
         <Node ToolID="28">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="714" y="870" />
+            <Position x="714" y="882" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -607,7 +613,7 @@ endif
         </Node>
         <Node ToolID="30">
           <GuiSettings Plugin="Optimization">
-            <Position x="534" y="791" />
+            <Position x="534" y="803" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -722,7 +728,7 @@ endif
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>Optimization Fantasy Sports Lineup Sample</Name>
+      <Name>_3_Optimization_Fantasy_Sports_Lineup</Name>
       <Description>This sample illustrates the use of the Alteryx optimization tool to solve a mixed integer programming proplem (or MIP). In the sample, the objective is to select a starting lineup for a daily fantasy sports baseball team. The objective is to maximize the expected fantasy points the team will earn, subject to a total salary constraint and contraints related to the positions the players play.</Description>
       <RootToolName />
       <ToolVersion />

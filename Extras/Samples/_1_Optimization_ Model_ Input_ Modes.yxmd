@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="42" width="828" height="72" />
+        <Position x="54" y="54" width="828" height="72" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -24,7 +24,7 @@ Optimization Tool</Text>
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="426" y="54" width="456" height="60" />
+        <Position x="426" y="66" width="456" height="60" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -44,7 +44,7 @@ Optimization Tool</Text>
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="126" width="204" height="24" />
+        <Position x="54" y="138" width="204" height="24" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -64,7 +64,7 @@ Optimization Tool</Text>
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="1314" width="828" height="24" />
+        <Position x="54" y="1326" width="828" height="24" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -84,7 +84,7 @@ Optimization Tool</Text>
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="54" y="1398" />
+        <Position x="54" y="1410" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -194,7 +194,7 @@ Optimization Tool</Text>
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="54" y="1542" />
+        <Position x="54" y="1554" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -244,7 +244,7 @@ Optimization Tool</Text>
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="54" y="1470" />
+        <Position x="54" y="1482" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -347,12 +347,12 @@ Optimization Tool</Text>
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="282" y="1422" />
+        <Position x="282" y="1434" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_652db1dd33234883a4f36e3a18a16a95_.yxdb</TempFileDataProfiling>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_fd7d34e6343749aead656d62d12af820_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_273f24442b76438a8fa868623c1e80c6_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_a317ed528dca4f2880c7b73bc5b45231_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -371,7 +371,7 @@ Optimization Tool</Text>
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="186" width="828" height="252" />
+        <Position x="54" y="198" width="828" height="252" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -404,7 +404,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="1338" width="828" height="36" />
+        <Position x="54" y="1350" width="828" height="36" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -424,7 +424,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="270" y="126" width="612" height="36" />
+        <Position x="270" y="138" width="612" height="36" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -444,12 +444,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="14">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="280" y="1542" />
+        <Position x="280" y="1554" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_0c185838bb934d07af86a81ace4caca5_.yxdb</TempFileDataProfiling>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_7944835eb5c8422093af5115bddd2485_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_b80b2fcf660d43dbbd9a84ef9dac26e0_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_3b01f02b20b34e01a8d65ae8dc28c4a5_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -472,7 +472,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="17">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="174" y="1158" />
+        <Position x="174" y="1170" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -491,7 +491,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="18">
       <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-        <Position x="258" y="1158" />
+        <Position x="258" y="1170" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -529,7 +529,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="354" y="1158" />
+        <Position x="354" y="1170" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -555,7 +555,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="20">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="354" y="1254" />
+        <Position x="354" y="1266" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -605,7 +605,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="174" y="1074" />
+        <Position x="174" y="1086" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -628,7 +628,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="270" y="1074" />
+        <Position x="270" y="1086" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -648,12 +648,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="704" y="1086" />
+        <Position x="704" y="1098" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_f9e80798e4284783b82020d9bd45d70b_.yxdb</TempFile>
-          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_319f1c3f42e144899683cc9f6f802221_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_4f0c0e9db02c4b59bed9bd2f51859138_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_687ea1dfeb18497787dc3d152824c6e7_.yxdb</TempFileDataProfiling>
           <Layout>
             <View1>
               <Hints>
@@ -672,12 +672,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="706" y="1166" />
+        <Position x="706" y="1178" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_3e6feb01c9cf44d997b21b842ee1d75c_.yxdb</TempFile>
-          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_2b015d56b0a5491c9570cbd090c0ac8e_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_13b4fbdf58ed4b948e03c3cc2d25012c_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_8259dc87e95c4035bc35c6e45fa722f4_.yxdb</TempFileDataProfiling>
           <Layout>
             <View1>
               <Hints>
@@ -696,7 +696,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="26">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="354" y="1074" />
+        <Position x="354" y="1086" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -715,7 +715,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="27">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="450" y="1158" />
+        <Position x="450" y="1170" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -734,7 +734,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="31">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="774" width="828" height="36" />
+        <Position x="54" y="786" width="828" height="36" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -754,7 +754,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="32">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="750" width="828" height="24" />
+        <Position x="54" y="762" width="828" height="24" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -774,7 +774,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="35">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="966" width="828" height="24" />
+        <Position x="54" y="978" width="828" height="24" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -794,7 +794,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="36">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="990" width="828" height="36" />
+        <Position x="54" y="1002" width="828" height="36" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -814,12 +814,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="37">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="238" y="810" />
+        <Position x="238" y="822" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_f0b29eb2a0c24ac39e731628d2f96fe1_.yxdb</TempFileDataProfiling>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_8d624645e91d4b6abbd8475f38f61ca7_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_e3fcc3a493a14d949bd8a250b4fa01de_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_732a13c907874025aa98442f49c25c7d_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -838,12 +838,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="38">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="234" y="859" />
+        <Position x="234" y="871" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_867a5490d0f749fead20059347ab9807_.yxdb</TempFileDataProfiling>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_7e8531af4adc48deb2bc87852a4d0f83_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_b6996fea530149a0b4ce4417ae50dd22_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_f0ba8c16e20f480db2a32ab0e0819670_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -862,7 +862,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="39">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="474" width="828" height="36" />
+        <Position x="54" y="486" width="828" height="36" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -882,7 +882,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="40">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="450" width="828" height="24" />
+        <Position x="54" y="462" width="828" height="24" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -902,12 +902,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="42">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="222" y="534" />
+        <Position x="222" y="546" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_f7bb3d355f9e4d1abec63028dde66736_.yxdb</TempFileDataProfiling>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_06061284b044449c9a4c8e2512383fef_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_fdc2085a3a3b45bd8f468a9a23d90312_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_033aa89e942c4e8088376c24c64dbca7_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -926,12 +926,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="43">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="222" y="633" />
+        <Position x="222" y="645" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_a6bd6393cc1c4960b5766ca5355e6ba5_.yxdb</TempFileDataProfiling>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_6b101e0889b344a6ba23e7f7e5937aed_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_142e34d01670465988fe6ab39673e830_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_daa15b701ef54f7f86a1375e35fcde41_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -954,7 +954,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="45">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="354" y="1386" width="528" height="204" />
+        <Position x="354" y="1398" width="528" height="204" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -975,7 +975,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="46">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="354" y="522" width="528" height="204" />
+        <Position x="354" y="534" width="528" height="204" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -996,7 +996,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="48">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="54" y="1122" />
+        <Position x="54" y="1134" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1092,17 +1092,24 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="49">
       <GuiSettings Plugin="Optimization">
-        <Position x="90" y="582" />
+        <Position x="90" y="594" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Value name="filePath">.\assortment.lp</Value>
+          <Value name="nameType" />
+          <Value name="nameUpper" />
+          <Value name="nameLower" />
+          <Value name="nameCoef" />
+          <Value name="nameVar" />
+          <Value name="displayFieldMapO">False</Value>
+          <Value name="constraintMode">conInRow</Value>
+          <Value name="filePath">..\SampleData\assortment.lp</Value>
           <Value name="fileType">CPLEX_LP</Value>
           <Value name="maximize">False</Value>
           <Value name="solver">glpk</Value>
           <Value name="problemType">LP</Value>
           <Value name="inputMode">file</Value>
-          <Value name="payload">{"fileType":"CPLEX_LP","filePath":".\\assortment.lp","solver":"glpk","inputMode":"file","maximize":false,"problemType":"LP"}</Value>
+          <Value name="payload">{"fileType":"CPLEX_LP","filePath":"..\\SampleData\\assortment.lp","solver":"glpk","inputMode":"file","maximize":false,"problemType":"LP"}</Value>
           <Value name="selectedTab">0</Value>
           <Value name="fieldList">[]</Value>
           <Value name="constraints">[]</Value>
@@ -1122,12 +1129,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="50">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="222" y="582" />
+        <Position x="222" y="594" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_bb57b1e2517840a99327506bfb2cd5be_.yxdb</TempFileDataProfiling>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_807dc7a2da194baca02a93b17360ac94_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_c1cac814bccf4ed48e3aeeef36f17734_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_ec37754685414f1f9158ede879709040_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -1146,7 +1153,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="51">
       <GuiSettings Plugin="Optimization">
-        <Position x="90" y="858" />
+        <Position x="90" y="870" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1175,12 +1182,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="52">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="234" y="902" />
+        <Position x="234" y="914" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_e6d861e86a07407f85bf32d92740ad44_.yxdb</TempFileDataProfiling>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_f9ff1ef3e25d469c89e15b7ea0baf2fb_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_d17450df05f54892a7428fcb0a8de726_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_6f1a602165eb481da5da29976921e9ea_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -1203,7 +1210,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="53">
       <GuiSettings Plugin="Optimization">
-        <Position x="582" y="1166" />
+        <Position x="582" y="1178" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1241,12 +1248,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="54">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="705" y="1242" />
+        <Position x="705" y="1254" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_fa21aa13f47842769c68169f3c57b8db_.yxdb</TempFile>
-          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_a59667ffb6de4b9c957eb6572743706f_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_08d6aa50f12144c18c993100992a13df_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_22e68eec376e47c090d484b971a6d938_.yxdb</TempFileDataProfiling>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -1269,7 +1276,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="55">
       <GuiSettings Plugin="Optimization">
-        <Position x="186" y="1478" />
+        <Position x="186" y="1490" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1300,12 +1307,12 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     </Node>
     <Node ToolID="56">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="279" y="1478" />
+        <Position x="279" y="1490" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFileDataProfiling>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_e8b0a95ce82e477da0ea7fc6220fb6ad_.yxdb</TempFileDataProfiling>
-          <TempFile>C:\Users\kliu\AppData\Local\Temp\Engine_5748_9490a57817e445989e4652654292373d_\Engine_8760_8e3c9a2e186942e8b32d851af0e95adb_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_9a69cc4d99f445518c7e00353acdf971_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1136_b012ab5bff18439b8033da3b353c6ad5_\Engine_5164_a589de860d25478eb3528bb9c9c5017b_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -1443,7 +1450,7 @@ For each product, we need to make a decision, either to choose  (1) or to not ch
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>Optimization Model Input Modes Sample</Name>
+      <Name>_1_Optimization_ Model_ Input_ Modes</Name>
       <Description>This sample illustrates the 3 model input modes (manual, file, and matrix) for the optimization tool. The use case for this sample is determining which products a retailer should put on their shelves to maximize profit. This is an example of a mixed integer programming problem (MIP).</Description>
       <RootToolName />
       <ToolVersion />
