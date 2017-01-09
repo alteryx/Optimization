@@ -4,9 +4,6 @@
   <!-- Landing Page -->
 	<fieldset id="landing">
 		<legend>Optimization</legend>
-		<div id='intro-div'>
-      <button class='default-button primary' id='intro'>Guide Me</button>
-    </div>
 		<div id='div-inputMode' class='has-hint'>{{ inputMode }}</div>
 	</fieldset>
   <!-- Manual Input Page -->
@@ -56,51 +53,4 @@ body {
 label {
   font-weight: normal;
 }
-#intro-div{
-  position: fixed;
-  bottom: 5px;
-  display: hidden;
-}
 </style>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.2.0/intro.min.js'>
-</script>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.2.0/introjs.min.css' />
-<script type="text/javascript">
-  var map_  = {
-    "inputMode": 3
-  }         
-  var intro = introJs();
-         intro.setOptions({
-            steps: [
-              { 
-                intro: "Welcome to Optimization!"
-              },
-              {
-                intro: "Another One!"
-              },
-              {
-                intro: "The input mode is...",
-                element: document.getElementById("div-inputMode")
-              }
-            ],
-            showStepNumbers: false,
-            showBullets: false,
-            disableInteraction: false
-          });
-      function startIntro(){
-          console.log('starting intro')
-          intro.start();
-      }
-      $('#intro').click(function(e){
-        e.preventDefault()
-        startIntro()
-      })
-      
-      $('.has-hint label').click(function(){
-        console.log('clicked...')
-        var step = map_[$(this).attr('for')]
-        intro.start().goToStep(step)
-      })
-      
-</script>
-
