@@ -5,6 +5,8 @@
     <title>
 Optimization
 </title>
+    <link href='./assets/entypo/entypo.css' rel='stylesheet' />
+    <link rel="stylesheet" href="./assets/alteryx-utils.css" charset="utf-8">
     <link rel="stylesheet" href="app.css" media="screen" charset="utf-8">
     <script type="text/javascript">
       // Include version 1 of the base GUI library.
@@ -25,9 +27,6 @@ Optimization
   <!-- Landing Page -->
 	<fieldset id="landing">
 		<legend>Optimization</legend>
-		<div id='intro-div'>
-      <button class='default-button primary' id='intro'>Guide Me</button>
-    </div>
 		<div id='div-inputMode' class='has-hint'>
 <!--  inputMode  -->
 <label for="inputMode">Select input mode</label>
@@ -61,7 +60,7 @@ Optimization
     <div id="manualMode1" style="display:block">
       
 <!--  maximize  -->
-<alteryx-pluginwidget type="CheckBox" text="Maximize Objective?" default="true" showAsToggle="true" id="maximize" dataName="maximize"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="Maximize Objective?" showAsToggle="true" id="maximize" dataName="maximize" defaultValue="true"></alteryx-pluginwidget>
 
        <!-- React Components - Constraints, Bounds -->
       <div id="manual-input"></div>
@@ -117,7 +116,7 @@ Optimization
 
       
 <!--  maximize  -->
-<alteryx-pluginwidget type="CheckBox" text="Maximize Objective?" default="true" showAsToggle="true" id="maximize" dataName="maximize"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="Maximize Objective?" showAsToggle="true" id="maximize" dataName="maximize" defaultValue="true"></alteryx-pluginwidget>
 
       <div>
 <!--  constraintMode  -->
@@ -131,7 +130,7 @@ Optimization
       <hr style="margin-bottom: 10px;"/>
       
 <!--  displayFieldMapO  -->
-<alteryx-pluginwidget type="CheckBox" text="Display field mapping for Input Anchor O" default="false" showAsToggle="true" id="displayFieldMapO" dataName="displayFieldMapO"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="Display field mapping for Input Anchor O" showAsToggle="true" id="displayFieldMapO" dataName="displayFieldMapO" defaultValue="false"></alteryx-pluginwidget>
       
       <div id='field-map-O'>
         
@@ -174,55 +173,10 @@ body {
 label {
   font-weight: normal;
 }
-#intro-div{
-  position: fixed;
-  bottom: 5px;
-  display: hidden;
-}
 </style>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.2.0/intro.min.js'>
-</script>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.2.0/introjs.min.css' />
-<script type="text/javascript">
-  var map_  = {
-    "inputMode": 3
-  }         
-  var intro = introJs();
-         intro.setOptions({
-            steps: [
-              { 
-                intro: "Welcome to Optimization!"
-              },
-              {
-                intro: "Another One!"
-              },
-              {
-                intro: "The input mode is...",
-                element: document.getElementById("div-inputMode")
-              }
-            ],
-            showStepNumbers: false,
-            showBullets: false,
-            disableInteraction: false
-          });
-      function startIntro(){
-          console.log('starting intro')
-          intro.start();
-      }
-      $('#intro').click(function(e){
-        e.preventDefault()
-        startIntro()
-      })
-      
-      $('.has-hint label').click(function(){
-        console.log('clicked...')
-        var step = map_[$(this).attr('for')]
-        intro.start().goToStep(step)
-      })
-      
-</script>
 
-
+  <script src="./assets/alteryx-utils.js"></script>
+  <script src='./assets/jquery-sticky-kit/jquery.sticky-kit.min.js'></script>
   <script src="app.min.js" type="text/javascript"></script>
 </body>
 </html>
