@@ -20,16 +20,16 @@ Optimization
 <form>
   <div style='display: none'>
 <!--  payload  -->
-<label for="payload">UI</label>
+<label for="payload">XMSG("UI")</label>
 <alteryx-pluginwidget type="TextBox" password="false" id="payload" dataName="payload"></alteryx-pluginwidget>
 </div>
 
   <!-- Landing Page -->
 	<fieldset id="landing">
-		<legend>Optimization</legend>
+		<legend>XMSG('Optimization')</legend>
 		<div id='div-inputMode' class='has-hint'>
 <!--  inputMode  -->
-<label for="inputMode">Select input mode</label>
+<label for="inputMode">XMSG("Select input mode")</label>
 <alteryx-pluginwidget type="DropDown" id="inputMode" dataName="inputMode">
   <alteryx-option uiobject="Specify the model as matrices" default="true">matrix</alteryx-option>
   <alteryx-option uiobject="Enter the model manually">manual</alteryx-option>
@@ -41,7 +41,7 @@ Optimization
   <fieldset class="page" id="page-manual">
     
 <!--  problemType  -->
-<label for="problemType">Select problem type</label>
+<label for="problemType">XMSG("Select problem type")</label>
 <alteryx-pluginwidget type="DropDown" id="problemType" dataName="problemType">
   <alteryx-option uiobject="Linear Program" default="true">LP</alteryx-option>
   <alteryx-option uiobject="Mixed Integer Program">MIP</alteryx-option>
@@ -50,7 +50,7 @@ Optimization
 
     
 <!--  solver  -->
-<label for="solver">Select solver</label>
+<label for="solver">XMSG("Select solver")</label>
 <alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
   <alteryx-option uiobject="Glpk" default="true">glpk</alteryx-option>
   <alteryx-option uiobject="Gurobi">gurobi</alteryx-option>
@@ -71,7 +71,7 @@ Optimization
     <fieldset class="page" id="page-file">
       
 <!--  fileType  -->
-<label for="fileType">Select file type</label>
+<label for="fileType">XMSG("Select file type")</label>
 <alteryx-pluginwidget type="DropDown" id="fileType" dataName="fileType">
   <alteryx-option uiobject="CPLEX_LP" default="true">CPLEX_LP</alteryx-option>
   <alteryx-option uiobject="MathProg">MathProg</alteryx-option>
@@ -80,7 +80,7 @@ Optimization
 
       
 <!--  solver  -->
-<label for="solver">Select solver</label>
+<label for="solver">XMSG("Select solver")</label>
 <alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
   <alteryx-option uiobject="Glpk" default="true">glpk</alteryx-option>
   <alteryx-option uiobject="Gurobi">gurobi</alteryx-option>
@@ -89,7 +89,7 @@ Optimization
 
       
 <!--  filePath  -->
-<label for="filePath">Select file</label>
+<label for="filePath">XMSG("Select file")</label>
 <alteryx-pluginwidget type="FileBrowse" id="filePath" dataName="filePath"></alteryx-pluginwidget>
 
     </fieldset>
@@ -98,7 +98,7 @@ Optimization
     <fieldset class="page" id="page-matrix">
       
 <!--  problemType  -->
-<label for="problemType">Select problem type</label>
+<label for="problemType">XMSG("Select problem type")</label>
 <alteryx-pluginwidget type="DropDown" id="problemType" dataName="problemType">
   <alteryx-option uiobject="Linear Program" default="true">LP</alteryx-option>
   <alteryx-option uiobject="Mixed Integer Program">MIP</alteryx-option>
@@ -107,7 +107,7 @@ Optimization
 
       
 <!--  solver  -->
-<label for="solver">Select solver</label>
+<label for="solver">XMSG("Select solver")</label>
 <alteryx-pluginwidget type="DropDown" id="solver" dataName="solver">
   <alteryx-option uiobject="Glpk" default="true">glpk</alteryx-option>
   <alteryx-option uiobject="Gurobi">gurobi</alteryx-option>
@@ -120,7 +120,7 @@ Optimization
 
       <div>
 <!--  constraintMode  -->
-<label for="constraintMode">Select constraint mode for Input Anchor A</label>
+<label for="constraintMode">XMSG("Select constraint mode for Input Anchor A")</label>
 <alteryx-pluginwidget type="DropDown" id="constraintMode" dataName="constraintMode">
   <alteryx-option uiobject="Dense matrix, constraints in rows" default="true">conInRow</alteryx-option>
   <alteryx-option uiobject="Dense matrix, variables in rows">varInRow</alteryx-option>
@@ -135,27 +135,27 @@ Optimization
       <div id='field-map-O'>
         
 <!--  nameVar  -->
-<label for="nameVar">Select variable column</label>
+<label for="nameVar">XMSG("Select variable column")</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" clearable="true" id="nameVar" dataName="nameVar"></alteryx-pluginwidget>
 		
         
 <!--  nameCoef  -->
-<label for="nameCoef">Select coefficient column</label>
+<label for="nameCoef">XMSG("Select coefficient column")</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" clearable="true" id="nameCoef" dataName="nameCoef"></alteryx-pluginwidget>
 
         
 <!--  nameLower  -->
-<label for="nameLower">Select lower bound column</label>
+<label for="nameLower">XMSG("Select lower bound column")</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" clearable="true" id="nameLower" dataName="nameLower"></alteryx-pluginwidget>
 
         
 <!--  nameUpper  -->
-<label for="nameUpper">Select upper bound column</label>
+<label for="nameUpper">XMSG("Select upper bound column")</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" clearable="true" id="nameUpper" dataName="nameUpper"></alteryx-pluginwidget>
 
         
 <!--  nameType  -->
-<label for="nameType">Select variable type</label>
+<label for="nameType">XMSG("Select variable type")</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" clearable="true" id="nameType" dataName="nameType"></alteryx-pluginwidget>
 
       </div>
